@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "riki's site"
+  navbar:
+    left:
+      - href: index.qmd
+        text: home
+      - href: projects.qmd
+        text: projects
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css

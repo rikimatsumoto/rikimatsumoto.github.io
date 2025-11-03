@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "analytics & data portfolio",
+    "section": "",
+    "text": "LinkedIn GitHub Analytics blog (Medium)\n\n\nhello! im riki!\n\n\nthis is a long-time coming but ive finally made a github pages… and it may be a long-time yet before this is fully fleshed out. In the meantime, here’s what you should know about me:\n\n\n00. Full-stack analytics with a unique perspective in economics. I’ve spent 4-5 years as a full-stack research and data person in a variety of settings which has allowed me to see the integration of data in economics firsthand.\n\n\n01. I solve problems. I’ve developed ETL processes from scratch to streamline intake as a data engineer. I’ve also created data visualisations analyzing U.S. tariff and trade data. I’m always looking for creative solutions to problems and more efficient ways to accomplish tasks.\n\n\n02. I’m constantly learning new things. I have certifications in data engineering topics and I’m learning more about MLOps. I’m often reading new research papers on AI and data science to keep up with the fast process of innovation and potential applicability to my work. Most recently, I experimented with Langchain to make an LLM web application to support foreign investment research. Beyond data, I’m also taking classes in judo, I’ve trained with the D.C. Community Emergency Response Team (CERT) and looking to become licensed as a radio HAM.\n\n\n03. I’m detail-oriented, creative, and inspired. I want to use data to answer critical operational questions and offer actionable insights. I currently oversee an MLOps project to support agricultural training for farmers in the international development space.\n\n\n04. I’m collaborative. At the end of the day, data analytics can’t be done in a silo. I understand my own expertise and the expertise of my team; Working in cross-functional roles is my favourite strategy to collaborate on new analytics solutions.\n\n\n\nHere’s an example of some interesting work I did with my colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending) -&gt;"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "riki's site",
+    "section": "",
+    "text": "hello! here are some of the projects I’ve worked on.\n\n\nU.S. Federal Expenditure tracker (Brookings)\n\nFor some interesting work I did with some colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending)\n\n\n\n\n\nSocial spending mini-simulation\n\nI created this simple mini-simulation to visualize how redistribution through social spending works. It’s quite “naive” in the sense that it models the income distribution of an entire country as ten shares. However, it helped me understand how redistribution directly impacts inequality metrics like the Gini coefficient.\n\n\n\n\n\nU.S. Tariff & Trade tracker (Brookings)\n\nDuring the height of the tariff uncertainty in Q1/Q2 2025, I developed a tariff tracker with my wonderful colleagues. Check it out!"
+  }
+]

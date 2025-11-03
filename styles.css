@@ -1,0 +1,20 @@
+/* Make content area full-width or wider */
+main.content {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: auto;
+  padding: 2rem;
+  background-color: #fff;
+  color: #111;
+}
+
+h1, h2 {
+  color: #004037;
+}
