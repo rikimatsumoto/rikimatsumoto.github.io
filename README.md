@@ -1,12 +1,12 @@
 # riki's github portfolio website
 
-hello! this is my personal portfolio website for showcasing some analytics projects. Built using basic HTML and is hosted via **GitHub Pages**.
+hello! this is my personal portfolio website for showcasing some analytics projects. Built using basic HTML, Quarto markdown tools and hosted via **GitHub Pages**.
 
-## 🌐 live site
+## live site
 
 Visit the site here: https://rikimatsumoto.github.io
 
-## 📊 Embedded Projects
+## Embedded Projects
 
 The site includes live, embedded dashboards powered by [shinyapps.io](https://www.shinyapps.io/), and Streamlit.
 

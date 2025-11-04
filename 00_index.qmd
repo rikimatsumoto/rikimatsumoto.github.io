@@ -37,3 +37,10 @@ project:
   At the end of the day, data analytics can't be done in a silo. I like working in interdisciplinary teams, translating technical analysis into insights product managers and economists can act on. Whether it's pairing with engineers to productionize a prototype application or brainstorming with project managers on dashboards, I always treat analytics as a team sport. </p>
 
 ---
+
+#### What I'm thinking about right now:
+
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:c2pjvazhh5txx57qt6jluvb2/app.bsky.feed.post/3ly47s3k3uc2g" data-bluesky-cid="bafyreiagxf6oc2bffysjcxlscfq7yantkzigeekmj4uaunlbpxgij5jslq" data-bluesky-embed-color-mode="system"><p lang="en">Point metrics don’t tell you whether the model outputs align with the observed data distribution.
+
+I.e., if the model has a good (low) RMSE but predicts a noticeably different distribution, it might be overfitting the center and neglecting the tails. Distributional metrics help identify this.<br><br><a href="https://bsky.app/profile/did:plc:c2pjvazhh5txx57qt6jluvb2/post/3ly47s3k3uc2g?ref_src=embed">[image or embed]</a></p>&mdash; riki (<a href="https://bsky.app/profile/did:plc:c2pjvazhh5txx57qt6jluvb2?ref_src=embed">@rikimatsumoto.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:c2pjvazhh5txx57qt6jluvb2/post/3ly47s3k3uc2g?ref_src=embed">September 5, 2025 at 1:47 PM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+

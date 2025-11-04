@@ -9,12 +9,12 @@ website:
   title: "riki's site"
   navbar:
     left:
-      - href: index.qmd
+      - href: 00_index.qmd
         text: home
-      - href: projects.qmd
-        text: projects
-      - href: articles.qmd
+      - href: 02_articles.qmd
         text: articles & papers
+      - href: 01_projects.qmd
+        text: projects
       - href: cdb/index_cdb.html
         text: ChatGPT's daily brief
 
