@@ -1,5 +1,5 @@
 ---
-title: "analytics & data portfolio"
+title: "analytics portfolio"
 format:
   html:
     toc: true
