@@ -27,15 +27,12 @@ project:
   I’ve spent 4-5 years as a full-stack research and data person in a variety of settings which has allowed me to see the integration of data in economics firsthand.</p>
 
   <p><strong>01. I solve problems.</strong><br>
-  I've developed ETL processes from scratch to streamline intake as a data engineer. I've also created data visualisations analyzing U.S. tariff and trade data. I’m always looking for creative solutions to problems and more efficient ways to accomplish tasks.</p>
+  I build ETL pipelines from scratch to optimize data intake and have developed data visualizations to analyze U.S. tariff and trade data. I currently oversee an MLOps project to support agricultural training for farmers in the international development space.</p>
 
   <p><strong>02. I’m constantly learning new things.</strong><br>
   I have certifications in data engineering topics and I'm learning more about MLOps. I'm often reading new research papers on AI and data science to keep up with the fast process of innovation and potential applicability to my work. Most recently, I experimented with Langchain to make an LLM web application to support foreign investment research. Beyond data, I'm also taking classes in judo, I've trained with the D.C. Community Emergency Response Team (CERT) and looking to become licensed as a radio HAM.</p>
 
-  <p><strong>03. I’m detail-oriented, creative, and inspired.</strong><br>
-  I want to use data to answer critical operational questions and offer actionable insights. I currently oversee an MLOps project to support agricultural training for farmers in the international development space.</p>
-
-  <p><strong>04. I’m collaborative.</strong><br>
+  <p><strong>03. I’m collaborative.</strong><br>
   At the end of the day, data analytics can't be done in a silo. I understand my own expertise and the expertise of my team; Working in cross-functional roles is my favourite strategy to collaborate on new analytics solutions. </p>
 
 ---
