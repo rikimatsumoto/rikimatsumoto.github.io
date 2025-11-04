@@ -1,0 +1,60 @@
+---
+title: "ChatGPT's daily brief"
+execute:
+  echo: false
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+hello! this is the **ChatGPT Daily Brief (CDB)** archive: an open-source intelligence digest compiled and rendered each morning for geopolitical news. I created this product so I could receive a summarized update of the day's main issues without having to read multiple different newsletters.
+
+Click any date below to view that day’s brief.
+
+
+```{python}
+#| output: asis
+import os
+from pathlib import Path
+import datetime
+
+def find_cdb_dir():
+    qproj = os.getenv("QUARTO_PROJECT_DIR")
+    if qproj:
+        p = Path(qproj) / "cdb"
+        if p.is_dir():
+            return p
+    cwd = Path.cwd()
+    if cwd.name.lower() == "cdb":
+        return cwd
+    p = cwd / "cdb"
+    if p.is_dir():
+        return p
+    for candidate in cwd.glob("**/cdb"):
+        if any(candidate.glob("CDB_*.qmd")):
+            return candidate
+    raise FileNotFoundError("Could not locate the 'cdb' folder.")
+
+cdb_dir = find_cdb_dir()
+
+files = sorted(
+    [f for f in cdb_dir.glob("CDB_*.qmd") if f.is_file()],
+    reverse=True
+)
+
+if not files:
+    print("No briefs available yet.")
+else:
+    print("| Date | Link |")
+    print("|------|------|")
+    for f in files:
+        date_str = f.stem.replace("CDB_", "")
+        display = datetime.datetime.strptime(date_str, "%Y-%m-%d").strftime("%b %d, %Y")
+        rel_link = f.name.replace(".qmd", ".html")
+        print(f"| {display} | [View Brief]({rel_link}) |")
+
+```
+
+
+

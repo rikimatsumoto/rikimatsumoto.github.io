@@ -2,16 +2,121 @@
   {
     "objectID": "articles.html",
     "href": "articles.html",
-    "title": "riki’s articles",
+    "title": "articles",
     "section": "",
-    "text": "Articles and blogs I’ve written\n\n\nBenchmarking Human Capital Spending Efficiency Using Bootstrapped Data Envelopment Analysis\n\nI demonstrate how to conduct Bootstrapped Data Envelopment Analysis (DEA) and generate distributions of efficiency scores. I examine expenditures in health and education and cross-country variation in human capital and find large potential efficiency gains for developing countries.\n\n\n\nBack-of-Envelope Series: Estimating spending needs to meet SDG 2\n\nI started a new series called the “Back-of-Envelope” Policy Series, where I calculate (very) rough estimates of a policy issue that interests me. For the inaugural “Back-of-Envelope” note, I estimated costs to meet “minimum hunger and nutrition needs” under specific scenarios.\n\n\nThis rough estimate is intended to contribute to efforts within the Sustainable Development Goals (SDGs) framework to end hunger, achieve food security and improved nutrition, and promote sustainable agriculture by 2030 (SDG 2) from a social protection perspective.\n\n\n\n(IMF Working Paper) Guaranteed Minimum Income Schemes in Europe: Landscape and Design\n\nThis paper provides an overview of the design of means-tested Guaranteed Minimum Income schemes, which constitute an important component of social protection systems in European countries. It discusses how key design features differ across countries, including how countries balance the primary objective of poverty alleviation against the desire to both manage the work disincentives inherent in such programs and contain fiscal cost.\n\n\n\n(IMF Working Paper) Challenges Facing SSNs in Emerging and Developing Economies\n\nWe show how the standard social welfare framework can be used to assess the performance of social safety nets (SSNs) in terms of targeting efficiency and budget effort. We apply this framework to the World Bank’s ASPIRE database and find that the variation in poverty alleviation achieved by SSNs in emerging markets and developing economies (EMDEs) is driven mainly by variation in budget effort. Increasing transfer spending is therefore key to strengthening SSNs in EMDEs."
+    "text": "what I’ve (co-)written\n\n\n0.1 Benchmarking Human Capital Spending Efficiency Using Bootstrapped Data Envelopment Analysis\n\nI demonstrate how to conduct Bootstrapped Data Envelopment Analysis (DEA) and generate distributions of efficiency scores. I examine expenditures in health and education and cross-country variation in human capital and find large potential efficiency gains for developing countries.\n\n\n\n0.2 Back-of-Envelope Series: Estimating spending needs to meet SDG 2\n\nI started a new series called the “Back-of-Envelope” Policy Series, where I calculate (very) rough estimates of a policy issue that interests me. For the inaugural “Back-of-Envelope” note, I estimated costs to meet “minimum hunger and nutrition needs” under specific scenarios.\n\n\nThis rough estimate is intended to contribute to efforts within the Sustainable Development Goals (SDGs) framework to end hunger, achieve food security and improved nutrition, and promote sustainable agriculture by 2030 (SDG 2) from a social protection perspective.\n\n\n\n0.3 (IMF Working Paper) Guaranteed Minimum Income Schemes in Europe: Landscape and Design\n\nThis paper provides an overview of the design of means-tested Guaranteed Minimum Income schemes, which constitute an important component of social protection systems in European countries. It discusses how key design features differ across countries, including how countries balance the primary objective of poverty alleviation against the desire to both manage the work disincentives inherent in such programs and contain fiscal cost.\n\n\n\n0.4 (IMF Working Paper) Challenges Facing SSNs in Emerging and Developing Economies\n\nWe show how the standard social welfare framework can be used to assess the performance of social safety nets (SSNs) in terms of targeting efficiency and budget effort. We apply this framework to the World Bank’s ASPIRE database and find that the variation in poverty alleviation achieved by SSNs in emerging markets and developing economies (EMDEs) is driven mainly by variation in budget effort. Increasing transfer spending is therefore key to strengthening SSNs in EMDEs."
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
-    "title": "riki’s projects",
+    "title": "projects",
     "section": "",
-    "text": "hello! here are some of the projects I’ve worked on.\n\n\nU.S. Federal Expenditure tracker (Brookings)\n\nFor some interesting work I did with some colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending)\n\n\n\n\n\nSocial spending mini-simulation\n\nI created this simple mini-simulation to visualize how redistribution through social spending works. It’s quite “naive” in the sense that it models the income distribution of an entire country as ten shares. However, it helped me understand how redistribution directly impacts inequality metrics like the Gini coefficient.\n\n\n\n\n\nU.S. Tariff & Trade tracker (Brookings)\n\nDuring the height of the tariff uncertainty in Q1/Q2 2025, I developed a tariff tracker with my wonderful colleagues. Check it out!"
+    "text": "hello! here are some of the projects I’ve worked on.\n\n\n0.1 U.S. Federal Expenditure tracker (Brookings)\n\nFor some interesting work I did with some colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending)\n\n\n\n\n\n0.2 Social spending mini-simulation\n\nI created this simple mini-simulation to visualize how redistribution through social spending works. It’s quite “naive” in the sense that it models the income distribution of an entire country as ten shares. However, it helped me understand how redistribution directly impacts inequality metrics like the Gini coefficient.\n\n\n\n\n\n0.3 U.S. Tariff & Trade tracker (Brookings)\n\nDuring the height of the tariff uncertainty in Q1/Q2 2025, I developed a tariff tracker with my wonderful colleagues. Check it out!"
+  },
+  {
+    "objectID": "cdb/index_cdb.html",
+    "href": "cdb/index_cdb.html",
+    "title": "ChatGPT’s daily brief",
+    "section": "",
+    "text": "hello! this is the ChatGPT Daily Brief (CDB) archive: an open-source intelligence digest compiled and rendered each morning for geopolitical news. I created this product so I could receive a summarized update of the day’s main issues without having to read multiple different newsletters.\nClick any date below to view that day’s brief.\n\n\n\nDate\nLink\n\n\n\n\nNov 04, 2025\nView Brief\n\n\nNov 03, 2025\nView Brief"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-04.html",
+    "href": "cdb/CDB_2025-11-04.html",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "",
+    "text": "What’s new (last 48–72h): Israel signaled it will intensify action unless Beirut enforces disarmament/pullbacks mandated in the 2024 framework; weekend/sun. strikes killed several Hezbollah operatives. UNIFIL separately condemned an armed incursion near Blida (Oct 30) and a prior drone-grenade incident against peacekeepers (Oct 26). [Reuters, Nov 2], [UNIFIL, Oct 30], [UNIFIL, Oct 26]\nAssessment: Israel will likely sustain calibrated, high‑precision strikes and cross‑border raids to coerce state action while avoiding a wider war. Escalation risk elevated but contained. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-04.html#israellebanon-israel-hardens-pressure-on-hezbollah-unifil-flags-violations",
+    "href": "cdb/CDB_2025-11-04.html#israellebanon-israel-hardens-pressure-on-hezbollah-unifil-flags-violations",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "",
+    "text": "What’s new (last 48–72h): Israel signaled it will intensify action unless Beirut enforces disarmament/pullbacks mandated in the 2024 framework; weekend/sun. strikes killed several Hezbollah operatives. UNIFIL separately condemned an armed incursion near Blida (Oct 30) and a prior drone-grenade incident against peacekeepers (Oct 26). [Reuters, Nov 2], [UNIFIL, Oct 30], [UNIFIL, Oct 26]\nAssessment: Israel will likely sustain calibrated, high‑precision strikes and cross‑border raids to coerce state action while avoiding a wider war. Escalation risk elevated but contained. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-04.html#levant-israellebanon",
+    "href": "cdb/CDB_2025-11-04.html#levant-israellebanon",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Levant / Israel–Lebanon",
+    "text": "Levant / Israel–Lebanon\n\nSignals & kinetics. Israeli leaders publicly press Lebanon to “fulfil commitments” on Hezbollah disarmament as strikes continue against Radwan-linked nodes; UN/EU statements underscore Blue Line violations and risk to UNIFIL. [Reuters, Nov 2], [UNIFIL, Oct 30], [EU EEAS, Oct 26]\nAssessment: Coercive pressure will persist this week; a large‑casualty incident north of the Litani would rapidly raise escalation odds. (Confidence: moderate.)\nPolitical optics. UN Security Council extended UNIFIL’s mandate in August, adding context to current friction on the ground. [Reuters, Aug 28]\nAssessment: Any perceived UNIFIL constraint or drawdown talk emboldens tactical risk‑taking by belligerents. (Confidence: low–moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-04.html#black-sea-ukraine",
+    "href": "cdb/CDB_2025-11-04.html#black-sea-ukraine",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Black Sea / Ukraine",
+    "text": "Black Sea / Ukraine\n\nFront line. Russia claims it is tightening the ring around Pokrovsk and pressuring Kupiansk; ISW maps/assessments show Russian gains inside Pokrovsk urban area. Ukraine reports 160+ daily engagements and SOF actions. [Reuters, Nov 4], [ISW, Nov 3], [ISW map], [Ukrinform, Nov 4]\nAssessment: Expect block‑by‑block combat, sustained drone/GLSDB/ballistic strikes on energy/logistics nodes; front remains fluid. (Confidence: moderate.)\nAir defense & supply. Additional Patriot components reported delivered; Ukraine emphasizes bolstering air defense amid nightly drone volleys. [Defense News, Nov 3]\nAssessment: Near‑term improvement to point defense around urban hubs, but magazine depth and repair cadence remain constraints. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-04.html#south-china-sea-philippines",
+    "href": "cdb/CDB_2025-11-04.html#south-china-sea-philippines",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "South China Sea / Philippines",
+    "text": "South China Sea / Philippines\n\nCoalition-building. Philippines–Canada SOVFA signed Nov 2, expanding Manila’s network after recent multinational patrols and creation of a US–PH joint task force. [Reuters, Nov 2], [AP, Nov 2], [Canadian DoND, Nov 2], [Reuters, Nov 1], [SCMP, Nov 4]\nAssessment: Expect PRC CCG/PLA “presence ops” and sharper messaging; Manila’s expanded exercises/patrols likely to continue. (Confidence: high.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-04.html#key-indicators",
+    "href": "cdb/CDB_2025-11-04.html#key-indicators",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Key Indicators",
+    "text": "Key Indicators\n\n\n\n\n\n\n\n\nRegion / Issue\nIndicator to watch\nWhy it matters\n\n\n\n\nIsrael–Lebanon\nPace/precision of IAF strikes; UNIFIL/LAF cache seizures; HVT claims\nWar‑risk premia for East Med routings; insurer exclusions\n\n\nUkraine\nDamage to gas/rail/repair hubs; urban control in Pokrovsk\nEU energy & rail volatility; supply chain delays\n\n\nSouth China Sea\nFrequency of CCG close interactions; scope of SOVFA-enabled drills\nFreight/insurance costs on SCS lanes; defense order flow\n\n\nUS posture\nOfficial clarifications: subcritical/system tests only\nNarrative risk for defense/uranium; limited direct ops impact"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-04.html#nearterm-business-actions-72h",
+    "href": "cdb/CDB_2025-11-04.html#nearterm-business-actions-72h",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Near‑Term Business Actions (72h)",
+    "text": "Near‑Term Business Actions (72h)\n\nHedge & liquidity: Re‑check fuel and freight hedges; scenario‑test +20–30% spot freight on SCS lanes, +10–15% EU gas on grid headlines.\n\nCoverage & clauses: Verify war‑risk riders for Levant/East Med; confirm force‑majeure exclusions in supplier contracts.\n\nCounterparty risk: Review exposures to Donetsk rail/energy nodes and Lebanese banking/FX channels.\n\nOps continuity: Identify alternates to SCS corridors (via Indonesia/Australia) for time‑sensitive shipments."
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-03.html",
+    "href": "cdb/CDB_2025-11-03.html",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "",
+    "text": "What’s new: Israeli leaders signaled stepped-up operations unless Beirut delivers visible disarmament and withdrawals under the 2024 ceasefire; weekend strikes killed several Hezbollah operatives as rhetoric hardened.\nAssessment: Israel will likely sustain calibrated, high-precision strikes and information ops this week to compel compliance while seeking to avoid a broad war. Escalation risk elevated but contained. (Confidence: moderate.)\nHostage/remains track: Media reports conflict over three sets of remains transferred from Gaza; some outlets reported they were hostages’ remains while others cited Israeli officials saying they were not.\nAssessment: Ambiguity sustains mistrust and complicates truce maintenance; the hostage/remains channel will likely continue with episodic crises of confidence. (Confidence: low–moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-03.html#israellebanon-pressure-campaign-to-enforce-hezbollah-pullback-intensifies",
+    "href": "cdb/CDB_2025-11-03.html#israellebanon-pressure-campaign-to-enforce-hezbollah-pullback-intensifies",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "",
+    "text": "What’s new: Israeli leaders signaled stepped-up operations unless Beirut delivers visible disarmament and withdrawals under the 2024 ceasefire; weekend strikes killed several Hezbollah operatives as rhetoric hardened.\nAssessment: Israel will likely sustain calibrated, high-precision strikes and information ops this week to compel compliance while seeking to avoid a broad war. Escalation risk elevated but contained. (Confidence: moderate.)\nHostage/remains track: Media reports conflict over three sets of remains transferred from Gaza; some outlets reported they were hostages’ remains while others cited Israeli officials saying they were not.\nAssessment: Ambiguity sustains mistrust and complicates truce maintenance; the hostage/remains channel will likely continue with episodic crises of confidence. (Confidence: low–moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-03.html#levant-israellebanon",
+    "href": "cdb/CDB_2025-11-03.html#levant-israellebanon",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Levant / Israel–Lebanon",
+    "text": "Levant / Israel–Lebanon\n\nSignals & kinetics: Public demands that Lebanon “uphold commitments” to disarm Hezbollah, paired with ongoing cross‑border strikes targeting Radwan elements. Likely intent: coerce state action before winter and shape negotiations. (Confidence: moderate.)\nHuman terrain & optics: Continued incidents despite truce fuel domestic pressure in both countries; international calls for de‑escalation persist. (Confidence: low–moderate.)\nShift indicators: A large‑casualty strike north of the Litani, or visible LAF/UNIFIL seizures of major caches, would respectively raise or lower escalation odds quickly. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-03.html#black-sea-ukraine",
+    "href": "cdb/CDB_2025-11-03.html#black-sea-ukraine",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Black Sea / Ukraine",
+    "text": "Black Sea / Ukraine\n\nPokrovsk fight: Russia claims advances into Prigorodny with overnight strikes on military‑industrial targets; Ukraine says forces are holding and rotating SOF. Expect block‑by‑block combat and deep‑strike volleys against energy/logistics nodes. (Confidence: moderate.)\nMarket angle: Confirmed disruption to gas infrastructure or rail nodes near Donetsk Oblast would add headline risk to European energy and freight names. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-03.html#south-china-sea-philippines",
+    "href": "cdb/CDB_2025-11-03.html#south-china-sea-philippines",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "South China Sea / Philippines",
+    "text": "South China Sea / Philippines\n\nCanada–Philippines SOVFA: New visiting‑forces pact expands Manila’s coalition signaling after recent water‑cannon/shouldering incidents; expect PRC maritime “presence ops” to probe resolve. (Confidence: high.)\nPLA posture: China has touted monitoring of Philippine patrols—likely to continue alongside messaging against “external interference.” (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-03.html#key-indicators",
+    "href": "cdb/CDB_2025-11-03.html#key-indicators",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Key Indicators",
+    "text": "Key Indicators\n\n\n\n\n\n\n\n\nRegion / Issue\nIndicator\nWhy it matters\n\n\n\n\nIsrael–Lebanon\nPace/precision of IAF strikes; UNIFIL/LAF cache seizures; Hezbollah casualty claims\nHigher war‑risk insurance premia; potential East Med shipping reroutes\n\n\nUkraine\nDamage to gas/rail/repair hubs; settlement control in Pokrovsk AO\nEU energy volatility; rail/freight delays ripple\n\n\nSouth China Sea\nFrequency of CCG close interactions; joint drills enabled by SOVFA\nFreight & insurance costs on SCS lanes; defense‑industrial order flow\n\n\nU.S. posture\nOfficial statements on subcritical testing only\nNarrative risk for defense/uranium names; limited direct impact"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-03.html#implications-nearterm-business-actions-72h",
+    "href": "cdb/CDB_2025-11-03.html#implications-nearterm-business-actions-72h",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Implications & Near‑Term Business Actions (72h)",
+    "text": "Implications & Near‑Term Business Actions (72h)\n\nLiquidity & hedging: Re‑check fuel/freight hedges; stress +20–30% freight for SCS, +10–15% TTF for EU energy headlines.\n\nCoverage & clauses: Validate war‑risk riders for Levant/East Med routes; confirm exclusions in supplier force‑majeure language.\n\nCounterparty review: Reassess counterparties with exposure to Donetsk rail/energy nodes and Lebanon banking channels.\n\nOps continuity: Identify alternates to SCS corridors (via Indonesia/Australia) for time‑sensitive shipments."
   },
   {
     "objectID": "index.html",

@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  dir: project
+
 website:
   title: "riki's site"
   navbar:
@@ -12,11 +15,13 @@ website:
         text: projects
       - href: articles.qmd
         text: articles & blog posts
-      - href: cdb/index.html
+      - href: cdb/index_cdb.html
         text: ChatGPT's daily brief
 
 format:
   html:
+    toc: true
+    number-sections: true
     theme: cosmo
     css: styles.css
 

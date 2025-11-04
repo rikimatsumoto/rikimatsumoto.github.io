@@ -1,11 +1,17 @@
 ---
-title: "rojects"
-format: html
+title: "projects"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+    css: styles.css
+lang: en
 ---
 
-<h3>hello! here are some of the projects I've worked on.</h2>
+<h2>hello! here are some of the projects I've worked on.</h2>
 
-#### U.S. Federal Expenditure tracker (Brookings)
+### U.S. Federal Expenditure tracker (Brookings)
   <p>For some interesting work I did with some colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending)</p>
 
 <iframe 
@@ -16,7 +22,7 @@ format: html
   style="border:1px solid black;">
 </iframe>
 
-#### Social spending mini-simulation
+### Social spending mini-simulation
 <p>I created this simple mini-simulation to visualize how redistribution through social spending works. It's quite "naive" in the sense that it models the income distribution of an entire country as ten shares. However, it helped me understand how redistribution directly impacts inequality metrics like the Gini coefficient.</p>
 
 <iframe 
@@ -28,7 +34,7 @@ format: html
 </iframe>
 
 
-#### U.S. Tariff & Trade tracker (Brookings)
+### U.S. Tariff & Trade tracker (Brookings)
   <p>During the height of the tariff uncertainty in Q1/Q2 2025, I developed a tariff tracker with my wonderful colleagues. Check it out!</p>
 
 <iframe 

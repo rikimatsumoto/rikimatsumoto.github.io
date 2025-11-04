@@ -1,6 +1,12 @@
 ---
 title: "analytics & data portfolio"
-format: html
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: cosmo
+    css: styles.css
+lang: en
 
 project:
   type: website
