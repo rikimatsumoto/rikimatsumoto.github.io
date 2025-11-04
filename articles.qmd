@@ -1,5 +1,5 @@
 ---
-title: "riki's articles"
+title: "articles"
 format: html
 ---
 
