@@ -1,9 +1,9 @@
 ---
-title: ""
+title: "riki's projects"
 format: html
 ---
 
-<h2>hello! here are some of the projects I've worked on.</h2>
+<h3>hello! here are some of the projects I've worked on.</h2>
 
 #### U.S. Federal Expenditure tracker (Brookings)
   <p>For some interesting work I did with some colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending)</p>
@@ -12,7 +12,8 @@ format: html
   src="https://www.brookings.edu/articles/tracking-federal-expenditures-in-real-time/" 
   width="100%" 
   height="600" 
-  frameborder="1">
+  frameborder="0"
+  style="border:1px solid black;">
 </iframe>
 
 #### Social spending mini-simulation
@@ -22,7 +23,8 @@ format: html
   src="https://rikimatsumoto.shinyapps.io/shiny-2023-05-04-povcalnet/" 
   width="100%" 
   height="600" 
-  frameborder="0">
+  frameborder="0"
+  style="border:1px solid black;">
 </iframe>
 
 
@@ -33,5 +35,6 @@ format: html
   src="https://www.brookings.edu/articles/tracking-trade-amid-uncertain-and-changing-tariff-policies/" 
   width="100%" 
   height="600" 
-  frameborder="0">
+  frameborder="0"
+  style="border:1px solid black;">
 </iframe>

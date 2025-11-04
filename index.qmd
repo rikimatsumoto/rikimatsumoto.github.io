@@ -33,11 +33,3 @@ project:
   At the end of the day, data analytics can't be done in a silo. I understand my own expertise and the expertise of my team; Working in cross-functional roles is my favourite strategy to collaborate on new analytics solutions. </p>
 
 ---
-  <p>Here's an example of some interesting work I did with my colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending) -></p>
-
-<iframe 
-  src="https://hamiltonproject.shinyapps.io/Outlay_tracker/" 
-  width="100%" 
-  height="600" 
-  frameborder="0">
-</iframe>

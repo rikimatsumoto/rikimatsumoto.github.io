@@ -10,8 +10,16 @@ website:
         text: home
       - href: projects.qmd
         text: projects
+      - href: articles.qmd
+        text: articles & blog posts
+      - href: cdb/index.html
+        text: ChatGPT's daily brief
 
 format:
   html:
     theme: cosmo
     css: styles.css
+
+render:
+  - "*.qmd"                # keep your top-level pages
+  - "cdb/*.qmd"            # render every brief inside /cdb
