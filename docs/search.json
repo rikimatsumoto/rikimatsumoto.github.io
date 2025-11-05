@@ -14,11 +14,67 @@
     "text": "LinkedIn GitHub Analytics blog (Medium) \n\n\nhello! im riki!\n\n\nthis is a long-time coming but ive finally made a github pages… and it may be a long-time yet before this is fully fleshed out. In the meantime, here’s what you should know about me:\n\n\n00. Full-stack analytics with economic policy background. I’ve spent 5+ years as a full-stack research and data person across economics and international policy institutions. My responsibilities have included pure research, data engineering, modelling, and application development, in a variety of settings which has allowed me to see the integration of data in economic policy firsthand.\n\n\n01. I prototype, ship, and solve problems. I’ve engineered ETL pipelines from scratch to automate intake workflows and have built (too many) interactive dashboards analyzing data, including one on U.S. tariff and trade data. I currently lead an ML project that predicts farmer adoption rates of agricultural training using XGBoost, SHAP explainability, and R Shiny deployed for technical assistance teams.\n\n\n02. I like learning new things.  I try to continuously upskill in ML/AI tooling, and I’m learning more about scalable solutions. Most recently, I used LangChain + ChromaDB to build an LLM-based app that generates private-sector diagnostics for investment teams. Outside work, I do judo, volunteer in the DC Community Emergency Response Team (CERT), and am pursuing my amateur HAM radio technician license.\n\n\n03. I’m collaborative. At the end of the day, data analytics can’t be done in a silo. I like working in interdisciplinary teams, translating technical analysis into insights product managers and economists can act on. Whether it’s pairing with engineers to productionize a prototype application or brainstorming with project managers on dashboards, I always treat analytics as a team sport.\n\n\n\nWhat I’m thinking about right now:\n\n\nPoint metrics don’t tell you whether the model outputs align with the observed data distribution.\nI.e., if the model has a good (low) RMSE but predicts a noticeably different distribution, it might be overfitting the center and neglecting the tails. Distributional metrics help identify this.[image or embed]\n\n— riki (@rikimatsumoto.bsky.social) September 5, 2025 at 1:47 PM"
   },
   {
-    "objectID": "cdb/index_cdb.html",
-    "href": "cdb/index_cdb.html",
-    "title": "ChatGPT’s daily brief",
+    "objectID": "cdb/CDB_2025-11-05.html",
+    "href": "cdb/CDB_2025-11-05.html",
+    "title": "ChatGPT Daily Brief (CDB)",
     "section": "",
-    "text": "hello! this is the ChatGPT Daily Brief (CDB) archive: an open-source intelligence digest compiled and rendered by ChatGPT 5 each morning for geopolitical news. I originally created this product for personal use so I could receive a summarized update of the day’s main issues without having to read multiple different newsletters. Adding it here in case folks find it useful.\nClick any date below to view that day’s brief.\n\n\n\nDate\nLink\n\n\n\n\nNov 04, 2025\nView Brief\n\n\nNov 03, 2025\nView Brief"
+    "text": "What’s new (last 48–72h): Israeli leaders reiterated that Lebanon must enforce ceasefire terms requiring Hezbollah’s disarmament and pullback; reporting also highlights ongoing precision strikes and UN/European statements about incidents affecting UNIFIL.\nAssessment: Israel is likely to sustain calibrated, high‑precision strikes and cross‑border actions to compel state enforcement while avoiding a wider war. Escalation risk elevated but contained. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-05.html#israellebanon-pressure-on-hezbollah-disarmament-persists-unifil-flags-risks",
+    "href": "cdb/CDB_2025-11-05.html#israellebanon-pressure-on-hezbollah-disarmament-persists-unifil-flags-risks",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "",
+    "text": "What’s new (last 48–72h): Israeli leaders reiterated that Lebanon must enforce ceasefire terms requiring Hezbollah’s disarmament and pullback; reporting also highlights ongoing precision strikes and UN/European statements about incidents affecting UNIFIL.\nAssessment: Israel is likely to sustain calibrated, high‑precision strikes and cross‑border actions to compel state enforcement while avoiding a wider war. Escalation risk elevated but contained. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-05.html#levant-israellebanon",
+    "href": "cdb/CDB_2025-11-05.html#levant-israellebanon",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Levant / Israel–Lebanon",
+    "text": "Levant / Israel–Lebanon\n\nSignals & kinetics. Public demands that Lebanon “fulfil commitments” on Hezbollah disarmament coincided with continued Israeli targeted strikes against Radwan‑linked elements near the Blue Line. UN and EU statements noted recent incidents endangering UN peacekeepers. (Confidence: moderate.)\nSources: Reuters (Nov 2, 2025); UNIFIL statements (Oct 26 & Oct 30, 2025); EU EEAS (Oct 28, 2025).\nPolitical optics. The disarmament drive faces domestic constraints in Lebanon; LAF operations and cache seizures continue but broader moves risk confrontation absent political consensus. (Confidence: moderate.)\nSource: Reuters (Oct 28, 2025).\nShift indicators. A large‑casualty strike north of the Litani would sharply raise escalation odds; conversely, visible LAF/UNIFIL seizures of major caches and reduced cross‑border incidents would lower near‑term risk. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-05.html#black-sea-ukraine",
+    "href": "cdb/CDB_2025-11-05.html#black-sea-ukraine",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Black Sea / Ukraine",
+    "text": "Black Sea / Ukraine\n\nPokrovsk fight. Russia and Ukraine report fierce urban combat in Pokrovsk, with Ukraine rotating SOF and emphasizing drone use while warning drones alone cannot hold the city. High‑tempo deep‑strike exchanges continue. (Confidence: moderate.)\nSources: Reuters (Nov 4–5, 2025); The Guardian (Nov 5, 2025); ABC AU (Nov 5, 2025).\nAir defense & supply. Reporting points to continued air‑defense reinforcement and domestic ammo production partnerships. (Confidence: moderate.)\nSources: Defense News (Nov 3, 2025); The Guardian (Nov 5, 2025)."
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-05.html#south-china-sea-philippines",
+    "href": "cdb/CDB_2025-11-05.html#south-china-sea-philippines",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "South China Sea / Philippines",
+    "text": "South China Sea / Philippines\n\nCoalition‑building. The Philippines–Canada SOVFA (Nov 2) broadens Manila’s defense network after recent multinational patrols; Beijing counters with presence operations and sharper messaging. (Confidence: high.)\nSources: Reuters (Nov 2, 2025); AP (Nov 2, 2025); Government of Canada (Nov 2, 2025); SCMP (Nov 4, 2025)."
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-05.html#latin-america-venezuela",
+    "href": "cdb/CDB_2025-11-05.html#latin-america-venezuela",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Latin America / Venezuela",
+    "text": "Latin America / Venezuela\n\nMaritime & sanctions risk. Naval posturing and legal wrangling around oil cargoes and maritime seizures continue in the Caribbean approaches; Washington and Caracas maintain back‑channel engagement to avert incidents while sanctions calibration remains on the table. (Confidence: low–moderate, due to opaque channels.)\nSources: Reuters Americas (Nov 4–5, 2025); Bloomberg LatAm (Nov 5, 2025); The Cipher Brief overnight roundups (Nov 5, 2025).\nMacro angle. Oil output guidance and debt litigation timelines interact with political calendar risk; insurers reassessing war‑risk and maritime liability bands for select lanes. (Confidence: moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-05.html#africa-sahelhornsudan",
+    "href": "cdb/CDB_2025-11-05.html#africa-sahelhornsudan",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Africa / Sahel–Horn–Sudan",
+    "text": "Africa / Sahel–Horn–Sudan\n\nSudan (El Fasher corridor). SAF–RSF clashes and drone use persist around humanitarian chokepoints; aid deconfliction fragile. (Confidence: moderate.)\nSources: UN OCHA updates (Nov 4–5, 2025); AllAfrica/AFP (Nov 5, 2025); The Cipher Brief Africa notes (Nov 5, 2025).\nSahel security compacts. Junta coordination meetings signal deeper cooperation with Russia‑linked security providers; spillovers to Niger/Burkina gold routes likely. (Confidence: low–moderate.)\nSources: Africa‑Intelligence (Nov 5, 2025); Reuters (Nov 5, 2025).\nHorn of Africa maritime. Piracy‑adjacent activity and detentions near key sea lanes remain episodic; insurance pricing sensitive to any spike in attempted boardings. (Confidence: low–moderate.)"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-05.html#key-indicators",
+    "href": "cdb/CDB_2025-11-05.html#key-indicators",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Key Indicators",
+    "text": "Key Indicators\n\n\n\n\n\n\n\n\nRegion / Issue\nIndicator to watch\nWhy it matters\n\n\n\n\nIsrael–Lebanon\nPace/precision of IAF strikes; UNIFIL/LAF cache seizures; HVT claims\nWar‑risk premia for East‑Med routes; insurer exclusions\n\n\nUkraine\nDamage to gas/rail/repair hubs; urban control in Pokrovsk\nEU energy & rail volatility; supply‑chain delays\n\n\nSouth China Sea\nFrequency of CCG close interactions; SOVFA‑enabled drills\nFreight/insurance costs on SCS lanes; defense‑industrial order flow\n\n\nVenezuela\nCourt/OFAC notices on cargoes; AIS spoofing clusters; tanker detentions\nCrude flows, freight rates, maritime liability pricing\n\n\nSudan/Sahel/Horn\nAid corridor access; gold‑route interdictions; piracy‑adjacent alerts\nFood/fuel/gold logistics; insurer pricing; counter‑party risk"
+  },
+  {
+    "objectID": "cdb/CDB_2025-11-05.html#nearterm-business-actions-72h",
+    "href": "cdb/CDB_2025-11-05.html#nearterm-business-actions-72h",
+    "title": "ChatGPT Daily Brief (CDB)",
+    "section": "Near‑Term Business Actions (72h)",
+    "text": "Near‑Term Business Actions (72h)\n\nHedge & liquidity: Re‑check fuel and freight hedges; scenario‑test +20–30% spot freight on SCS lanes, +10–15% EU gas on grid headlines, and Caribbean tanker day‑rate spikes.\n\nCoverage & clauses: Validate war‑risk riders for East‑Med, Red Sea, and Caribbean lanes; confirm force‑majeure and sanctions‑compliance clauses in supplier contracts.\n\nCounterparty risk: Review exposures to Donetsk rail/energy nodes, Lebanese banking/FX, Venezuelan counterparties, and Sahel gold logistics.\n\nOps continuity: Identify alternate routings (e.g., via Indonesia/Australia for SCS; via Atlantic lanes for Red Sea risk) and buffer inventory at vulnerable nodes."
   },
   {
     "objectID": "cdb/CDB_2025-11-04.html",
@@ -68,6 +124,13 @@
     "title": "ChatGPT Daily Brief (CDB)",
     "section": "Near‑Term Business Actions (72h)",
     "text": "Near‑Term Business Actions (72h)\n\nHedge & liquidity: Re‑check fuel and freight hedges; scenario‑test +20–30% spot freight on SCS lanes, +10–15% EU gas on grid headlines.\n\nCoverage & clauses: Verify war‑risk riders for Levant/East Med; confirm force‑majeure exclusions in supplier contracts.\n\nCounterparty risk: Review exposures to Donetsk rail/energy nodes and Lebanese banking/FX channels.\n\nOps continuity: Identify alternates to SCS corridors (via Indonesia/Australia) for time‑sensitive shipments."
+  },
+  {
+    "objectID": "cdb/index_cdb.html",
+    "href": "cdb/index_cdb.html",
+    "title": "ChatGPT’s daily brief",
+    "section": "",
+    "text": "hello! this is the ChatGPT Daily Brief (CDB) archive: an open-source intelligence digest compiled and rendered by ChatGPT 5 each morning for geopolitical news. I originally created this product for personal use so I could receive a summarized update of the day’s main issues without having to read multiple different newsletters. Adding it here in case folks find it useful.\nClick any date below to view that day’s brief.\n\n\n\nDate\nLink\n\n\n\n\nNov 05, 2025\nView Brief\n\n\nNov 04, 2025\nView Brief\n\n\nNov 03, 2025\nView Brief"
   },
   {
     "objectID": "cdb/CDB_2025-11-03.html",
