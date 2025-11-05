@@ -9,7 +9,7 @@ website:
   title: "riki's site"
   navbar:
     left:
-      - href: 00_index.qmd
+      - href: index.qmd
         text: home
       - href: 02_articles.qmd
         text: articles & papers
