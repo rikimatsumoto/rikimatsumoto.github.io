@@ -1,0 +1,8 @@
+
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+    css: styles.css
+    include-after-body: disclaimer.html

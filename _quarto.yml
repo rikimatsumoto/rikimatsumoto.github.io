@@ -15,6 +15,8 @@ website:
         text: articles & papers
       - href: 01_projects.qmd
         text: projects
+      - href: blog/index_blog.html
+        text: blog
       - href: cdb/index_cdb.html
         text: ChatGPT's daily brief
 

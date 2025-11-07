@@ -1,0 +1,60 @@
+---
+title: "blog"
+execute:
+  echo: false
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+hello! this my blog repo that are either 1) too short or 2) too casual for my main Medium data page. 
+
+Below is a list of things I've written so far:
+
+
+```{python}
+#| output: asis
+import os
+from pathlib import Path
+import datetime
+
+def find_cdb_dir():
+    qproj = os.getenv("QUARTO_PROJECT_DIR")
+    if qproj:
+        p = Path(qproj) / "blog"
+        if p.is_dir():
+            return p
+    cwd = Path.cwd()
+    if cwd.name.lower() == "blog":
+        return cwd
+    p = cwd / "blog"
+    if p.is_dir():
+        return p
+    for candidate in cwd.glob("**/blog"):
+        if any(candidate.glob("blog_*.qmd")):
+            return candidate
+    raise FileNotFoundError("Could not locate the 'blog' folder.")
+
+cdb_dir = find_cdb_dir()
+
+files = sorted(
+    [f for f in cdb_dir.glob("blog_*.qmd") if f.is_file()],
+    reverse=True
+)
+
+if not files:
+    print("No blogs available yet.")
+else:
+    print("| Date | Link |")
+    print("|------|------|")
+    for f in files:
+        date_str = f.stem.replace("blog_", "")
+        display = datetime.datetime.strptime(date_str, "%Y-%m-%d").strftime("%b %d, %Y")
+        rel_link = f.name.replace(".qmd", ".html")
+        print(f"| {display} | [View Brief]({rel_link}) |")
+
+```
+
+
+
