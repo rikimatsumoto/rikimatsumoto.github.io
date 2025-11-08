@@ -1,5 +1,16 @@
 ---
 permalink: /404.html
+format:
+  html:
+    toc: false
+    number-sections: false
+    theme: cosmo
+    css: styles.css
+lang: en
 ---
 
-<p>Error! :(</p>
+## Oh no! 404 Error! :(
+
+*What is a 404 error?:* Your browser was able to communicate with a given server, but the server could not find what was requested. Basically, there's nothing at the requested link!
+
+Go back to [home](https://rikimatsumoto.github.io)
