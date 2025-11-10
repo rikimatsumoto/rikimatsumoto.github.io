@@ -8,7 +8,7 @@ format:
     number-sections: true
 ---
 
-hello! this my blog repo that are either 1) too short or 2) too casual for my main Medium data page. 
+hello! this my blog repo that are either 1) too short or 2) too casual for my main [Medium](https://medium.com/@rikimatsumoto). 
 
 Below is a list of things I've written so far:
 
