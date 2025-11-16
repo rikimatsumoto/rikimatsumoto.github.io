@@ -1,0 +1,130 @@
+---
+title: "ChatGPT Daily Brief (CDB)"
+subtitle: "Open-Source Intelligence Edition — PDB Style"
+date: "November 11, 2025"
+format:
+  html:
+    toc: true
+    number-sections: false
+lang: en
+---
+
+# Lead
+
+## Levant — Israel–Lebanon: Precision strikes and pressure track
+
+**What changed (last 24–72h):** Israel sustained **targeted airstrikes** in southern Lebanon after evacuation alerts, while debate intensified over **Lebanese Army searches for Hezbollah arms** under the truce framework. UNIFIL reiterated Blue Line compliance concerns.  
+**Assessment:** Further **calibrated strike packages** are **likely** over the next 72h, with Hezbollah maintaining bounded retaliation below full-war thresholds. *Escalation risk elevated but contained.* **(Confidence: moderate.)**
+
+*Key sourcing:* Reuters (Nov 6 & Nov 10, 2025); UNIFIL statements.
+
+---
+
+# Regional Spotlights *(only theatres with credible new developments in the last 24–72h)*
+
+## Levant / Israel–Lebanon
+- **Operational tempo:** Reuters reports Israeli strikes in south Lebanon after evacuation warnings (Aita al‑Jabal, Al‑Tayyiba, Tayr Debba and others). UNIFIL flags continued 1701 compliance issues. **(Confidence: moderate–high.)**  
+- **Policy pressure:** Israel has pressed the **Lebanese Army** to search more intrusively for Hezbollah arms; Lebanese leadership resists amid civil‑strife concerns. **(Confidence: moderate.)**  
+
+**Why it matters for business/finance:** East‑Med **war‑risk premiums** and selective **rerouting** remain in play for the week; monitor insurer circulars and port advisories.
+
+*Sources:* Reuters, UNIFIL (Nov 6–11, 2025).
+
+---
+
+## Black Sea / Ukraine
+- **Frontline dynamics:** Russia claims **house‑to‑house** advances in **Pokrovsk**; Ukraine denies encirclement but acknowledges intense urban combat. **(Confidence: moderate.)**  
+- **Infrastructure risk:** Elevated probability of **deep‑strike exchanges** against rail and power nodes through the week. **(Confidence: moderate.)**
+
+**Why it matters:** Higher tail‑risk for **EU power/rail disruption** and **insurance** on Ukraine‑adjacent logistics; track outage notices and rail NOTAMs.
+
+*Sources:* Reuters; Ukrinform; ISW (Nov 5–11, 2025).
+
+---
+
+## South China Sea / Philippines
+- **Presence ops:** China’s military publicly **tracked/monitored Philippine‑led patrols**; allied coordination continues following the **Canada–Philippines SOVFA**. **(Confidence: high.)**  
+- **Friction risk:** Expect continued **close‑quarters** interactions around resupply and fisheries protection near Scarborough/Spratlys. **(Confidence: moderate.)**
+
+**Why it matters:** Potential **freight/insurance creep** and schedule variance on West Philippine Sea lanes; consider buffer time and alternate routings.
+
+*Sources:* Reuters; Government of Canada; SCMP; Philippine Star (Nov 1–11, 2025).
+
+---
+
+## Latin America / Venezuela
+- **Maritime interdictions:** The U.S. reported **additional lethal strikes** on suspected drug‑carrying vessels in the **Caribbean** (Nov 6) and **eastern Pacific** (Nov 10). **(Confidence: high.)**
+
+**Why it matters:** Watch **tanker routing**, **AIS anomalies**, and **P&I circulars**; intermittent **day‑rate spikes** possible if incidents cluster regionally.
+
+*Sources:* Reuters round‑ups (Oct–Nov 2025).
+
+---
+
+# Watch Items (Next 24–72h)
+
+- **Blue Line (Levant):** More **pre‑announced precision strikes**; indicators: evacuation maps, UNIFIL patrol advisories, Hezbollah claim streams. **(Confidence: moderate.)**  
+- **Pokrovsk AO (Ukraine):** **Street‑to‑street** fighting; indicators: geolocated footage, substation outage notices, rail NOTAMs. **(Confidence: moderate.)**  
+- **West Philippine Sea:** **CCG massing / militia clustering** during allied patrols; indicators: PCG advisories, AIS dark clusters, PLAN PAOs. **(Confidence: moderate.)**  
+- **Caribbean/Eastern Pacific:** Continued U.S. **maritime strikes**; indicators: DoD/PAO posts, insurer notices. **(Confidence: moderate.)**
+
+---
+
+# Indicators & Implications Annex (Business / Financial)
+
+## Key Indicators to Watch
+
+| Region / Issue | Indicator | Why it matters |
+|---|---|---|
+| Israel–Lebanon | Strike frequency; UNIFIL/LAF enforcement; truce implementation text | **War‑risk pricing** and routing for East‑Med; port security advisories |
+| Ukraine | Grid/rail disruption notices; urban control in Pokrovsk | **EU power volatility**; **supply‑chain delays** and insurer responses |
+| South China Sea | CCG/PLAN proximity events; coalition patrol schedule | **Freight/insurance creep**; detention/demurrage risk |
+| Caribbean/E. Pacific | Interdiction tempo; AIS spoofing clusters | **Crude/products flows**, liability exposure, day‑rate spikes |
+
+## Near‑Term Business Actions (72h)
+1. **Coverage check:** Validate **war‑risk riders** (East‑Med, West Philippine Sea) and sanctions/force‑majeure clauses.  
+2. **Liquidity & hedging:** Scenario‑test **+20–30%** spot freight on SCS lanes and **+10–15%** EU power/gas on outage headlines.  
+3. **Routing & buffers:** Pre‑plan alternate routings (Indonesia/Australia arcs; Atlantic alternatives) and **build buffer inventory** at vulnerable nodes.
+
+---
+
+# Navlist — Today’s Top Coverage
+- Reuters — Israel airstrikes after evacuation warnings (Nov 6, 2025)  
+- Reuters — Israel presses LAF to search for Hezbollah arms (Nov 10, 2025)  
+- Reuters — Russia says forces advance in Pokrovsk (Nov 6, 2025)  
+- Ukrinform — Pokrovsk update: no encirclement (Nov 7, 2025)  
+- Reuters — China tracked Philippine patrol (Nov 1, 2025)  
+- Government of Canada — Canada–Philippines SOVFA (Nov 2, 2025)  
+- Reuters — U.S. strikes vessels (Nov 6 & Nov 10, 2025)
+
+---
+
+# Sources & References (accessed November 11, 2025)
+
+**Levant / Israel–Lebanon**  
+- Reuters — *Israel launches airstrikes on south Lebanon after evacuation orders* (Nov 6, 2025): https://www.reuters.com/world/middle-east/israeli-military-warns-residents-three-southern-lebanon-villages-evacuate-2025-11-06/  
+- Reuters — *Israel pushes Lebanon army to search more intrusively for Hezbollah arms – sources* (Nov 10, 2025): https://www.reuters.com/world/middle-east/israel-pushes-lebanon-army-search-more-intrusively-hezbollah-arms-sources-say-2025-11-10/  
+- UNIFIL — Statements/briefings on Blue Line compliance (Nov 2025): https://peacekeeping.un.org/en/mission/unifil  
+
+**Black Sea / Ukraine**  
+- Reuters — *Russia says its forces advance in Pokrovsk in house‑to‑house battles* (Nov 6, 2025): https://www.reuters.com/world/europe/russia-says-its-forces-advance-pokrovsk-house-to-house-battles-2025-11-06/  
+- Ukrinform — *Battle of Pokrovsk: no encirclement* (Nov 7, 2025): https://www.ukrinform.net/rubric-ato/4056014-battle-of-pokrovsk-no-encirclement-ukraines-defense-is-holding-its-ground.html  
+- ISW — *Russian Offensive Campaign Assessment* (rolling): https://understandingwar.org/
+
+**South China Sea / Philippines**  
+- Reuters — *China’s military says it monitored Philippine patrol in the South China Sea* (Nov 1, 2025): https://www.reuters.com/world/china/china-military-says-it-monitored-philippine-patrol-south-china-sea-2025-11-01/  
+- Government of Canada — *Canada and the Philippines sign a Status of Visiting Forces Agreement* (Nov 2, 2025): https://www.canada.ca/en/department-national-defence/news/2025/11/canada-and-the-philippines-sign-a-status-of-visiting-forces-agreement.html  
+- SCMP — *South China Sea — latest coverage hub* (accessed Nov 11, 2025): https://www.scmp.com/topics/south-china-sea  
+- Philippine Star — incident backgrounders (Oct 2025): https://www.philstar.com/headlines/
+
+**Latin America / Venezuela & E. Pacific**  
+- Reuters — *US kills three in strike on suspected drug vessel in the Caribbean* (Nov 7, 2025): https://www.reuters.com/world/americas/us-kills-three-men-another-strike-suspected-drug-vessel-hegseth-says-2025-11-07/  
+- Reuters — *US strikes alleged drug‑carrying vessels in the eastern Pacific, killing six* (Nov 10, 2025): https://www.reuters.com/world/us-strikes-alleged-drug-carrying-vessels-eastern-pacific-killing-six-2025-11-10/  
+- Reuters — *Tally: how many US strikes on boats near Venezuela?* (Oct 17, 2025): https://www.reuters.com/world/americas/how-many-us-strikes-boats-near-venezuela-have-there-been-2025-10-17/
+
+**Also consulted:** The Cipher Brief daily roundups; AP; BBC; CBC; DOE/EIA; Defense News (as relevant and available).
+
+---
+
+*Prepared by: ChatGPT / OSINT Analysis Unit*  
+*IC‑style estimative language; confidence reflects source quality, corroboration, and timeliness.*
