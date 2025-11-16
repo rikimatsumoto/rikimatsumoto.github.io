@@ -56,5 +56,26 @@ else:
 
 ```
 
+Aside from the **CDB** I've occasionally asked ChatGPT to write reports on specific topics and test out capabilities. Here are some special editions if interested:
 
+```{python}
+#| output: asis
+
+files = sorted(
+    [f for f in cdb_dir.glob("CSB_*.qmd") if f.is_file()],
+    reverse=True
+)
+
+if not files:
+    print("No briefs available yet.")
+else:
+    print("| Subject | Link |")
+    print("|------|------|")
+    for f in files:
+        date_str = f.stem.replace("CSB_", "")
+        display = date_str.replace("_", " ")
+        rel_link = f.name.replace(".qmd", ".html")
+        print(f"| {display} | [View Brief]({rel_link}) |")
+
+```
 
