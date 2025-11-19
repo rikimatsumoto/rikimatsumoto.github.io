@@ -1,0 +1,89 @@
+---
+title: "ChatGPT Daily Brief (CDB)"
+subtitle: "Open-Source Intelligence Edition"
+date: "November 17, 2025"
+format:
+  html:
+    toc: true
+    number-sections: false
+lang: en
+---
+
+## Lead
+
+**UN Security Council approves U.S.-backed resolution endorsing Trump’s 20‑point Gaza plan.**  
+The UNSC passed a resolution backing the Trump administration’s Gaza framework including an international stabilisation mission and a “Board of Peace.” Israel objects to elements of governance authority; Hamas excluded. *Assessment:* Diplomatic inflection point shaping the next phase of regional security dynamics. **(Moderate–High confidence)**
+
+---
+
+## Regional Spotlights
+
+### Levant / Israel–Lebanon
+
+- No major cross‑border kinetic developments overnight. Gaza-centred diplomatic shifts expected to influence Israeli posture in the north. **(Moderate confidence)**  
+- **Indicators:** UNIFIL mobility/spot reports; IDF/LAF friction points; Hezbollah messaging on UNSC resolution.
+
+---
+
+### Black Sea / Ukraine
+
+- **Russian missile strike** killed three and wounded ten in Balakliia (Kharkiv).  
+- **Odesa region** hit by drones/missiles, sparking fires at port sites; 36,500 households temporarily without power.  
+- *Assessment:* Russia continues systematic targeting of energy/port infrastructure ahead of winter. **(High confidence)**  
+- **Watch:** Ukrainian repair tempo, AD depletion, and port export interruptions.
+
+---
+
+### South China Sea / Philippines
+
+- No new major incidents as of 17 Nov ET. **(Low–Moderate confidence)**  
+- **Business angle:** Sustained insurance risk for Luzon-adjacent sea lanes; Manila’s ROE shifts remain a near-term variable.
+
+---
+
+### Latin America / Venezuela
+
+- No major new escalatory events reported overnight. **(Low confidence)**  
+- Previous days highlighted U.S. military planning conversations and Colombia’s intelligence cooperation suspension; still shaping diplomatic and shipping risk environment.
+
+---
+
+### Africa / Sahel–Horn–Sudan
+
+- No fresh large-scale developments. **(Low confidence)**  
+- Structural risks remain: corridor insecurity, aid disruption, and RSF/SAF maneuvering near Darfur and Gezira.
+
+---
+
+## Watch Items (24–72h)
+
+1. **Gaza resolution implementation:** troop contributions, financing, Israeli/Russian signalling.  
+2. **Ukraine winter targeting:** uptick in drone/missile strikes on grid and port nodes.  
+3. **SCS resupply cycles:** water-cannoning/shouldering risks around Ayungin/Scarborough.  
+4. **Venezuela regional posture:** U.S.–Saudi arms developments; Colombian political moves.  
+5. **European transit security:** follow-up on Polish rail sabotage implications.
+
+---
+
+## Annex — Business & Financial Indicators
+
+### Energy
+- **Oil dips** after loadings resume at Novorossiysk export hub. *Implication:* Short-term easing of supply concerns; geopolitical volatility remains a premium driver. **(Moderate confidence)**
+
+### Defense/Industrial
+- **F‑35 sale to Saudi Arabia** signalled by U.S. administration. *Implication:* Potentially significant defence contracting volume; raises QME (qualitative military edge) debates. **(Moderate confidence)**
+
+### Logistics/Transit
+- **Polish rail sabotage** highlights vulnerability of Ukraine-adjacent supply routes. *Implication:* Elevated insurance and operational risk for rail-linked logistics chains into Ukraine. **(Moderate confidence)**
+
+---
+
+## Sources & References (selected)
+
+- Reuters — Russian attack on Odesa port facilities (17 Nov 2025)  
+- Reuters — Strike on Kharkiv region (17 Nov 2025)  
+- Reuters — Oil loadings resume at Russian export hub (17 Nov 2025)  
+- Reuters — Polish rail sabotage investigation (17 Nov 2025)  
+- AP — Trump approves F‑35 sale to Saudi Arabia (17 Nov 2025)  
+- Guardian — UNSC Gaza plan approval (17 Nov 2025)
+
