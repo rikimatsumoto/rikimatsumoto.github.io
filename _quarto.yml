@@ -25,6 +25,7 @@ format:
     toc: true
     number-sections: true
     theme: cosmo
+    #theme: default
     css: styles.css
 
 render:
