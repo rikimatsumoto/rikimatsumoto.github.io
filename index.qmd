@@ -25,10 +25,10 @@ project:
   <p>this is a long-time coming but ive finally made a github pages... and it may be a long-time yet before this is fully fleshed out. In the meantime, here's what you should know about me:</p>
 
   <p><strong>00. Full-stack analytics with economic policy background.</strong><br>
-  I’ve spent 5+ years as a full-stack research and data person across economics and international policy institutions. My responsibilities have included pure research, data engineering, modelling, and application development, in a variety of settings which has allowed me to see the integration of data in economic policy firsthand.</p>
+  I’ve spent 5+ years as a full-stack research and data person across economics and international policy institutions. My responsibilities have included pure research, data engineering, modelling, and web-application development, in a variety of settings which has allowed me to see the integration of data in economic policy firsthand.</p>
 
   <p><strong>01. I prototype, ship, and solve problems.</strong><br>
-  I’ve engineered ETL pipelines from scratch to automate intake workflows and have built (too many) interactive dashboards analyzing data, including one on U.S. tariff and trade data. I currently lead an ML project that predicts farmer adoption rates of agricultural training using XGBoost, SHAP explainability, and R Shiny deployed for technical assistance teams.</p>
+  I’ve engineered data pipelines from scratch to automate intake workflows and have built (too many) full-stack web applications analyzing data, including one on U.S. tariff and trade data. I currently lead an ML project that predicts farmer adoption rates of agricultural training using XGBoost, SHAP explainability, and R Shiny deployed for technical assistance teams.</p>
 
   <p><strong>02. I like learning new things. </strong><br>
   I try to continuously upskill in ML/AI tooling, and I'm learning more about scalable solutions. Most recently, I used LangChain + ChromaDB to build an LLM-based app that generates private-sector diagnostics for investment teams. Outside work, I do judo, volunteer in the DC Community Emergency Response Team (CERT), and am pursuing my amateur HAM radio technician license.</p>
