@@ -153,29 +153,7 @@ The embedded app below shows how different smart-camera devices compare in terms
 :::
 
 
-### Useful rule of thumb
-
-#### **ZONE HIGH RISK: 200+ px face height (0.5–1.2 m with 1080p / 2–3 m with 4K)**
-
-* high-quality facial landmarks
-* very stable embedding vectors
-* robust even under sunglasses, hats
-
-#### **ZONE MEDIUM RISK: 112–200 px (1–2 m in 1080p / 3–4 m in 4K)**
-
-* meets minimum ArcFace requirements
-* recognition mostly reliable
-* occlusions start impacting performance more heavily
-
-#### **ZONE LOW RISK: 80–112 px**
-
-* identity similarity fluctuates
-* side angles >30° become problematic
-
-#### **ZONE MINIMAL RISK: <80 px**
-
-* recognition accuracy drops sharply
-* <40 px → detection fails, recognition impossible
+Code available [here](https://github.com/rikimatsumoto/streamlit-privacyriskheatmap)
 
 ---
 

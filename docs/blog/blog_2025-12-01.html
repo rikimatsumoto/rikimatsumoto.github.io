@@ -172,10 +172,7 @@ window.Quarto = {
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
   <li><a href="#example-4k-camera-at-different-distances" id="toc-example-4k-camera-at-different-distances" class="nav-link" data-scroll-target="#example-4k-camera-at-different-distances">example: 4K camera at different distances</a></li>
   </ul></li>
-  <li><a href="#recognition-risk-zones-interactive-risk-heatmap" id="toc-recognition-risk-zones-interactive-risk-heatmap" class="nav-link" data-scroll-target="#recognition-risk-zones-interactive-risk-heatmap">4. recognition risk zones (interactive risk heatmap)</a>
-  <ul class="collapse">
-  <li><a href="#useful-rule-of-thumb" id="toc-useful-rule-of-thumb" class="nav-link" data-scroll-target="#useful-rule-of-thumb">Useful rule of thumb</a></li>
-  </ul></li>
+  <li><a href="#recognition-risk-zones-interactive-risk-heatmap" id="toc-recognition-risk-zones-interactive-risk-heatmap" class="nav-link" data-scroll-target="#recognition-risk-zones-interactive-risk-heatmap">4. recognition risk zones (interactive risk heatmap)</a></li>
   <li><a href="#practical-lessons-and-takeaways" id="toc-practical-lessons-and-takeaways" class="nav-link" data-scroll-target="#practical-lessons-and-takeaways">5. practical lessons and takeaways</a></li>
   <li><a href="#concluding-notes" id="toc-concluding-notes" class="nav-link" data-scroll-target="#concluding-notes">6. concluding notes</a></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">7. appendix</a>
@@ -401,40 +398,8 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 <p><a href="https://app-privacyriskheatmap-camerafacialembed.streamlit.app/?embed_options=light_theme">Click here to open the Streamlit app live →</a></p>
 </div>
 </div>
-<section id="useful-rule-of-thumb" class="level3">
-<h3 class="anchored" data-anchor-id="useful-rule-of-thumb">Useful rule of thumb</h3>
-<section id="zone-high-risk-200-px-face-height-0.51.2-m-with-1080p-23-m-with-4k" class="level4">
-<h4 class="anchored" data-anchor-id="zone-high-risk-200-px-face-height-0.51.2-m-with-1080p-23-m-with-4k"><strong>ZONE HIGH RISK: 200+ px face height (0.5–1.2 m with 1080p / 2–3 m with 4K)</strong></h4>
-<ul>
-<li>high-quality facial landmarks</li>
-<li>very stable embedding vectors</li>
-<li>robust even under sunglasses, hats</li>
-</ul>
-</section>
-<section id="zone-medium-risk-112200-px-12-m-in-1080p-34-m-in-4k" class="level4">
-<h4 class="anchored" data-anchor-id="zone-medium-risk-112200-px-12-m-in-1080p-34-m-in-4k"><strong>ZONE MEDIUM RISK: 112–200 px (1–2 m in 1080p / 3–4 m in 4K)</strong></h4>
-<ul>
-<li>meets minimum ArcFace requirements</li>
-<li>recognition mostly reliable</li>
-<li>occlusions start impacting performance more heavily</li>
-</ul>
-</section>
-<section id="zone-low-risk-80112-px" class="level4">
-<h4 class="anchored" data-anchor-id="zone-low-risk-80112-px"><strong>ZONE LOW RISK: 80–112 px</strong></h4>
-<ul>
-<li>identity similarity fluctuates</li>
-<li>side angles &gt;30° become problematic</li>
-</ul>
-</section>
-<section id="zone-minimal-risk-80-px" class="level4">
-<h4 class="anchored" data-anchor-id="zone-minimal-risk-80-px"><strong>ZONE MINIMAL RISK: &lt;80 px</strong></h4>
-<ul>
-<li>recognition accuracy drops sharply</li>
-<li>&lt;40 px → detection fails, recognition impossible</li>
-</ul>
+<p>Code available <a href="https://github.com/rikimatsumoto/streamlit-privacyriskheatmap">here</a></p>
 <hr>
-</section>
-</section>
 </section>
 <section id="practical-lessons-and-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="practical-lessons-and-takeaways">5. practical lessons and takeaways</h2>
