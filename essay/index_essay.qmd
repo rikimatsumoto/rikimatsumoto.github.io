@@ -1,5 +1,5 @@
 ---
-title: "blog"
+title: "essays"
 execute:
   echo: false
 format:
@@ -8,7 +8,7 @@ format:
     number-sections: true
 ---
 
-hello! this my blog repo that are either 1) too short, 2) too casual, 3) or a bit too random for my main [Medium](https://medium.com/@rikimatsumoto). 
+hello! this my essay & writings repo that are either 1) too short, 2) too casual, 3) or a bit too random for my main [Medium](https://medium.com/@rikimatsumoto). 
 
 Below is a list of things I've written so far:
 
@@ -22,34 +22,34 @@ import datetime
 def find_cdb_dir():
     qproj = os.getenv("QUARTO_PROJECT_DIR")
     if qproj:
-        p = Path(qproj) / "blog"
+        p = Path(qproj) / "essay"
         if p.is_dir():
             return p
     cwd = Path.cwd()
-    if cwd.name.lower() == "blog":
+    if cwd.name.lower() == "essay":
         return cwd
-    p = cwd / "blog"
+    p = cwd / "essay"
     if p.is_dir():
         return p
-    for candidate in cwd.glob("**/blog"):
-        if any(candidate.glob("blog_*.qmd")):
+    for candidate in cwd.glob("**/essay"):
+        if any(candidate.glob("essay_*.qmd")):
             return candidate
-    raise FileNotFoundError("Could not locate the 'blog' folder.")
+    raise FileNotFoundError("Could not locate the 'essay' folder.")
 
 cdb_dir = find_cdb_dir()
 
 files = sorted(
-    [f for f in cdb_dir.glob("blog_*.qmd") if f.is_file()],
+    [f for f in cdb_dir.glob("essay_*.qmd") if f.is_file()],
     reverse=True
 )
 
 if not files:
-    print("No blogs available yet.")
+    print("No essays available yet.")
 else:
     print("| Date | Link |")
     print("|------|------|")
     for f in files:
-        date_str = f.stem.replace("blog_", "")
+        date_str = f.stem.replace("essay_", "")
         display = datetime.datetime.strptime(date_str, "%Y-%m-%d").strftime("%b %d, %Y")
         rel_link = f.name.replace(".qmd", ".html")
         print(f"| {display} | [View Brief]({rel_link}) |")

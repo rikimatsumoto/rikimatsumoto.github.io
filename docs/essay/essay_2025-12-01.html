@@ -136,8 +136,8 @@ window.Quarto = {
 <span class="menu-text">projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog/index_blog.html"> 
-<span class="menu-text">blog</span></a>
+    <a class="nav-link" href="../essay/index_essay.html"> 
+<span class="menu-text">essays</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../cdb/index_cdb.html"> 
@@ -232,15 +232,15 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>“The best accuracy is obtained from faces appearing in turnstile video clips with mean minimum and maximum interocular distances of 20 and 55 pixels respectively. More recently, Clearview, a company that provides face recognition technologies to law enforcement agencies, claimed to use a 110 × 110 pixel definition of a face… The face is not a single biometric but includes many sub-biometrics, each with varying levels of identification possibilities.”</p>
 </blockquote>
-<p>Understanding these variables are essential for evaluating <strong>realistic privacy risks</strong>:</p>
+<p>Understanding these variables is essential for evaluating <strong>realistic privacy risks</strong>:</p>
 <ul>
 <li>At very close range (1–2 meters), consumer cameras can produce <strong>high-quality embeddings</strong>.<br>
 </li>
 <li>At moderate distances, recognition quality depends heavily on resolution, angle, machine learning model, lighting, and sensor size.</li>
 <li>Beyond certain pixel thresholds, a camera simply <strong>cannot</strong> extract a usable embedding, no matter what software is used. Gen AI “image enhancers” will try to claim differently, but realistically no. They impute (creating uncertainty), and do not “add” more information.</li>
 </ul>
-<p>This post explains a straightforward geometric framework that helps you estimate the <strong>face pixel density</strong> captured by cameras. Using just four ingredients^ - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the <strong>technical privacy implications</strong> of today’s ubiquitous home surveillance devices.</p>
-<p>^ Disclaimer! To be clear, there are more than four ingredients. For example, blur (from movement) would understandably affect facial recognition. Blur is, of course, a function of a video camera’s frame rate. Similarly, low light conditions would also affect the quality of the facial embedding. To keep this simple, I’m using a simplified framework!</p>
+<p>The goal in this essay is to use a straightforward geometric framework that helps you estimate the <strong>facial pixels</strong> captured by cameras. Using just four ingredients^ - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the <strong>technical privacy implications</strong> of today’s ubiquitous home surveillance devices.</p>
+<p>^ Disclaimer! To clarify, there are more than four ingredients. For example, blur caused by movement would understandably impact facial recognition. Blur, of course, partly results from a video camera’s frame rate. Likewise, low light conditions would also affect the quality of the facial embedding. To keep things simple, I’m using a “naive” framework :P</p>
 </section>
 <section id="why-distance-and-resolution-matter" class="level2">
 <h2 class="anchored" data-anchor-id="why-distance-and-resolution-matter">2. why distance and resolution matter</h2>
@@ -495,7 +495,7 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 <ul>
 <li>Recognition performance depends on lighting, pose, occlusion, compression, and camera optics—not just pixel count.</li>
 <li>Models trained on super-resolution or cross-resolution datasets may recognize faces below these thresholds in controlled settings.</li>
-<li>The model assumes a frontal face and simple geometric projection; real-world scenes introduce additional variability.</li>
+<li>Many facial recognition models assume a frontal face and simple geometric projection; real-world scenes introduce additional variability.</li>
 </ul>
 
 
@@ -506,7 +506,7 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 </main> <!-- /main -->
 <hr style="margin-top:2em;margin-bottom:1em;">
 
-<p><strong>Disclaimer:</strong> This blog contains my own views and do not reflect my employer. My blogs may contain errors, omissions, or outdated information. It is provided “as is,” without warranties of any kind, express or implied. The blog is not investment, legal, security, or policy advice and must not be relied upon for decision-making. You are responsible for independently verifying facts and conclusions. Neither the author nor providers of this service accept any liability for losses or harms arising from use of this content. No duty to update is assumed.</p>
+<p><strong>Disclaimer:</strong> This essay/blog contains my own views and do not reflect my employer. My essays may contain errors, omissions, or outdated information. It is provided “as is,” without warranties of any kind, express or implied. The essays are not investment, legal, security, or policy advice and must not be relied upon for decision-making. You are responsible for independently verifying facts and conclusions. The author does not accept any liability for losses or harms arising from use of this content. No duty to update is assumed.</p>
 
 
 <script id="quarto-html-after-body" type="application/javascript">

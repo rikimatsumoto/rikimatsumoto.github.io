@@ -35,15 +35,15 @@ In an excellent essay from 2021, Adam Harvey in "What is a face?" [notes](https:
 
 > "The best accuracy is obtained from faces appearing in turnstile video clips with mean minimum and maximum interocular distances of 20 and 55 pixels respectively. More recently, Clearview, a company that provides face recognition technologies to law enforcement agencies, claimed to use a 110 × 110 pixel definition of a face... The face is not a single biometric but includes many sub-biometrics, each with varying levels of identification possibilities."
 
-Understanding these variables are essential for evaluating **realistic privacy risks**:
+Understanding these variables is essential for evaluating **realistic privacy risks**:
 
 - At very close range (1–2 meters), consumer cameras can produce **high-quality embeddings**.  
 - At moderate distances, recognition quality depends heavily on resolution, angle, machine learning model, lighting, and sensor size.
 - Beyond certain pixel thresholds, a camera simply **cannot** extract a usable embedding, no matter what software is used. Gen AI "image enhancers" will try to claim differently, but realistically no. They impute (creating uncertainty), and do not "add" more information.
 
-This post explains a straightforward geometric framework that helps you estimate the **face pixel density** captured by cameras. Using just four ingredients^ - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the **technical privacy implications** of today's ubiquitous home surveillance devices.
+The goal in this essay is to use a straightforward geometric framework that helps you estimate the **facial pixels** captured by cameras. Using just four ingredients^ - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the **technical privacy implications** of today's ubiquitous home surveillance devices.
 
-^ Disclaimer! To be clear, there are more than four ingredients. For example, blur (from movement) would understandably affect facial recognition. Blur is, of course, a function of a video camera's frame rate. Similarly, low light conditions would also affect the quality of the facial embedding. To keep this simple, I'm using a simplified framework!
+^ Disclaimer! To clarify, there are more than four ingredients. For example, blur caused by movement would understandably impact facial recognition. Blur, of course, partly results from a video camera's frame rate. Likewise, low light conditions would also affect the quality of the facial embedding. To keep things simple, I'm using a "naive" framework :P
 
 ## 2. why distance and resolution matter
 
@@ -268,5 +268,5 @@ These thresholds should be interpreted as **heuristic ranges**:
 
 * Recognition performance depends on lighting, pose, occlusion, compression, and camera optics—not just pixel count.
 * Models trained on super-resolution or cross-resolution datasets may recognize faces below these thresholds in controlled settings.
-* The model assumes a frontal face and simple geometric projection; real-world scenes introduce additional variability.
+* Many facial recognition models assume a frontal face and simple geometric projection; real-world scenes introduce additional variability.
 
