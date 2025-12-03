@@ -124,9 +124,7 @@ This shows:
 
 This explains why a 4K camera can reliably detect faces at much longer distances than a 1080p webcam.
 
----
-
-## 4. example: 4K camera at different distances
+### example: 4K camera at different distances
 
 Assume:
 
@@ -135,8 +133,6 @@ Assume:
 - $\theta = 50^\circ$
 
 Using the formula:
-
-### Results
 
 | Distance (meters) | Face Pixel Height (px) | Expected Recognition |
 |-------------------|------------------------|----------------------|
@@ -147,7 +143,7 @@ Using the formula:
 
 ---
 
-## 5. recognition risk zones (interactive risk heatmap)
+## 4. recognition risk zones (interactive risk heatmap)
 
 The embedded app below shows how different smart-camera devices compare in terms of privacy risk at various distances. Darker/red cells indicate conditions where a camera is more likely to capture enough pixels to generate a usable facial embedding.
 
@@ -183,7 +179,7 @@ The embedded app below shows how different smart-camera devices compare in terms
 
 ---
 
-## 6. practical lessons and takeaways
+## 5. practical lessons and takeaways
 
 #### a. Distance acts as a form of compression!
 
@@ -211,13 +207,13 @@ Noise reduces effective pixel quality.
 
 ---
 
-## 7. concluding notes
+## 6. concluding notes
 
 Facial-recognition accuracy follows a simple rule: **the number of pixels covering the face.** Knowing this helps privacy-conscious folks estimate when a camera can reliably identify someone, setting realistic expectations for when you should be concerned. For example, a Ring device with 4K resolution, standing more than 5 meters away (like on a house's front lawn) is *probably* safe...
 
 ---
 
-## 8. appendix
+## 7. appendix
 
 ### Table A1
 
