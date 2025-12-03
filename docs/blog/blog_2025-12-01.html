@@ -445,11 +445,11 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 <h3 class="anchored" data-anchor-id="methods-assumptions-for-facial-pixel-thresholds">methods &amp; assumptions for facial pixel thresholds</h3>
 <section id="a.-why-face-height-in-pixels" class="level4">
 <h4 class="anchored" data-anchor-id="a.-why-face-height-in-pixels">a. why face height in pixels?</h4>
-<p>In facial recognition standards, the term <strong>inter-ocular distance (IOD)</strong> - the number of pixels between the centers of the eyes - rather than full face height is used. To translate IOD into a simple geometric model, I assume the common anthropometric proportionality:</p>
+<p>In facial recognition standards, the term <strong>inter-ocular distance (IOD)</strong> - the number of pixels between the centers of the eyes - rather than full face height is used. To translate IOD, I assumed the following proportionality:</p>
 <p><span class="math display">\[
 \text{Face height} \approx 2.5 \times \text{IOD}.
 \]</span></p>
-<p>This ratio is consistent with standard facial alignment datasets and normalization procedures.</p>
+<p>Personally, I’m probably closer to 3 than 2.5.</p>
 </section>
 <section id="b.-evidence-used-to-define-the-thresholds" class="level4">
 <h4 class="anchored" data-anchor-id="b.-evidence-used-to-define-the-thresholds">b. Evidence used to define the thresholds</h4>

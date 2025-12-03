@@ -205,13 +205,13 @@ Facial-recognition accuracy follows a simple rule: **the number of pixels coveri
 
 #### a. why face height in pixels?
 
-In facial recognition standards, the term **inter-ocular distance (IOD)** - the number of pixels between the centers of the eyes - rather than full face height is used. To translate IOD into a simple geometric model, I assume the common anthropometric proportionality:
+In facial recognition standards, the term **inter-ocular distance (IOD)** - the number of pixels between the centers of the eyes - rather than full face height is used. To translate IOD, I assumed the following proportionality:
 
 $$
 \text{Face height} \approx 2.5 \times \text{IOD}.
 $$
 
-This ratio is consistent with standard facial alignment datasets and normalization procedures.
+Personally, I'm probably closer to 3 than 2.5.
 
 #### b. Evidence used to define the thresholds
 
