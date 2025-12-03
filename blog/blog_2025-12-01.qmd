@@ -76,7 +76,7 @@ We can relate **camera resolution**, **field of view**, and **distance** to the 
 
 Let:
 
-- $(H_f)$ = real face height (meters), e.g. $( H_f \approx 0.20\,\text{m} )$
+- $(H_f)$ = real face height (meters), e.g. $( H_f \approx 0.20\,\text{m} )$ 
 - $( R_v )$ = vertical resolution of the camera (pixels), e.g. 720, 1080, 2160
 - $( \theta )$ = vertical field of view (in degrees)
 - $( D )$ = distance from the camera to the subject (meters)
@@ -134,7 +134,7 @@ This explains why a 4K camera can reliably detect faces at much longer distances
 
 Assume:
 
-- $H_f = 0.20$ m  
+- $H_f = 0.20$ m, see [this](https://www.quora.com/What-is-the-average-length-of-a-mans-face-I-am-21-and-my-face-length-is-7-inches).
 - $R_v = 2160$ px (4K)  
 - $\theta = 50^\circ$
 
