@@ -227,7 +227,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Whether a given camera <em>can</em> generate a meaningful facial embedding depends largely on <strong>distance</strong>, <strong>resolution</strong>, and the <strong>number of pixels covering the face</strong>.</p>
 </blockquote>
-<p>If a person walks several meters away from a camera that records only 1080p video, their face may occupy too few pixels for any modern recognition algorithm (even a sophisticated one like ArcFace or the systems deployed in commercial products) to reliably extract a face embedding at all. Conversely, a <strong>close-range camera with 4K resolution</strong> can capture enough detail to produce an embedding even from quick or casual exposures.</p>
+<p>If a person walks several meters away from a camera that records only 1080px video, their face may occupy too few pixels for any modern recognition algorithm (even a sophisticated one like ArcFace or the systems deployed in commercial products) to reliably extract a face embedding at all. Conversely, a <strong>close-range camera with 4K resolution</strong> can capture enough detail to produce an embedding even from quick or casual exposures.</p>
 <p>Understanding this relationship is essential for evaluating <strong>realistic privacy risks</strong>:</p>
 <ul>
 <li>At very close range (1–2 meters), even consumer cameras can often produce <strong>high-quality embeddings</strong>.<br>
@@ -246,6 +246,8 @@ window.Quarto = {
 <p><strong>More pixels per face → more datapoints per face → better recognition. Fewer pixels → degraded or impossible recognition.</strong></p>
 </blockquote>
 <p>This is why a person standing directly in front of a camera is recognized with high confidence, while someone several meters away may not even be detected.</p>
+<p>Here’s a <a href="http://digitalprotalk.blogspot.com/2008/02/so-how-many-pixels-does-it-take-to-make.html#:~:text=As%20cameras%20continue%20to%20improve,the%20more%20pixels%20%2C%20the%20better.">blog post</a> from photographer David Ziser about pixels and portraits</p>
+<p><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVvjiC8z3t-J0HUd2WPwNyXlKmqw5Azqr-G_8nN09fm0fk9RtjgZ2EH8OLaY8qpRnEp1CqIyiMkbEbcQs2JbZi4JejclSiZ-iCo7pquaWzvJSdoe79ls88l18JfbJKW1a4iE66/s400/FAcePix+4-Image+Compare.jpg" width="300" style="border-radius: 10px; float: center;" alt="pixel and portraits"></p>
 <section id="face-resolution-thresholds" class="level3">
 <h3 class="anchored" data-anchor-id="face-resolution-thresholds">face resolution thresholds</h3>
 <p>Research (see Table A1 for a brief literature review) on modern face-recognition systems shows:</p>
@@ -276,6 +278,7 @@ window.Quarto = {
 </tbody>
 </table>
 <p>These thresholds are generally universal across most modern deep-learning face-recognition models.</p>
+<p>Now comes some maths - if you’d rather skip it, go straight to part 4!</p>
 <hr>
 </section>
 </section>
@@ -335,7 +338,7 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 </li>
 <li><strong>Narrower field of view → higher pixel density on the face</strong></li>
 </ul>
-<p>This explains why a 4K camera can reliably detect faces at much longer distances than a 1080p webcam.</p>
+<p>This explains why a 4K camera can reliably detect faces at much longer distances than a 1080px webcam.</p>
 </section>
 <section id="example-4k-camera-at-different-distances" class="level3">
 <h3 class="anchored" data-anchor-id="example-4k-camera-at-different-distances">example: 4K camera at different distances</h3>
@@ -409,7 +412,7 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 </section>
 <section id="b.-camera-resolution-directly-determines-usable-recognition-range" class="level4">
 <h4 class="anchored" data-anchor-id="b.-camera-resolution-directly-determines-usable-recognition-range">b. Camera resolution directly determines usable recognition range</h4>
-<p>A 4K camera offers roughly <strong>2× the effective distance</strong> of a 1080p camera for the same accuracy.</p>
+<p>A 4K camera offers roughly <strong>2× the effective distance</strong> of a 1080px camera for the same accuracy.</p>
 </section>
 <section id="c.-face-pixel-count-predicts-accuracy-better-than-any-other-variable" class="level4">
 <h4 class="anchored" data-anchor-id="c.-face-pixel-count-predicts-accuracy-better-than-any-other-variable">c.&nbsp;Face pixel count predicts accuracy better than any other variable</h4>
@@ -426,7 +429,7 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 </section>
 <section id="e.-bad-lighting-cancels-out-high-resolution" class="level4">
 <h4 class="anchored" data-anchor-id="e.-bad-lighting-cancels-out-high-resolution">e. Bad lighting cancels out high resolution</h4>
-<p>Noise reduces effective pixel quality.</p>
+<p>Noise from low light conditions reduces the pixel quality. <a href="https://web.archive.org/web/20251203044605/https://www.sdmmag.com/articles/104360-image-clarity-requires-more-than-resolution-alone">Higher resolution means more detail, but increasing pixel count shrinks pixel size, reducing light intake and affecting low-light performance. But (!!!) larger sensors in newer cameras enable more pixels without sacrificing size.</a></p>
 <hr>
 </section>
 </section>

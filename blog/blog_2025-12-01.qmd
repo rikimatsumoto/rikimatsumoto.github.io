@@ -29,7 +29,7 @@ Moreover, a key technical point often missing from the privacy debate:
 
 > Whether a given camera *can* generate a meaningful facial embedding depends largely on **distance**, **resolution**, and the **number of pixels covering the face**.
 
-If a person walks several meters away from a camera that records only 1080p video, their face may occupy too few pixels for any modern recognition algorithm (even a sophisticated one like ArcFace or the systems deployed in commercial products) to reliably extract a face embedding at all. Conversely, a **close-range camera with 4K resolution** can capture enough detail to produce an embedding even from quick or casual exposures.
+If a person walks several meters away from a camera that records only 1080px video, their face may occupy too few pixels for any modern recognition algorithm (even a sophisticated one like ArcFace or the systems deployed in commercial products) to reliably extract a face embedding at all. Conversely, a **close-range camera with 4K resolution** can capture enough detail to produce an embedding even from quick or casual exposures.
 
 Understanding this relationship is essential for evaluating **realistic privacy risks**:
 
@@ -49,6 +49,10 @@ Facial-recognition systems do not “see” distance directly. What they *actual
 
 This is why a person standing directly in front of a camera is recognized with high confidence, while someone several meters away may not even be detected.
 
+Here's a [blog post](http://digitalprotalk.blogspot.com/2008/02/so-how-many-pixels-does-it-take-to-make.html#:~:text=As%20cameras%20continue%20to%20improve,the%20more%20pixels%20%2C%20the%20better.) from photographer David Ziser about pixels and portraits
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVvjiC8z3t-J0HUd2WPwNyXlKmqw5Azqr-G_8nN09fm0fk9RtjgZ2EH8OLaY8qpRnEp1CqIyiMkbEbcQs2JbZi4JejclSiZ-iCo7pquaWzvJSdoe79ls88l18JfbJKW1a4iE66/s400/FAcePix+4-Image+Compare.jpg" width="300" style="border-radius: 10px; float: center;" alt="pixel and portraits" >
+
 ### face resolution thresholds
 
 Research (see Table A1 for a brief literature review) on modern face-recognition systems shows:
@@ -61,6 +65,8 @@ Research (see Table A1 for a brief literature review) on modern face-recognition
 | **< 40 px** | Recognition typically fails |
 
 These thresholds are generally universal across most modern deep-learning face-recognition models.
+
+Now comes some maths - if you'd rather skip it, go straight to part 4!
 
 ---
 
@@ -122,7 +128,7 @@ This shows:
 - **Double the resolution → double the face pixels**  
 - **Narrower field of view → higher pixel density on the face**
 
-This explains why a 4K camera can reliably detect faces at much longer distances than a 1080p webcam.
+This explains why a 4K camera can reliably detect faces at much longer distances than a 1080px webcam.
 
 ### example: 4K camera at different distances
 
@@ -165,7 +171,7 @@ Moving farther from the camera reduces image detail *exactly* like lowering reso
 
 #### b. Camera resolution directly determines usable recognition range
 
-A 4K camera offers roughly **2× the effective distance** of a 1080p camera for the same accuracy.
+A 4K camera offers roughly **2× the effective distance** of a 1080px camera for the same accuracy.
 
 #### c. Face pixel count predicts accuracy better than any other variable
 
@@ -181,7 +187,7 @@ But digital zoom does not...
 
 #### e. Bad lighting cancels out high resolution
 
-Noise reduces effective pixel quality.
+Noise from low light conditions reduces the pixel quality. [Higher resolution means more detail, but increasing pixel count shrinks pixel size, reducing light intake and affecting low-light performance. But (!!!) larger sensors in newer cameras enable more pixels without sacrificing size.](https://web.archive.org/web/20251203044605/https://www.sdmmag.com/articles/104360-image-clarity-requires-more-than-resolution-alone)
 
 ---
 
