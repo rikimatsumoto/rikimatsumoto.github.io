@@ -9,63 +9,63 @@
   {
     "objectID": "blog/blog_2025-12-01.html",
     "href": "blog/blog_2025-12-01.html",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "",
     "text": "Facial-recognition models such as ArcFace, FaceNet, and modern InsightFace pipelines rely on image detail to extract reliable facial “embeddings” (i.e., mathematical representations of the image of a face). One of the strongest predictors of recognition accuracy comes from a much more fundamental factor: the number of pixels covering the face. This post explains the mathematical relationship between camera resolution, distance, and facial-recognition accuracy, and provides a practical Python tool to measure face quality."
   },
   {
     "objectID": "blog/blog_2025-12-01.html#tldr",
     "href": "blog/blog_2025-12-01.html#tldr",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "",
     "text": "Facial-recognition models such as ArcFace, FaceNet, and modern InsightFace pipelines rely on image detail to extract reliable facial “embeddings” (i.e., mathematical representations of the image of a face). One of the strongest predictors of recognition accuracy comes from a much more fundamental factor: the number of pixels covering the face. This post explains the mathematical relationship between camera resolution, distance, and facial-recognition accuracy, and provides a practical Python tool to measure face quality."
   },
   {
     "objectID": "blog/blog_2025-12-01.html#introduction",
     "href": "blog/blog_2025-12-01.html#introduction",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "1. introduction",
     "text": "1. introduction\nOver the past few years, consumer/government smart-camera ecosystems have come under increased scrutiny of violating personal privacy. In September 2025, Amazon announced a range of new 2K and 4K smart-camera devices with new AI facial recognition features that stores and processes the facial embeddings of anyone passing in front of a Ring camera. To be clear, Amazon is neither the first nor the only company that has released AI facial recognition features - Flock, with a more government focused user-base has also come under scrutiny. Regardless, the fact remains that a person’s face may be retained without their knowledge or consent.\nThe proliferation of facial recognition raises an important question that many reports don’t seem to adequately answer:\n\nUnder what conditions can a doorbell or security camera actually capture enough detail to generate a usable facial embedding?\n\nMoreover, a key technical point often missing from the privacy debate:\n\nWhether a given camera can generate a meaningful facial embedding depends largely on distance, resolution, and the number of pixels covering the face.\n\nIf a person walks several meters away from a camera that records only 1080p video, their face may occupy too few pixels for any modern recognition algorithm (even a sophisticated one like ArcFace or the systems deployed in commercial products) to reliably extract a face embedding at all. Conversely, a close-range camera with 4K resolution can capture enough detail to produce an embedding even from quick or casual exposures.\nUnderstanding this relationship is essential for evaluating realistic privacy risks:\n\nAt very close range (1–2 meters), even consumer cameras can often produce high-quality embeddings.\n\nAt moderate distances, recognition quality depends heavily on resolution and angle.\n\nBeyond certain pixel thresholds, a camera simply cannot extract a usable embedding, no matter what software is used. Gen AI “image enhancers” will try to claim differently, but realistically no. They impute (creating uncertainty), and do not “add” more information.\n\nThis post explains a straightforward geometric framework that helps you estimate the face pixel density captured by cameras. Using just four ingredients^* - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the technical privacy implications of today’s ubiquitous home surveillance devices.\n^* Disclaimer! To be clear, there are more than four ingredients. For example, blur (from movement) would understandably affect facial recognition. Blur is, of course, a function of a video camera’s frame rate. Similarly, low light conditions would also affect the quality of the facial embedding. To keep this simple, I’m using a simplified framework!"
   },
   {
     "objectID": "blog/blog_2025-12-01.html#why-distance-and-resolution-matter",
     "href": "blog/blog_2025-12-01.html#why-distance-and-resolution-matter",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "2. why distance and resolution matter",
     "text": "2. why distance and resolution matter\nFacial-recognition systems do not “see” distance directly. What they actually see is the face as a block of pixels. As a person moves farther away from the camera, their face occupies fewer pixels, reducing the amount of detail available for landmark extraction and embedding generation.\n\nMore pixels per face → more datapoints per face → better recognition. Fewer pixels → degraded or impossible recognition.\n\nThis is why a person standing directly in front of a camera is recognized with high confidence, while someone several meters away may not even be detected.\n\nface resolution thresholds\nResearch (see Table A1 for a brief literature review) on modern face-recognition systems shows:\n\n\n\nFace Pixel Height\nExpected Recognition Quality\n\n\n\n\n≥ 200 px\nExcellent (high stability, robust to disguises)\n\n\n112 px\nMinimum reliable threshold for ArcFace\n\n\n80 px\nNoticeable performance drop\n\n\n&lt; 40 px\nRecognition typically fails\n\n\n\nThese thresholds are generally universal across most modern deep-learning face-recognition models."
   },
   {
     "objectID": "blog/blog_2025-12-01.html#the-mathematical-relationship",
     "href": "blog/blog_2025-12-01.html#the-mathematical-relationship",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "3. the mathematical relationship",
     "text": "3. the mathematical relationship\nWe can relate camera resolution, field of view, and distance to the face height in pixels using a simple geometric projection formula.\nLet:\n\n\\((H_f)\\) = real face height (meters), e.g. \\(( H_f \\approx 0.20\\,\\text{m} )\\)\n\\(( R_v )\\) = vertical resolution of the camera (pixels), e.g. 720, 1080, 2160\n\\(( \\theta )\\) = vertical field of view (in degrees)\n\\(( D )\\) = distance from the camera to the subject (meters)\n\\(( \\text{face}_{px} )\\) = face height in pixels in the captured image\n\n\nDerivation\nThe vertical span of the scene at distance \\(D\\) is:\n\\[\nH_{\\text{scene}} = 2 D \\tan\\left(\\frac{\\theta}{2}\\right).\n\\]\nThis full vertical span is mapped to \\(R_v\\) pixels, so the meters-per-pixel in the vertical direction is:\n\\[\n\\text{meters-per-pixel} = \\frac{H_{\\text{scene}}}{R_v}\n= \\frac{2 D \\tan\\left(\\frac{\\theta}{2}\\right)}{R_v}.\n\\]\nThe face height in pixels is then:\n\\[\n\\text{face}_{px}\n= \\frac{H_f}{\\text{meters-per-pixel}}\n= \\frac{H_f}{\\dfrac{2 D \\tan\\left(\\frac{\\theta}{2}\\right)}{R_v}}\n= \\frac{R_v H_f}{2 D \\tan\\left(\\frac{\\theta}{2}\\right)}.\n\\]\n\n\nFinal Relationship\n\\[\n\\boxed{\n\\text{face}_{px}\n= \\frac{R_v \\, H_f}{2 D \\, \\tan\\left(\\dfrac{\\theta}{2}\\right)}\n}\n\\]\nThis shows:\n\n\\(\\text{face}_{px} \\propto R_v\\): higher resolution → more pixels on the face\n\n\\(\\text{face}_{px} \\propto \\frac{1}{D}\\): farther away → fewer pixels on the face\n\n\\(\\text{face}_{px} \\propto \\frac{1}{\\tan(\\theta/2)}\\): narrower FOV (zoomed-in) → more pixels on the face\n\n\n\nInterpretation\n\nDouble the distance → half the face pixels\n\nDouble the resolution → double the face pixels\n\nNarrower field of view → higher pixel density on the face\n\nThis explains why a 4K camera can reliably detect faces at much longer distances than a 1080p webcam.\n\n\nexample: 4K camera at different distances\nAssume:\n\n\\(H_f = 0.20\\) m\n\n\\(R_v = 2160\\) px (4K)\n\n\\(\\theta = 50^\\circ\\)\n\nUsing the formula:\n\n\n\nDistance (meters)\nFace Pixel Height (px)\nExpected Recognition\n\n\n\n\n1 m\n~216 px\nExcellent\n\n\n2 m\n~108 px\nUsable\n\n\n3 m\n~72 px\nWeak\n\n\n5 m\n~43 px\nOften fails"
   },
   {
     "objectID": "blog/blog_2025-12-01.html#recognition-risk-zones-interactive-risk-heatmap",
     "href": "blog/blog_2025-12-01.html#recognition-risk-zones-interactive-risk-heatmap",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "4. recognition risk zones (interactive risk heatmap)",
     "text": "4. recognition risk zones (interactive risk heatmap)\nThe embedded app below shows how different smart-camera devices compare in terms of privacy risk at various distances. Darker/red cells indicate conditions where a camera is more likely to capture enough pixels to generate a usable facial embedding.\n\n\n\n\n\n\nTipLaunch the Interactive Heatmap App\n\n\n\nClick here to open the Streamlit app live →\n\n\nCode available here"
   },
   {
     "objectID": "blog/blog_2025-12-01.html#practical-lessons-and-takeaways",
     "href": "blog/blog_2025-12-01.html#practical-lessons-and-takeaways",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "5. practical lessons and takeaways",
     "text": "5. practical lessons and takeaways\n\na. Distance acts as a form of compression!\nMoving farther from the camera reduces image detail exactly like lowering resolution. Duh…\n\n\nb. Camera resolution directly determines usable recognition range\nA 4K camera offers roughly 2× the effective distance of a 1080p camera for the same accuracy.\n\n\nc. Face pixel count predicts accuracy better than any other variable\nThis often matters more than:\n\nmodel architecture\ntraining dataset\npre-processing steps\n\n\n\nd. Optical zoom dramatically improves performance\nBut digital zoom does not…\n\n\ne. Bad lighting cancels out high resolution\nNoise reduces effective pixel quality."
   },
   {
     "objectID": "blog/blog_2025-12-01.html#concluding-notes",
     "href": "blog/blog_2025-12-01.html#concluding-notes",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "6. concluding notes",
     "text": "6. concluding notes\nFacial-recognition accuracy follows a simple rule: the number of pixels covering the face. Knowing this helps privacy-conscious folks estimate when a camera can reliably identify someone, setting realistic expectations for when you should be concerned. For example, a Ring device with 4K resolution, standing more than 5 meters away (like on a house’s front lawn) is probably safe…"
   },
   {
     "objectID": "blog/blog_2025-12-01.html#appendix",
     "href": "blog/blog_2025-12-01.html#appendix",
-    "title": "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
+    "title": "how camera resolution and distance affects facial recognition accuracy (simplified analysis)",
     "section": "7. appendix",
     "text": "7. appendix\n\nTable A1\n\n\n\n\n\n\n\n\nFace Height (Pixels)\nEvidence Source(s)\nKey Findings / Interpretation\n\n\n\n\n≥ 200 px\nNIST FRVT (2019, 2022); Beveridge et al. (BTAS 2010)\nHighest accuracy; stable embeddings; robust to occlusion and pose.\n\n\n150–200 px\nNIST FRVT; IJB-A/B/C datasets\nStrong performance with minimal degradation.\n\n\n112 px\nArcFace Paper (Wang et al., CVPR 2019)\nMinimum aligned face crop size used for training; baseline for reliable recognition.\n\n\n80–112 px\nNIST FRVT; Low-Resolution Face Recognition Survey (Chen et al., 2020)\nNoticeable decline in match scores; embeddings become less stable.\n\n\n50–80 px\nNIST Good/Bad/Ugly; LRFR Survey\nWeak recognition; high false-negative rates; more sensitive to lighting and occlusion.\n\n\n40–50 px\nRetinaFace (Deng et al., 2020); SCRFD (Guo et al., 2021)\nDetection may still occur, but recognition performance is very poor.\n\n\n20–40 px\nRetinaFace & SCRFD small-face evaluations\nFace detection becomes inconsistent; recognition nearly impossible.\n\n\n&lt; 20 px\nAll modern face detection papers; NIST FRVT\nFace fails to be detected; insufficient pixels for any meaningful recognition."
   },

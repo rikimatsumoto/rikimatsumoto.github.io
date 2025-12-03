@@ -1,6 +1,6 @@
 ---
-title: "Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)"
-subtitle: "A practical, quantitative guide for privacy curious folks"
+title: "how camera resolution and distance affects facial recognition accuracy (simplified analysis)"
+subtitle: "a practical, quantitative guide for privacy curious folks"
 date: "December 2, 2025"
 format:
   html:
