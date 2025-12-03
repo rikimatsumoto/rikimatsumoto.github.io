@@ -31,15 +31,19 @@ Moreover, a key technical point often missing from the privacy debate:
 
 If a person walks several meters away from a camera that records only 1080px video, their face may occupy too few pixels for any modern recognition algorithm (even a sophisticated one like ArcFace or the systems deployed in commercial products) to reliably extract a face embedding at all. Conversely, a **close-range camera with 4K resolution** can capture enough detail to produce an embedding even from quick or casual exposures.
 
-Understanding this relationship is essential for evaluating **realistic privacy risks**:
+In an excellent essay from 2021, Adam Harvey in "What is a face?" [notes](https://adam.harvey.studio/what-is-a-face/):
 
-- At very close range (1–2 meters), even consumer cameras can often produce **high-quality embeddings**.  
-- At moderate distances, recognition quality depends heavily on resolution and angle.  
+> "The best accuracy is obtained from faces appearing in turnstile video clips with mean minimum and maximum interocular distances of 20 and 55 pixels respectively. More recently, Clearview, a company that provides face recognition technologies to law enforcement agencies, claimed to use a 110 × 110 pixel definition of a face... The face is not a single biometric but includes many sub-biometrics, each with varying levels of identification possibilities."
+
+Understanding these variables are essential for evaluating **realistic privacy risks**:
+
+- At very close range (1–2 meters), consumer cameras can produce **high-quality embeddings**.  
+- At moderate distances, recognition quality depends heavily on resolution, angle, machine learning model, lighting, and sensor size.
 - Beyond certain pixel thresholds, a camera simply **cannot** extract a usable embedding, no matter what software is used. Gen AI "image enhancers" will try to claim differently, but realistically no. They impute (creating uncertainty), and do not "add" more information.
 
-This post explains a straightforward geometric framework that helps you estimate the **face pixel density** captured by cameras. Using just four ingredients^* - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the **technical privacy implications** of today's ubiquitous home surveillance devices.
+This post explains a straightforward geometric framework that helps you estimate the **face pixel density** captured by cameras. Using just four ingredients^ - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the **technical privacy implications** of today's ubiquitous home surveillance devices.
 
-^* Disclaimer! To be clear, there are more than four ingredients. For example, blur (from movement) would understandably affect facial recognition. Blur is, of course, a function of a video camera's frame rate. Similarly, low light conditions would also affect the quality of the facial embedding. To keep this simple, I'm using a simplified framework!
+^ Disclaimer! To be clear, there are more than four ingredients. For example, blur (from movement) would understandably affect facial recognition. Blur is, of course, a function of a video camera's frame rate. Similarly, low light conditions would also affect the quality of the facial embedding. To keep this simple, I'm using a simplified framework!
 
 ## 2. why distance and resolution matter
 
@@ -55,16 +59,14 @@ Here's a [blog post](http://digitalprotalk.blogspot.com/2008/02/so-how-many-pixe
 
 ### face resolution thresholds
 
-Research (see Table A1 for a brief literature review) on modern face-recognition systems shows:
+Research (see appendix for further info on methods!) on face-recognition systems shows:
 
 | Face Pixel Height | Expected Recognition Quality |
 |-------------------|------------------------------|
 | **≥ 200 px** | Excellent (high stability, robust to disguises) |
-| **112 px** | Minimum reliable threshold for ArcFace |
+| **112 px** | Standard threshold for ArcFace |
 | **80 px** | Noticeable performance drop |
 | **< 40 px** | Recognition typically fails |
-
-These thresholds are generally universal across most modern deep-learning face-recognition models.
 
 Now comes some maths - if you'd rather skip it, go straight to part 4!
 
@@ -140,7 +142,7 @@ Assume:
 
 Using the formula:
 
-| Distance (meters) | Face Pixel Height (px) | Expected Recognition |
+| Distance (meters) | Face Pixel Height (px) | Implied Recognition |
 |-------------------|------------------------|----------------------|
 | **1 m** | ~216 px | Excellent |
 | **2 m** | ~108 px | Usable |
@@ -199,17 +201,72 @@ Facial-recognition accuracy follows a simple rule: **the number of pixels coveri
 
 ## 7. appendix
 
-### Table A1
+### methods & assumptions for facial pixel thresholds
 
-| Face Height (Pixels) | Evidence Source(s) | Key Findings / Interpretation |
-|----------------------|--------------------|-------------------------------|
-| **≥ 200 px** | NIST FRVT (2019, 2022); Beveridge et al. (BTAS 2010) | Highest accuracy; stable embeddings; robust to occlusion and pose. |
-| **150–200 px** | NIST FRVT; IJB-A/B/C datasets | Strong performance with minimal degradation. |
-| **112 px** | ArcFace Paper (Wang et al., CVPR 2019) | Minimum aligned face crop size used for training; baseline for reliable recognition. |
-| **80–112 px** | NIST FRVT; Low-Resolution Face Recognition Survey (Chen et al., 2020) | Noticeable decline in match scores; embeddings become less stable. |
-| **50–80 px** | NIST Good/Bad/Ugly; LRFR Survey | Weak recognition; high false-negative rates; more sensitive to lighting and occlusion. |
-| **40–50 px** | RetinaFace (Deng et al., 2020); SCRFD (Guo et al., 2021) | Detection may still occur, but recognition performance is very poor. |
-| **20–40 px** | RetinaFace & SCRFD small-face evaluations | Face detection becomes inconsistent; recognition nearly impossible. |
-| **< 20 px** | All modern face detection papers; NIST FRVT | Face fails to be detected; insufficient pixels for any meaningful recognition. |
+#### a. why face height in pixels?
 
+In facial recognition standards, the term **inter-ocular distance (IOD)** - the number of pixels between the centers of the eyes - rather than full face height is used. To translate IOD into a simple geometric model, I assume the common anthropometric proportionality:
+
+$$
+\text{Face height} \approx 2.5 \times \text{IOD}.
+$$
+
+This ratio is consistent with standard facial alignment datasets and normalization procedures.
+
+#### b. Evidence used to define the thresholds
+
+*I. High-quality threshold (≥ 200 px face height)*
+High-performance facial recognition typically requires **large IOD values**:
+
+* ISO and ICAO guidelines for travel documents recommend **90–120 px IOD** for high-quality face images.
+* Commercial/NIST-linked guidance for FR systems also recommends **≥ 90 px**, preferably **≥ 120 px** IOD.
+
+Converted via the 2.5× proportion, these imply:
+
+$$
+\text{Face height} \approx 225\text{–}300\ \text{px}.
+$$
+
+To avoid overstating precision, I adopt **≥ 200 px** as a conservative indicator that face recognition is likely to be **reliable** for many modern models.
+
+*II. Usable / “medium” threshold (≈ 112 px)*
+
+Recent deep face-recognition networks like **ArcFace** (CVPR 2019), were trained on **112×112 px aligned face crops**. This suggests the model expects roughly that pixel scale for stable embeddings.
+
+Thus:
+
+$$
+\text{Standard “usable” face height} \approx 112\ \text{px}.
+$$
+
+*III. Low-quality threshold (≈ 80 px)*
+
+The choice of 80 px comes from two research lines:
+
+1. **Low-resolution face recognition surveys** indicate that traditional algorithms require **32×32–64×64 px** face crops to function, with performance dropping sharply below this range.
+2. A NIST-affiliated study (Hu et al.) found that systems maintained comparable accuracy as IOD decreased from **60 px to 30 px**, but performance **severely degraded** at **15 px IOD**.
+
+Using the 2.5× conversion:
+
+* 30 px IOD → ~75 px face height.
+
+Therefore **~80 px** marks a reasonable lower boundary for **weak but still potentially recognizable** faces.
+
+*IV. Minimal threshold (< 40 px)*
+
+Several studies show that below this scale, recognition becomes unreliable:
+
+* NIST (Hu et al.) reports severe degradation at **15 px IOD** (~38 px face height).
+* Zou & Yuen describe **faces smaller than 16×16 px** as “very-low-resolution,” where recognition algorithms perform poorly or fail entirely.
+* 2020 PULSE project by Duke University researchers showed that the restricted perceptual space of a 16 × 16 pixel face image allows for wildly different identities to all downscale to perceptually indifferent images. The work confirmed the technical reality that **two faces can appear identical at 16 × 16 pixels, but resemble completely different identities at 1024 × 1024 pixels**.
+
+Thus, **< 40 px face height** is used to indicate **minimal recognition capability**.
+
+#### c. Limitations and uncertainty
+
+These thresholds should be interpreted as **heuristic ranges**:
+
+* Recognition performance depends on lighting, pose, occlusion, compression, and camera optics—not just pixel count.
+* Models trained on super-resolution or cross-resolution datasets may recognize faces below these thresholds in controlled settings.
+* The model assumes a frontal face and simple geometric projection; real-world scenes introduce additional variability.
 
