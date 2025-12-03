@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-23">
+<meta name="dcterms.date" content="2025-12-02">
 
-<title>what is riki thinking for thanksgiving? – riki’s site</title>
+<title>Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis) – riki’s site</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="styles.css">
@@ -130,17 +159,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#menu" id="toc-menu" class="nav-link active" data-scroll-target="#menu">Menu!</a>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">tldr!</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. introduction</a></li>
+  <li><a href="#why-distance-and-resolution-matter" id="toc-why-distance-and-resolution-matter" class="nav-link" data-scroll-target="#why-distance-and-resolution-matter">2. why distance and resolution matter</a>
   <ul class="collapse">
-  <li><a href="#side-dishes" id="toc-side-dishes" class="nav-link" data-scroll-target="#side-dishes">1. <strong>Side Dishes</strong></a></li>
-  <li><a href="#breakfast" id="toc-breakfast" class="nav-link" data-scroll-target="#breakfast">2. <strong>Breakfast</strong></a></li>
-  <li><a href="#drinks-cocktails" id="toc-drinks-cocktails" class="nav-link" data-scroll-target="#drinks-cocktails">3. <strong>Drinks &amp; Cocktails</strong></a></li>
+  <li><a href="#face-resolution-thresholds" id="toc-face-resolution-thresholds" class="nav-link" data-scroll-target="#face-resolution-thresholds">face resolution thresholds</a></li>
   </ul></li>
-  <li><a href="#shopping-list" id="toc-shopping-list" class="nav-link" data-scroll-target="#shopping-list">Shopping List</a>
+  <li><a href="#the-mathematical-relationship" id="toc-the-mathematical-relationship" class="nav-link" data-scroll-target="#the-mathematical-relationship">3. the mathematical relationship</a>
   <ul class="collapse">
-  <li><a href="#produce" id="toc-produce" class="nav-link" data-scroll-target="#produce">Produce</a></li>
-  <li><a href="#pantry" id="toc-pantry" class="nav-link" data-scroll-target="#pantry">Pantry</a></li>
-  <li><a href="#rice" id="toc-rice" class="nav-link" data-scroll-target="#rice">Rice</a></li>
+  <li><a href="#derivation" id="toc-derivation" class="nav-link" data-scroll-target="#derivation">Derivation</a></li>
+  <li><a href="#final-relationship" id="toc-final-relationship" class="nav-link" data-scroll-target="#final-relationship">Final Relationship</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#example-4k-camera-at-different-distances" id="toc-example-4k-camera-at-different-distances" class="nav-link" data-scroll-target="#example-4k-camera-at-different-distances">4. example: 4K camera at different distances</a>
+  <ul class="collapse">
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul></li>
+  <li><a href="#recognition-risk-zones-interactive-risk-heatmap" id="toc-recognition-risk-zones-interactive-risk-heatmap" class="nav-link" data-scroll-target="#recognition-risk-zones-interactive-risk-heatmap">5. recognition risk zones (interactive risk heatmap)</a>
+  <ul class="collapse">
+  <li><a href="#useful-rule-of-thumb" id="toc-useful-rule-of-thumb" class="nav-link" data-scroll-target="#useful-rule-of-thumb">Useful rule of thumb</a></li>
+  </ul></li>
+  <li><a href="#practical-lessons-and-takeaways" id="toc-practical-lessons-and-takeaways" class="nav-link" data-scroll-target="#practical-lessons-and-takeaways">6. practical lessons and takeaways</a></li>
+  <li><a href="#concluding-notes" id="toc-concluding-notes" class="nav-link" data-scroll-target="#concluding-notes">7. concluding notes</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">8. appendix</a>
+  <ul class="collapse">
+  <li><a href="#table-a1" id="toc-table-a1" class="nav-link" data-scroll-target="#table-a1">Table A1</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -150,8 +193,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">what is riki thinking for thanksgiving?</h1>
-<p class="subtitle lead">a few Thanksgiving recipes with a personal twist</p>
+<h1 class="title">Blog: how camera resolution and distance affects facial recognition accuracy (simplified analysis)</h1>
+<p class="subtitle lead">A practical, quantitative guide for privacy curious folks</p>
 </div>
 
 
@@ -162,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 23, 2025</p>
+      <p class="date">December 2, 2025</p>
     </div>
   </div>
   
@@ -174,179 +217,326 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="menu" class="level2">
-<h2 class="anchored" data-anchor-id="menu">Menu!</h2>
-<section id="side-dishes" class="level3">
-<h3 class="anchored" data-anchor-id="side-dishes">1. <strong>Side Dishes</strong></h3>
-<p>Classic sides!</p>
-<ul>
-<li><strong>Mashed bluish potatoes</strong>
-<ul>
-<li>Ingredients:
-<ul>
-<li>2 lb. medium Yukon Gold potatoes, scrubbed</li>
-<li>2 lb. medium Adirondack Blue potatoes, scrubbed</li>
-<li>4 tsp. Diamond Crystal or 2½ tsp. Morton kosher salt, plus more</li>
-<li>1½ cups whole milk</li>
-<li>½ cup heavy cream</li>
-<li>1 head of garlic, halved crosswise</li>
-<li>3 sprigs rosemary</li>
-<li>1 cup (2 sticks) unsalted butter, room temperature, cut into pieces</li>
-<li>Freshly ground black pepper</li>
-</ul></li>
-<li>Prep/Assembly Instructions:
-<ul>
-<li>Place 4 lb. of potatoes, scrubbed, in a large pot and pour in cold water to cover by 1”. Add a large handful of kosher salt (water should taste briny, like the ocean) and bring to a boil on the stovetop over high heat. Reduce heat and simmer until potatoes are fork-tender (very tender but not crumbly, 30–35 minutes). Drain, briefly rinse with cool water to remove any excess starch, and return potatoes to warm pot (off heat) to dry while you heat the milk mixture.</li>
-<li>Warm 1½ cups whole milk, ½ cup heavy cream, 1 head of garlic, halved crosswise, and 3 sprigs rosemary in a small saucepan over medium until fragrant, about 5 minutes. Remove pan from heat.</li>
-<li>Pass hot potatoes through ricer or food mill into a large bowl (cold potatoes will become gummy; ricer will catch potato skins, remove and discard as needed if they start to block grate). Add 1 cup (2 sticks) unsalted butter, room temperature, cut into pieces, and 4 tsp. Diamond Crystal or 2½ tsp. Morton kosher salt and stir until butter is completely incorporated. Strain warm milk mixture through a fine-mesh sieve into a large measuring glass. Pour into potatoes ½-cupful at a time, stirring after each addition until liquid is fully incorporated and mixture is smooth before adding more.</li>
-<li>Serve mashed potatoes topped with a few grinds of freshly ground black pepper.</li>
-</ul></li>
-<li>Notes: I used a modified version of the <a href="https://www.bonappetit.com/recipe/best-mashed-potatoes">“Our Best Ever Mashed Potatoes”</a>.</li>
-</ul></li>
-<li><strong>riki’s pickled cabbage slaw</strong>
-<ul>
-<li>Ingredients:
-<ul>
-<li>1 lb of saurkraut</li>
-<li>half a head of purple cabbage</li>
-<li>dashi powder</li>
-<li>mirin</li>
-<li>brown sugar</li>
-<li>fish sauce</li>
-<li>kewpie mayonnaise</li>
-<li>Gochugaru (korean chilis)</li>
-</ul></li>
-<li>Prep/Assembly Instructions:
-<ul>
-<li>Cut and dice the purple cabbage, then rinse a few times under cold water.</li>
-<li>Pour the saurkraut into a pot, then gently warm. Pour the purple cabbage into the pot.</li>
-<li>While the saurkraut and the purple cabbage are gently cooked, add brown sugar, dashi powder, mirin, fish sauce, and gochugaru to taste.</li>
-<li>Once the purple cabbage is gently cooked, turn heat off and leave to cool.</li>
-<li>Add kewpie mayonnaise and serve!</li>
-</ul></li>
-<li>Notes: a blend of Pennsylvania dutch cuisine (saurkraut), and Thai/Japanese/Korean flavours. A personal creation!</li>
-</ul></li>
-</ul>
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">tldr!</h2>
+<p>Facial-recognition models such as <a href="https://www.insightface.ai/research/arcface">ArcFace</a>, <a href="https://en.wikipedia.org/wiki/FaceNet">FaceNet</a>, and modern <a href="https://www.insightface.ai">InsightFace</a> pipelines rely on <strong>image detail</strong> to extract reliable facial “embeddings” (i.e., mathematical representations of the image of a face). One of the strongest predictors of recognition accuracy comes from a much more fundamental factor: <strong>the number of pixels covering the face</strong>. This post explains the mathematical relationship between <strong>camera resolution</strong>, <strong>distance</strong>, and <strong>facial-recognition accuracy</strong>, and provides a practical Python tool to measure face quality.</p>
 <hr>
 </section>
-<section id="breakfast" class="level3">
-<h3 class="anchored" data-anchor-id="breakfast">2. <strong>Breakfast</strong></h3>
-<p>Tasty breakfast options…</p>
-<section id="a.-miso-butter-onigiri-vegetarian" class="level4">
-<h4 class="anchored" data-anchor-id="a.-miso-butter-onigiri-vegetarian"><strong>A. Miso-Butter Onigiri (Vegetarian)</strong></h4>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. introduction</h2>
+<p>Over the past few years, consumer/government smart-camera ecosystems have come under increased scrutiny of violating personal privacy. In <a href="https://web.archive.org/web/20251001082647/https://www.theverge.com/news/788290/ring-amazon-hardware-event-price-specs">September 2025, Amazon announced a range of new 2K and 4K smart-camera devices with new AI facial recognition features</a> that stores and processes the <strong>facial embeddings of anyone passing in front of a Ring camera</strong>. To be clear, <strong>Amazon is neither the first nor the only company</strong> that has released AI facial recognition features - Flock, with a more government focused user-base has also come under scrutiny. Regardless, the fact remains that <strong>a person’s face may be retained without their knowledge or consent</strong>.</p>
+<p>The proliferation of facial recognition raises an important question that many reports don’t seem to adequately answer:</p>
+<blockquote class="blockquote">
+<p>Under <em>what conditions</em> can a doorbell or security camera actually <em>capture enough detail</em> to generate a usable facial embedding?</p>
+</blockquote>
+<p>Moreover, a key technical point often missing from the privacy debate:</p>
+<blockquote class="blockquote">
+<p>Whether a given camera <em>can</em> generate a meaningful facial embedding depends largely on <strong>distance</strong>, <strong>resolution</strong>, and the <strong>number of pixels covering the face</strong>.</p>
+</blockquote>
+<p>If a person walks several meters away from a camera that records only 1080p video, their face may occupy too few pixels for any modern recognition algorithm (even a sophisticated one like ArcFace or the systems deployed in commercial products) to reliably extract a face embedding at all. Conversely, a <strong>close-range camera with 4K resolution</strong> can capture enough detail to produce an embedding even from quick or casual exposures.</p>
+<p>Understanding this relationship is essential for evaluating <strong>realistic privacy risks</strong>:</p>
 <ul>
-<li><strong>Filling Ingredients:</strong>
-<ul>
-<li>White miso<br>
+<li>At very close range (1–2 meters), even consumer cameras can often produce <strong>high-quality embeddings</strong>.<br>
 </li>
-<li>Softened butter<br>
+<li>At moderate distances, recognition quality depends heavily on resolution and angle.<br>
 </li>
-<li>Scallions (finely sliced)<br>
-</li>
-</ul></li>
-<li><strong>Rice Type:</strong> Japanese short-grain rice<br>
-</li>
-<li><strong>Seasoning:</strong> Light sprinkle of salt on hands before shaping<br>
-</li>
-<li><strong>Notes:</strong>
-<ul>
-<li>Pan-sear lightly after shaping for golden edges.<br>
-</li>
-<li>Add a small square of nori on the bottom.</li>
-</ul></li>
+<li>Beyond certain pixel thresholds, a camera simply <strong>cannot</strong> extract a usable embedding, no matter what software is used. Gen AI “image enhancers” will try to claim differently, but realistically no. They impute (creating uncertainty), and do not “add” more information.</li>
 </ul>
+<p>This post explains a straightforward geometric framework that helps you estimate the <strong>face pixel density</strong> captured by cameras. Using just four ingredients^* - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the <strong>technical privacy implications</strong> of today’s ubiquitous home surveillance devices.</p>
+<p>^* Disclaimer! To be clear, there are more than four ingredients. For example, blur (from movement) would understandably affect facial recognition. Blur is, of course, a function of a video camera’s frame rate. Similarly, low light conditions would also affect the quality of the facial embedding. To keep this simple, I’m using a simplified framework!</p>
 </section>
-<section id="b.-umeboshi-pickled-plum-onigiri" class="level4">
-<h4 class="anchored" data-anchor-id="b.-umeboshi-pickled-plum-onigiri"><strong>B. Umeboshi (Pickled Plum) Onigiri</strong></h4>
-<ul>
-<li><strong>Filling Ingredients:</strong>
-<ul>
-<li>1–2 umeboshi plums, pit removed, mashed<br>
-</li>
-</ul></li>
-<li><strong>Rice Type:</strong> Japanese short-grain rice<br>
-</li>
-<li><strong>Seasoning:</strong> Sesame seeds on outside<br>
-</li>
-<li><strong>Notes:</strong>
-<ul>
-<li>Tart, bright, and traditional.<br>
-</li>
-<li>Great to balance heavy Thanksgiving dishes.</li>
-</ul></li>
-</ul>
-</section>
-<section id="c.-shiitake-soy-glaze-onigiri" class="level4">
-<h4 class="anchored" data-anchor-id="c.-shiitake-soy-glaze-onigiri"><strong>C. Shiitake &amp; Soy Glaze Onigiri</strong></h4>
-<ul>
-<li><strong>Filling Ingredients:</strong>
-<ul>
-<li>Sauteed shiitake mushrooms<br>
-</li>
-<li>1 tsp soy sauce<br>
-</li>
-<li>Mirin (optional)<br>
-</li>
-<li>A dash of sugar or maple syrup<br>
-</li>
-</ul></li>
-<li><strong>Rice Type:</strong> White or mixed-grain rice<br>
-</li>
-<li><strong>Seasoning:</strong> Furikake sprinkled inside or outside<br>
-</li>
-<li><strong>Notes:</strong>
-<ul>
-<li>Earthy and umami-rich.<br>
-</li>
-<li>Works well warmed or cold.</li>
-</ul></li>
-</ul>
+<section id="why-distance-and-resolution-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-distance-and-resolution-matter">2. why distance and resolution matter</h2>
+<p>Facial-recognition systems do not “see” distance directly. What they <em>actually</em> see is the <strong>face as a block of pixels</strong>. As a person moves farther away from the camera, their face occupies fewer pixels, reducing the amount of detail available for landmark extraction and embedding generation.</p>
+<blockquote class="blockquote">
+<p><strong>More pixels per face → more datapoints per face → better recognition. Fewer pixels → degraded or impossible recognition.</strong></p>
+</blockquote>
+<p>This is why a person standing directly in front of a camera is recognized with high confidence, while someone several meters away may not even be detected.</p>
+<section id="face-resolution-thresholds" class="level3">
+<h3 class="anchored" data-anchor-id="face-resolution-thresholds">face resolution thresholds</h3>
+<p>Research (see Table A1 for a brief literature review) on modern face-recognition systems shows:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Face Pixel Height</th>
+<th>Expected Recognition Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>≥ 200 px</strong></td>
+<td>Excellent (high stability, robust to disguises)</td>
+</tr>
+<tr class="even">
+<td><strong>112 px</strong></td>
+<td>Minimum reliable threshold for ArcFace</td>
+</tr>
+<tr class="odd">
+<td><strong>80 px</strong></td>
+<td>Noticeable performance drop</td>
+</tr>
+<tr class="even">
+<td><strong>&lt; 40 px</strong></td>
+<td>Recognition typically fails</td>
+</tr>
+</tbody>
+</table>
+<p>These thresholds are generally universal across most modern deep-learning face-recognition models.</p>
 <hr>
 </section>
 </section>
-<section id="drinks-cocktails" class="level3">
-<h3 class="anchored" data-anchor-id="drinks-cocktails">3. <strong>Drinks &amp; Cocktails</strong></h3>
+<section id="the-mathematical-relationship" class="level2">
+<h2 class="anchored" data-anchor-id="the-mathematical-relationship">3. the mathematical relationship</h2>
+<p>We can relate <strong>camera resolution</strong>, <strong>field of view</strong>, and <strong>distance</strong> to the <strong>face height in pixels</strong> using a simple geometric projection formula.</p>
+<p>Let:</p>
 <ul>
-<li><strong>Stappi Apperitivo red bitters</strong>
+<li><span class="math inline">\((H_f)\)</span> = real face height (meters), e.g.&nbsp;<span class="math inline">\(( H_f \approx 0.20\,\text{m} )\)</span></li>
+<li><span class="math inline">\(( R_v )\)</span> = vertical resolution of the camera (pixels), e.g.&nbsp;720, 1080, 2160</li>
+<li><span class="math inline">\(( \theta )\)</span> = vertical field of view (in degrees)</li>
+<li><span class="math inline">\(( D )\)</span> = distance from the camera to the subject (meters)</li>
+<li><span class="math inline">\(( \text{face}_{px} )\)</span> = face height in pixels in the captured image</li>
+</ul>
+<section id="derivation" class="level3">
+<h3 class="anchored" data-anchor-id="derivation">Derivation</h3>
+<p>The vertical span of the scene at distance <span class="math inline">\(D\)</span> is:</p>
+<p><span class="math display">\[
+H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
+\]</span></p>
+<p>This full vertical span is mapped to <span class="math inline">\(R_v\)</span> pixels, so the <strong>meters-per-pixel</strong> in the vertical direction is:</p>
+<p><span class="math display">\[
+\text{meters-per-pixel} = \frac{H_{\text{scene}}}{R_v}
+= \frac{2 D \tan\left(\frac{\theta}{2}\right)}{R_v}.
+\]</span></p>
+<p>The face height in pixels is then:</p>
+<p><span class="math display">\[
+\text{face}_{px}
+= \frac{H_f}{\text{meters-per-pixel}}
+= \frac{H_f}{\dfrac{2 D \tan\left(\frac{\theta}{2}\right)}{R_v}}
+= \frac{R_v H_f}{2 D \tan\left(\frac{\theta}{2}\right)}.
+\]</span></p>
+</section>
+<section id="final-relationship" class="level3">
+<h3 class="anchored" data-anchor-id="final-relationship">Final Relationship</h3>
+<p><span class="math display">\[
+\boxed{
+\text{face}_{px}
+= \frac{R_v \, H_f}{2 D \, \tan\left(\dfrac{\theta}{2}\right)}
+}
+\]</span></p>
+<p>This shows:</p>
 <ul>
-<li>Description: delicious non-alcoholic options</li>
-</ul></li>
+<li><span class="math inline">\(\text{face}_{px} \propto R_v\)</span>: higher resolution → more pixels on the face<br>
+</li>
+<li><span class="math inline">\(\text{face}_{px} \propto \frac{1}{D}\)</span>: farther away → fewer pixels on the face<br>
+</li>
+<li><span class="math inline">\(\text{face}_{px} \propto \frac{1}{\tan(\theta/2)}\)</span>: narrower FOV (zoomed-in) → more pixels on the face</li>
+</ul>
+</section>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<ul>
+<li><strong>Double the distance → half the face pixels</strong><br>
+</li>
+<li><strong>Double the resolution → double the face pixels</strong><br>
+</li>
+<li><strong>Narrower field of view → higher pixel density on the face</strong></li>
+</ul>
+<p>This explains why a 4K camera can reliably detect faces at much longer distances than a 1080p webcam.</p>
+<hr>
+</section>
+</section>
+<section id="example-4k-camera-at-different-distances" class="level2">
+<h2 class="anchored" data-anchor-id="example-4k-camera-at-different-distances">4. example: 4K camera at different distances</h2>
+<p>Assume:</p>
+<ul>
+<li><span class="math inline">\(H_f = 0.20\)</span> m<br>
+</li>
+<li><span class="math inline">\(R_v = 2160\)</span> px (4K)<br>
+</li>
+<li><span class="math inline">\(\theta = 50^\circ\)</span></li>
+</ul>
+<p>Using the formula:</p>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Distance (meters)</th>
+<th>Face Pixel Height (px)</th>
+<th>Expected Recognition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1 m</strong></td>
+<td>~216 px</td>
+<td>Excellent</td>
+</tr>
+<tr class="even">
+<td><strong>2 m</strong></td>
+<td>~108 px</td>
+<td>Usable</td>
+</tr>
+<tr class="odd">
+<td><strong>3 m</strong></td>
+<td>~72 px</td>
+<td>Weak</td>
+</tr>
+<tr class="even">
+<td><strong>5 m</strong></td>
+<td>~43 px</td>
+<td>Often fails</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="recognition-risk-zones-interactive-risk-heatmap" class="level2">
+<h2 class="anchored" data-anchor-id="recognition-risk-zones-interactive-risk-heatmap">5. recognition risk zones (interactive risk heatmap)</h2>
+<p>The embedded app below shows how different smart-camera devices compare in terms of privacy risk at various distances. Darker/red cells indicate conditions where a camera is more likely to capture enough pixels to generate a usable facial embedding.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Launch the Interactive Heatmap App
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://app-privacyriskheatmap-camerafacialembed.streamlit.app/?embed_options=light_theme">Click here to open the Streamlit app live →</a></p>
+</div>
+</div>
+<section id="useful-rule-of-thumb" class="level3">
+<h3 class="anchored" data-anchor-id="useful-rule-of-thumb">Useful rule of thumb</h3>
+<section id="zone-high-risk-200-px-face-height-0.51.2-m-with-1080p-23-m-with-4k" class="level4">
+<h4 class="anchored" data-anchor-id="zone-high-risk-200-px-face-height-0.51.2-m-with-1080p-23-m-with-4k"><strong>ZONE HIGH RISK: 200+ px face height (0.5–1.2 m with 1080p / 2–3 m with 4K)</strong></h4>
+<ul>
+<li>high-quality facial landmarks</li>
+<li>very stable embedding vectors</li>
+<li>robust even under sunglasses, hats</li>
+</ul>
+</section>
+<section id="zone-medium-risk-112200-px-12-m-in-1080p-34-m-in-4k" class="level4">
+<h4 class="anchored" data-anchor-id="zone-medium-risk-112200-px-12-m-in-1080p-34-m-in-4k"><strong>ZONE MEDIUM RISK: 112–200 px (1–2 m in 1080p / 3–4 m in 4K)</strong></h4>
+<ul>
+<li>meets minimum ArcFace requirements</li>
+<li>recognition mostly reliable</li>
+<li>occlusions start impacting performance more heavily</li>
+</ul>
+</section>
+<section id="zone-low-risk-80112-px" class="level4">
+<h4 class="anchored" data-anchor-id="zone-low-risk-80112-px"><strong>ZONE LOW RISK: 80–112 px</strong></h4>
+<ul>
+<li>identity similarity fluctuates</li>
+<li>side angles &gt;30° become problematic</li>
+</ul>
+</section>
+<section id="zone-minimal-risk-80-px" class="level4">
+<h4 class="anchored" data-anchor-id="zone-minimal-risk-80-px"><strong>ZONE MINIMAL RISK: &lt;80 px</strong></h4>
+<ul>
+<li>recognition accuracy drops sharply</li>
+<li>&lt;40 px → detection fails, recognition impossible</li>
 </ul>
 <hr>
 </section>
 </section>
-<section id="shopping-list" class="level2">
-<h2 class="anchored" data-anchor-id="shopping-list">Shopping List</h2>
-<section id="produce" class="level3">
-<h3 class="anchored" data-anchor-id="produce">Produce</h3>
+</section>
+<section id="practical-lessons-and-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="practical-lessons-and-takeaways">6. practical lessons and takeaways</h2>
+<section id="a.-distance-acts-as-a-form-of-compression" class="level4">
+<h4 class="anchored" data-anchor-id="a.-distance-acts-as-a-form-of-compression">a. Distance acts as a form of compression!</h4>
+<p>Moving farther from the camera reduces image detail <em>exactly</em> like lowering resolution. Duh…</p>
+</section>
+<section id="b.-camera-resolution-directly-determines-usable-recognition-range" class="level4">
+<h4 class="anchored" data-anchor-id="b.-camera-resolution-directly-determines-usable-recognition-range">b. Camera resolution directly determines usable recognition range</h4>
+<p>A 4K camera offers roughly <strong>2× the effective distance</strong> of a 1080p camera for the same accuracy.</p>
+</section>
+<section id="c.-face-pixel-count-predicts-accuracy-better-than-any-other-variable" class="level4">
+<h4 class="anchored" data-anchor-id="c.-face-pixel-count-predicts-accuracy-better-than-any-other-variable">c.&nbsp;Face pixel count predicts accuracy better than any other variable</h4>
+<p>This often matters more than:</p>
 <ul>
-<li>Shiitake mushrooms<br>
-</li>
-<li>Umeboshi<br>
-</li>
-<li>Scallions</li>
+<li>model architecture</li>
+<li>training dataset</li>
+<li>pre-processing steps</li>
 </ul>
 </section>
-<section id="pantry" class="level3">
-<h3 class="anchored" data-anchor-id="pantry">Pantry</h3>
-<ul>
-<li>Soy sauce<br>
-</li>
-<li>Mirin<br>
-</li>
-<li>Sesame seeds<br>
-</li>
-<li>Nori sheets<br>
-</li>
-<li>White miso</li>
-</ul>
+<section id="d.-optical-zoom-dramatically-improves-performance" class="level4">
+<h4 class="anchored" data-anchor-id="d.-optical-zoom-dramatically-improves-performance">d.&nbsp;Optical zoom dramatically improves performance</h4>
+<p>But digital zoom does not…</p>
 </section>
-<section id="rice" class="level3">
-<h3 class="anchored" data-anchor-id="rice">Rice</h3>
-<ul>
-<li>Japanese short-grain white rice</li>
-</ul>
+<section id="e.-bad-lighting-cancels-out-high-resolution" class="level4">
+<h4 class="anchored" data-anchor-id="e.-bad-lighting-cancels-out-high-resolution">e. Bad lighting cancels out high resolution</h4>
+<p>Noise reduces effective pixel quality.</p>
 <hr>
+</section>
+</section>
+<section id="concluding-notes" class="level2">
+<h2 class="anchored" data-anchor-id="concluding-notes">7. concluding notes</h2>
+<p>Facial-recognition accuracy follows a simple rule: <strong>the number of pixels covering the face.</strong> Knowing this helps privacy-conscious folks estimate when a camera can reliably identify someone, setting realistic expectations for when you should be concerned. For example, a Ring device with 4K resolution, standing more than 5 meters away (like on a house’s front lawn) is <em>probably</em> safe…</p>
+<hr>
+</section>
+<section id="appendix" class="level2">
+<h2 class="anchored" data-anchor-id="appendix">8. appendix</h2>
+<section id="table-a1" class="level3">
+<h3 class="anchored" data-anchor-id="table-a1">Table A1</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 27%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Face Height (Pixels)</th>
+<th>Evidence Source(s)</th>
+<th>Key Findings / Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>≥ 200 px</strong></td>
+<td>NIST FRVT (2019, 2022); Beveridge et al.&nbsp;(BTAS 2010)</td>
+<td>Highest accuracy; stable embeddings; robust to occlusion and pose.</td>
+</tr>
+<tr class="even">
+<td><strong>150–200 px</strong></td>
+<td>NIST FRVT; IJB-A/B/C datasets</td>
+<td>Strong performance with minimal degradation.</td>
+</tr>
+<tr class="odd">
+<td><strong>112 px</strong></td>
+<td>ArcFace Paper (Wang et al., CVPR 2019)</td>
+<td>Minimum aligned face crop size used for training; baseline for reliable recognition.</td>
+</tr>
+<tr class="even">
+<td><strong>80–112 px</strong></td>
+<td>NIST FRVT; Low-Resolution Face Recognition Survey (Chen et al., 2020)</td>
+<td>Noticeable decline in match scores; embeddings become less stable.</td>
+</tr>
+<tr class="odd">
+<td><strong>50–80 px</strong></td>
+<td>NIST Good/Bad/Ugly; LRFR Survey</td>
+<td>Weak recognition; high false-negative rates; more sensitive to lighting and occlusion.</td>
+</tr>
+<tr class="even">
+<td><strong>40–50 px</strong></td>
+<td>RetinaFace (Deng et al., 2020); SCRFD (Guo et al., 2021)</td>
+<td>Detection may still occur, but recognition performance is very poor.</td>
+</tr>
+<tr class="odd">
+<td><strong>20–40 px</strong></td>
+<td>RetinaFace &amp; SCRFD small-face evaluations</td>
+<td>Face detection becomes inconsistent; recognition nearly impossible.</td>
+</tr>
+<tr class="even">
+<td><strong>&lt; 20 px</strong></td>
+<td>All modern face detection papers; NIST FRVT</td>
+<td>Face fails to be detected; insufficient pixels for any meaningful recognition.</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
