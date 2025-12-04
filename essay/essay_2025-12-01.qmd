@@ -13,13 +13,15 @@ execute:
 
 ## tldr!
 
-Facial-recognition models such as [ArcFace](https://www.insightface.ai/research/arcface), [FaceNet](https://en.wikipedia.org/wiki/FaceNet), and modern [InsightFace](https://www.insightface.ai) pipelines rely on **image detail** to extract reliable facial "embeddings" (i.e., mathematical representations of the image of a face). One of the strongest predictors of recognition accuracy comes from a much more fundamental factor: **the number of pixels covering the face**. This post explains the mathematical relationship between **camera resolution**, **distance**, and **facial-recognition accuracy**, and provides a practical Python tool to measure face quality.
+Facial-recognition models such as [ArcFace](https://www.insightface.ai/research/arcface), [FaceNet](https://en.wikipedia.org/wiki/FaceNet), and modern [InsightFace](https://www.insightface.ai) pipelines rely on **image detail** to extract reliable facial "embeddings" (i.e., mathematical representations of the image of a face). One of the strongest predictors of recognition accuracy comes from a much more fundamental factor: **the number of pixels covering the face**. This post explains the mathematical relationship between **camera resolution**, **distance**, and **facial-recognition accuracy**, and provides a practical Python tool to measure facial image quality and associated privacy risk.
 
 ---
 
 ## 1. introduction
 
-Over the past few years, consumer/government smart-camera ecosystems have come under increased scrutiny of violating personal privacy. In [September 2025, Amazon announced a range of new 2K and 4K smart-camera devices with new AI facial recognition features](https://web.archive.org/web/20251001082647/https://www.theverge.com/news/788290/ring-amazon-hardware-event-price-specs) that stores and processes the **facial embeddings of anyone passing in front of a Ring camera**. To be clear, **Amazon is neither the first nor the only company** that has released AI facial recognition features - Flock/Clearview AI, both with a more government focused user-base, have also come under scrutiny. Regardless, the fact remains that **a person’s face may be retained without their knowledge or consent**.
+Over the past few years, consumer/government smart-camera ecosystems have come under increased scrutiny of violating personal privacy. In [September 2025, Amazon announced a range of new 2K and 4K smart-camera devices with new AI facial recognition features](https://web.archive.org/web/20251001082647/https://www.theverge.com/news/788290/ring-amazon-hardware-event-price-specs) that stores and processes the **facial embeddings of anyone passing in front of a Ring camera**. Then, in October 2025, Amazon announced [Ring would partner with Flock Safety and share data with the government.](https://web.archive.org/web/20251201224341/https://www.cnbc.com/2025/10/16/amazon-ring-cameras-surveillance-law-enforcement-crime-police-investigations.html) To be clear, **Amazon is neither the first nor the only company** that has released AI facial recognition features - Clearview AI, with a more law-enformence focused user-base, have also come under scrutiny. 
+
+Regardless, the fact remains that **a person’s face may be retained without their knowledge or consent**.
 
 The proliferation of facial recognition raises an important question that many reports don’t seem to adequately answer:
 
