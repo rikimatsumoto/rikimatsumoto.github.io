@@ -43,12 +43,14 @@ files = sorted(
     reverse=True
 )
 
-if not files:
+files_subset = files[:5]
+
+if not files_subset:
     print("No briefs available yet.")
 else:
     print("| Date | Link |")
     print("|------|------|")
-    for f in files:
+    for f in files_subset:
         date_str = f.stem.replace("CDB_", "")
         display = datetime.datetime.strptime(date_str, "%Y-%m-%d").strftime("%b %d, %Y")
         rel_link = f.name.replace(".qmd", ".html")
@@ -66,12 +68,14 @@ files = sorted(
     reverse=True
 )
 
-if not files:
+files_subset = files[:5]
+
+if not files_subset:
     print("No briefs available yet.")
 else:
     print("| Subject | Link |")
     print("|------|------|")
-    for f in files:
+    for f in files_subset:
         date_str = f.stem.replace("CSB_", "")
         display = date_str.replace("_", " ")
         rel_link = f.name.replace(".qmd", ".html")

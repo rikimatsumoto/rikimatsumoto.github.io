@@ -12,49 +12,8 @@ hello! this my essay & writings repo that are either 1) too short, 2) too casual
 
 Below is a list of things I've written so far:
 
-
-```{python}
-#| output: asis
-import os
-from pathlib import Path
-import datetime
-
-def find_cdb_dir():
-    qproj = os.getenv("QUARTO_PROJECT_DIR")
-    if qproj:
-        p = Path(qproj) / "essay"
-        if p.is_dir():
-            return p
-    cwd = Path.cwd()
-    if cwd.name.lower() == "essay":
-        return cwd
-    p = cwd / "essay"
-    if p.is_dir():
-        return p
-    for candidate in cwd.glob("**/essay"):
-        if any(candidate.glob("essay_*.qmd")):
-            return candidate
-    raise FileNotFoundError("Could not locate the 'essay' folder.")
-
-cdb_dir = find_cdb_dir()
-
-files = sorted(
-    [f for f in cdb_dir.glob("essay_*.qmd") if f.is_file()],
-    reverse=True
-)
-
-if not files:
-    print("No essays available yet.")
-else:
-    print("| Date | Link |")
-    print("|------|------|")
-    for f in files:
-        date_str = f.stem.replace("essay_", "")
-        display = datetime.datetime.strptime(date_str, "%Y-%m-%d").strftime("%b %d, %Y")
-        rel_link = f.name.replace(".qmd", ".html")
-        print(f"| {display} | [View Brief]({rel_link}) |")
-
-```
-
-
+| Date | Title |
+|------|------|
+| Dec 01, 2025 | [how camera resolution and distance affects facial recognition accuracy](essay_2025-12-01.html) |
+| Nov 23, 2025 | [what is riki thinking for thanksgiving?](essay_2025-11-23.html) |
 
