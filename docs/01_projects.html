@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#global-private-default-risk-analysis" id="toc-global-private-default-risk-analysis" class="nav-link active" data-scroll-target="#global-private-default-risk-analysis"><span class="header-section-number">0.1</span> Global private default risk analysis</a></li>
+  <li><a href="#global-private-default-risk-analysis-working-draft" id="toc-global-private-default-risk-analysis-working-draft" class="nav-link active" data-scroll-target="#global-private-default-risk-analysis-working-draft"><span class="header-section-number">0.1</span> Global private default risk analysis (working draft)</a></li>
   <li><a href="#u.s.-federal-expenditure-tracker-brookings" id="toc-u.s.-federal-expenditure-tracker-brookings" class="nav-link" data-scroll-target="#u.s.-federal-expenditure-tracker-brookings"><span class="header-section-number">0.2</span> U.S. Federal Expenditure tracker (Brookings)</a></li>
   <li><a href="#social-spending-mini-simulation" id="toc-social-spending-mini-simulation" class="nav-link" data-scroll-target="#social-spending-mini-simulation"><span class="header-section-number">0.3</span> Social spending mini-simulation</a></li>
   <li><a href="#u.s.-tariff-trade-tracker-brookings" id="toc-u.s.-tariff-trade-tracker-brookings" class="nav-link" data-scroll-target="#u.s.-tariff-trade-tracker-brookings"><span class="header-section-number">0.4</span> U.S. Tariff &amp; Trade tracker (Brookings)</a></li>
@@ -160,20 +160,20 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored">
 hello! here are some of the projects I’ve worked on.
 </h2>
-<section id="global-private-default-risk-analysis" class="level3" data-number="0.1">
-<h3 data-number="0.1" class="anchored" data-anchor-id="global-private-default-risk-analysis"><span class="header-section-number">0.1</span> Global private default risk analysis</h3>
+<section id="global-private-default-risk-analysis-working-draft" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="global-private-default-risk-analysis-working-draft"><span class="header-section-number">0.1</span> Global private default risk analysis (working draft)</h3>
 <p>
 I created this web-app to perform predictive analytics that estimates private default risk at the country-level using World Bank GEMS default-rate data as the target variable and IMF Financial Development Index indicators, along with macroeconomic fundamentals, as the feature set. Technical features:
 </p>
 <ul>
 <li>
-<strong>Automated, versioned data ingestion</strong> from World Bank and IMF FDI APIs with reproducible preprocessing workflows.
+<strong>Automated, versioned data ingestion</strong> from World Bank and IMF FDI APIs
 </li>
 <li>
-<strong>Separation of concerns</strong> between data, models, and UI, with prediction logic and feature engineering implemented in dedicated R functions.
+<strong>Modular components</strong> between data, models, and UI, with prediction logic and feature engineering implemented in R.
 </li>
 <li>
-<strong>Bootstrap-ensemble ML pipeline</strong> with persistent model artifacts, enabling distributional forecasts.
+<strong>Bootstrap-ensemble ML pipeline</strong> for distributional forecasting.
 </li>
 <li>
 <strong>Built-in model interpretability</strong> using SHAP values
@@ -182,7 +182,7 @@ I created this web-app to perform predictive analytics that estimates private de
 <strong>Reduced runtime latency</strong> through offline model training with hashed predictor sets and registry
 </li>
 <li>
-<strong>Automated research reporting</strong> via R markdown, generating consistent “presentation-ready” briefs.
+<strong>Automated reporting</strong> via R markdown, generating consistent “presentation-ready” briefs.
 </li>
 <li>
 <strong>Deployment practices</strong> using Git/GitHub for version control and ShinyApps.io/containerized hosting for reproducible delivery.

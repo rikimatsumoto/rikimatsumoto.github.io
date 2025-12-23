@@ -1,0 +1,148 @@
+---
+title: "how spamming stylized images can poison the (gen AI) well"
+subtitle: "an overview of adversarial drift in image GenAI"
+date: "December 20, 2025"
+format:
+  html:
+    toc: true
+    number-sections: false
+lang: en
+execute:
+  echo: true
+---
+
+## tldr!
+
+Generative image AI models can be “poisoned” surprisingly easily - not necessarily through malicious attacks, but through repeated exposure to heavily stylized images such as the popular “Charlie Kirk filters.”
+
+There's no need for millions of poisoned images. A small, consistent bias in the data that receives the most training weight would be enough to cause a generator to produce faces with distorted proportions. 
+
+Moreover, the most likely vector for poisoning lies in Reinforcement Learning from Human Feedback (RLHF) and aesthetic scoring systems trained on web-scraped galleries, where even tiny, hard-to-detect biases in feedback data can reshape the model’s entire notion of what a “good” image looks like.
+
+## 1. introduction to data poisoning in generative models
+
+Recent discussions around “Charlie Kirk filters”, image edits that exaggerate specific facial proportions, have raised questions about whether repeated exposure to such stylized images can “poison” generative AI systems. A few users on Youtube have observed that some models begin [producing faces with distortions resembling these filters, even when not explicitly prompted.](https://web.archive.org/web/20251222205934/https://www.ebaumsworld.com/articles/charlie-kirks-face-may-be-poisoning-ai-image-generators/87732671/) 
+
+This phenomenon actually reflects known behaviors in data poisoning, latent-space drift, and preference-model bias documented in the machine learning literature. This short article provides an analytical overview of **how stylized or adversarial images meaningfully shift a generative model’s output distribution**, and why generative systems remain vulnerable even when the total fraction of poisoned data appears small.
+
+## 2. poisoning depends on a *subset*, not the whole dataset
+
+Data poisoning occurs when an adversary (or, unintentionally, users in aggregate) introduces manipulated samples into a model’s training or fine-tuning data, shifting the "learned distribution" of outputs. While poisoning has been studied for classifiers (Biggio & Roli, 2018), modern diffusion and GAN-based systems are increasingly recognized as vulnerable to similar attacks (Zhai et al., 2023).
+
+Large multimodal models work by learning **clustered latent spaces**, where different semantic (i.e., meaning/concepts) categories occupy their own submanifolds (Zhu et al., 2024). You can think of semantic clusters behaving like **mini-datasets** within the full dataset:
+
+* faces cluster together
+* landscapes cluster together
+* cars cluster together
+* animals cluster together
+
+A stylized face image generally **does not compete** with a picture of a beach or a car. It competes only with *other face images* for influence over the “face” region of the model’s latent space. Human faces form a **tightly structured, low-dimensional manifold**. This structure makes models highly efficient at learning facial variation but also highly sensitive to biased samples.
+
+Poisoning typically manifests as a **directional shift/drift** in latent space. A small directional shift in features such as eye spacing, jawline width, or cheekbone prominence can influence a wide range of latent samples, producing consistent distortions across outputs.
+  
+## 3. training paradigm and their associated vulnerability
+
+The amount of poisoned data required to meaningfully influence outputs depends primarily on **how the model is being updated**. Three update regimes dominate modern generative AI pipelines, which I evaluate across two dimensions:
+
+* **Sensitivty** (how sensitive the model is to poisoning)
+* **Likelihood** (how easy it is to poison that stage, i.e., the "attack surface")
+
+### a. large-scale foundation training (lowest risk)
+
+Full foundational training over a massive dataset is extremely costly (compute + storage + noise/quality filtering), so is the **most unlikely vector for poisoning** - partly as it does not happen often, and partly because the image generation training pipeline typically uses quality-filtered subsets. Moreover, models trained on hundreds of millions of text-image pairs (e.g., Stable Diffusion, DALL·E base models) dilute the effect of individual poisoned samples.
+
+* If the subset of the training dataset with human faces has **N images**,
+  and **P images are poisoned**,
+  the poisoning fraction is:
+
+$$
+\text{Poisoning fraction (human face subset)} = \frac{P}{N}
+$$
+
+Here's an example scenario: let's assume
+
+- Total dataset size: 200,000,000 images
+- Face subset (i.e., proportion that are human faces) size:** ~2,000,000 images
+
+Now consider poisoning  **0.1% of the face subset**:
+
+$$
+0.001 \times 2{,000{,}000} = 2{,}000 \text{ stylized faces}
+$$
+
+... a decently large number.
+
+**threat summary: foundation-stage training**
+
+Foundation-stage poisoning is mostly an **academic or state-level risk**, not a practical threat for everyday products. Injecting 2,000+ stylized faces into a curated internal dataset is generally unlikely. Malicious agents would need access to the internal processes, the dataset, and training pipeline.
+
+### b. fine-tuning (LoRA, DreamBooth, task-specific updates) (medium risk)
+
+Poisoning during **fine-tuning** is dramatically easier, but similarly *unlikely*. Fine-tuning is similarly a deliberate and curated process that occurs in an internal environment. It is usually manually triggered by developers or by enterprise customers. The curated fine-tuning dataset means it's rare for malicious samples to sneak-in unnoticed by the service providers. In cybersecurity, this is called a "narrow attack surface."
+
+At the same time, fine-tuning does have structural properties that make poisoning attacks inherently more efficient. Fine-tuning datasets are more sensitive and **much smaller** (often only containing about a few hundred images), and their gradients carry disproportionately large weight in updating model parameters. Typical sizes:
+
+* **DreamBooth**: 3–20 images
+* **LoRA for style**: 50–300 images
+
+In the documentation for [fine-tuning FLUX with Replicate](https://replicate.com/docs/get-started/fine-tune-with-flux), the minimum number is in fact **two** for specific semantic categories.
+
+**threat summary: fine-tuning**
+
+Fine-tuning poisoning is effective but still relatively hard to pull off externally. The risk is greatest when:
+
+* Companies fine-tune with **user-submitted data**
+* Teams reuse datasets without vetting
+* Multiple fine-tuning jobs accumulate distortions across time
+
+### c. reweighting/preference optimization (RLHF, aesthetic scoring, feedback loops) (highest risk)
+
+Modern models increasingly rely on **reward models** that score generated images, selecting “good” images for future training cycles. These systems are extremely sensitive to biased or stylized input. If stylized images are consistently given high implicit weight, e.g., via user interaction, curation pipelines, or aesthetic filters, the effective contribution of a small dataset can be multiplied. This likely explains why stylized “Charlie Kirk filter” images might cause visible drift without anyone deliberately contaminating the training data.
+
+Reinforcement Learning from Human Feedback (RLHF) pipelines are uniquely exposed because they use:
+
+* User votes, likes, hearts, or ratings
+* Aesthetic scorers trained on web-scraped galleries
+* Self-generated images used for iterative model updates
+
+**threat summary: RHLF**
+
+RLHF is the **most likely** poisoning pathway and also the **most damaging**.
+It is the only stage where relatively tiny amounts of poisoned data can meaningfully alter model behavior, and where attackers (or viral social trends) can realistically slip poisoned samples into the pipeline.
+
+## 4. how vulnerable is each training stage? A practical rule of thumb
+
+| Training Stage                     | Impact of Poisoning | Likelihood of Poisoning | Overall Risk  |
+| ---------------------------------- | ------------------- | ----------------------- | ------------- |
+| **Foundation Training**            | Low                 | Very Low                | **Very low**  |
+| **Fine-Tuning (LoRA/DreamBooth)**  | High                | Low–Medium              | **Low**       |
+| **RLHF / Preference Optimization** | **Very High**       | **High**                | **High**      |
+
+## 5. concluding thoughts
+
+As generative systems move toward continual learning and user-in-the-loop optimization, understanding these vulnerabilities, and designing systems robust to distribution drift, becomes increasingly important to prevent malicious or unintentional poisoning!
+
+
+## 6. references
+
+* Biggio, B., & Roli, F. (2018). *Wild patterns: Ten years after the rise of adversarial machine learning*. Pattern Recognition.
+* Zhai, S. et al (2023). *Text-to-Image Diffusion Models can be Easily Backdoored through Multimodal Data Poisoning*. [arXiv:2305.04175](https://arxiv.org/abs/2305.04175)
+* Zhu, M. et al (2024). *Explaining latent representations of generative models with large multimodal models*. [arXiv:2402.01858v1](https://arxiv.org/html/2402.01858v1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

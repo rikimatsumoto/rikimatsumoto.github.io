@@ -11,16 +11,16 @@ lang: en
 
 <h2>hello! here are some of the projects I've worked on.</h2>
 
-### Global private default risk analysis
+### Global private default risk analysis (working draft)
 <p>I created this web-app to perform predictive analytics that estimates private default risk at the country-level using World Bank GEMS default-rate data as the target variable and IMF Financial Development Index indicators, along with macroeconomic fundamentals, as the feature set. Technical features:</p>
 
 <ul>
-  <li><strong>Automated, versioned data ingestion</strong> from World Bank and IMF FDI APIs with reproducible preprocessing workflows.</li>
-  <li><strong>Separation of concerns</strong> between data, models, and UI, with prediction logic and feature engineering implemented in dedicated R functions.</li>
-  <li><strong>Bootstrap-ensemble ML pipeline</strong> with persistent model artifacts, enabling distributional forecasts.</li>
+  <li><strong>Automated, versioned data ingestion</strong> from World Bank and IMF FDI APIs</li>
+  <li><strong>Modular components</strong> between data, models, and UI, with prediction logic and feature engineering implemented in R.</li>
+  <li><strong>Bootstrap-ensemble ML pipeline</strong> for distributional forecasting.</li>
   <li><strong>Built-in model interpretability</strong> using SHAP values</li>
   <li><strong>Reduced runtime latency</strong> through offline model training with hashed predictor sets and registry</li>
-  <li><strong>Automated research reporting</strong> via R markdown, generating consistent "presentation-ready" briefs.</li>
+  <li><strong>Automated reporting</strong> via R markdown, generating consistent "presentation-ready" briefs.</li>
   <li><strong>Deployment practices</strong> using Git/GitHub for version control and ShinyApps.io/containerized hosting for reproducible delivery.</li>
 </ul>
 

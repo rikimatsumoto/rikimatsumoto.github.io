@@ -214,6 +214,8 @@ window.Quarto = {
 <section id="tldr" class="level2">
 <h2 class="anchored" data-anchor-id="tldr">tldr!</h2>
 <p>Facial-recognition models such as <a href="https://www.insightface.ai/research/arcface">ArcFace</a>, <a href="https://en.wikipedia.org/wiki/FaceNet">FaceNet</a>, and modern <a href="https://www.insightface.ai">InsightFace</a> pipelines rely on <strong>image detail</strong> to extract reliable facial “embeddings” (i.e., mathematical representations of the image of a face). One of the strongest predictors of recognition accuracy comes from a much more fundamental factor: <strong>the number of pixels covering the face</strong>. This post explains the mathematical relationship between <strong>camera resolution</strong>, <strong>distance</strong>, and <strong>facial-recognition accuracy</strong>, and provides a practical Python tool to measure facial image quality and associated privacy risk.</p>
+<p>Finally, this post notes that for most pedestrians walking on the street, 5-6m+ from home Ring cameras, there is likely not enough detail to extract a useful “facial-embedding” - you’re probably good!</p>
+<p><em>update:</em> Jason Koebler from 404 media recently wrote this article on how Flock <a href="https://www.404media.co/r/a43147f7?m=e23fcb51-2df3-4179-afdf-b38ab110a6c5">“left at least 60 of its people-tracking Condor PTZ cameras live streaming and exposed to the open internet.”</a></p>
 <hr>
 </section>
 <section id="introduction" class="level2">

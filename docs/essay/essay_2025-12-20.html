@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-12-20">
 
-<title>essays – riki’s site</title>
+<title>how spamming stylized images can poison the (gen AI) well – riki’s site</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="styles.css">
@@ -106,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../essay/index_essay.html" aria-current="page"> 
+    <a class="nav-link" href="../essay/index_essay.html"> 
 <span class="menu-text">essays</span></a>
   </li>  
   <li class="nav-item">
@@ -124,15 +154,33 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">tldr!</a></li>
+  <li><a href="#introduction-to-data-poisoning-in-generative-models" id="toc-introduction-to-data-poisoning-in-generative-models" class="nav-link" data-scroll-target="#introduction-to-data-poisoning-in-generative-models">1. introduction to data poisoning in generative models</a></li>
+  <li><a href="#poisoning-depends-on-a-subset-not-the-whole-dataset" id="toc-poisoning-depends-on-a-subset-not-the-whole-dataset" class="nav-link" data-scroll-target="#poisoning-depends-on-a-subset-not-the-whole-dataset">2. poisoning depends on a <em>subset</em>, not the whole dataset</a></li>
+  <li><a href="#training-paradigm-and-their-associated-vulnerability" id="toc-training-paradigm-and-their-associated-vulnerability" class="nav-link" data-scroll-target="#training-paradigm-and-their-associated-vulnerability">3. training paradigm and their associated vulnerability</a>
+  <ul class="collapse">
+  <li><a href="#a.-large-scale-foundation-training-lowest-risk" id="toc-a.-large-scale-foundation-training-lowest-risk" class="nav-link" data-scroll-target="#a.-large-scale-foundation-training-lowest-risk">a. large-scale foundation training (lowest risk)</a></li>
+  <li><a href="#b.-fine-tuning-lora-dreambooth-task-specific-updates-medium-risk" id="toc-b.-fine-tuning-lora-dreambooth-task-specific-updates-medium-risk" class="nav-link" data-scroll-target="#b.-fine-tuning-lora-dreambooth-task-specific-updates-medium-risk">b. fine-tuning (LoRA, DreamBooth, task-specific updates) (medium risk)</a></li>
+  <li><a href="#c.-reweightingpreference-optimization-rlhf-aesthetic-scoring-feedback-loops-highest-risk" id="toc-c.-reweightingpreference-optimization-rlhf-aesthetic-scoring-feedback-loops-highest-risk" class="nav-link" data-scroll-target="#c.-reweightingpreference-optimization-rlhf-aesthetic-scoring-feedback-loops-highest-risk">c.&nbsp;reweighting/preference optimization (RLHF, aesthetic scoring, feedback loops) (highest risk)</a></li>
+  </ul></li>
+  <li><a href="#how-vulnerable-is-each-training-stage-a-practical-rule-of-thumb" id="toc-how-vulnerable-is-each-training-stage-a-practical-rule-of-thumb" class="nav-link" data-scroll-target="#how-vulnerable-is-each-training-stage-a-practical-rule-of-thumb">4. how vulnerable is each training stage? A practical rule of thumb</a></li>
+  <li><a href="#concluding-thoughts" id="toc-concluding-thoughts" class="nav-link" data-scroll-target="#concluding-thoughts">5. concluding thoughts</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">6. references</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">essays</h1>
+<h1 class="title">how spamming stylized images can poison the (gen AI) well</h1>
+<p class="subtitle lead">an overview of adversarial drift in image GenAI</p>
 </div>
 
 
@@ -140,6 +188,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 20, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -149,32 +203,142 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>hello! this my essay &amp; writings repo that are either 1) too short, 2) too casual, 3) or a bit too random for my main <a href="https://medium.com/@rikimatsumoto">Medium</a>.</p>
-<p>Below is a list of things I’ve written so far:</p>
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">tldr!</h2>
+<p>Generative image AI models can be “poisoned” surprisingly easily - not necessarily through malicious attacks, but through repeated exposure to heavily stylized images such as the popular “Charlie Kirk filters.”</p>
+<p>There’s no need for millions of poisoned images. A small, consistent bias in the data that receives the most training weight would be enough to cause a generator to produce faces with distorted proportions.</p>
+<p>Moreover, the most likely vector for poisoning lies in Reinforcement Learning from Human Feedback (RLHF) and aesthetic scoring systems trained on web-scraped galleries, where even tiny, hard-to-detect biases in feedback data can reshape the model’s entire notion of what a “good” image looks like.</p>
+</section>
+<section id="introduction-to-data-poisoning-in-generative-models" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-data-poisoning-in-generative-models">1. introduction to data poisoning in generative models</h2>
+<p>Recent discussions around “Charlie Kirk filters”, image edits that exaggerate specific facial proportions, have raised questions about whether repeated exposure to such stylized images can “poison” generative AI systems. A few users on Youtube have observed that some models begin <a href="https://web.archive.org/web/20251222205934/https://www.ebaumsworld.com/articles/charlie-kirks-face-may-be-poisoning-ai-image-generators/87732671/">producing faces with distortions resembling these filters, even when not explicitly prompted.</a></p>
+<p>This phenomenon actually reflects known behaviors in data poisoning, latent-space drift, and preference-model bias documented in the machine learning literature. This short article provides an analytical overview of <strong>how stylized or adversarial images meaningfully shift a generative model’s output distribution</strong>, and why generative systems remain vulnerable even when the total fraction of poisoned data appears small.</p>
+</section>
+<section id="poisoning-depends-on-a-subset-not-the-whole-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="poisoning-depends-on-a-subset-not-the-whole-dataset">2. poisoning depends on a <em>subset</em>, not the whole dataset</h2>
+<p>Data poisoning occurs when an adversary (or, unintentionally, users in aggregate) introduces manipulated samples into a model’s training or fine-tuning data, shifting the “learned distribution” of outputs. While poisoning has been studied for classifiers (Biggio &amp; Roli, 2018), modern diffusion and GAN-based systems are increasingly recognized as vulnerable to similar attacks (Zhai et al., 2023).</p>
+<p>Large multimodal models work by learning <strong>clustered latent spaces</strong>, where different semantic (i.e., meaning/concepts) categories occupy their own submanifolds (Zhu et al., 2024). You can think of semantic clusters behaving like <strong>mini-datasets</strong> within the full dataset:</p>
+<ul>
+<li>faces cluster together</li>
+<li>landscapes cluster together</li>
+<li>cars cluster together</li>
+<li>animals cluster together</li>
+</ul>
+<p>A stylized face image generally <strong>does not compete</strong> with a picture of a beach or a car. It competes only with <em>other face images</em> for influence over the “face” region of the model’s latent space. Human faces form a <strong>tightly structured, low-dimensional manifold</strong>. This structure makes models highly efficient at learning facial variation but also highly sensitive to biased samples.</p>
+<p>Poisoning typically manifests as a <strong>directional shift/drift</strong> in latent space. A small directional shift in features such as eye spacing, jawline width, or cheekbone prominence can influence a wide range of latent samples, producing consistent distortions across outputs.</p>
+</section>
+<section id="training-paradigm-and-their-associated-vulnerability" class="level2">
+<h2 class="anchored" data-anchor-id="training-paradigm-and-their-associated-vulnerability">3. training paradigm and their associated vulnerability</h2>
+<p>The amount of poisoned data required to meaningfully influence outputs depends primarily on <strong>how the model is being updated</strong>. Three update regimes dominate modern generative AI pipelines, which I evaluate across two dimensions:</p>
+<ul>
+<li><strong>Sensitivty</strong> (how sensitive the model is to poisoning)</li>
+<li><strong>Likelihood</strong> (how easy it is to poison that stage, i.e., the “attack surface”)</li>
+</ul>
+<section id="a.-large-scale-foundation-training-lowest-risk" class="level3">
+<h3 class="anchored" data-anchor-id="a.-large-scale-foundation-training-lowest-risk">a. large-scale foundation training (lowest risk)</h3>
+<p>Full foundational training over a massive dataset is extremely costly (compute + storage + noise/quality filtering), so is the <strong>most unlikely vector for poisoning</strong> - partly as it does not happen often, and partly because the image generation training pipeline typically uses quality-filtered subsets. Moreover, models trained on hundreds of millions of text-image pairs (e.g., Stable Diffusion, DALL·E base models) dilute the effect of individual poisoned samples.</p>
+<ul>
+<li>If the subset of the training dataset with human faces has <strong>N images</strong>, and <strong>P images are poisoned</strong>, the poisoning fraction is:</li>
+</ul>
+<p><span class="math display">\[
+\text{Poisoning fraction (human face subset)} = \frac{P}{N}
+\]</span></p>
+<p>Here’s an example scenario: let’s assume</p>
+<ul>
+<li>Total dataset size: 200,000,000 images</li>
+<li>Face subset (i.e., proportion that are human faces) size:** ~2,000,000 images</li>
+</ul>
+<p>Now consider poisoning <strong>0.1% of the face subset</strong>:</p>
+<p><span class="math display">\[
+0.001 \times 2{,000{,}000} = 2{,}000 \text{ stylized faces}
+\]</span></p>
+<p>… a decently large number.</p>
+<p><strong>threat summary: foundation-stage training</strong></p>
+<p>Foundation-stage poisoning is mostly an <strong>academic or state-level risk</strong>, not a practical threat for everyday products. Injecting 2,000+ stylized faces into a curated internal dataset is generally unlikely. Malicious agents would need access to the internal processes, the dataset, and training pipeline.</p>
+</section>
+<section id="b.-fine-tuning-lora-dreambooth-task-specific-updates-medium-risk" class="level3">
+<h3 class="anchored" data-anchor-id="b.-fine-tuning-lora-dreambooth-task-specific-updates-medium-risk">b. fine-tuning (LoRA, DreamBooth, task-specific updates) (medium risk)</h3>
+<p>Poisoning during <strong>fine-tuning</strong> is dramatically easier, but similarly <em>unlikely</em>. Fine-tuning is similarly a deliberate and curated process that occurs in an internal environment. It is usually manually triggered by developers or by enterprise customers. The curated fine-tuning dataset means it’s rare for malicious samples to sneak-in unnoticed by the service providers. In cybersecurity, this is called a “narrow attack surface.”</p>
+<p>At the same time, fine-tuning does have structural properties that make poisoning attacks inherently more efficient. Fine-tuning datasets are more sensitive and <strong>much smaller</strong> (often only containing about a few hundred images), and their gradients carry disproportionately large weight in updating model parameters. Typical sizes:</p>
+<ul>
+<li><strong>DreamBooth</strong>: 3–20 images</li>
+<li><strong>LoRA for style</strong>: 50–300 images</li>
+</ul>
+<p>In the documentation for <a href="https://replicate.com/docs/get-started/fine-tune-with-flux">fine-tuning FLUX with Replicate</a>, the minimum number is in fact <strong>two</strong> for specific semantic categories.</p>
+<p><strong>threat summary: fine-tuning</strong></p>
+<p>Fine-tuning poisoning is effective but still relatively hard to pull off externally. The risk is greatest when:</p>
+<ul>
+<li>Companies fine-tune with <strong>user-submitted data</strong></li>
+<li>Teams reuse datasets without vetting</li>
+<li>Multiple fine-tuning jobs accumulate distortions across time</li>
+</ul>
+</section>
+<section id="c.-reweightingpreference-optimization-rlhf-aesthetic-scoring-feedback-loops-highest-risk" class="level3">
+<h3 class="anchored" data-anchor-id="c.-reweightingpreference-optimization-rlhf-aesthetic-scoring-feedback-loops-highest-risk">c.&nbsp;reweighting/preference optimization (RLHF, aesthetic scoring, feedback loops) (highest risk)</h3>
+<p>Modern models increasingly rely on <strong>reward models</strong> that score generated images, selecting “good” images for future training cycles. These systems are extremely sensitive to biased or stylized input. If stylized images are consistently given high implicit weight, e.g., via user interaction, curation pipelines, or aesthetic filters, the effective contribution of a small dataset can be multiplied. This likely explains why stylized “Charlie Kirk filter” images might cause visible drift without anyone deliberately contaminating the training data.</p>
+<p>Reinforcement Learning from Human Feedback (RLHF) pipelines are uniquely exposed because they use:</p>
+<ul>
+<li>User votes, likes, hearts, or ratings</li>
+<li>Aesthetic scorers trained on web-scraped galleries</li>
+<li>Self-generated images used for iterative model updates</li>
+</ul>
+<p><strong>threat summary: RHLF</strong></p>
+<p>RLHF is the <strong>most likely</strong> poisoning pathway and also the <strong>most damaging</strong>. It is the only stage where relatively tiny amounts of poisoned data can meaningfully alter model behavior, and where attackers (or viral social trends) can realistically slip poisoned samples into the pipeline.</p>
+</section>
+</section>
+<section id="how-vulnerable-is-each-training-stage-a-practical-rule-of-thumb" class="level2">
+<h2 class="anchored" data-anchor-id="how-vulnerable-is-each-training-stage-a-practical-rule-of-thumb">4. how vulnerable is each training stage? A practical rule of thumb</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 21%">
+<col style="width: 25%">
+<col style="width: 14%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Date</th>
-<th>Title</th>
+<th>Training Stage</th>
+<th>Impact of Poisoning</th>
+<th>Likelihood of Poisoning</th>
+<th>Overall Risk</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Dec 20, 2025</td>
-<td><a href="essay_2025-12-20.html">how spamming stylized images can poison the (gen AI) well</a></td>
+<td><strong>Foundation Training</strong></td>
+<td>Low</td>
+<td>Very Low</td>
+<td><strong>Very low</strong></td>
 </tr>
 <tr class="even">
-<td>Dec 01, 2025</td>
-<td><a href="essay_2025-12-01.html">how camera resolution and distance affects facial recognition accuracy</a></td>
+<td><strong>Fine-Tuning (LoRA/DreamBooth)</strong></td>
+<td>High</td>
+<td>Low–Medium</td>
+<td><strong>Low</strong></td>
 </tr>
 <tr class="odd">
-<td>Nov 23, 2025</td>
-<td><a href="essay_2025-11-23.html">what is riki thinking for thanksgiving?</a></td>
+<td><strong>RLHF / Preference Optimization</strong></td>
+<td><strong>Very High</strong></td>
+<td><strong>High</strong></td>
+<td><strong>High</strong></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="concluding-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="concluding-thoughts">5. concluding thoughts</h2>
+<p>As generative systems move toward continual learning and user-in-the-loop optimization, understanding these vulnerabilities, and designing systems robust to distribution drift, becomes increasingly important to prevent malicious or unintentional poisoning!</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">6. references</h2>
+<ul>
+<li>Biggio, B., &amp; Roli, F. (2018). <em>Wild patterns: Ten years after the rise of adversarial machine learning</em>. Pattern Recognition.</li>
+<li>Zhai, S. et al (2023). <em>Text-to-Image Diffusion Models can be Easily Backdoored through Multimodal Data Poisoning</em>. <a href="https://arxiv.org/abs/2305.04175">arXiv:2305.04175</a></li>
+<li>Zhu, M. et al (2024). <em>Explaining latent representations of generative models with large multimodal models</em>. <a href="https://arxiv.org/html/2402.01858v1">arXiv:2402.01858v1</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <hr style="margin-top:2em;margin-bottom:1em;">

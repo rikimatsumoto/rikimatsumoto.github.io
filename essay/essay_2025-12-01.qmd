@@ -15,6 +15,10 @@ execute:
 
 Facial-recognition models such as [ArcFace](https://www.insightface.ai/research/arcface), [FaceNet](https://en.wikipedia.org/wiki/FaceNet), and modern [InsightFace](https://www.insightface.ai) pipelines rely on **image detail** to extract reliable facial "embeddings" (i.e., mathematical representations of the image of a face). One of the strongest predictors of recognition accuracy comes from a much more fundamental factor: **the number of pixels covering the face**. This post explains the mathematical relationship between **camera resolution**, **distance**, and **facial-recognition accuracy**, and provides a practical Python tool to measure facial image quality and associated privacy risk.
 
+Finally, this post notes that for most pedestrians walking on the street, 5-6m+ from home Ring cameras, there is likely not enough detail to extract a useful "facial-embedding" - you're probably good!
+
+*update:* Jason Koebler from 404 media recently wrote this article on how Flock ["left at least 60 of its people-tracking Condor PTZ cameras live streaming and exposed to the open internet."](https://www.404media.co/r/a43147f7?m=e23fcb51-2df3-4179-afdf-b38ab110a6c5)
+
 ---
 
 ## 1. introduction
