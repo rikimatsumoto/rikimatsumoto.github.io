@@ -21,16 +21,18 @@ project:
 
   <h2>hello! im riki!  </h2>
 
-  <p>this is a long-time coming but ive finally made a github pages... and it may be a long-time yet before this is fully fleshed out. In the meantime, here's what you should know about me:</p>
+  <p>here's what you should know about me:</p>
 
   <p><strong>00. Full-stack analytics with economic policy background.</strong><br>
-  I have a Master's in analytics from Georgia Tech's Industrial and Systems Engineering and am a former IMF research analyst. I’ve spent 5+ years as a full-stack research and data person across economics and international policy institutions. Currently, I lead an ML project that predicts farmers' adoption rates of agricultural training using XGBoost, SHAP explainability, and R Shiny, deployed for project teams.</p>
+  I have a Master's in analytics from Georgia Tech and am a former IMF research analyst. I’ve spent 5+ years as a full-stack research and data person across economics and international policy institutions. Currently, I lead an ML project that predicts farmers' adoption rates of agricultural training deployed for project teams.</p>
 
   <p><strong>01. I prototype, ship, and solve analytic problems.</strong><br>
-  I've designed, built, and deployed full analytic pipelines — from data engineering and modeling to machine-learning interpretability, dashboarding, and automated reporting. I've probably created *too many* analytics web applications for teams.</p>
+  I've designed, built, and deployed full analytic pipelines — from data pipelines and modeling to machine-learning interpretability, dashboarding, and automated reporting.</p>
 
   <p><strong>02. I like learning new things. </strong><br>
-  I try to continuously upskill in ML/AI tooling, and I'm learning more about scalable solutions. I used LangChain + ChromaDB to build an LLM-based app that generates private-sector diagnostics for investment teams. Most recently, I wrote an [essay about how camera resolution and distance affects facial recognition accuracy](https://rikimatsumoto.github.io/essay/essay_2025-12-01.html). Outside work, I do judo, volunteer in the DC Community Emergency Response Team (CERT), and am pursuing my amateur HAM radio technician license.</p>
+  I try to continuously upskill in ML/AI tooling, and I'm learning more about scalable solutions. Previously, I used LangChain + ChromaDB to build an LLM-based app that assessed foreign investment suitability. Most recently, I wrote an [essay about how camera resolution and distance affect facial recognition accuracy](https://rikimatsumoto.github.io/essay/essay_2025-12-01.html). Outside work, I do judo, volunteer in the DC Community Emergency Response Team (CERT), and am pursuing my amateur HAM radio technician license.</p>
+
+  <p><strong> Check out my work above! </strong><br>
   
 ---
 
