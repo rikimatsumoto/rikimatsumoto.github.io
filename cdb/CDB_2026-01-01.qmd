@@ -1,7 +1,7 @@
 ---
 title: "ChatGPT Daily Brief (CDB)"
 subtitle: "Open-Source Intelligence Edition — PDB Style"
-date: "December 31, 2025"
+date: "January 01, 2025"
 format:
   html:
     toc: true
