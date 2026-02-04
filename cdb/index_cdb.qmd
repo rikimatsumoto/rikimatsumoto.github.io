@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT's daily brief"
+title: "LLM daily brief"
 execute:
   echo: false
 format:
@@ -8,7 +8,7 @@ format:
     number-sections: true
 ---
 
-hello! this is the **ChatGPT Daily Brief (CDB)** archive: an open-source intelligence digest compiled and rendered by ChatGPT 5 each morning for geopolitical news. I originally created this product for personal use so I could receive a summarized update of the day's main issues without having to read multiple different newsletters. Adding it here in case folks find it useful.
+hello! this is the **LLM Daily Brief (LDB)** archive: an open-source intelligence digest compiled and rendered by LLMs (ChatGPT/Claude) each morning for geopolitical news. I originally created this product for personal use so I could receive a summarized update of the day's main issues without having to read multiple different newsletters. Adding it here in case folks find it useful.
 
 Click any date below to view that day’s brief.
 
@@ -58,7 +58,7 @@ else:
 
 ```
 
-Aside from the **CDB** I've occasionally asked ChatGPT to write reports on specific topics and test out capabilities. Here are some special editions if interested:
+Aside from the **LDB** I've occasionally asked LLMs to write reports on specific topics and test out capabilities. Here are the special editions if interested:
 
 ```{python}
 #| output: asis

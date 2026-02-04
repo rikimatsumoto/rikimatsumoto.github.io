@@ -18,7 +18,7 @@ website:
       - href: essay/index_essay.html
         text: essays
       - href: cdb/index_cdb.html
-        text: ChatGPT's daily brief
+        text: LLM's daily brief
 
 format:
   html:

@@ -1,0 +1,16 @@
+---
+title: "how spamming stylized images can poison the (gen AI) well"
+subtitle: "an overview of adversarial drift in image GenAI"
+date: "January 01, 2026"
+format:
+  html:
+    toc: true
+    number-sections: false
+lang: en
+execute:
+  echo: true
+---
+
+## tldr!
+
+
