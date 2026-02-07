@@ -1,0 +1,356 @@
+---
+title: "LLM Daily Brief (LDB)"
+subtitle: "Open-Source Intelligence Edition — PDB Style"
+date: "February 07, 2026"
+format:
+  html:
+    toc: true
+    number-sections: false
+lang: en
+---
+
+## EXECUTIVE SUMMARY
+
+**Lead Assessment:** Russia's planned Summer 2026 offensive faces strategic reserve constraints while Abu Dhabi talks yield limited tactical gains (military hotline restoration, prisoner swap), as Iranian regime conducts mass executions to consolidate post-massacre control amid US-Iran nuclear talks in Oman. Israel's escalatory trajectory in Lebanon (50 air raids in January alone—double December) and persistent energy market volatility underscore interconnected Middle East instability threatening global economic recovery. **(High Confidence)**
+
+**Top Coverage Nav:**
+- Ukraine: Military dialogue restored; Starlink cut to Russia; GRU general shot
+- Iran: Mass executions (72 in one week); nuclear talks in Oman; regime consolidation
+- Lebanon: Israeli strikes at 14-month high; environmental warfare accusations
+- Energy Markets: Oil $63-72 range on Iran-US talk volatility; winter storm impacts
+- Russia: Summer 2026 offensive planned but strategic reserve insufficient (ISW)
+
+---
+
+## REGIONAL SPOTLIGHTS
+
+### **UKRAINE: Abu Dhabi Talks Yield Tactical Wins Amid Strategic Deadlock**
+
+**Assessment:** US-Russia agreement to restore military-to-military communications and Feb 5 prisoner swap (157 Russian for 150 Ukrainian servicemen) represent procedural confidence-building measures, but fail to address core territorial disputes. Russia's planning for Summer 2026 offensive indicates Kremlin views negotiations as operational pause, not strategic pivot. **(High Confidence)**
+
+**Key Developments:**
+
+**Abu Dhabi Outcomes (Feb 4-5):**
+- **Military Dialogue Restored:** First high-level US-Russia military communications since late 2021; framed as providing "consistent military-to-military contact as parties work towards lasting peace"
+- **Prisoner Exchange:** 157 Russian servicemen (including 3 captured in Kursk incursion) for 150 Ukrainian troops; Kyiv noted returnees in "difficult psychological conditions," some critically underweight
+- **Casualty Acknowledgment:** Zelenskyy announced 55,000 Ukrainian combat deaths since February 2022 (UN documented 15,000 civilian deaths, 40,000 wounded through Dec 2025)
+
+**Military Operations Feb 5-7:**
+- **Starlink Cutoff:** Musk deactivated Russian forces' Starlink terminals following Ukrainian plea; at least 9 Russian milbloggers reported sweeping outages, warning of impaired drone warfare coordination. Russia lacks domestic alternative satellite internet system
+- **Belgorod Shelling:** Ukrainian forces inflicted "serious damage" on Russian border city Feb 6; Governor Gladkov confirmed 2 wounded
+- **Kyiv Strikes:** Feb 6 Russian attack (2 ballistic missiles, 183 drones; 156 intercepted) damaged residential buildings, kindergarten; 2 wounded. Zaporizhzhia animal shelter strike killed 8, injured 20+ animals
+- **GRU Assassination Attempt:** Lt. Gen. Vladimir Alekseyev (deputy GRU chief, sanctioned for cyberattacks and Skripal nerve agent attack) shot multiple times in Moscow Feb 6; Russian FM Lavrov blamed Ukraine for "terrorist act" to "disrupt negotiation process." Suspect fled; Alekseyev hospitalized
+- **Ukrainian Deep Strikes:** Jan operations hit Kapustin Yar IRBM testing ground near Caspian Sea per Zelenskyy; struck Oreshnik hypersonic missile prep facilities
+
+**Strategic Assessments:**
+- **ISW Analysis (Feb 6):** Russian military command planning Summer 2026 offensive in southern/eastern Ukraine but "likely lacks sufficient reserves to both adequately prepare for such an offensive and achieve objectives"
+- **Syrskyi Statement:** Ukraine conducted 3 offensive operations in 2025—one in Donetsk's Dobropillia sector, two inside Russian territory (Kursk, Belgorod oblasts); disrupted Russian plans to seize Donetsk and establish buffer zones
+- **Force Levels:** Russian troops on Ukrainian territory remain ~711,000-712,000 personnel (unchanged 6 months)
+- **Territorial Control:** Russia gained 29 sq miles in week Jan 27-Feb 3; 123 sq miles in four weeks Jan 6-Feb 3 (increase over previous period's 74). Russia captured Hulyaipole (pre-war population 13,000) after 3-month fight; unlikely to make rapid advances without deprioritizing other fronts
+
+**Energy Infrastructure Impact:**
+- 1,142+ apartment blocks in Kyiv still without heating from Feb 3 strikes
+- 300,000 in Kharkiv without electricity after power plant damaged beyond repair
+- Temperatures forecast to -30C; acute humanitarian crisis deepening
+- Ukraine's electricity imports jumped 40% in January (894 GWh) indicating severe generation capacity loss
+
+**Implications:** Military hotline restoration suggests both sides hedging against uncontrolled escalation while maintaining operational tempo. Starlink cutoff demonstrates Musk's tactical leverage over Russian operations but raises reliability concerns for Ukrainian forces. GRU general shooting follows pattern of Ukrainian "liquidations" targeting leadership (Lt. Gen. Igor Kirillov killed Dec 2024, others throughout 2023-2025). Russian planning for summer offensive without strategic reserves indicates grinding attrition warfare continuation rather than decisive operational breakthrough capacity. Zelenskyy's casualty disclosure (55,000 killed) significantly lower than some Western estimates but serves diplomatic signaling of Ukraine's continued resistance viability.
+
+**Outlook (24-72h):** Low probability of substantive peace agreement progress despite military dialogue restoration. High probability of continued mutual deep strikes on critical infrastructure. Monitor for additional Ukrainian strikes on Russian IRBM/hypersonic missile facilities. Assess Russian reprisal operations for GRU assassination attempt. Watch for Starlink service disruptions affecting Ukrainian forces as Russia seeks workarounds.
+
+---
+
+### **IRAN: Mass Executions Consolidate Post-Massacre Control; Nuclear Talks Begin**
+
+**Assessment:** The regime's execution of 72 individuals in one week (late January) represents systematic application of capital punishment to eliminate uprising leadership and deter future mobilization, while nuclear talks in Oman Feb 7 suggest Khamenei prioritizing deterrence of US military action over domestic legitimacy concerns. **(High Confidence)**
+
+**Key Developments:**
+
+**Repression Intensification:**
+- **Mass Executions:** 72 executed in less than one week (late January); charges include "moharebeh" (waging war against God), applied to protesters labeled "rioters and terrorists"
+- **Enforced Disappearances:** Four sisters (Niusha Nakhai, Mona Nakhai, Kimia Davoudi, Tara Davoudi) arrested in Tehran, whereabouts unknown for 2-3 weeks; pattern of isolation without family/lawyer access
+- **Medical Coercion:** Continued reports of detained protesters forcibly injected with unknown substances linked to deaths in custody; security forces raiding hospitals to seize wounded (Imam Khomeini Hospital, Ilam)
+- **Digital Siege:** Internet shutdowns costing Iran $1.56M per hour; $27-29B digital economy threatened; 90M+ people disrupted
+
+**Death Toll Dynamics (as of Feb 5-7):**
+- **HRANA (US-based):** 18,571 total cases; 6,941 confirmed deaths (6,495 protesters, 146 minors); 11,630 under investigation
+- **Iran International:** 6,634 documented with names/photos/circumstances; fewer than 100 overlap with regime's official list
+- **Britannica/Academic Estimates:** Ministry of Health internal estimates indicated "at least 30,000 killed in first 48 hours" (Jan 8-9)
+- **UK House of Commons:** 6,092 protesters killed per HRANA (Jan 28-29 data); ~42,500 detained
+- **Regime's Official Claim:** 3,117 total (2,447 civilians/security forces, remainder "terrorists"); list of 2,986 names published but largely unverifiable
+
+**Diplomatic/Military Developments:**
+- **US-Iran Nuclear Talks:** Resumed in Oman Feb 7 after initial round concluded without breakthrough; US pushing broader agenda (ballistic missiles, regional activities); Iran insists nuclear-only focus
+- **US Naval Posture:** USS Abraham Lincoln carrier strike group in Arabian Sea; shot down Iranian Shahed-139 drone that "aggressively approached" carrier early February
+- **Virtual Embassy Alert:** US Virtual Embassy in Iran urged American citizens to leave immediately Feb 6-7
+- **Trump Pressure:** "Khamenei should be very worried" statements; threatened 25% tariffs on nations trading with Iran; considering "strong options"
+
+**International Sanctions Escalation:**
+- **EU IRGC Terror Listing:** Formal designation as terrorist organization Feb 2026
+- **UK Sanctions:** Feb 2 designations of 10 individuals (Interior Minister, police chiefs, IRGC members) and Law Enforcement Forces organization
+- **US Position:** White House "very skeptical" negotiations will succeed despite ongoing talks
+
+**Foreign Militia Deployment:**
+- 800+ Iraqi militia members (Kata'ib Hezbollah, Harakat al-Nujaba, Sayyid al-Shuhada, Badr Organisation) sent to Iran via Shalamcheh, Chazabeh, Khosravi border crossings under "pilgrimage" cover
+- Lebanese Hezbollah, Pakistani Liwa Zainabiyoun, Afghan Liwa Fatemiyoun reported assisting suppression operations
+
+**Resistance Activities:**
+- **Berlin Free Iran Rally:** Scheduled Feb 7; Paris exhibitions Feb 5 in solidarity with uprising
+- **Underground Medical Network:** "Red Lion and Sun" network treating wounded protesters covertly
+- **Funeral Resistance:** Reports of dancing at massacre victims' funerals as resistance symbol
+
+**Implications:** Mass executions within weeks of massacre indicate regime confidence in having reasserted control through overwhelming force, yet simultaneous deployment of foreign militias suggests domestic security force reliability concerns. Nuclear talks timing suggests Khamenei calculus prioritizes averting US military strikes over domestic opposition—regime views external threats as existential, internal dissent as manageable through violence. Economic costs of internet shutdowns ($1.56M/hour) compounding with sanctions creating compound economic crisis, but regime demonstrating willingness to sacrifice economic functionality for information control. IRGC terror listing by EU creates additional financial/operational constraints on regime's external operations.
+
+**Energy Security Assessment:** Iran's 3.3M bpd production at risk from multiple vectors: (1) labor strikes by oil workers (currently unreported but potential), (2) infrastructure sabotage by opposition, (3) US military strikes on nuclear/military facilities potentially hitting energy sector, (4) regime chaos if elite fracturing accelerates. Oil markets pricing modest risk premium ($3-5/bbl) but underestimating potential for rapid supply disruption.
+
+**Outlook (24-72h):** Moderate probability of additional executions as regime works through detained protesters' "trials." Low probability of nuclear talks breakthrough given agenda disagreements. High probability of continued low-intensity resistance (funeral gatherings, nighttime chanting). Monitor for oil worker actions in Khuzestan/southern fields. Assess for clerical establishment fissures as additional former officials potentially break silence. Watch US carrier group positioning for military action indicators.
+
+---
+
+### **LEVANT: Israel's Lebanon Strikes Reach 14-Month High**
+
+**Assessment:** Norwegian Refugee Council documentation of 50+ Israeli air raids in January 2026—double December's total—demonstrates escalatory trajectory contradicting ceasefire commitments. Israel's chemical spraying operations and targeting of reconstruction equipment indicate strategy to prevent southern Lebanon rehabilitation, creating conditions for indefinite displacement of 64,000+ Lebanese. **(High Confidence)**
+
+**Key Developments:**
+
+**Escalation Metrics:**
+- **January Raid Total:** 50+ air raids (Norwegian Refugee Council), highest monthly level since Nov 2024 ceasefire; 100% increase over December
+- **14-Month Totals:** 330+ killed since ceasefire (including 127+ civilians), 11,000+ violations documented by UNIFIL (7,500 airspace, 2,500 ground)
+- **Displacement Persistence:** 64,000 Lebanese remain displaced 14 months post-ceasefire; reconstruction efforts "hampered" by Israeli targeting of construction equipment
+
+**Recent Strike Pattern (Late Jan-Early Feb):**
+- **Targeting Profile:** Alleged Hezbollah operatives "restoring infrastructure," weapons storage, heavy machinery for reconstruction
+- **Geographic Spread:** Strikes in Tyre, Bint Jbeil, Nabatieh, Marjayoun, Jezzine districts; both south of Litani and beyond
+- **Civilian Impact:** Residential buildings, agricultural land reclamation sites, marble factories targeted alongside military objectives
+
+**Environmental Warfare Allegations:**
+- **Chemical Spraying:** Israeli aircraft sprayed "unknown substance" over southern Lebanese towns Feb 5-6; President Aoun accused Israel of "environmental crime"
+- **UNIFIL Statement:** UN peacekeepers reported Feb 3 Israeli aircraft dropping "unknown chemical substance" near Blue Line, delaying observer activities 9 hours; IDF claimed "non-toxic"
+- **Historical Precedent:** Echoes of Agent Orange/defoliant concerns; potential crop destruction/contamination strategy
+
+**Hezbollah Posture:**
+- **Restraint Continued:** Only 1 attack in 14 months (December rocket fire, no casualties); Israel responded by killing 11
+- **Leadership Statements:** Naim Qassem reiterated refusal to accept Phase 2 disarmament (Litani to Awali River) unless Israel abides by ceasefire
+- **Organizational Status:** Weakened from 2024 war (most military leadership killed including Nasrallah); Syrian regime fall disrupted Iran supply route; strategic deterrence capacity degraded
+
+**Lebanese Government Response:**
+- **LAF Phase 2 Plan:** Disarmament proposal from Litani River to Awali River (south of Beirut) to be presented to Cabinet in February
+- **International Diplomacy:** Paris conference March 5 for LAF support; seeking Saudi, French, Qatari, Egyptian backing to pressure US to constrain Israel
+- **Aoun's Criticism:** President condemned Israeli "policy of systematic aggression" directly targeting civilians Feb 6-7
+
+**Implications:** NRC assessment that January strikes represent "clear and dangerous surge" validates concerns about Israeli strategy shift from targeted counter-terror to systematic infrastructure degradation. Chemical spraying allegations, if substantiated, would constitute war crime under international humanitarian law and represent dramatic escalation in methods. Israel's occupation of 5 positions and continued strikes despite LAF Phase 1 completion indicates Jerusalem views ceasefire as unilateral Lebanese obligation, not reciprocal commitment.
+
+Hezbollah's extraordinary restraint (1 attack vs 11,000+ Israeli violations) reflects organizational incapacity rather than strategic choice—group fears Israeli retaliation would complete its military destruction. LAF caught in impossible position: disarm Hezbollah (risking civil conflict) while Israel prevents reconstruction (undermining Lebanese state capacity). Lebanese state's appeal to non-US partners (France, Saudi Arabia, Qatar) indicates recognition that Washington unwilling/unable to constrain Israeli operations.
+
+**Outlook (24-72h):** High probability of continued Israeli strikes at elevated tempo. Moderate probability of chemical spraying operations intensifying if crop destruction proven effective. Low probability of Hezbollah retaliation unless casualties spike dramatically. Monitor LAF Cabinet presentation on Phase 2 disarmament for domestic political reaction. Assess March 5 Paris conference preparations for international pressure indicators. Watch for Israeli strikes potentially targeting Phase 2 disarmament zones preemptively.
+
+---
+
+### **ENERGY MARKETS: Iran-US Talks Drive Volatility; Oversupply Fundamentals Persist**
+
+**Assessment:** Oil prices oscillating between geopolitical risk premium from Iran-US tensions and bearish fundamentals from global oversupply, creating volatility conducive to neither energy security planning nor investment certainty. Winter Storm Fern impacts and Saudi price cuts signal deeper structural challenges. **(Moderate to High Confidence)**
+
+**Price Action (Feb 5-7):**
+- **WTI Crude:** Trading $63-67/bbl range; choppy action reflecting Iran-US negotiation uncertainty
+- **Brent Crude:** $67-72/bbl; briefly breached $72 (6-month high) on Iran tensions before retreating
+- **Weekly Trend:** First weekly decline in seven weeks; geopolitical risk premium dissipating as Oman talks commence
+
+**Key Drivers:**
+
+**1. Iran-US Nuclear Standoff:**
+- **Geopolitical Premium:** Analysts estimate $7-8/bbl added from Iran conflict risk
+- **Supply at Risk:** Iran's 3.3M bpd production threatened by potential US military action, labor strikes, or infrastructure sabotage
+- **Strait of Hormuz:** 20% of global oil/gas supply transits chokepoint; heightened naval activity (USS Abraham Lincoln strike group)
+- **Market Reaction:** Prices spiked on Trump threats, retreated on Oman talks announcement, volatility high pending outcome
+
+**2. Oversupply Fundamentals:**
+- **EIA Forecast:** Brent averaging $56/bbl in 2026 (19% below 2025), $54/bbl in 2027
+- **Production vs. Demand:** Global production exceeding consumption; inventories rising
+- **Surplus Estimates:** 2.1-4M bpd surplus forecast for H1 2026 (EIA, IEA, BloombergNEF)
+- **OPEC+ Response:** Maintained voluntary cuts through March at Feb 1 virtual meeting; holding 2.5M bpd spare capacity (primarily Saudi Arabia)
+
+**3. Saudi Arabia Price Signal:**
+- **Asian Grade Cuts:** Reduced prices for main crude grade to Asia to lowest since late 2020, signaling oversupply
+- **Demand Confidence:** Smaller-than-expected cut suggests some optimism on Asian demand resilience
+
+**4. Winter Storm Fern Impacts:**
+- **US Inventories:** API reported 11.1M barrel draw (week ending Feb 4)—significantly exceeding market expectations of 640K barrels
+- **Production Disruptions:** Permian Basin freeze-offs, refinery run reductions, infrastructure impacts
+- **Distillate Draw:** 4.8M barrel decline; gasoline inventories rose 4.7M barrels
+- **Regional Heating:** Belgorod Oblast (Russia) weeks-long outages from Ukrainian strikes; heating at 50% capacity
+
+**5. Demand-Side Factors:**
+- **US Production:** Record 13.6M bpd in 2025 but forecast to decline 1% in 2026, 2% in 2027 as low prices constrain drilling
+- **Natural Gas Collapse:** Henry Hub prices halved to $3.48/MMBtu from $7+ after milder weather forecasts
+- **Gasoline Prices:** US retail forecast to average $2.90/gal in 2026 (down ~$0.20 from 2025)
+
+**Forecaster Divergence:**
+- **Company Expectations:** Dallas Fed survey respondents expect $64/bbl average in 2026 (down from $70 expectation in early 2025)
+- **Independent Forecasts:** EIA, IEA project WTI in low-to-mid $50s
+- **Long Forecast:** WTI fluctuating around $62.80/bbl in 2026, high of $66.20 in March
+- **McKinsey 2040:** $50-60/bbl range driven by flat production costs and energy transition pressures
+
+**Investment Implications:**
+- **US Shale Stress:** Small/mid-cap E&P companies face acute pressure; drilling activity cuts accelerating
+- **Major Producers:** ExxonMobil, Chevron, ConocoPhillips maintaining/increasing activity betting on 2027+ recovery despite 2026 weakness
+- **Downstream Impacts:** West Coast refinery closures affecting regional gasoline prices; crack spreads rising despite crude decline
+
+**Outlook (24-72h):**
+
+**Scenario 1 - Diplomatic Progress (40% probability):** Iran-US talks show signs of "freeze-for-freeze" (enrichment pause for sanctions relief); oil retreats toward $60 WTI, $63 Brent; risk premium dissipates
+
+**Scenario 2 - Talk Breakdown (35% probability):** Negotiations collapse on agenda disagreements; US military posture escalates; oil spikes to $70-75 WTI, $75-80 Brent on supply disruption fears
+
+**Scenario 3 - Muddle Through (25% probability):** Talks continue inconclusively; prices range-bound $63-67 WTI as markets await clarity; fundamentals gradually reassert downward pressure
+
+**Critical Variables:** (1) Iran-US talks outcome in Oman, (2) US carrier strike group positioning, (3) Iranian oil worker actions, (4) OPEC+ March meeting decisions, (5) Chinese economic data releases
+
+---
+
+## WATCH ITEMS (24-72h Horizon)
+
+### **Critical Priority:**
+1. **Iran-US Nuclear Talks in Oman:** Outcome determines oil price trajectory; watch for "freeze-for-freeze" proposals or breakdown triggering military escalation
+2. **Berlin Free Iran Rally (Feb 7):** Diaspora mobilization indicator; potential for regime response targeting organizers' families in Iran
+3. **Ukrainian Starlink Reliability:** Monitor for Russian workarounds or Ukrainian service disruptions as Moscow retaliates for terminal cutoff
+4. **Russian GRU General Assassination:** Assess Kremlin response; potential for major Ukrainian target reprisal
+
+### **High Priority:**
+1. **Israel-Lebanon Chemical Warfare:** UNIFIL/independent testing of sprayed substances; potential war crimes documentation
+2. **Iranian Mass Executions:** Monitor for additional death sentences; watch prison conditions for detained protesters
+3. **Russian Summer Offensive Preparations:** ISW tracking of reserve mobilization; assess whether Kremlin can address strategic reserve deficit
+4. **Lebanon LAF Phase 2 Disarmament Plan:** Cabinet presentation and domestic political reaction; Hezbollah response to expanded disarmament
+
+### **Medium Priority:**
+1. **Oil Worker Strikes (Iran):** Khuzestan/southern fields for labor action indicators
+2. **Ukrainian Energy Reconstruction:** Assess repair timelines for critical generation capacity
+3. **OPEC+ March Meeting:** Saudi Arabia production decision; spare capacity deployment considerations
+4. **US-China Iran Coordination:** Trump-Xi discussions on Iran trade isolation
+
+---
+
+## ANNEX: BUSINESS/FINANCIAL INDICATORS & IMPLICATIONS
+
+### **Energy Markets - February 7, 2026**
+
+**Current Prices:**
+- **WTI:** $63-67/bbl (volatile, first weekly decline in 7 weeks)
+- **Brent:** $67-72/bbl (touched 6-month high before retreating)
+- **Henry Hub Natural Gas:** $3.48/MMBtu (halved from $7+ on weather)
+
+**Geopolitical Risk Premium Analysis:**
+The $7-8/bbl Iran premium reflects modest probability-weighted scenarios:
+- 60% baseline: talks muddle through, no disruption ($0 premium)
+- 25% disruption: limited strikes or labor actions, 0.5-1M bpd offline ($15-20 premium)
+- 10% major disruption: Strait of Hormuz restrictions, 2-3M bpd offline ($40-50 premium)
+- 5% full closure: Regional war, 5M+ bpd offline ($80-100 premium)
+
+Current pricing suggests market significantly underweighting tail risks given:
+- Active US carrier deployment
+- Iranian chemical weapons use reports (detention center injections)
+- Regime facing existential legitimacy crisis
+- Trump's "Khamenei should be very worried" rhetoric
+
+**Fundamental Oversupply Reality:**
+Despite geopolitical noise, structural oversupply dominates H2 2026 outlook:
+- 2.1-4M bpd surplus forecast
+- US shale production declining as prices pressure breakevens ($55-60 range for most Permian producers)
+- OPEC+ spare capacity (2.5M bpd) acts as ceiling on price spikes
+- Energy transition accelerating demand destruction in developed markets
+
+**Investment Strategy Implications:**
+
+**Energy Sector:**
+- **Majors:** ExxonMobil, Chevron, ConocoPhillips playing long game; betting $64 company expectations wrong but positioning for 2027+ recovery
+- **Independents:** High distress risk; small/mid-cap E&P companies cutting capex, facing covenant pressures
+- **Services:** Declining rig count (down 15% in early 2025) pressuring Schlumberger, Halliburton, Baker Hughes
+
+**Defense/Aerospace:**
+- Elevated from multiple theaters (Ukraine, Iran, Lebanon)
+- US carrier deployment sustaining readiness spending
+- Israeli operations requiring continued munitions replenishment
+
+**Emerging Markets:**
+- Iranian rial at 145,000 tomans/USD; 56% depreciation in 6 months creating contagion concerns for other sanctioned/fragile economies
+- Lebanese pound under pressure from reconstruction uncertainty and Israeli operations
+- Ukrainian electricity crisis requiring massive EU financial support
+
+**Geopolitical Hedge Assets:**
+- Gold elevated (recent all-time highs near $4,630/oz)
+- Bitcoin volatile, tracking risk sentiment
+- Defense stocks (Lockheed Martin, Raytheon, Northrop Grumman) elevated
+
+### **72-Hour Market Catalyst Assessment:**
+
+**Upside Oil Risks ($70-75 WTI):**
+- Iran-US talks collapse with Trump ordering military strikes
+- Iranian oil worker strikes in Khuzestan fields
+- Hezbollah major retaliation triggering Israel-Lebanon escalation
+- Russian deep strike on Ukrainian decision-making centers
+
+**Downside Oil Risks ($58-62 WTI):**
+- Iran-US "freeze-for-freeze" agreement announced
+- OPEC+ surprise production increase at March meeting
+- Chinese economic data disappoints significantly
+- Mild winter weather persists, crushing natural gas and heating oil demand
+
+**Base Case ($63-67 WTI):**
+- Iran-US talks continue inconclusively
+- Geopolitical developments offset but don't eliminate risk premium
+- Oversupply fundamentals gradually exert downward pressure into Q2 2026
+- Volatility remains elevated but prices range-bound pending clarity
+
+---
+
+## SOURCES & REFERENCES
+
+### Primary Sources:
+1. **Institute for the Study of War (ISW)** - Ukraine assessments, Russian offensive planning, Feb 6-7
+2. **US Department of Defense / CENTCOM** - USS Abraham Lincoln operations, Iranian drone incident
+3. **Ukrainian Presidential Office / General Staff** - Casualty figures, offensive operations claims
+4. **Human Rights Activists News Agency (HRANA)** - Iran protest deaths documentation
+5. **National Council of Resistance of Iran (NCRI)** - Execution reports, Berlin rally coordination
+6. **Norwegian Refugee Council** - Lebanon strike frequency documentation
+7. **UNIFIL** - Chemical spraying reports, Blue Line violations
+8. **US Energy Information Administration** - Oil price forecasts, production outlook
+
+### Regional Reporting:
+9. **Kyiv Independent** - Ukrainian military developments, Starlink cutoff
+10. **Al Jazeera** - Iran protests, Lebanon strikes, Ukraine prisoner swap
+11. **CBS News / CNN** - GRU assassination attempt, Starlink analysis
+12. **PBS News / Washington Post** - Iran regime consolidation, US skepticism on talks
+13. **The Times of Israel** - Israeli operations, chemical spraying justifications
+14. **Iran International** - Independent death toll documentation, regime analysis
+
+### Analytical Sources:
+15. **Russia Matters** - Territorial control metrics, casualty estimates
+16. **Euronews** - US-Russia military dialogue restoration
+17. **FDD's Long War Journal** - Israeli operations tactical tracking
+18. **UK House of Commons Library** - Iran protests parliamentary briefing
+19. **UConn Today** - Academic Iran uprising analysis
+20. **Britannica** - Iran protests encyclopedic documentation
+
+### Financial & Energy:
+21. **OilPrice.com** - Market analysis, geopolitical risk premium estimates
+22. **Trading Economics** - Real-time commodity pricing, technical analysis
+23. **Standard Chartered** - Oil market sentiment analysis
+24. **Dallas Fed Energy Survey** - Producer expectations, breakeven analysis
+25. **Financial Content / Energy Intelligence** - Iran-US standoff energy impacts
+
+### Official Statements:
+26. **White House / Trump Administration** - Iran warnings, nuclear talk skepticism
+27. **Russian Foreign Ministry** - GRU assassination blame, ceasefire claims
+28. **Lebanese Presidential Office** - Aoun's environmental crime accusations
+29. **Iranian Foreign Ministry** - Nuclear talk parameters, US criticisms
+30. **Ukrainian Defense Ministry** - Starlink deactivation confirmation, operations updates
+
+---
+
+## METHODOLOGY NOTE
+
+This brief synthesizes open-source intelligence from overnight February 6-7, 2026, using IC-standard estimative language. Confidence assessments reflect source quality, corroboration level, and analytical judgment.
+
+**Source Reliability Notes:** Iranian death toll figures show significant variance between regime claims (3,117), human rights organizations (6,900-7,000 verified with 11,000+ under investigation), and leaked internal documents suggesting 30,000+ in first 48 hours. Brief presents full range to allow policymaker judgment. Oil price forecasts similarly divergent; brief presents institutional consensus while noting company expectations remain higher.
+
+**Collection Gaps:** Real-time verification of chemical substances sprayed in Lebanon pending; reliance on UNIFIL observer reports and Lebanese government claims. Russian Summer 2026 offensive planning assessed through ISW open-source analysis but lacking access to classified Russian military planning documents.
+

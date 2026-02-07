@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-02-07">
+
+<title>LLM Daily Brief (LDB) – riki’s site</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">riki’s site</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../02_articles.html"> 
+<span class="menu-text">articles &amp; papers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../01_projects.html"> 
+<span class="menu-text">projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../essay/index_essay.html"> 
+<span class="menu-text">essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cdb/index_cdb.html"> 
+<span class="menu-text">LLM’s daily brief</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary">EXECUTIVE SUMMARY</a></li>
+  <li><a href="#regional-spotlights" id="toc-regional-spotlights" class="nav-link" data-scroll-target="#regional-spotlights">REGIONAL SPOTLIGHTS</a>
+  <ul class="collapse">
+  <li><a href="#ukraine-abu-dhabi-talks-yield-tactical-wins-amid-strategic-deadlock" id="toc-ukraine-abu-dhabi-talks-yield-tactical-wins-amid-strategic-deadlock" class="nav-link" data-scroll-target="#ukraine-abu-dhabi-talks-yield-tactical-wins-amid-strategic-deadlock"><strong>UKRAINE: Abu Dhabi Talks Yield Tactical Wins Amid Strategic Deadlock</strong></a></li>
+  <li><a href="#iran-mass-executions-consolidate-post-massacre-control-nuclear-talks-begin" id="toc-iran-mass-executions-consolidate-post-massacre-control-nuclear-talks-begin" class="nav-link" data-scroll-target="#iran-mass-executions-consolidate-post-massacre-control-nuclear-talks-begin"><strong>IRAN: Mass Executions Consolidate Post-Massacre Control; Nuclear Talks Begin</strong></a></li>
+  <li><a href="#levant-israels-lebanon-strikes-reach-14-month-high" id="toc-levant-israels-lebanon-strikes-reach-14-month-high" class="nav-link" data-scroll-target="#levant-israels-lebanon-strikes-reach-14-month-high"><strong>LEVANT: Israel’s Lebanon Strikes Reach 14-Month High</strong></a></li>
+  <li><a href="#energy-markets-iran-us-talks-drive-volatility-oversupply-fundamentals-persist" id="toc-energy-markets-iran-us-talks-drive-volatility-oversupply-fundamentals-persist" class="nav-link" data-scroll-target="#energy-markets-iran-us-talks-drive-volatility-oversupply-fundamentals-persist"><strong>ENERGY MARKETS: Iran-US Talks Drive Volatility; Oversupply Fundamentals Persist</strong></a></li>
+  </ul></li>
+  <li><a href="#watch-items-24-72h-horizon" id="toc-watch-items-24-72h-horizon" class="nav-link" data-scroll-target="#watch-items-24-72h-horizon">WATCH ITEMS (24-72h Horizon)</a>
+  <ul class="collapse">
+  <li><a href="#critical-priority" id="toc-critical-priority" class="nav-link" data-scroll-target="#critical-priority"><strong>Critical Priority:</strong></a></li>
+  <li><a href="#high-priority" id="toc-high-priority" class="nav-link" data-scroll-target="#high-priority"><strong>High Priority:</strong></a></li>
+  <li><a href="#medium-priority" id="toc-medium-priority" class="nav-link" data-scroll-target="#medium-priority"><strong>Medium Priority:</strong></a></li>
+  </ul></li>
+  <li><a href="#annex-businessfinancial-indicators-implications" id="toc-annex-businessfinancial-indicators-implications" class="nav-link" data-scroll-target="#annex-businessfinancial-indicators-implications">ANNEX: BUSINESS/FINANCIAL INDICATORS &amp; IMPLICATIONS</a>
+  <ul class="collapse">
+  <li><a href="#energy-markets---february-7-2026" id="toc-energy-markets---february-7-2026" class="nav-link" data-scroll-target="#energy-markets---february-7-2026"><strong>Energy Markets - February 7, 2026</strong></a></li>
+  <li><a href="#hour-market-catalyst-assessment" id="toc-hour-market-catalyst-assessment" class="nav-link" data-scroll-target="#hour-market-catalyst-assessment"><strong>72-Hour Market Catalyst Assessment:</strong></a></li>
+  </ul></li>
+  <li><a href="#sources-references" id="toc-sources-references" class="nav-link" data-scroll-target="#sources-references">SOURCES &amp; REFERENCES</a>
+  <ul class="collapse">
+  <li><a href="#primary-sources" id="toc-primary-sources" class="nav-link" data-scroll-target="#primary-sources">Primary Sources:</a></li>
+  <li><a href="#regional-reporting" id="toc-regional-reporting" class="nav-link" data-scroll-target="#regional-reporting">Regional Reporting:</a></li>
+  <li><a href="#analytical-sources" id="toc-analytical-sources" class="nav-link" data-scroll-target="#analytical-sources">Analytical Sources:</a></li>
+  <li><a href="#financial-energy" id="toc-financial-energy" class="nav-link" data-scroll-target="#financial-energy">Financial &amp; Energy:</a></li>
+  <li><a href="#official-statements" id="toc-official-statements" class="nav-link" data-scroll-target="#official-statements">Official Statements:</a></li>
+  </ul></li>
+  <li><a href="#methodology-note" id="toc-methodology-note" class="nav-link" data-scroll-target="#methodology-note">METHODOLOGY NOTE</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">LLM Daily Brief (LDB)</h1>
+<p class="subtitle lead">Open-Source Intelligence Edition — PDB Style</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 7, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="executive-summary" class="level2">
+<h2 class="anchored" data-anchor-id="executive-summary">EXECUTIVE SUMMARY</h2>
+<p><strong>Lead Assessment:</strong> Russia’s planned Summer 2026 offensive faces strategic reserve constraints while Abu Dhabi talks yield limited tactical gains (military hotline restoration, prisoner swap), as Iranian regime conducts mass executions to consolidate post-massacre control amid US-Iran nuclear talks in Oman. Israel’s escalatory trajectory in Lebanon (50 air raids in January alone—double December) and persistent energy market volatility underscore interconnected Middle East instability threatening global economic recovery. <strong>(High Confidence)</strong></p>
+<p><strong>Top Coverage Nav:</strong> - Ukraine: Military dialogue restored; Starlink cut to Russia; GRU general shot - Iran: Mass executions (72 in one week); nuclear talks in Oman; regime consolidation - Lebanon: Israeli strikes at 14-month high; environmental warfare accusations - Energy Markets: Oil $63-72 range on Iran-US talk volatility; winter storm impacts - Russia: Summer 2026 offensive planned but strategic reserve insufficient (ISW)</p>
+<hr>
+</section>
+<section id="regional-spotlights" class="level2">
+<h2 class="anchored" data-anchor-id="regional-spotlights">REGIONAL SPOTLIGHTS</h2>
+<section id="ukraine-abu-dhabi-talks-yield-tactical-wins-amid-strategic-deadlock" class="level3">
+<h3 class="anchored" data-anchor-id="ukraine-abu-dhabi-talks-yield-tactical-wins-amid-strategic-deadlock"><strong>UKRAINE: Abu Dhabi Talks Yield Tactical Wins Amid Strategic Deadlock</strong></h3>
+<p><strong>Assessment:</strong> US-Russia agreement to restore military-to-military communications and Feb 5 prisoner swap (157 Russian for 150 Ukrainian servicemen) represent procedural confidence-building measures, but fail to address core territorial disputes. Russia’s planning for Summer 2026 offensive indicates Kremlin views negotiations as operational pause, not strategic pivot. <strong>(High Confidence)</strong></p>
+<p><strong>Key Developments:</strong></p>
+<p><strong>Abu Dhabi Outcomes (Feb 4-5):</strong> - <strong>Military Dialogue Restored:</strong> First high-level US-Russia military communications since late 2021; framed as providing “consistent military-to-military contact as parties work towards lasting peace” - <strong>Prisoner Exchange:</strong> 157 Russian servicemen (including 3 captured in Kursk incursion) for 150 Ukrainian troops; Kyiv noted returnees in “difficult psychological conditions,” some critically underweight - <strong>Casualty Acknowledgment:</strong> Zelenskyy announced 55,000 Ukrainian combat deaths since February 2022 (UN documented 15,000 civilian deaths, 40,000 wounded through Dec 2025)</p>
+<p><strong>Military Operations Feb 5-7:</strong> - <strong>Starlink Cutoff:</strong> Musk deactivated Russian forces’ Starlink terminals following Ukrainian plea; at least 9 Russian milbloggers reported sweeping outages, warning of impaired drone warfare coordination. Russia lacks domestic alternative satellite internet system - <strong>Belgorod Shelling:</strong> Ukrainian forces inflicted “serious damage” on Russian border city Feb 6; Governor Gladkov confirmed 2 wounded - <strong>Kyiv Strikes:</strong> Feb 6 Russian attack (2 ballistic missiles, 183 drones; 156 intercepted) damaged residential buildings, kindergarten; 2 wounded. Zaporizhzhia animal shelter strike killed 8, injured 20+ animals - <strong>GRU Assassination Attempt:</strong> Lt. Gen.&nbsp;Vladimir Alekseyev (deputy GRU chief, sanctioned for cyberattacks and Skripal nerve agent attack) shot multiple times in Moscow Feb 6; Russian FM Lavrov blamed Ukraine for “terrorist act” to “disrupt negotiation process.” Suspect fled; Alekseyev hospitalized - <strong>Ukrainian Deep Strikes:</strong> Jan operations hit Kapustin Yar IRBM testing ground near Caspian Sea per Zelenskyy; struck Oreshnik hypersonic missile prep facilities</p>
+<p><strong>Strategic Assessments:</strong> - <strong>ISW Analysis (Feb 6):</strong> Russian military command planning Summer 2026 offensive in southern/eastern Ukraine but “likely lacks sufficient reserves to both adequately prepare for such an offensive and achieve objectives” - <strong>Syrskyi Statement:</strong> Ukraine conducted 3 offensive operations in 2025—one in Donetsk’s Dobropillia sector, two inside Russian territory (Kursk, Belgorod oblasts); disrupted Russian plans to seize Donetsk and establish buffer zones - <strong>Force Levels:</strong> Russian troops on Ukrainian territory remain ~711,000-712,000 personnel (unchanged 6 months) - <strong>Territorial Control:</strong> Russia gained 29 sq miles in week Jan 27-Feb 3; 123 sq miles in four weeks Jan 6-Feb 3 (increase over previous period’s 74). Russia captured Hulyaipole (pre-war population 13,000) after 3-month fight; unlikely to make rapid advances without deprioritizing other fronts</p>
+<p><strong>Energy Infrastructure Impact:</strong> - 1,142+ apartment blocks in Kyiv still without heating from Feb 3 strikes - 300,000 in Kharkiv without electricity after power plant damaged beyond repair - Temperatures forecast to -30C; acute humanitarian crisis deepening - Ukraine’s electricity imports jumped 40% in January (894 GWh) indicating severe generation capacity loss</p>
+<p><strong>Implications:</strong> Military hotline restoration suggests both sides hedging against uncontrolled escalation while maintaining operational tempo. Starlink cutoff demonstrates Musk’s tactical leverage over Russian operations but raises reliability concerns for Ukrainian forces. GRU general shooting follows pattern of Ukrainian “liquidations” targeting leadership (Lt. Gen.&nbsp;Igor Kirillov killed Dec 2024, others throughout 2023-2025). Russian planning for summer offensive without strategic reserves indicates grinding attrition warfare continuation rather than decisive operational breakthrough capacity. Zelenskyy’s casualty disclosure (55,000 killed) significantly lower than some Western estimates but serves diplomatic signaling of Ukraine’s continued resistance viability.</p>
+<p><strong>Outlook (24-72h):</strong> Low probability of substantive peace agreement progress despite military dialogue restoration. High probability of continued mutual deep strikes on critical infrastructure. Monitor for additional Ukrainian strikes on Russian IRBM/hypersonic missile facilities. Assess Russian reprisal operations for GRU assassination attempt. Watch for Starlink service disruptions affecting Ukrainian forces as Russia seeks workarounds.</p>
+<hr>
+</section>
+<section id="iran-mass-executions-consolidate-post-massacre-control-nuclear-talks-begin" class="level3">
+<h3 class="anchored" data-anchor-id="iran-mass-executions-consolidate-post-massacre-control-nuclear-talks-begin"><strong>IRAN: Mass Executions Consolidate Post-Massacre Control; Nuclear Talks Begin</strong></h3>
+<p><strong>Assessment:</strong> The regime’s execution of 72 individuals in one week (late January) represents systematic application of capital punishment to eliminate uprising leadership and deter future mobilization, while nuclear talks in Oman Feb 7 suggest Khamenei prioritizing deterrence of US military action over domestic legitimacy concerns. <strong>(High Confidence)</strong></p>
+<p><strong>Key Developments:</strong></p>
+<p><strong>Repression Intensification:</strong> - <strong>Mass Executions:</strong> 72 executed in less than one week (late January); charges include “moharebeh” (waging war against God), applied to protesters labeled “rioters and terrorists” - <strong>Enforced Disappearances:</strong> Four sisters (Niusha Nakhai, Mona Nakhai, Kimia Davoudi, Tara Davoudi) arrested in Tehran, whereabouts unknown for 2-3 weeks; pattern of isolation without family/lawyer access - <strong>Medical Coercion:</strong> Continued reports of detained protesters forcibly injected with unknown substances linked to deaths in custody; security forces raiding hospitals to seize wounded (Imam Khomeini Hospital, Ilam) - <strong>Digital Siege:</strong> Internet shutdowns costing Iran $1.56M per hour; $27-29B digital economy threatened; 90M+ people disrupted</p>
+<p><strong>Death Toll Dynamics (as of Feb 5-7):</strong> - <strong>HRANA (US-based):</strong> 18,571 total cases; 6,941 confirmed deaths (6,495 protesters, 146 minors); 11,630 under investigation - <strong>Iran International:</strong> 6,634 documented with names/photos/circumstances; fewer than 100 overlap with regime’s official list - <strong>Britannica/Academic Estimates:</strong> Ministry of Health internal estimates indicated “at least 30,000 killed in first 48 hours” (Jan 8-9) - <strong>UK House of Commons:</strong> 6,092 protesters killed per HRANA (Jan 28-29 data); ~42,500 detained - <strong>Regime’s Official Claim:</strong> 3,117 total (2,447 civilians/security forces, remainder “terrorists”); list of 2,986 names published but largely unverifiable</p>
+<p><strong>Diplomatic/Military Developments:</strong> - <strong>US-Iran Nuclear Talks:</strong> Resumed in Oman Feb 7 after initial round concluded without breakthrough; US pushing broader agenda (ballistic missiles, regional activities); Iran insists nuclear-only focus - <strong>US Naval Posture:</strong> USS Abraham Lincoln carrier strike group in Arabian Sea; shot down Iranian Shahed-139 drone that “aggressively approached” carrier early February - <strong>Virtual Embassy Alert:</strong> US Virtual Embassy in Iran urged American citizens to leave immediately Feb 6-7 - <strong>Trump Pressure:</strong> “Khamenei should be very worried” statements; threatened 25% tariffs on nations trading with Iran; considering “strong options”</p>
+<p><strong>International Sanctions Escalation:</strong> - <strong>EU IRGC Terror Listing:</strong> Formal designation as terrorist organization Feb 2026 - <strong>UK Sanctions:</strong> Feb 2 designations of 10 individuals (Interior Minister, police chiefs, IRGC members) and Law Enforcement Forces organization - <strong>US Position:</strong> White House “very skeptical” negotiations will succeed despite ongoing talks</p>
+<p><strong>Foreign Militia Deployment:</strong> - 800+ Iraqi militia members (Kata’ib Hezbollah, Harakat al-Nujaba, Sayyid al-Shuhada, Badr Organisation) sent to Iran via Shalamcheh, Chazabeh, Khosravi border crossings under “pilgrimage” cover - Lebanese Hezbollah, Pakistani Liwa Zainabiyoun, Afghan Liwa Fatemiyoun reported assisting suppression operations</p>
+<p><strong>Resistance Activities:</strong> - <strong>Berlin Free Iran Rally:</strong> Scheduled Feb 7; Paris exhibitions Feb 5 in solidarity with uprising - <strong>Underground Medical Network:</strong> “Red Lion and Sun” network treating wounded protesters covertly - <strong>Funeral Resistance:</strong> Reports of dancing at massacre victims’ funerals as resistance symbol</p>
+<p><strong>Implications:</strong> Mass executions within weeks of massacre indicate regime confidence in having reasserted control through overwhelming force, yet simultaneous deployment of foreign militias suggests domestic security force reliability concerns. Nuclear talks timing suggests Khamenei calculus prioritizes averting US military strikes over domestic opposition—regime views external threats as existential, internal dissent as manageable through violence. Economic costs of internet shutdowns ($1.56M/hour) compounding with sanctions creating compound economic crisis, but regime demonstrating willingness to sacrifice economic functionality for information control. IRGC terror listing by EU creates additional financial/operational constraints on regime’s external operations.</p>
+<p><strong>Energy Security Assessment:</strong> Iran’s 3.3M bpd production at risk from multiple vectors: (1) labor strikes by oil workers (currently unreported but potential), (2) infrastructure sabotage by opposition, (3) US military strikes on nuclear/military facilities potentially hitting energy sector, (4) regime chaos if elite fracturing accelerates. Oil markets pricing modest risk premium ($3-5/bbl) but underestimating potential for rapid supply disruption.</p>
+<p><strong>Outlook (24-72h):</strong> Moderate probability of additional executions as regime works through detained protesters’ “trials.” Low probability of nuclear talks breakthrough given agenda disagreements. High probability of continued low-intensity resistance (funeral gatherings, nighttime chanting). Monitor for oil worker actions in Khuzestan/southern fields. Assess for clerical establishment fissures as additional former officials potentially break silence. Watch US carrier group positioning for military action indicators.</p>
+<hr>
+</section>
+<section id="levant-israels-lebanon-strikes-reach-14-month-high" class="level3">
+<h3 class="anchored" data-anchor-id="levant-israels-lebanon-strikes-reach-14-month-high"><strong>LEVANT: Israel’s Lebanon Strikes Reach 14-Month High</strong></h3>
+<p><strong>Assessment:</strong> Norwegian Refugee Council documentation of 50+ Israeli air raids in January 2026—double December’s total—demonstrates escalatory trajectory contradicting ceasefire commitments. Israel’s chemical spraying operations and targeting of reconstruction equipment indicate strategy to prevent southern Lebanon rehabilitation, creating conditions for indefinite displacement of 64,000+ Lebanese. <strong>(High Confidence)</strong></p>
+<p><strong>Key Developments:</strong></p>
+<p><strong>Escalation Metrics:</strong> - <strong>January Raid Total:</strong> 50+ air raids (Norwegian Refugee Council), highest monthly level since Nov 2024 ceasefire; 100% increase over December - <strong>14-Month Totals:</strong> 330+ killed since ceasefire (including 127+ civilians), 11,000+ violations documented by UNIFIL (7,500 airspace, 2,500 ground) - <strong>Displacement Persistence:</strong> 64,000 Lebanese remain displaced 14 months post-ceasefire; reconstruction efforts “hampered” by Israeli targeting of construction equipment</p>
+<p><strong>Recent Strike Pattern (Late Jan-Early Feb):</strong> - <strong>Targeting Profile:</strong> Alleged Hezbollah operatives “restoring infrastructure,” weapons storage, heavy machinery for reconstruction - <strong>Geographic Spread:</strong> Strikes in Tyre, Bint Jbeil, Nabatieh, Marjayoun, Jezzine districts; both south of Litani and beyond - <strong>Civilian Impact:</strong> Residential buildings, agricultural land reclamation sites, marble factories targeted alongside military objectives</p>
+<p><strong>Environmental Warfare Allegations:</strong> - <strong>Chemical Spraying:</strong> Israeli aircraft sprayed “unknown substance” over southern Lebanese towns Feb 5-6; President Aoun accused Israel of “environmental crime” - <strong>UNIFIL Statement:</strong> UN peacekeepers reported Feb 3 Israeli aircraft dropping “unknown chemical substance” near Blue Line, delaying observer activities 9 hours; IDF claimed “non-toxic” - <strong>Historical Precedent:</strong> Echoes of Agent Orange/defoliant concerns; potential crop destruction/contamination strategy</p>
+<p><strong>Hezbollah Posture:</strong> - <strong>Restraint Continued:</strong> Only 1 attack in 14 months (December rocket fire, no casualties); Israel responded by killing 11 - <strong>Leadership Statements:</strong> Naim Qassem reiterated refusal to accept Phase 2 disarmament (Litani to Awali River) unless Israel abides by ceasefire - <strong>Organizational Status:</strong> Weakened from 2024 war (most military leadership killed including Nasrallah); Syrian regime fall disrupted Iran supply route; strategic deterrence capacity degraded</p>
+<p><strong>Lebanese Government Response:</strong> - <strong>LAF Phase 2 Plan:</strong> Disarmament proposal from Litani River to Awali River (south of Beirut) to be presented to Cabinet in February - <strong>International Diplomacy:</strong> Paris conference March 5 for LAF support; seeking Saudi, French, Qatari, Egyptian backing to pressure US to constrain Israel - <strong>Aoun’s Criticism:</strong> President condemned Israeli “policy of systematic aggression” directly targeting civilians Feb 6-7</p>
+<p><strong>Implications:</strong> NRC assessment that January strikes represent “clear and dangerous surge” validates concerns about Israeli strategy shift from targeted counter-terror to systematic infrastructure degradation. Chemical spraying allegations, if substantiated, would constitute war crime under international humanitarian law and represent dramatic escalation in methods. Israel’s occupation of 5 positions and continued strikes despite LAF Phase 1 completion indicates Jerusalem views ceasefire as unilateral Lebanese obligation, not reciprocal commitment.</p>
+<p>Hezbollah’s extraordinary restraint (1 attack vs 11,000+ Israeli violations) reflects organizational incapacity rather than strategic choice—group fears Israeli retaliation would complete its military destruction. LAF caught in impossible position: disarm Hezbollah (risking civil conflict) while Israel prevents reconstruction (undermining Lebanese state capacity). Lebanese state’s appeal to non-US partners (France, Saudi Arabia, Qatar) indicates recognition that Washington unwilling/unable to constrain Israeli operations.</p>
+<p><strong>Outlook (24-72h):</strong> High probability of continued Israeli strikes at elevated tempo. Moderate probability of chemical spraying operations intensifying if crop destruction proven effective. Low probability of Hezbollah retaliation unless casualties spike dramatically. Monitor LAF Cabinet presentation on Phase 2 disarmament for domestic political reaction. Assess March 5 Paris conference preparations for international pressure indicators. Watch for Israeli strikes potentially targeting Phase 2 disarmament zones preemptively.</p>
+<hr>
+</section>
+<section id="energy-markets-iran-us-talks-drive-volatility-oversupply-fundamentals-persist" class="level3">
+<h3 class="anchored" data-anchor-id="energy-markets-iran-us-talks-drive-volatility-oversupply-fundamentals-persist"><strong>ENERGY MARKETS: Iran-US Talks Drive Volatility; Oversupply Fundamentals Persist</strong></h3>
+<p><strong>Assessment:</strong> Oil prices oscillating between geopolitical risk premium from Iran-US tensions and bearish fundamentals from global oversupply, creating volatility conducive to neither energy security planning nor investment certainty. Winter Storm Fern impacts and Saudi price cuts signal deeper structural challenges. <strong>(Moderate to High Confidence)</strong></p>
+<p><strong>Price Action (Feb 5-7):</strong> - <strong>WTI Crude:</strong> Trading $63-67/bbl range; choppy action reflecting Iran-US negotiation uncertainty - <strong>Brent Crude:</strong> $67-72/bbl; briefly breached $72 (6-month high) on Iran tensions before retreating - <strong>Weekly Trend:</strong> First weekly decline in seven weeks; geopolitical risk premium dissipating as Oman talks commence</p>
+<p><strong>Key Drivers:</strong></p>
+<p><strong>1. Iran-US Nuclear Standoff:</strong> - <strong>Geopolitical Premium:</strong> Analysts estimate $7-8/bbl added from Iran conflict risk - <strong>Supply at Risk:</strong> Iran’s 3.3M bpd production threatened by potential US military action, labor strikes, or infrastructure sabotage - <strong>Strait of Hormuz:</strong> 20% of global oil/gas supply transits chokepoint; heightened naval activity (USS Abraham Lincoln strike group) - <strong>Market Reaction:</strong> Prices spiked on Trump threats, retreated on Oman talks announcement, volatility high pending outcome</p>
+<p><strong>2. Oversupply Fundamentals:</strong> - <strong>EIA Forecast:</strong> Brent averaging $56/bbl in 2026 (19% below 2025), $54/bbl in 2027 - <strong>Production vs.&nbsp;Demand:</strong> Global production exceeding consumption; inventories rising - <strong>Surplus Estimates:</strong> 2.1-4M bpd surplus forecast for H1 2026 (EIA, IEA, BloombergNEF) - <strong>OPEC+ Response:</strong> Maintained voluntary cuts through March at Feb 1 virtual meeting; holding 2.5M bpd spare capacity (primarily Saudi Arabia)</p>
+<p><strong>3. Saudi Arabia Price Signal:</strong> - <strong>Asian Grade Cuts:</strong> Reduced prices for main crude grade to Asia to lowest since late 2020, signaling oversupply - <strong>Demand Confidence:</strong> Smaller-than-expected cut suggests some optimism on Asian demand resilience</p>
+<p><strong>4. Winter Storm Fern Impacts:</strong> - <strong>US Inventories:</strong> API reported 11.1M barrel draw (week ending Feb 4)—significantly exceeding market expectations of 640K barrels - <strong>Production Disruptions:</strong> Permian Basin freeze-offs, refinery run reductions, infrastructure impacts - <strong>Distillate Draw:</strong> 4.8M barrel decline; gasoline inventories rose 4.7M barrels - <strong>Regional Heating:</strong> Belgorod Oblast (Russia) weeks-long outages from Ukrainian strikes; heating at 50% capacity</p>
+<p><strong>5. Demand-Side Factors:</strong> - <strong>US Production:</strong> Record 13.6M bpd in 2025 but forecast to decline 1% in 2026, 2% in 2027 as low prices constrain drilling - <strong>Natural Gas Collapse:</strong> Henry Hub prices halved to $3.48/MMBtu from $7+ after milder weather forecasts - <strong>Gasoline Prices:</strong> US retail forecast to average $2.90/gal in 2026 (down ~$0.20 from 2025)</p>
+<p><strong>Forecaster Divergence:</strong> - <strong>Company Expectations:</strong> Dallas Fed survey respondents expect $64/bbl average in 2026 (down from $70 expectation in early 2025) - <strong>Independent Forecasts:</strong> EIA, IEA project WTI in low-to-mid $50s - <strong>Long Forecast:</strong> WTI fluctuating around $62.80/bbl in 2026, high of $66.20 in March - <strong>McKinsey 2040:</strong> $50-60/bbl range driven by flat production costs and energy transition pressures</p>
+<p><strong>Investment Implications:</strong> - <strong>US Shale Stress:</strong> Small/mid-cap E&amp;P companies face acute pressure; drilling activity cuts accelerating - <strong>Major Producers:</strong> ExxonMobil, Chevron, ConocoPhillips maintaining/increasing activity betting on 2027+ recovery despite 2026 weakness - <strong>Downstream Impacts:</strong> West Coast refinery closures affecting regional gasoline prices; crack spreads rising despite crude decline</p>
+<p><strong>Outlook (24-72h):</strong></p>
+<p><strong>Scenario 1 - Diplomatic Progress (40% probability):</strong> Iran-US talks show signs of “freeze-for-freeze” (enrichment pause for sanctions relief); oil retreats toward $60 WTI, $63 Brent; risk premium dissipates</p>
+<p><strong>Scenario 2 - Talk Breakdown (35% probability):</strong> Negotiations collapse on agenda disagreements; US military posture escalates; oil spikes to $70-75 WTI, $75-80 Brent on supply disruption fears</p>
+<p><strong>Scenario 3 - Muddle Through (25% probability):</strong> Talks continue inconclusively; prices range-bound $63-67 WTI as markets await clarity; fundamentals gradually reassert downward pressure</p>
+<p><strong>Critical Variables:</strong> (1) Iran-US talks outcome in Oman, (2) US carrier strike group positioning, (3) Iranian oil worker actions, (4) OPEC+ March meeting decisions, (5) Chinese economic data releases</p>
+<hr>
+</section>
+</section>
+<section id="watch-items-24-72h-horizon" class="level2">
+<h2 class="anchored" data-anchor-id="watch-items-24-72h-horizon">WATCH ITEMS (24-72h Horizon)</h2>
+<section id="critical-priority" class="level3">
+<h3 class="anchored" data-anchor-id="critical-priority"><strong>Critical Priority:</strong></h3>
+<ol type="1">
+<li><strong>Iran-US Nuclear Talks in Oman:</strong> Outcome determines oil price trajectory; watch for “freeze-for-freeze” proposals or breakdown triggering military escalation</li>
+<li><strong>Berlin Free Iran Rally (Feb 7):</strong> Diaspora mobilization indicator; potential for regime response targeting organizers’ families in Iran</li>
+<li><strong>Ukrainian Starlink Reliability:</strong> Monitor for Russian workarounds or Ukrainian service disruptions as Moscow retaliates for terminal cutoff</li>
+<li><strong>Russian GRU General Assassination:</strong> Assess Kremlin response; potential for major Ukrainian target reprisal</li>
+</ol>
+</section>
+<section id="high-priority" class="level3">
+<h3 class="anchored" data-anchor-id="high-priority"><strong>High Priority:</strong></h3>
+<ol type="1">
+<li><strong>Israel-Lebanon Chemical Warfare:</strong> UNIFIL/independent testing of sprayed substances; potential war crimes documentation</li>
+<li><strong>Iranian Mass Executions:</strong> Monitor for additional death sentences; watch prison conditions for detained protesters</li>
+<li><strong>Russian Summer Offensive Preparations:</strong> ISW tracking of reserve mobilization; assess whether Kremlin can address strategic reserve deficit</li>
+<li><strong>Lebanon LAF Phase 2 Disarmament Plan:</strong> Cabinet presentation and domestic political reaction; Hezbollah response to expanded disarmament</li>
+</ol>
+</section>
+<section id="medium-priority" class="level3">
+<h3 class="anchored" data-anchor-id="medium-priority"><strong>Medium Priority:</strong></h3>
+<ol type="1">
+<li><strong>Oil Worker Strikes (Iran):</strong> Khuzestan/southern fields for labor action indicators</li>
+<li><strong>Ukrainian Energy Reconstruction:</strong> Assess repair timelines for critical generation capacity</li>
+<li><strong>OPEC+ March Meeting:</strong> Saudi Arabia production decision; spare capacity deployment considerations</li>
+<li><strong>US-China Iran Coordination:</strong> Trump-Xi discussions on Iran trade isolation</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="annex-businessfinancial-indicators-implications" class="level2">
+<h2 class="anchored" data-anchor-id="annex-businessfinancial-indicators-implications">ANNEX: BUSINESS/FINANCIAL INDICATORS &amp; IMPLICATIONS</h2>
+<section id="energy-markets---february-7-2026" class="level3">
+<h3 class="anchored" data-anchor-id="energy-markets---february-7-2026"><strong>Energy Markets - February 7, 2026</strong></h3>
+<p><strong>Current Prices:</strong> - <strong>WTI:</strong> $63-67/bbl (volatile, first weekly decline in 7 weeks) - <strong>Brent:</strong> $67-72/bbl (touched 6-month high before retreating) - <strong>Henry Hub Natural Gas:</strong> $3.48/MMBtu (halved from $7+ on weather)</p>
+<p><strong>Geopolitical Risk Premium Analysis:</strong> The $7-8/bbl Iran premium reflects modest probability-weighted scenarios: - 60% baseline: talks muddle through, no disruption ($0 premium) - 25% disruption: limited strikes or labor actions, 0.5-1M bpd offline ($15-20 premium) - 10% major disruption: Strait of Hormuz restrictions, 2-3M bpd offline ($40-50 premium) - 5% full closure: Regional war, 5M+ bpd offline ($80-100 premium)</p>
+<p>Current pricing suggests market significantly underweighting tail risks given: - Active US carrier deployment - Iranian chemical weapons use reports (detention center injections) - Regime facing existential legitimacy crisis - Trump’s “Khamenei should be very worried” rhetoric</p>
+<p><strong>Fundamental Oversupply Reality:</strong> Despite geopolitical noise, structural oversupply dominates H2 2026 outlook: - 2.1-4M bpd surplus forecast - US shale production declining as prices pressure breakevens ($55-60 range for most Permian producers) - OPEC+ spare capacity (2.5M bpd) acts as ceiling on price spikes - Energy transition accelerating demand destruction in developed markets</p>
+<p><strong>Investment Strategy Implications:</strong></p>
+<p><strong>Energy Sector:</strong> - <strong>Majors:</strong> ExxonMobil, Chevron, ConocoPhillips playing long game; betting $64 company expectations wrong but positioning for 2027+ recovery - <strong>Independents:</strong> High distress risk; small/mid-cap E&amp;P companies cutting capex, facing covenant pressures - <strong>Services:</strong> Declining rig count (down 15% in early 2025) pressuring Schlumberger, Halliburton, Baker Hughes</p>
+<p><strong>Defense/Aerospace:</strong> - Elevated from multiple theaters (Ukraine, Iran, Lebanon) - US carrier deployment sustaining readiness spending - Israeli operations requiring continued munitions replenishment</p>
+<p><strong>Emerging Markets:</strong> - Iranian rial at 145,000 tomans/USD; 56% depreciation in 6 months creating contagion concerns for other sanctioned/fragile economies - Lebanese pound under pressure from reconstruction uncertainty and Israeli operations - Ukrainian electricity crisis requiring massive EU financial support</p>
+<p><strong>Geopolitical Hedge Assets:</strong> - Gold elevated (recent all-time highs near $4,630/oz) - Bitcoin volatile, tracking risk sentiment - Defense stocks (Lockheed Martin, Raytheon, Northrop Grumman) elevated</p>
+</section>
+<section id="hour-market-catalyst-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="hour-market-catalyst-assessment"><strong>72-Hour Market Catalyst Assessment:</strong></h3>
+<p><strong>Upside Oil Risks ($70-75 WTI):</strong> - Iran-US talks collapse with Trump ordering military strikes - Iranian oil worker strikes in Khuzestan fields - Hezbollah major retaliation triggering Israel-Lebanon escalation - Russian deep strike on Ukrainian decision-making centers</p>
+<p><strong>Downside Oil Risks ($58-62 WTI):</strong> - Iran-US “freeze-for-freeze” agreement announced - OPEC+ surprise production increase at March meeting - Chinese economic data disappoints significantly - Mild winter weather persists, crushing natural gas and heating oil demand</p>
+<p><strong>Base Case ($63-67 WTI):</strong> - Iran-US talks continue inconclusively - Geopolitical developments offset but don’t eliminate risk premium - Oversupply fundamentals gradually exert downward pressure into Q2 2026 - Volatility remains elevated but prices range-bound pending clarity</p>
+<hr>
+</section>
+</section>
+<section id="sources-references" class="level2">
+<h2 class="anchored" data-anchor-id="sources-references">SOURCES &amp; REFERENCES</h2>
+<section id="primary-sources" class="level3">
+<h3 class="anchored" data-anchor-id="primary-sources">Primary Sources:</h3>
+<ol type="1">
+<li><strong>Institute for the Study of War (ISW)</strong> - Ukraine assessments, Russian offensive planning, Feb 6-7</li>
+<li><strong>US Department of Defense / CENTCOM</strong> - USS Abraham Lincoln operations, Iranian drone incident</li>
+<li><strong>Ukrainian Presidential Office / General Staff</strong> - Casualty figures, offensive operations claims</li>
+<li><strong>Human Rights Activists News Agency (HRANA)</strong> - Iran protest deaths documentation</li>
+<li><strong>National Council of Resistance of Iran (NCRI)</strong> - Execution reports, Berlin rally coordination</li>
+<li><strong>Norwegian Refugee Council</strong> - Lebanon strike frequency documentation</li>
+<li><strong>UNIFIL</strong> - Chemical spraying reports, Blue Line violations</li>
+<li><strong>US Energy Information Administration</strong> - Oil price forecasts, production outlook</li>
+</ol>
+</section>
+<section id="regional-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="regional-reporting">Regional Reporting:</h3>
+<ol start="9" type="1">
+<li><strong>Kyiv Independent</strong> - Ukrainian military developments, Starlink cutoff</li>
+<li><strong>Al Jazeera</strong> - Iran protests, Lebanon strikes, Ukraine prisoner swap</li>
+<li><strong>CBS News / CNN</strong> - GRU assassination attempt, Starlink analysis</li>
+<li><strong>PBS News / Washington Post</strong> - Iran regime consolidation, US skepticism on talks</li>
+<li><strong>The Times of Israel</strong> - Israeli operations, chemical spraying justifications</li>
+<li><strong>Iran International</strong> - Independent death toll documentation, regime analysis</li>
+</ol>
+</section>
+<section id="analytical-sources" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-sources">Analytical Sources:</h3>
+<ol start="15" type="1">
+<li><strong>Russia Matters</strong> - Territorial control metrics, casualty estimates</li>
+<li><strong>Euronews</strong> - US-Russia military dialogue restoration</li>
+<li><strong>FDD’s Long War Journal</strong> - Israeli operations tactical tracking</li>
+<li><strong>UK House of Commons Library</strong> - Iran protests parliamentary briefing</li>
+<li><strong>UConn Today</strong> - Academic Iran uprising analysis</li>
+<li><strong>Britannica</strong> - Iran protests encyclopedic documentation</li>
+</ol>
+</section>
+<section id="financial-energy" class="level3">
+<h3 class="anchored" data-anchor-id="financial-energy">Financial &amp; Energy:</h3>
+<ol start="21" type="1">
+<li><strong>OilPrice.com</strong> - Market analysis, geopolitical risk premium estimates</li>
+<li><strong>Trading Economics</strong> - Real-time commodity pricing, technical analysis</li>
+<li><strong>Standard Chartered</strong> - Oil market sentiment analysis</li>
+<li><strong>Dallas Fed Energy Survey</strong> - Producer expectations, breakeven analysis</li>
+<li><strong>Financial Content / Energy Intelligence</strong> - Iran-US standoff energy impacts</li>
+</ol>
+</section>
+<section id="official-statements" class="level3">
+<h3 class="anchored" data-anchor-id="official-statements">Official Statements:</h3>
+<ol start="26" type="1">
+<li><strong>White House / Trump Administration</strong> - Iran warnings, nuclear talk skepticism</li>
+<li><strong>Russian Foreign Ministry</strong> - GRU assassination blame, ceasefire claims</li>
+<li><strong>Lebanese Presidential Office</strong> - Aoun’s environmental crime accusations</li>
+<li><strong>Iranian Foreign Ministry</strong> - Nuclear talk parameters, US criticisms</li>
+<li><strong>Ukrainian Defense Ministry</strong> - Starlink deactivation confirmation, operations updates</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="methodology-note" class="level2">
+<h2 class="anchored" data-anchor-id="methodology-note">METHODOLOGY NOTE</h2>
+<p>This brief synthesizes open-source intelligence from overnight February 6-7, 2026, using IC-standard estimative language. Confidence assessments reflect source quality, corroboration level, and analytical judgment.</p>
+<p><strong>Source Reliability Notes:</strong> Iranian death toll figures show significant variance between regime claims (3,117), human rights organizations (6,900-7,000 verified with 11,000+ under investigation), and leaked internal documents suggesting 30,000+ in first 48 hours. Brief presents full range to allow policymaker judgment. Oil price forecasts similarly divergent; brief presents institutional consensus while noting company expectations remain higher.</p>
+<p><strong>Collection Gaps:</strong> Real-time verification of chemical substances sprayed in Lebanon pending; reliance on UNIFIL observer reports and Lebanese government claims. Russian Summer 2026 offensive planning assessed through ISW open-source analysis but lacking access to classified Russian military planning documents.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<hr style="margin-top:2em;margin-bottom:1em;">
+
+<p><strong>Disclaimer:</strong> The LLM Daily Brief (LDB), or any Special Brief (SB) is automatically generated from open-source material and may contain errors, omissions, or outdated information. It is provided “as is,” without warranties of any kind, express or implied. The LDB/SB is not investment, legal, security, or policy advice and must not be relied upon for decision-making. You are responsible for independently verifying facts and conclusions with primary sources and qualified professionals. Neither the author nor providers of this service accept any liability for losses or harms arising from use of this content. No duty to update is assumed.</p>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
