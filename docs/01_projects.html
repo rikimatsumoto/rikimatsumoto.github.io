@@ -128,10 +128,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#global-private-default-risk-analysis-working-draft" id="toc-global-private-default-risk-analysis-working-draft" class="nav-link active" data-scroll-target="#global-private-default-risk-analysis-working-draft"><span class="header-section-number">0.1</span> Global private default risk analysis (working draft)</a></li>
-  <li><a href="#u.s.-federal-expenditure-tracker-brookings" id="toc-u.s.-federal-expenditure-tracker-brookings" class="nav-link" data-scroll-target="#u.s.-federal-expenditure-tracker-brookings"><span class="header-section-number">0.2</span> U.S. Federal Expenditure tracker (Brookings)</a></li>
-  <li><a href="#social-spending-mini-simulation" id="toc-social-spending-mini-simulation" class="nav-link" data-scroll-target="#social-spending-mini-simulation"><span class="header-section-number">0.3</span> Social spending mini-simulation</a></li>
-  <li><a href="#u.s.-tariff-trade-tracker-brookings" id="toc-u.s.-tariff-trade-tracker-brookings" class="nav-link" data-scroll-target="#u.s.-tariff-trade-tracker-brookings"><span class="header-section-number">0.4</span> U.S. Tariff &amp; Trade tracker (Brookings)</a></li>
+  <li><a href="#basic-discounted-cash-flow-dcf-analysis" id="toc-basic-discounted-cash-flow-dcf-analysis" class="nav-link active" data-scroll-target="#basic-discounted-cash-flow-dcf-analysis"><span class="header-section-number">0.1</span> Basic discounted cash flow (DCF) analysis</a></li>
+  <li><a href="#global-private-default-risk-analysis-working-draft" id="toc-global-private-default-risk-analysis-working-draft" class="nav-link" data-scroll-target="#global-private-default-risk-analysis-working-draft"><span class="header-section-number">0.2</span> Global private default risk analysis (working draft)</a></li>
+  <li><a href="#u.s.-federal-expenditure-tracker-brookings" id="toc-u.s.-federal-expenditure-tracker-brookings" class="nav-link" data-scroll-target="#u.s.-federal-expenditure-tracker-brookings"><span class="header-section-number">0.3</span> U.S. Federal Expenditure tracker (Brookings)</a></li>
+  <li><a href="#social-spending-mini-simulation" id="toc-social-spending-mini-simulation" class="nav-link" data-scroll-target="#social-spending-mini-simulation"><span class="header-section-number">0.4</span> Social spending mini-simulation</a></li>
+  <li><a href="#u.s.-tariff-trade-tracker-brookings" id="toc-u.s.-tariff-trade-tracker-brookings" class="nav-link" data-scroll-target="#u.s.-tariff-trade-tracker-brookings"><span class="header-section-number">0.5</span> U.S. Tariff &amp; Trade tracker (Brookings)</a></li>
   </ul>
 </nav>
     </div>
@@ -160,8 +161,15 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored">
 hello! here are some of the projects I’ve worked on.
 </h2>
-<section id="global-private-default-risk-analysis-working-draft" class="level3" data-number="0.1">
-<h3 data-number="0.1" class="anchored" data-anchor-id="global-private-default-risk-analysis-working-draft"><span class="header-section-number">0.1</span> Global private default risk analysis (working draft)</h3>
+<section id="basic-discounted-cash-flow-dcf-analysis" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="basic-discounted-cash-flow-dcf-analysis"><span class="header-section-number">0.1</span> Basic discounted cash flow (DCF) analysis</h3>
+<p>
+I created this web-app to automate basic Monte Carlo DCF analysis for publicly traded companies (with data available via Yahoo Finance). Enter a ticker and it pulls live financials from Yahoo Finance, estimates WACC via CAPM, projects free cash flows, and calculates an intrinsic value per share. It runs Monte Carlo simulations to quantify uncertainty, offering a configurable sensitivity table color-coded against the market price, and backtesting the model against historical data to see if past signals were directionally correct. The risk-free rate is auto-fetched from FRED. Built with Python, Streamlit, and Plotly.
+</p>
+<p><a href="hhttps://app-naivedcf.streamlit.app" target="_blank">Streamlit application</a></p>
+</section>
+<section id="global-private-default-risk-analysis-working-draft" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="global-private-default-risk-analysis-working-draft"><span class="header-section-number">0.2</span> Global private default risk analysis (working draft)</h3>
 <p>
 I created this web-app to perform predictive analytics that estimates private default risk at the country-level using World Bank GEMS default-rate data as the target variable and IMF Financial Development Index indicators, along with macroeconomic fundamentals, as the feature set. Technical features:
 </p>
@@ -191,24 +199,24 @@ I created this web-app to perform predictive analytics that estimates private de
 <iframe src="https://rikimatsumoto.shinyapps.io/rshiny-defaultrisksom/" width="100%" height="600" frameborder="0" style="border:1px solid black;">
 </iframe>
 </section>
-<section id="u.s.-federal-expenditure-tracker-brookings" class="level3" data-number="0.2">
-<h3 data-number="0.2" class="anchored" data-anchor-id="u.s.-federal-expenditure-tracker-brookings"><span class="header-section-number">0.2</span> U.S. Federal Expenditure tracker (Brookings)</h3>
+<section id="u.s.-federal-expenditure-tracker-brookings" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="u.s.-federal-expenditure-tracker-brookings"><span class="header-section-number">0.3</span> U.S. Federal Expenditure tracker (Brookings)</h3>
 <p>
 For some interesting work I did with some colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending)
 </p>
 <iframe src="https://www.brookings.edu/articles/tracking-federal-expenditures-in-real-time/" width="100%" height="600" frameborder="0" style="border:1px solid black;">
 </iframe>
 </section>
-<section id="social-spending-mini-simulation" class="level3" data-number="0.3">
-<h3 data-number="0.3" class="anchored" data-anchor-id="social-spending-mini-simulation"><span class="header-section-number">0.3</span> Social spending mini-simulation</h3>
+<section id="social-spending-mini-simulation" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="social-spending-mini-simulation"><span class="header-section-number">0.4</span> Social spending mini-simulation</h3>
 <p>
 I created this simple mini-simulation to visualize how redistribution through social spending works. It’s quite “naive” in the sense that it models the income distribution of an entire country as ten shares. However, it helped me understand how redistribution directly impacts inequality metrics like the Gini coefficient.
 </p>
 <iframe src="https://rikimatsumoto.shinyapps.io/shiny-2023-05-04-povcalnet/" width="100%" height="600" frameborder="0" style="border:1px solid black;">
 </iframe>
 </section>
-<section id="u.s.-tariff-trade-tracker-brookings" class="level3" data-number="0.4">
-<h3 data-number="0.4" class="anchored" data-anchor-id="u.s.-tariff-trade-tracker-brookings"><span class="header-section-number">0.4</span> U.S. Tariff &amp; Trade tracker (Brookings)</h3>
+<section id="u.s.-tariff-trade-tracker-brookings" class="level3" data-number="0.5">
+<h3 data-number="0.5" class="anchored" data-anchor-id="u.s.-tariff-trade-tracker-brookings"><span class="header-section-number">0.5</span> U.S. Tariff &amp; Trade tracker (Brookings)</h3>
 <p>
 During the height of the tariff uncertainty in Q1/Q2 2025, I developed a tariff tracker with my wonderful colleagues. Check it out!
 </p>
