@@ -11,11 +11,13 @@ lang: en
 
 <h2>hello! here are some of the projects I've worked on.</h2>
 
-### Basic discounted cash flow (DCF) analysis
+### Discounted cash flow (DCF) analysis tool
 
-<p>I created this web-app to automate basic Monte Carlo DCF analysis for publicly traded companies (with data available via Yahoo Finance). Enter a ticker and it pulls live financials from Yahoo Finance, estimates WACC via CAPM, projects free cash flows, and calculates an intrinsic value per share. It runs Monte Carlo simulations to quantify uncertainty, offering a configurable sensitivity table color-coded against the market price, and backtesting the model against historical data to see if past signals were directionally correct. The risk-free rate is auto-fetched from FRED. Built with Python, Streamlit, and Plotly. </p>
+<p>I created this web-app to automate basic Monte Carlo DCF analysis for publicly traded companies (with data available via Yahoo Finance). Enter a ticker and it pulls live financials from Yahoo Finance, estimates WACC via CAPM, projects free cash flows, and calculates an intrinsic value per share.</p>
 
-<a href="hhttps://app-naivedcf.streamlit.app" target="_blank" >Streamlit application</a>
+<p>It runs Monte Carlo simulations to quantify uncertainty, offering a configurable sensitivity table color-coded against the market price, and backtesting the model against historical data to see if past signals were directionally correct. The risk-free rate is auto-fetched from FRED. Built with Python, Streamlit, and Plotly. </p>
+
+<a href="https://app-naivedcf.streamlit.app" target="_blank" >Streamlit application</a>
 
 ### Global private default risk analysis (working draft)
 <p>I created this web-app to perform predictive analytics that estimates private default risk at the country-level using World Bank GEMS default-rate data as the target variable and IMF Financial Development Index indicators, along with macroeconomic fundamentals, as the feature set. Technical features:</p>
