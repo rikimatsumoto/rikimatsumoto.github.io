@@ -9,6 +9,7 @@ main.content {
 
 body {
   font-family: Arial, sans-serif;
+  font-size: 1em; /* e.g., 16px, 1em, 100%, medium */
   margin: auto;
   padding: 2rem;
 }

@@ -12,7 +12,7 @@ lang: en
 <h2>what I've (co-)written</h2>
 
 ### [Benchmarking Human Capital Spending Efficiency Using Bootstrapped Data Envelopment Analysis](https://medium.com/@rikimatsumoto/benchmarking-human-capital-spending-efficiency-using-monte-carlo-data-envelopment-analysis-6b184d2a6c77)
-  <p>I demonstrate how to conduct Bootstrapped Data Envelopment Analysis (DEA) and generate distributions of efficiency scores. I examine expenditures in health and education and cross-country variation in human capital and find large potential efficiency gains for developing countries.</p>
+<p>I demonstrate how to conduct Bootstrapped Data Envelopment Analysis (DEA) and generate distributions of efficiency scores. I examine expenditures in health and education and cross-country variation in human capital and find large potential efficiency gains for developing countries.</p>
 
 ### [Back-of-Envelope Series: Estimating spending needs to meet SDG 2](https://medium.com/@rikimatsumoto/back-of-envelope-series-estimating-spending-needs-to-meet-sdg-2-02ed96d41247)
 <p> I started a new series called the “Back-of-Envelope” Policy Series, where I calculate (very) rough estimates of a policy issue that interests me. For the inaugural “Back-of-Envelope” note, I estimated costs to meet “minimum hunger and nutrition needs” under specific scenarios.</p>
@@ -20,6 +20,9 @@ lang: en
 
 ### [(IMF Working Paper) Guaranteed Minimum Income Schemes in Europe: Landscape and Design](https://www.imf.org/en/Publications/WP/Issues/2021/07/02/Guaranteed-Minimum-Income-Schemes-in-Europe-Landscape-and-Design-461341)
 <p> This paper provides an overview of the design of means-tested Guaranteed Minimum Income schemes, which constitute an important component of social protection systems in European countries. It discusses how key design features differ across countries, including how countries balance the primary objective of poverty alleviation against the desire to both manage the work disincentives inherent in such programs and contain fiscal cost.</p>
+
+### [Simulating disease outbreak in a workplace environment using R](https://medium.com/@rikimatsumoto/simulating-the-outbreak-of-disease-in-a-workplace-environment-using-r-cfb16e512246)
+In this analysis, I explain how to create a discrete-event simulation (DES) of an infectious disease within a workplace environment using a modified Susceptible-Infectious-Recovered (SIR) framework.
 
 ### [(IMF Working Paper) Challenges Facing SSNs in Emerging and Developing Economies](https://www.imf.org/en/Publications/WP/Issues/2024/05/03/Challenges-Facing-SSNs-in-Emerging-and-Developing-Economies-548582)
 <p> We show how the standard social welfare framework can be used to assess the performance of social safety nets (SSNs) in terms of targeting efficiency and budget effort. We apply this framework to the World Bank’s ASPIRE database and find that the variation in poverty alleviation achieved by SSNs in emerging markets and developing economies (EMDEs) is driven mainly by variation in budget effort. Increasing transfer spending is therefore key to strengthening SSNs in EMDEs. </p>
