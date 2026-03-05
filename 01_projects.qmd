@@ -11,6 +11,20 @@ lang: en
 
 <h2>hello! here are some of the projects I've worked on.</h2>
 
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Zetetic-LLM powered investment app
+
+A Streamlit application that converts your investment thesis into executable strategies using multiple AI models, simulates those strategies with Yahoo Finance data, and provides comprehensive performance analysis with backtesting support and estimated AI cost transparency.
+
+<a href="https://zetetic.streamlit.app" target="_blank" >Streamlit application</a>
+
+:::
+
+::: {.column width="50%"}
+
 ### Discounted cash flow (DCF) analysis tool
 
 <p>I created this web-app to automate basic Monte Carlo DCF analysis for publicly traded companies (with data available via Yahoo Finance). Enter a ticker and it pulls live financials from Yahoo Finance, estimates WACC via CAPM, projects free cash flows, and calculates an intrinsic value per share.</p>
@@ -18,6 +32,10 @@ lang: en
 <p>It runs Monte Carlo simulations to quantify uncertainty, offering a configurable sensitivity table color-coded against the market price, and backtesting the model against historical data to see if past signals were directionally correct. The risk-free rate is auto-fetched from FRED. Built with Python, Streamlit, and Plotly. </p>
 
 <a href="https://app-naivedcf.streamlit.app" target="_blank" >Streamlit application</a>
+
+:::
+
+::::
 
 ### Implementation of Lilien Index (1982) in R and Python (working draft)
 
