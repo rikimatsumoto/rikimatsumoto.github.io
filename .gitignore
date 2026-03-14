@@ -1,2 +1,19 @@
 /.quarto/
 **/*.quarto_ipynb
+
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Environment variables (Sensitive info!)
+.env
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
