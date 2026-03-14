@@ -90,7 +90,7 @@ Outside my career, I work on my [art projects](https://rikimatsumoto.github.io/a
     <span class="card-desc">Interactive tracker of federal spending patterns and trends.</span>
   </a>
 
-  <a href="https://www.imf.org/en/publications/tnm/issues/2022/10/03/imf-engagement-on-social-safety-net-issues-in-surveillance-and-program-work-524087" class="preview-card">
+  <a href="02_articles.html#imf-technical-guidance-note-imf-engagement-on-social-safety-net-issues-in-surveillance-and-program-work" class="preview-card">
     <span class="card-category">IMF</span>
     <span class="card-title">IMF Engagement on Social Safety Nets</span>
     <span class="card-desc">A Technical Guidance Note on IMF Engagement on Social Safety Net Issues in Surveillance and Program Work</span>
@@ -101,13 +101,13 @@ Outside my career, I work on my [art projects](https://rikimatsumoto.github.io/a
 <div class="preview-section-label">ART</div>
 
 <div class="preview-row">
-  <a href="art.html#lapiscine_lamp" class="preview-card">
+  <a href="art/index_art.html#lapiscine_lamp" class="preview-card">
     <span class="card-category">LATEST</span>
     <span class="card-title">DIY "La Piscine" lamp</span>
     <span class="card-desc">Fixed an estate sale lamp with custom lamp fixture and bulb.</span>
   </a>
 
-  <a href="art.html#frog_jacket" class="preview-card">
+  <a href="art/index_art.html#frog_jacket" class="preview-card">
     <span class="card-category">TEXTILE</span>
     <span class="card-title">"Frog" Button Jacket</span>
     <span class="card-desc">Customizing an embroidered jacket with 1960's Chinese rayon frog closures.</span>
