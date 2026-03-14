@@ -129,15 +129,19 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../02_articles.html"> 
-<span class="menu-text">articles &amp; papers</span></a>
+<span class="menu-text">published</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../01_projects.html"> 
-<span class="menu-text">projects</span></a>
+<span class="menu-text">code</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../essay/index_essay.html"> 
-<span class="menu-text">essays</span></a>
+<span class="menu-text">musings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../art/index_art.html"> 
+<span class="menu-text">art</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../cdb/index_cdb.html"> 
@@ -215,12 +219,14 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="tldr">tldr!</h2>
 <p>Facial-recognition models such as <a href="https://www.insightface.ai/research/arcface">ArcFace</a>, <a href="https://en.wikipedia.org/wiki/FaceNet">FaceNet</a>, and modern <a href="https://www.insightface.ai">InsightFace</a> pipelines rely on <strong>image detail</strong> to extract reliable facial “embeddings” (i.e., mathematical representations of the image of a face). One of the strongest predictors of recognition accuracy comes from a much more fundamental factor: <strong>the number of pixels covering the face</strong>. This post explains the mathematical relationship between <strong>camera resolution</strong>, <strong>distance</strong>, and <strong>facial-recognition accuracy</strong>, and provides a practical Python tool to measure facial image quality and associated privacy risk.</p>
 <p>Finally, this post notes that for most pedestrians walking on the street, 5-6m+ from home Ring cameras, there is likely not enough detail to extract a useful “facial-embedding” - you’re probably good!</p>
-<p><em>update:</em> Jason Koebler from 404 media recently wrote this article on how Flock <a href="https://www.404media.co/r/a43147f7?m=e23fcb51-2df3-4179-afdf-b38ab110a6c5">“left at least 60 of its people-tracking Condor PTZ cameras live streaming and exposed to the open internet.”</a></p>
+<p><em>update I:</em> Jason Koebler from 404 media recently wrote this article on how Flock <a href="https://www.404media.co/r/a43147f7?m=e23fcb51-2df3-4179-afdf-b38ab110a6c5">“left at least 60 of its people-tracking Condor PTZ cameras live streaming and exposed to the open internet.”</a></p>
+<p><em>update II:</em> After backlash, <a href="https://www.cnn.com/2026/02/13/tech/amazon-ring-flock-partnership-ice">Ring cancelled its partnership with Flock Safety in February 2026</a>, following significant public backlash after a Super Bowl ad. The integration never launched, so no Ring customer videos were ever sent to Flock Safety Ring.</p>
 <hr>
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">1. introduction</h2>
-<p>Over the past few years, consumer/government smart-camera ecosystems have come under increased scrutiny of violating personal privacy. In <a href="https://web.archive.org/web/20251001082647/https://www.theverge.com/news/788290/ring-amazon-hardware-event-price-specs">September 2025, Amazon announced a range of new 2K and 4K smart-camera devices with new AI facial recognition features</a> that stores and processes the <strong>facial embeddings of anyone passing in front of a Ring camera</strong>. Then, in October 2025, Amazon announced <a href="https://web.archive.org/web/20251201224341/https://www.cnbc.com/2025/10/16/amazon-ring-cameras-surveillance-law-enforcement-crime-police-investigations.html">Ring would partner with Flock Safety and share data with the government.</a> To be clear, <strong>Amazon is neither the first nor the only company</strong> that has released AI facial recognition features - Clearview AI, with a more law-enformence focused user-base, have also come under scrutiny.</p>
+<p>Over the past few years, consumer/government smart-camera ecosystems have come under increased scrutiny of violating personal privacy. In <a href="https://web.archive.org/web/20251001082647/https://www.theverge.com/news/788290/ring-amazon-hardware-event-price-specs">September 2025, Amazon announced a range of new 2K and 4K smart-camera devices with new AI facial recognition features</a> that stores and processes the <strong>facial embeddings of people passing in front of a Ring camera</strong> if the Familiar Faces feature is enabled (<a href="https://ring.com/support/articles/z3yhg/familiar-faces">requires a compatible Ring subscription, and is not available in Texas, Illinois, Portland, or Quebec due to legislation</a>).</p>
+<p>Then, in October 2025, Amazon announced <a href="https://web.archive.org/web/20251201224341/https://www.cnbc.com/2025/10/16/amazon-ring-cameras-surveillance-law-enforcement-crime-police-investigations.html">Ring would partner with Flock Safety and share data with the government.</a> To be clear, <strong>Amazon is neither the first nor the only company</strong> that has released AI facial recognition features - Clearview AI, with a more law-enformence focused user-base, have also come under scrutiny.</p>
 <p>Regardless, the fact remains that some individuals may worry that their <strong>face may be retained without their knowledge or consent</strong>.</p>
 <p>The proliferation of facial recognition raises an important question that many reports don’t seem to adequately answer:</p>
 <blockquote class="blockquote">
@@ -240,7 +246,7 @@ window.Quarto = {
 <li>At very close range (1–2 meters), consumer cameras can produce <strong>high-quality embeddings</strong>.<br>
 </li>
 <li>At moderate distances, recognition quality depends heavily on resolution, angle, machine learning model, lighting, and sensor size.</li>
-<li>Beyond certain pixel thresholds, a camera simply <strong>cannot</strong> extract a usable embedding, no matter what software is used. Gen AI “image enhancers” will try to claim differently, but realistically no. They impute (creating uncertainty), and do not “add” more information.</li>
+<li>Beyond certain pixel thresholds, a camera simply <strong>cannot</strong> extract a usable embedding, no matter what software is used. Gen AI “image enhancers” will try to claim differently, but realistically no. By and large, they impute (creating uncertainty), and do not “add” more information. While some super-resolution models trained on face-specific priors can improve recognitions accuracy at low resolutions, they also hallucinate plausible detail rather than recovering real data, so they cannot reliably be used for identification.</li>
 </ul>
 <p>The goal in this essay is to use a straightforward geometric framework that helps you estimate the <strong>facial pixels</strong> captured by cameras. Using just four ingredients^ - 1) camera resolution, 2) field of view, 3) real-world face size, and 4) distance - you can loosely estimate whether a facial recognition system is likely to succeed or fail. Understanding these limits enables us to think more precisely about the <strong>technical privacy implications</strong> of today’s ubiquitous home surveillance devices.</p>
 <p>^ Disclaimer! To clarify, there are more than four ingredients. For example, blur caused by movement would understandably impact facial recognition. Blur, of course, partly results from a video camera’s frame rate. Likewise, low light conditions would also affect the quality of the facial embedding. To keep things simple, I’m using a “naive” framework :P</p>
@@ -412,7 +418,7 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 <h2 class="anchored" data-anchor-id="practical-lessons-and-takeaways">5. practical lessons and takeaways</h2>
 <section id="a.-distance-acts-as-a-form-of-compression" class="level4">
 <h4 class="anchored" data-anchor-id="a.-distance-acts-as-a-form-of-compression">a. Distance acts as a form of compression!</h4>
-<p>Moving farther from the camera reduces image detail <em>exactly</em> like lowering resolution. Duh…</p>
+<p>Moving farther from the camera reduces image detail <em>exactly</em> like lowering resolution.</p>
 </section>
 <section id="b.-camera-resolution-directly-determines-usable-recognition-range" class="level4">
 <h4 class="anchored" data-anchor-id="b.-camera-resolution-directly-determines-usable-recognition-range">b. Camera resolution directly determines usable recognition range</h4>
@@ -440,7 +446,7 @@ H_{\text{scene}} = 2 D \tan\left(\frac{\theta}{2}\right).
 <section id="concluding-notes" class="level2">
 <h2 class="anchored" data-anchor-id="concluding-notes">6. concluding notes</h2>
 <p>Facial-recognition accuracy follows a simple rule: <strong>the number of pixels covering the face.</strong> Knowing this helps privacy-conscious folks estimate when a camera can reliably identify someone, setting realistic expectations for when you should be concerned. For example, a Ring device with 4K resolution, standing more than 5 meters away (like on a house’s front lawn) is <em>probably</em> safe…</p>
-<p>The distance from the house (where a camera might be placed) to the street largely depends on local zoning laws. Local codes might require houses to be a certain distance (e.g., 20-40 ft) from the street, which directly determines the minimum front yard depth. In suburban America, houses are probably located 6-12 meters (20-40 ft) from the street, so pedestrians on the street likely <em>don’t have to worry</em> about facial recognition.</p>
+<p>The distance from the house (where a camera might be placed) to the street largely depends on local zoning laws. Local codes might require houses to be a certain distance (e.g., 20-40 ft) from the street, which directly determines the minimum front yard depth. In many U.S. suburban areas, houses are probably located 6-12 meters (20-40 ft) from the street, so pedestrians on the street likely <em>don’t have to worry</em> about facial recognition.</p>
 <hr>
 </section>
 <section id="appendix" class="level2">

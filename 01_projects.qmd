@@ -1,5 +1,5 @@
 ---
-title: "projects"
+title: "code"
 format:
   html:
     toc: true
@@ -29,7 +29,7 @@ A Streamlit application that converts your investment thesis into executable str
 
 <p>I created this web-app to automate basic Monte Carlo DCF analysis for publicly traded companies (with data available via Yahoo Finance). Enter a ticker and it pulls live financials from Yahoo Finance, estimates WACC via CAPM, projects free cash flows, and calculates an intrinsic value per share.</p>
 
-<p>It runs Monte Carlo simulations to quantify uncertainty, offering a configurable sensitivity table color-coded against the market price, and backtesting the model against historical data to see if past signals were directionally correct. The risk-free rate is auto-fetched from FRED. Built with Python, Streamlit, and Plotly. </p>
+<p>It runs Monte Carlo simulations to quantify uncertainty, offering a sensitivity table color-coded against the market price, and backtesting the model against historical data to see if past signals were directionally correct. The risk-free rate is auto-fetched from FRED. Built with Python, Streamlit, and Plotly. </p>
 
 <a href="https://app-naivedcf.streamlit.app" target="_blank" >Streamlit application</a>
 

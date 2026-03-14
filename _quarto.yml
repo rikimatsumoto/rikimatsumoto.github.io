@@ -1,8 +1,8 @@
 project:
   type: website
   output-dir: docs
-  resources:                          # ← ADD THIS BLOCK
-    - "courses/LP_101_Interactive.html"                   # tells Quarto to copy this folder to docs/
+  # resources:                          # ← ADD THIS BLOCK
+  #   - "courses/LP_101_Interactive.html"                   # tells Quarto to copy this folder to docs/
 
 execute:
   dir: project
@@ -14,11 +14,13 @@ website:
       - href: index.qmd
         text: home
       - href: 02_articles.qmd
-        text: articles & papers
+        text: published
       - href: 01_projects.qmd
-        text: projects
+        text: code
       - href: essay/index_essay.html
-        text: essays
+        text: musings
+      - href: art/index_art.html
+        text: art
       - href: cdb/index_cdb.html
         text: LLM's daily brief
 

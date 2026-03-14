@@ -1,0 +1,147 @@
+---
+title: "art"
+format:
+  html:
+    toc: false
+    number-sections: false
+    theme: cosmo
+    css: styles.css
+lang: en
+---
+
+## things I've made.
+
+<!-- ============================================================
+     ART PROJECT CARDS
+
+     Each .art-card is one project. Structure:
+     ┌──────────────────────────────────────────────┐
+     │  .art-card-header  (image + date/brief)      │
+     │    .art-hero        → your project photo      │
+     │    .art-meta         → date + one-line brief   │
+     ├──────────────┬───────────────────────────────│
+     │  .art-col    │  .art-col                      │
+     │  label + text│  label + text                  │
+     └──────────────┴───────────────────────────────┘
+
+     The two column labels are whatever you want per project.
+     See BLANK TEMPLATE at the bottom of this file.
+     ============================================================ -->
+ 
+
+<!-- PROJECT: lamp -->
+
+<div class="art-card" id="lapiscine_lamp">
+<div class="art-card-header">
+<img class="art-hero" src="media/lapiscine_lamp.jpg" alt="La Piscine lamp">
+<div class="art-meta">
+<span class="art-date">2026</span>
+<span class="art-brief">DIY "La Piscine" lamp</span>
+</div>
+</div>
+<div class="art-columns">
+<div class="art-col">
+<span class="art-col-label">Inspiration</span>
+<p>An italian marble lamp from an estate sale was unfortunately missing it's original lamp shade. Inspired by a beautiful lamp from the french movie "La Piscine."</p>
+</div>
+<div class="art-col">
+<span class="art-col-label">Process</span>
+<p>I DIY'd the lamp by stripping entirely & replaced the innards from an Ace Hardware kit. Realized how simple most lamps are to construct! Found the large e-edison bulb online.</p>
+</div>
+</div>
+</div>
+
+<!-- PROJECT: lucy lamp -->
+
+<div class="art-card" id="lucy_lamp">
+<div class="art-card-header">
+<img class="art-hero" src="media/lucy_lamp.jpg" alt="Lucy the cow lamp fixture">
+<div class="art-meta">
+<span class="art-date">2025</span>
+<span class="art-brief">"Lucy the cow" light fixture</span>
+</div>
+</div>
+<div class="art-columns">
+<div class="art-col">
+<span class="art-col-label">Concept</span>
+<p>An artist was giving a cardboard cow head away for free in Washington, D.C. I took it home & wanted to upcycle the piece. </p>
+</div>
+<div class="art-col">
+<span class="art-col-label">Process</span>
+<p>Always in need of interesting lighting so I decided to turn Lucy into a light fixture. I painted her baby blue to match Lucy's personality.</p>
+</div>
+</div>
+</div>
+
+<!-- PROJECT: Frog Button Jacket -->
+
+<div class="art-card" id="frog_jacket">
+<div class="art-card-header">
+<img class="art-hero" src="media/frog_jacket.jpg" alt="Embroidered jacket with custom Chinese frog button closures">
+<div class="art-meta">
+<span class="art-date">2025</span>
+<span class="art-brief">Customizing an embroidered jacket with vintage Chinese frog closures.</span>
+</div>
+</div>
+<div class="art-columns">
+<div class="art-col">
+<span class="art-col-label">Materials</span>
+<p>1960's period Chinese rayon frog loop closures (Rose Mille). Width: 2", Length: 3-3/8". Sourced from Rose Mille.</p>
+</div>
+<div class="art-col">
+<span class="art-col-label">Process</span>
+<p>My jacket needed some closures. Hand-sewn onto existing button plackets. Paired silver-blue knotwork against the gold floral embroidery for contrast.</p>
+</div>
+</div>
+</div>
+
+
+<!-- PROJECT: Toji's worm -->
+
+<div class="art-card" id="tojisworm_crochet">
+<div class="art-card-header">
+<img class="art-hero" src="media/tojisworm_crochet.jpg" alt="Toji's worm (crocheted)">
+<div class="art-meta">
+<span class="art-date">2025</span>
+<span class="art-brief">Crocheted custom Toji's worm for Halloween.</span>
+</div>
+</div>
+<div class="art-columns">
+<div class="art-col">
+<span class="art-col-label">Concept</span>
+<p>I was reflecting on cute DIY halloween constumes while watching the latest episode of the anime Jujutsu Kaisen. I realized a Toji's worm would be a perfect complement to my existing wardrobe pieces.</p>
+</div>
+<div class="art-col">
+<span class="art-col-label">Process</span>
+<p>I mocked up a general concept and style. My lover crocheted it for me in like 48 hours!! Concept to art...</p>
+</div>
+</div>
+</div>
+
+<!--
+BLANK TEMPLATE — copy between the CUT lines, paste above, fill in.
+
+─── CUT ───
+
+<div class="art-card">
+<div class="art-card-header">
+<img class="art-hero" src="IMAGE_PATH" alt="IMAGE_ALT_TEXT">
+<div class="art-meta">
+<span class="art-date">YEAR</span>
+<span class="art-brief">ONE SENTENCE BRIEF.</span>
+</div>
+</div>
+<div class="art-columns">
+<div class="art-col">
+<span class="art-col-label">LABEL_1</span>
+<p>DESCRIPTION_1</p>
+</div>
+<div class="art-col">
+<span class="art-col-label">LABEL_2</span>
+<p>DESCRIPTION_2</p>
+</div>
+</div>
+</div>
+
+─── CUT ───
+-->

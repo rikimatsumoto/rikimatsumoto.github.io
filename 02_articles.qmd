@@ -1,5 +1,5 @@
 ---
-title: "articles & papers"
+title: "academic"
 format:
   html:
     toc: true
@@ -27,3 +27,5 @@ In this analysis, I explain how to create a discrete-event simulation (DES) of a
 ### [(IMF Working Paper) Challenges Facing SSNs in Emerging and Developing Economies](https://www.imf.org/en/Publications/WP/Issues/2024/05/03/Challenges-Facing-SSNs-in-Emerging-and-Developing-Economies-548582)
 <p> We show how the standard social welfare framework can be used to assess the performance of social safety nets (SSNs) in terms of targeting efficiency and budget effort. We apply this framework to the World Bank’s ASPIRE database and find that the variation in poverty alleviation achieved by SSNs in emerging markets and developing economies (EMDEs) is driven mainly by variation in budget effort. Increasing transfer spending is therefore key to strengthening SSNs in EMDEs. </p>
 
+### [(IMF Technical Guidance Note) IMF Engagement on Social Safety Net Issues in Surveillance and Program Work](https://www.imf.org/en/publications/tnm/issues/2022/10/03/imf-engagement-on-social-safety-net-issues-in-surveillance-and-program-work-524087)
+<p> This technical note discusses (1) the different channels through which SSN spending may become macro-critical, (2) how to assess the importance of these channels, and (3) the types of policy responses that are appropriate and the trade-offs involved in choosing among them. </p>

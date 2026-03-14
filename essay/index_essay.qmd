@@ -1,5 +1,5 @@
 ---
-title: "essays"
+title: "musings"
 execute:
   echo: false
 format:
