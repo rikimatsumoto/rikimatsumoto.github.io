@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-03-16">
+
+<title>LLM Daily Brief (LDB) – riki’s site</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">riki’s site</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../02_articles.html"> 
+<span class="menu-text">published</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../01_projects.html"> 
+<span class="menu-text">code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../essay/index_essay.html"> 
+<span class="menu-text">musings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../art/index_art.html"> 
+<span class="menu-text">art</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cdb/index_cdb.html"> 
+<span class="menu-text">daily brief</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lead-usisrael-war-on-iran-enters-day-17-strait-of-hormuz-closure-drives-oil-past-100" id="toc-lead-usisrael-war-on-iran-enters-day-17-strait-of-hormuz-closure-drives-oil-past-100" class="nav-link active" data-scroll-target="#lead-usisrael-war-on-iran-enters-day-17-strait-of-hormuz-closure-drives-oil-past-100">LEAD: US–Israel War on Iran Enters Day 17; Strait of Hormuz Closure Drives Oil Past $100</a></li>
+  <li><a href="#regional-spotlight-levant-israelhezbollah-war-reignites" id="toc-regional-spotlight-levant-israelhezbollah-war-reignites" class="nav-link" data-scroll-target="#regional-spotlight-levant-israelhezbollah-war-reignites">Regional Spotlight: Levant — Israel–Hezbollah War Reignites</a></li>
+  <li><a href="#regional-spotlight-black-sea-ukraine" id="toc-regional-spotlight-black-sea-ukraine" class="nav-link" data-scroll-target="#regional-spotlight-black-sea-ukraine">Regional Spotlight: Black Sea / Ukraine</a></li>
+  <li><a href="#regional-spotlight-south-china-sea-philippines" id="toc-regional-spotlight-south-china-sea-philippines" class="nav-link" data-scroll-target="#regional-spotlight-south-china-sea-philippines">Regional Spotlight: South China Sea / Philippines</a></li>
+  <li><a href="#regional-spotlight-latin-america-venezuela" id="toc-regional-spotlight-latin-america-venezuela" class="nav-link" data-scroll-target="#regional-spotlight-latin-america-venezuela">Regional Spotlight: Latin America / Venezuela</a></li>
+  <li><a href="#regional-spotlight-africa-sahel-horn-sudan" id="toc-regional-spotlight-africa-sahel-horn-sudan" class="nav-link" data-scroll-target="#regional-spotlight-africa-sahel-horn-sudan">Regional Spotlight: Africa — Sahel, Horn &amp; Sudan</a></li>
+  <li><a href="#watch-items-2472-hours" id="toc-watch-items-2472-hours" class="nav-link" data-scroll-target="#watch-items-2472-hours">Watch Items (24–72 Hours)</a></li>
+  <li><a href="#business-financial-indicators-implications-annex" id="toc-business-financial-indicators-implications-annex" class="nav-link" data-scroll-target="#business-financial-indicators-implications-annex">Business / Financial Indicators &amp; Implications Annex</a></li>
+  <li><a href="#top-coverage-nav-list" id="toc-top-coverage-nav-list" class="nav-link" data-scroll-target="#top-coverage-nav-list">Top Coverage Nav-List</a></li>
+  <li><a href="#sources-references" id="toc-sources-references" class="nav-link" data-scroll-target="#sources-references">Sources &amp; References</a></li>
+  <li><a href="#estimative-language-key" id="toc-estimative-language-key" class="nav-link" data-scroll-target="#estimative-language-key">Estimative Language Key</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">LLM Daily Brief (LDB)</h1>
+<p class="subtitle lead">Open-Source Intelligence Edition — PDB Style</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 16, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lead-usisrael-war-on-iran-enters-day-17-strait-of-hormuz-closure-drives-oil-past-100" class="level2">
+<h2 class="anchored" data-anchor-id="lead-usisrael-war-on-iran-enters-day-17-strait-of-hormuz-closure-drives-oil-past-100">LEAD: US–Israel War on Iran Enters Day 17; Strait of Hormuz Closure Drives Oil Past $100</h2>
+<div class="lead-box">
+<p><strong>Bottom Line Up Front (BLUF):</strong> The US–Israeli military campaign against Iran, now in its 17th day, shows no signs of near-term ceasefire. Iran’s IRGC continues to enforce a near-total blockade of the Strait of Hormuz, crippling roughly 20% of global oil transit. Brent crude topped $106/bbl on 16 March as Trump’s call for a multinational naval coalition to reopen the strait drew non-committal responses from key allies including Japan, Australia, and the EU. The conflict has metastasised into a renewed Israel–Hezbollah war in Lebanon and is reshaping energy security calculations from the Gulf to the Indo-Pacific.</p>
+</div>
+<p><strong>Current Situation.</strong> US CENTCOM reported having struck over 5,000 targets inside Iran since operations began on 28 February. Iran’s retaliatory capability, while degraded, persists: Tehran continues launching ballistic missiles and drones at Israeli territory, US bases across the Middle East, and infrastructure in Gulf states. Preliminary casualty figures stand at approximately 1,444 killed in Iran, at least 15 in Israel, 13 US service members, and 20 in Gulf states (<em>Al Jazeera</em> live tracker, updated 16 March). On 15 March, US and Israeli strikes hit Isfahan, killing at least 15; sirens sounded in central Israel as Iran launched retaliatory salvos.</p>
+<p><strong>Leadership Succession.</strong> Following the assassination of Supreme Leader Ali Khamenei on 28 February, Iran’s Assembly of Experts elected his son Mojtaba Khamenei on 8 March. Senior IRGC leadership and key political figures have pledged allegiance, though Trump publicly questioned whether the new supreme leader is “even alive” following Pentagon claims he was “likely disfigured” (<em>Al Jazeera</em>, 15 March; <em>Britannica</em>; <em>Wikipedia</em>).</p>
+<p><strong>Diplomatic Outlook.</strong> Iran’s Foreign Ministry has publicly denied requesting a ceasefire from Washington. Trump told NBC on 15 March that Iran “wants to make a deal” but terms were “not good enough yet.” Oman’s mediation channel, which had produced a near-breakthrough on nuclear talks just days before strikes began, appears moribund. The UK House of Commons Library assessed that the strikes aim at regime change and dismantling Iran’s nuclear and ballistic missile programmes (<em>UK Commons Library</em>, 15 March).</p>
+<div class="confidence-note">
+<p><strong>Confidence: HIGH.</strong> Corroborated across multiple independent sources including CENTCOM statements, ACLED event data, Al Jazeera live tracker, Reuters wire reporting, and UK parliamentary analysis. Key uncertainty: actual Iranian military capability remaining and Tehran’s internal decision-making calculus on escalation vs.&nbsp;negotiation.</p>
+</div>
+<hr>
+</section>
+<section id="regional-spotlight-levant-israelhezbollah-war-reignites" class="level2">
+<h2 class="anchored" data-anchor-id="regional-spotlight-levant-israelhezbollah-war-reignites">Regional Spotlight: Levant — Israel–Hezbollah War Reignites</h2>
+<p><strong>Situation.</strong> The November 2024 ceasefire between Israel and Hezbollah collapsed on 2 March when Hezbollah launched its first projectiles into northern Israel since the truce, targeting a missile-defence site near Haifa. Israel responded with massive airstrikes on Beirut, southern Lebanon, and the Bekaa Valley. By 6 March, the IDF reported striking over 500 Hezbollah targets and killing at least 70 operatives, including Hezbollah’s intelligence HQ commander and its firepower management chief. Lebanon’s health ministry reported over 800 killed and 800,000 displaced as of 15 March (<em>CNN</em>, 13 March; <em>FDD Long War Journal</em>, 7 March).</p>
+<p><strong>Lebanese Government Response.</strong> In an unprecedented move, Beirut proscribed Hezbollah’s military and security activities on 2 March and ordered the group to surrender its weapons. On 5 March, the government ordered the arrest and deportation of Iranian IRGC personnel, prompting the departure of dozens of Quds Force officers (<em>Axios</em>; <em>FDD</em>). However, LAF Commander Rodolphe Haykal has reportedly resisted orders to confront Hezbollah directly, favouring continued deconfliction.</p>
+<p><strong>Diplomatic Feelers.</strong> Israeli officials told Reuters on 15 March that talks with Lebanon aimed at securing a durable ceasefire and Hezbollah’s disarmament are expected in coming days. Ron Dermer reportedly visited Saudi Arabia to discuss the initiative. However, Lebanese President Joseph Aoun’s precondition — a full ceasefire before negotiations — remains unmet. Israel’s campaign is likely to intensify before any diplomatic track matures (<em>Reuters</em>, 15 March; <em>Times of Israel</em>).</p>
+<p><strong>UNIFIL.</strong> Peacekeepers were fired upon by non-state armed groups in three separate incidents on 15 March near Yatar, Dayr Kifa, and Qallawiyah. Two patrols returned fire in self-defence. UNIFIL has documented over 210 Hezbollah missile launches since 2 March (<em>UNIFIL statement</em>; <em>Times of Israel</em>).</p>
+<div class="confidence-note">
+<p><strong>Confidence: HIGH</strong> on military developments (multi-source IDF, UNIFIL, Lebanese government statements). <strong>MODERATE</strong> on diplomatic track (single-source Israeli officials; Lebanese side has not confirmed formal notification).</p>
+</div>
+<hr>
+</section>
+<section id="regional-spotlight-black-sea-ukraine" class="level2">
+<h2 class="anchored" data-anchor-id="regional-spotlight-black-sea-ukraine">Regional Spotlight: Black Sea / Ukraine</h2>
+<p><strong>Battlefield.</strong> Day 1,482 of Russia’s full-scale invasion. The Ukrainian General Staff reported 167 combat engagements in the past 24 hours, with Russia conducting 101 airstrikes (287 guided aerial bombs), deploying over 9,100 kamikaze drones, and shelling 3,525 times (<em>EMPR</em>, 16 March). Russia claimed 760 KIA in the past 24 hours. ISW data through 10 March show Russian forces <em>lost</em> 30 square miles in the most recent week — a notable reversal from gains in preceding weeks — though Russia still controls roughly 20% of Ukraine’s territory (<em>Russia Matters</em>, 11 March).</p>
+<p><strong>Deep Strikes.</strong> On 12 March, Ukraine struck the Kremniy El microchip factory in Bryansk using British Storm Shadow/SCALP missiles, reportedly guided by drones for the first time — a significant tactical evolution. Russia condemned the strike as an attempt to derail peace talks (<em>Washington Post</em>, 12 March). Ukraine also struck the Afipsky oil refinery and Port Kavkaz in Krasnodar on 15 March (<em>Al Jazeera</em>, 14 March).</p>
+<p><strong>Diplomatic Dynamics.</strong> Peace talks have stalled. While Trump and Zelenskyy reportedly agreed on 90–95% of a peace proposal, Russia has shown no willingness to reciprocate. The Iran conflict is diverting US attention and, critically, financially benefiting Moscow: the Trump administration lifted sanctions on Russian oil purchases through 4 April to compensate for Hormuz disruption, generating an estimated $1.3–1.9 billion windfall in Russian tax revenue (<em>Financial Times</em> via <em>Al Jazeera</em>, 13 March). The EU renewed sanctions targeting ~2,600 individuals and entities until September 2026, breaking a Hungarian–Slovak blockade (<em>EU Council</em>, 14 March).</p>
+<p><strong>Ukraine’s Iran Pivot.</strong> Kyiv has leveraged the Iran conflict to seek re-engagement with Washington, offering drone counter-warfare expertise to protect US Gulf bases. Ukraine’s Center for Countering Disinformation publicised the US request on 6 March (<em>Al Jazeera</em>, 13 March).</p>
+<div class="confidence-note">
+<p><strong>Confidence: HIGH</strong> on battlefield data (ISW, EMPR/General Staff, ACLED). <strong>MODERATE</strong> on diplomatic trajectory — multiple variables including US bandwidth and Russian windfall calculations create analytic uncertainty.</p>
+</div>
+<hr>
+</section>
+<section id="regional-spotlight-south-china-sea-philippines" class="level2">
+<h2 class="anchored" data-anchor-id="regional-spotlight-south-china-sea-philippines">Regional Spotlight: South China Sea / Philippines</h2>
+<p><strong>Escalating Rhetoric.</strong> On 16 March, the Philippine DFA issued a strongly worded rejection of Beijing’s claim to sovereignty over the entire South China Sea. Spokesperson Rogelio Villanueva called the Chinese embassy’s weekend statement “erroneous and misleading,” affirming Manila’s “indivisible, incontrovertible and longstanding sovereignty” over Scarborough Shoal and the Kalayaan Island Group. The exchange was triggered by a Chinese embassy social media post citing a 1990 letter purportedly showing a Philippine ambassador conceding the shoal — which Manila dismissed as a document of “uncertain origin and authenticity” (<em>Reuters</em>, 16 March; <em>Philippine Star</em>; <em>Rappler</em>).</p>
+<p><strong>Code of Conduct.</strong> As 2026 ASEAN Chair, the Philippines has pledged to conclude negotiations on a South China Sea Code of Conduct with China. DFA Secretary Lazaro committed to monthly working group meetings. However, SCMP reported that China’s leading SCS academic assessed a 2026 deal as “100 per cent not likely,” arguing the Philippines will “inevitably bring up the arbitration ruling” (<em>SCMP</em>, 3 March). East Asia Forum analysis assessed that diplomatic success in 2026 “should be measured modestly” given ASEAN’s structural constraints (<em>EAF</em>, 10 March).</p>
+<p><strong>Military Posture.</strong> No major kinetic incidents were reported in the past 72 hours, but the broader context of US naval assets being diverted to the Persian Gulf likely reduces the deterrent posture Washington can project in the Indo-Pacific. Beijing may calculate that the Middle East distraction creates a permissive environment for assertive grey-zone operations.</p>
+<div class="confidence-note">
+<p><strong>Confidence: HIGH</strong> on diplomatic exchanges (official DFA statements, Reuters wire). <strong>MODERATE</strong> on PRC opportunism assessment — this is an analytic judgement based on historical pattern recognition rather than specific intelligence.</p>
+</div>
+<hr>
+</section>
+<section id="regional-spotlight-latin-america-venezuela" class="level2">
+<h2 class="anchored" data-anchor-id="regional-spotlight-latin-america-venezuela">Regional Spotlight: Latin America / Venezuela</h2>
+<p><strong>Post-Intervention Governance.</strong> Nearly eleven weeks after US forces abducted President Nicolás Maduro on 3 January, Venezuela remains under interim President Delcy Rodríguez. A UN Fact-Finding Mission reported to the Human Rights Council on 12 March that “there are no indicators of structural reforms or change” in human rights conditions. Civic space remains “severely restricted” under Rodríguez, even as 621 of an estimated 800+ political prisoners have been released (<em>Al Jazeera</em>, 12 March; <em>Wikipedia</em>).</p>
+<p><strong>Oil &amp; Economy.</strong> The US controls Venezuelan oil sales “indefinitely” per Energy Secretary Chris Wright. Trump announced during his State of the Union that the US had received “more than 80 million barrels” of Venezuelan crude. The IMF described Venezuela’s economy as “quite fragile” in February, with triple-digit inflation and public debt at ~180% of GDP. Venezuela’s oil production remains at roughly 800,000–1,100,000 bpd, far below its 1990s peak of 3.5 million bpd (<em>IMF via Al Jazeera</em>, 20 February; <em>Holland &amp; Knight</em>).</p>
+<p><strong>Legal.</strong> Maduro’s next court appearance, initially set for 17 March, has been postponed to 26 March. He and his wife face drug trafficking charges in Manhattan federal court (<em>Wikipedia</em>).</p>
+<p><strong>Regional Reaction.</strong> The intervention remains widely condemned under international law. The UN Secretary-General called it a “dangerous precedent.” The Fact-Finding Mission stated unequivocally that while Maduro is “responsible for crimes against humanity,” this “does not justify an unlawful military intervention” (<em>UN News</em>; <em>UNHRC</em>).</p>
+<div class="confidence-note">
+<p><strong>Confidence: HIGH</strong> on factual developments (court records, official UN/IMF statements). <strong>LOW-TO-MODERATE</strong> on long-term governance trajectory — Rodríguez regime stability and genuine reform prospects remain deeply uncertain.</p>
+</div>
+<hr>
+</section>
+<section id="regional-spotlight-africa-sahel-horn-sudan" class="level2">
+<h2 class="anchored" data-anchor-id="regional-spotlight-africa-sahel-horn-sudan">Regional Spotlight: Africa — Sahel, Horn &amp; Sudan</h2>
+<p><strong>Sudan (Day ~1,065).</strong> The civil war approaches its fourth year with no ceasefire in sight. Fighting has intensified in the Kordofan corridor following the SAF’s recapture of Khartoum in March 2025. The RSF is consolidating in Darfur and North Darfur, while daily drone strikes in Kordofan produce substantial civilian casualties, including attacks on markets, health facilities, and mosques (<em>ACLED March 2026 Overview</em>; <em>Crisis Group</em>, 11 March).</p>
+<p><strong>Regionalisation.</strong> The conflict is steadily internationalising. Reuters revealed in February 2026 that the UAE finances and supports a secret RSF training camp inside Ethiopia, with approximately 4,300 fighters training there as of January 2026. Chad has shut its eastern border with Sudan indefinitely following cross-border armed group incursions. The Saudi–UAE rift — triggered by the UAE-backed Southern Transitional Council’s offensive in Yemen — has deepened fault lines over Sudan, with each Gulf power backing opposing factions (<em>Reuters</em>; <em>Crisis Group</em>; <em>The Week</em>).</p>
+<p><strong>Humanitarian.</strong> Over 9 million internally displaced; nearly 40% of Sudan’s population faces acute food insecurity. Death toll estimates range to 400,000 since April 2023, per the former US envoy. Doctors Without Borders accused the SAF of a drone strike on a market near the Chad border on 13 March (<em>CFR Global Conflict Tracker</em>; <em>AP</em>).</p>
+<p><strong>Sahel / Horn Linkages.</strong> ACLED’s March Africa Overview notes JNIM defections sparking crackdowns across the central Sahel. Ethiopia–Eritrea tensions remain elevated, with alliances crystallising along the same Saudi/UAE-backed lines as in Sudan. Crisis Group warns the Horn of Africa “appears on the precipice of a wider regional war.”</p>
+<div class="confidence-note">
+<p><strong>Confidence: HIGH</strong> on humanitarian data (OCHA, ACLED, MSF). <strong>MODERATE</strong> on regional escalation trajectory — dependent on Saudi–UAE diplomatic dynamics and whether the Iran conflict produces a détente or deepens divisions.</p>
+</div>
+<hr>
+</section>
+<section id="watch-items-2472-hours" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="watch-items-2472-hours">Watch Items (24–72 Hours)</h2>
+<div class="watch-item">
+<p><strong>1. Strait of Hormuz Naval Coalition Diplomacy.</strong> Trump’s demand for allied naval escorts drew non-committal responses from Japan, Australia, and the EU as of 16 March. If no coalition forms by end of week, expect continued oil price elevation above $100/bbl and growing pressure on Asian importers (China, India, Japan, South Korea). <strong>Probability of coalition formation within 72 hours: UNLIKELY (20–35%).</strong></p>
+</div>
+<div class="watch-item">
+<p><strong>2. Israel–Lebanon Ceasefire Talks.</strong> Israeli officials indicated talks are imminent, with Dermer visiting Riyadh to lay groundwork. Watch for Lebanese delegation composition and whether Aoun’s ceasefire precondition holds. <strong>Probability of formal talks launching within 72 hours: ROUGHLY EVEN CHANCE (45–55%).</strong></p>
+</div>
+<div class="watch-item">
+<p><strong>3. Iran Leadership &amp; Escalation Calculus.</strong> Mojtaba Khamenei’s consolidation of power and IRGC cohesion under sustained bombardment will shape whether Tehran escalates (e.g., widening Hormuz attacks to neutral-flag vessels) or signals openness to back-channel negotiation. The NYT report of Iranian operatives reaching out to discuss terms remains unconfirmed. <strong>Probability of formal ceasefire channel opening within 72 hours: UNLIKELY (15–30%).</strong></p>
+</div>
+<div class="watch-item">
+<p><strong>4. Russian Exploitation of Middle East Crisis.</strong> Moscow is profiting from oil price surges while the US is distracted. Watch for increased Russian offensive tempo in Ukraine (particularly the Pokrovsk and Toretsk axes) and further diplomatic manoeuvring to fracture EU sanctions consensus. Hungary’s Orbán has already called for EU energy sanction suspension.</p>
+</div>
+<div class="watch-item">
+<p><strong>5. South China Sea Grey Zone.</strong> With US naval assets concentrated in the Persian Gulf, monitor for Chinese coast guard or maritime militia activity escalation around Second Thomas Shoal or Scarborough Shoal. The Philippines’ strong 16 March DFA statement may provoke a proportional Chinese response.</p>
+</div>
+<div class="watch-item">
+<p><strong>6. Maduro Court Date (26 March).</strong> Postponed from 17 March. Pre-trial manoeuvring and potential plea developments could shift the Venezuela political dynamic. Watch for Rodríguez government positioning and opposition leader María Corina Machado’s planned return to Venezuela.</p>
+</div>
+<hr>
+</section>
+<section id="business-financial-indicators-implications-annex" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="business-financial-indicators-implications-annex">Business / Financial Indicators &amp; Implications Annex</h2>
+<div class="annex-box">
+<p><strong>ENERGY</strong></p>
+<ul>
+<li><strong>Brent Crude:</strong> Topped $106/bbl on 16 March (up ~40% since pre-war levels of ~$70). Eased slightly to ~$104.63 by early Monday GMT. WTI at ~$94.62.</li>
+<li><strong>Strait of Hormuz:</strong> Near-zero commercial transit continues. UKMTO reports no more than 5 ships/day transiting vs.&nbsp;pre-war average of 138. Over 200 tankers stranded in the Gulf (<em>Lloyd’s List Intelligence</em>).</li>
+<li><strong>IEA Emergency Release:</strong> 32 member countries unanimously released 400 million barrels from strategic reserves — the largest coordinated drawdown in history.</li>
+<li><strong>European Gas:</strong> Dutch TTF futures peaked above €60/MWh (nearly double pre-war), currently oscillating around €48/MWh.</li>
+<li><strong>Russian Windfall:</strong> US Treasury temporarily lifted Russian oil sanctions through 4 April. Moscow estimated to have gained $1.3–1.9bn in additional tax revenue. Indian imports of Russian crude up ~50%. Benchmark Brent surge could generate an estimated $3.3bn/month for the Russian treasury.</li>
+<li><strong>Saudi/UAE Pipeline Diversions:</strong> Saudi Arabia increasingly routing oil via the East–West Pipeline to Yanbu (Red Sea). UAE diverting via the Abu Dhabi pipeline to Fujairah (Arabian Sea). Combined pipeline capacity falls ~12 million bpd short of normal Hormuz throughput.</li>
+</ul>
+</div>
+<div class="annex-box">
+<p><strong>MACRO / MARKETS</strong></p>
+<ul>
+<li><strong>US Equities:</strong> S&amp;P 500 rose 1% in early trading on 16 March on oil price easing. Third consecutive losing week prior. Extreme volatility tied to Hormuz developments.</li>
+<li><strong>Goldman Sachs Scenarios:</strong> Base case (Brent $98 avg. Mar–Apr) → US inflation +0.8pp to 2.9%, GDP −0.3pp to 2.2%. Severe case (Brent $110 avg.) → inflation 3.3%, GDP 2.1%. Recession probability raised to 25%.</li>
+<li><strong>Oxford Economics Stress Test:</strong> Brent at $140/bbl for two months would push the Eurozone, UK, and Japan into recession, create US economic standstill, and push global inflation to 5.1%.</li>
+<li><strong>Venezuelan Oil:</strong> US controlling sales “indefinitely.” 19 Maduro-era contracts cancelled under review. New US licence issued for Venezuelan gold trade.</li>
+</ul>
+</div>
+<div class="annex-box">
+<p><strong>DEFENCE / INDUSTRY</strong></p>
+<ul>
+<li><strong>Israeli Interceptor Stocks:</strong> Israel informed the US it is running critically low on ballistic missile interceptors (<em>Semafor</em>). This has significant implications for sustained operations on two fronts (Iran + Lebanon).</li>
+<li><strong>Ukrainian Drone Innovation:</strong> Kyiv automating mission feedback via “Mission Control” system — first time procurement decisions generated from real-time combat data. Ukraine offering counter-drone expertise to Gulf states.</li>
+<li><strong>Insurance / Shipping:</strong> War risk premiums soaring. Sohar port falls within insurer war-risk zones. JPMorgan warned that policy measures “may have limited impact on oil prices unless safe passage through the Strait of Hormuz is assured.”</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="top-coverage-nav-list" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="top-coverage-nav-list">Top Coverage Nav-List</h2>
+<ol type="1">
+<li><a href="https://www.reuters.com">Reuters — “Israel and Lebanon expected to hold talks soon”</a> (15 Mar)</li>
+<li><a href="https://www.aljazeera.com/economy/2026/3/16/oil-prices-keep-rising-as-trump-seeks-coalition-to-reopen-strait-of-hormuz">Al Jazeera — “Oil prices keep rising as Trump seeks Hormuz coalition”</a> (16 Mar)</li>
+<li><a href="https://www.cnn.com/2026/03/13/middleeast/israel-strikes-hezbollah-lebanon-intl-cmd">CNN — “Israel seizes moment to finish fight against Hezbollah”</a> (13 Mar)</li>
+<li><a href="https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-march-16-2026/">EMPR — “Russia–Ukraine War Updates, 16 March 2026”</a> (16 Mar)</li>
+<li><a href="https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-march-11-2026">ISW/Russia Matters — “War Report Card, 11 March 2026”</a> (11 Mar)</li>
+<li><a href="https://www.rappler.com/philippines/manila-reject-beijing-claims-south-china-sea/">Rappler — “PH slams China’s SCS claims”</a> (16 Mar)</li>
+<li><a href="https://www.crisisgroup.org/opd/africa/sudan/sudans-devastating-war-rages-regional-rivalries-deepen">Crisis Group — “Sudan’s devastating war rages on”</a> (11 Mar)</li>
+<li><a href="https://www.fdd.org/analysis/2026/03/07/israel-strikes-over-500-targets-in-lebanon-issues-evac-orders-in-renewed-war-with-hezbollah-march-2-6/">FDD Long War Journal — “Israel strikes 500+ targets in Lebanon”</a> (7 Mar)</li>
+<li><a href="https://www.axios.com/2026/03/12/oil-prices-iran-strait-of-hormuz">Axios — “Oil prices, recession: What if Hormuz stays closed”</a> (12 Mar)</li>
+<li><a href="https://commonslibrary.parliament.uk/research-briefings/cbp-10521/">UK House of Commons Library — “US-Israel strikes on Iran”</a> (15 Mar)</li>
+</ol>
+<hr>
+</section>
+<section id="sources-references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sources-references">Sources &amp; References</h2>
+<p><strong>Wire Services &amp; Major Outlets</strong></p>
+<ul>
+<li>Reuters. “Israel and Lebanon expected to hold talks soon, Israeli officials say.” 15 March 2026.</li>
+<li>AP. “Falling oil prices send stocks higher.” 16 March 2026.</li>
+<li>BBC. Ongoing Middle East and Sudan coverage, March 2026.</li>
+<li>CNN. “The war that never ended: Israel seizes moment to finish fight against Hezbollah.” 13 March 2026.</li>
+<li>Washington Post. “Ukraine strikes Russian electronics plant that builds missile components.” 12 March 2026.</li>
+<li>NBC News. “Oil prices volatile on conflicting Hormuz reports.” 10 March 2026.</li>
+<li>CNBC. “Oil prices ease after Trump says US will insure tankers.” 4 March 2026.</li>
+<li>Financial Times. Russian oil windfall estimates. Via Al Jazeera, 13 March 2026.</li>
+</ul>
+<p><strong>Analytic &amp; Research Organisations</strong></p>
+<ul>
+<li>Institute for the Study of War (ISW). Daily campaign assessments, ongoing.</li>
+<li>Russia Matters (Harvard Belfer Center). “War Report Card.” 4 and 11 March 2026.</li>
+<li>ACLED. “Middle East Special Issue: March 2026” and “Africa Overview: March 2026.”</li>
+<li>FDD Long War Journal. “Israel strikes over 500 targets in Lebanon.” 7 March 2026.</li>
+<li>International Crisis Group. “Sudan’s devastating war rages on as regional rivalries deepen.” 11 March 2026.</li>
+<li>International Crisis Group. “Seven Peace and Security Priorities for Africa in 2026.” 9 February 2026.</li>
+<li>Atlantic Council. “How might Russia’s war on Ukraine change in 2026?” January 2026.</li>
+<li>East Asia Forum. “ASEAN’s incremental diplomacy in the South China Sea.” 10 March 2026.</li>
+<li>Oxford Economics. Oil price stress test scenarios. Via Axios, 12 March 2026.</li>
+<li>Goldman Sachs. Revised oil price and macro forecasts. Via Euronews and Axios, March 2026.</li>
+</ul>
+<p><strong>Government &amp; International Organisations</strong></p>
+<ul>
+<li>US CENTCOM. Operational updates, ongoing.</li>
+<li>UK House of Commons Library. “US-Israel strikes on Iran: February/March 2026.” CBP-10521. 15 March 2026.</li>
+<li>EU Council. “Russia’s war of aggression against Ukraine: EU extends individual listings.” 14 March 2026.</li>
+<li>UNIFIL. Operational statements, 14–15 March 2026.</li>
+<li>UN News. “US actions in Venezuela ‘constitute a dangerous precedent’: Guterres.” 5 January 2026.</li>
+<li>UNHRC Independent Fact-Finding Mission on Venezuela. Remarks to HRC. 12 March 2026.</li>
+<li>IEA. Emergency oil reserve release announcement. 11 March 2026.</li>
+<li>IMF. Venezuela economic briefing. 20 February 2026.</li>
+<li>US DOE. Venezuelan oil and energy announcements, January–March 2026.</li>
+</ul>
+<p><strong>Regional &amp; Specialist Sources</strong></p>
+<ul>
+<li>Al Jazeera. “US-Israel attacks on Iran: Death toll live tracker.” Updated 16 March 2026.</li>
+<li>Al Jazeera. “Oil stays above $100 a barrel amid Iran’s stranglehold on Strait of Hormuz.” 13 March 2026.</li>
+<li>Al Jazeera. “Ukraine finds new role as protector of US, Gulf allies amid Iran war.” 13 March 2026.</li>
+<li>Al Jazeera. “UN fact-finding mission warns of continued HR abuses in Venezuela.” 12 March 2026.</li>
+<li>Al-Monitor. “Israel and Lebanon expected to hold talks soon.” 15 March 2026.</li>
+<li>Times of Israel. Liveblog, 15 March 2026.</li>
+<li>SCMP. “South China Sea expert warns 2026 code of conduct ‘simply not achievable.’” 3 March 2026.</li>
+<li>Rappler. “PH dismisses Beijing’s SCS claims.” 16 March 2026.</li>
+<li>Philippine Star / Tribune. DFA spokesperson statements, 16 March 2026.</li>
+<li>Manila Bulletin. “PH vows to keep South China Sea ‘a sea of peace and stability.’” 11 March 2026.</li>
+<li>Ukrinform / EMPR. Daily war updates, 13–16 March 2026.</li>
+<li>Euronews. “Passage denied: Hormuz shutdown keeps oil prices on upward trajectory.” 4 March 2026.</li>
+<li>Axios. “Oil prices, recession: What happens if Strait of Hormuz stays closed.” 12 March 2026.</li>
+<li>Alma Research Center. “Daily Report: The Second Iran War.” 10 March 2026.</li>
+<li>CFR Global Conflict Tracker. Sudan updates, ongoing.</li>
+<li>Holland &amp; Knight. “Venezuela: Navigating a New Era of Uncertainty.” January 2026.</li>
+<li>Britannica. “2026 Iran Conflict” entry. Updated March 2026.</li>
+</ul>
+<hr>
+</section>
+<section id="estimative-language-key" class="level2">
+<h2 class="anchored" data-anchor-id="estimative-language-key">Estimative Language Key</h2>
+<p>This brief employs standardised IC estimative language. Confidence levels reflect source corroboration, analytic rigour, and information gaps:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Probability Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Almost certainly</td>
+<td>95–99%</td>
+</tr>
+<tr class="even">
+<td>Very likely / Highly likely</td>
+<td>80–95%</td>
+</tr>
+<tr class="odd">
+<td>Likely / Probably</td>
+<td>55–80%</td>
+</tr>
+<tr class="even">
+<td>Roughly even chance</td>
+<td>45–55%</td>
+</tr>
+<tr class="odd">
+<td>Unlikely</td>
+<td>20–45%</td>
+</tr>
+<tr class="even">
+<td>Very unlikely</td>
+<td>5–20%</td>
+</tr>
+<tr class="odd">
+<td>Remote / Almost no chance</td>
+<td>1–5%</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<hr style="margin-top:2em;margin-bottom:1em;">
+
+<p><strong>Disclaimer:</strong> The LLM Daily Brief (LDB), or any Special Brief (SB) is automatically generated from open-source material and may contain errors, omissions, or outdated information. It is provided “as is,” without warranties of any kind, express or implied. The LDB/SB is not investment, legal, security, or policy advice and must not be relied upon for decision-making. You are responsible for independently verifying facts and conclusions with primary sources and qualified professionals. Neither the author nor providers of this service accept any liability for losses or harms arising from use of this content. No duty to update is assumed.</p>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

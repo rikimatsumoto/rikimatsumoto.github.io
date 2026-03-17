@@ -22,7 +22,7 @@ website:
       - href: art/index_art.html
         text: art
       - href: cdb/index_cdb.html
-        text: LLM's daily brief
+        text: daily brief
 
 format:
   html:

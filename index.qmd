@@ -47,7 +47,7 @@ Outside my career, I work on my [art projects](https://rikimatsumoto.github.io/a
 <div class="preview-grid">
 
 <!-- ─── ROW: PROJECTS ─────────────────────────────────── -->
-<div class="preview-section-label">PROJECTS</div>
+<div class="preview-section-label">CODE</div>
 
 <div class="preview-row">
   <a href="01_projects.html#zetetic-llm-powered-investment-app" class="preview-card">
@@ -84,7 +84,7 @@ Outside my career, I work on my [art projects](https://rikimatsumoto.github.io/a
 <div class="preview-section-label">POLICY TOOLS</div>
 
 <div class="preview-row">
-  <a href="01_projects.html#us-federal-expenditure-tracker-brookings" class="preview-card">
+  <a href="01_projects.html#u.s.-federal-expenditure-tracker-brookings" class="preview-card">
     <span class="card-category">BROOKINGS</span>
     <span class="card-title">U.S. Federal Expenditure Tracker</span>
     <span class="card-desc">Interactive tracker of federal spending patterns and trends.</span>

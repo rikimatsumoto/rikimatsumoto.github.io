@@ -1,0 +1,257 @@
+---
+title: "LLM Daily Brief (LDB)"
+subtitle: "Open-Source Intelligence Edition — PDB Style"
+date: "March 16, 2026"
+format:
+  html:
+    toc: true
+    number-sections: false
+lang: en
+---
+
+
+## LEAD: US–Israel War on Iran Enters Day 17; Strait of Hormuz Closure Drives Oil Past $100
+
+::: {.lead-box}
+**Bottom Line Up Front (BLUF):** The US–Israeli military campaign against Iran, now in its 17th day, shows no signs of near-term ceasefire. Iran's IRGC continues to enforce a near-total blockade of the Strait of Hormuz, crippling roughly 20% of global oil transit. Brent crude topped $106/bbl on 16 March as Trump's call for a multinational naval coalition to reopen the strait drew non-committal responses from key allies including Japan, Australia, and the EU. The conflict has metastasised into a renewed Israel–Hezbollah war in Lebanon and is reshaping energy security calculations from the Gulf to the Indo-Pacific.
+:::
+
+**Current Situation.** US CENTCOM reported having struck over 5,000 targets inside Iran since operations began on 28 February. Iran's retaliatory capability, while degraded, persists: Tehran continues launching ballistic missiles and drones at Israeli territory, US bases across the Middle East, and infrastructure in Gulf states. Preliminary casualty figures stand at approximately 1,444 killed in Iran, at least 15 in Israel, 13 US service members, and 20 in Gulf states (*Al Jazeera* live tracker, updated 16 March). On 15 March, US and Israeli strikes hit Isfahan, killing at least 15; sirens sounded in central Israel as Iran launched retaliatory salvos.
+
+**Leadership Succession.** Following the assassination of Supreme Leader Ali Khamenei on 28 February, Iran's Assembly of Experts elected his son Mojtaba Khamenei on 8 March. Senior IRGC leadership and key political figures have pledged allegiance, though Trump publicly questioned whether the new supreme leader is "even alive" following Pentagon claims he was "likely disfigured" (*Al Jazeera*, 15 March; *Britannica*; *Wikipedia*).
+
+**Diplomatic Outlook.** Iran's Foreign Ministry has publicly denied requesting a ceasefire from Washington. Trump told NBC on 15 March that Iran "wants to make a deal" but terms were "not good enough yet." Oman's mediation channel, which had produced a near-breakthrough on nuclear talks just days before strikes began, appears moribund. The UK House of Commons Library assessed that the strikes aim at regime change and dismantling Iran's nuclear and ballistic missile programmes (*UK Commons Library*, 15 March).
+
+::: {.confidence-note}
+**Confidence: HIGH.** Corroborated across multiple independent sources including CENTCOM statements, ACLED event data, Al Jazeera live tracker, Reuters wire reporting, and UK parliamentary analysis. Key uncertainty: actual Iranian military capability remaining and Tehran's internal decision-making calculus on escalation vs. negotiation.
+:::
+
+---
+
+## Regional Spotlight: Levant — Israel–Hezbollah War Reignites
+
+**Situation.** The November 2024 ceasefire between Israel and Hezbollah collapsed on 2 March when Hezbollah launched its first projectiles into northern Israel since the truce, targeting a missile-defence site near Haifa. Israel responded with massive airstrikes on Beirut, southern Lebanon, and the Bekaa Valley. By 6 March, the IDF reported striking over 500 Hezbollah targets and killing at least 70 operatives, including Hezbollah's intelligence HQ commander and its firepower management chief. Lebanon's health ministry reported over 800 killed and 800,000 displaced as of 15 March (*CNN*, 13 March; *FDD Long War Journal*, 7 March).
+
+**Lebanese Government Response.** In an unprecedented move, Beirut proscribed Hezbollah's military and security activities on 2 March and ordered the group to surrender its weapons. On 5 March, the government ordered the arrest and deportation of Iranian IRGC personnel, prompting the departure of dozens of Quds Force officers (*Axios*; *FDD*). However, LAF Commander Rodolphe Haykal has reportedly resisted orders to confront Hezbollah directly, favouring continued deconfliction.
+
+**Diplomatic Feelers.** Israeli officials told Reuters on 15 March that talks with Lebanon aimed at securing a durable ceasefire and Hezbollah's disarmament are expected in coming days. Ron Dermer reportedly visited Saudi Arabia to discuss the initiative. However, Lebanese President Joseph Aoun's precondition — a full ceasefire before negotiations — remains unmet. Israel's campaign is likely to intensify before any diplomatic track matures (*Reuters*, 15 March; *Times of Israel*).
+
+**UNIFIL.** Peacekeepers were fired upon by non-state armed groups in three separate incidents on 15 March near Yatar, Dayr Kifa, and Qallawiyah. Two patrols returned fire in self-defence. UNIFIL has documented over 210 Hezbollah missile launches since 2 March (*UNIFIL statement*; *Times of Israel*).
+
+::: {.confidence-note}
+**Confidence: HIGH** on military developments (multi-source IDF, UNIFIL, Lebanese government statements). **MODERATE** on diplomatic track (single-source Israeli officials; Lebanese side has not confirmed formal notification).
+:::
+
+---
+
+## Regional Spotlight: Black Sea / Ukraine
+
+**Battlefield.** Day 1,482 of Russia's full-scale invasion. The Ukrainian General Staff reported 167 combat engagements in the past 24 hours, with Russia conducting 101 airstrikes (287 guided aerial bombs), deploying over 9,100 kamikaze drones, and shelling 3,525 times (*EMPR*, 16 March). Russia claimed 760 KIA in the past 24 hours. ISW data through 10 March show Russian forces *lost* 30 square miles in the most recent week — a notable reversal from gains in preceding weeks — though Russia still controls roughly 20% of Ukraine's territory (*Russia Matters*, 11 March).
+
+**Deep Strikes.** On 12 March, Ukraine struck the Kremniy El microchip factory in Bryansk using British Storm Shadow/SCALP missiles, reportedly guided by drones for the first time — a significant tactical evolution. Russia condemned the strike as an attempt to derail peace talks (*Washington Post*, 12 March). Ukraine also struck the Afipsky oil refinery and Port Kavkaz in Krasnodar on 15 March (*Al Jazeera*, 14 March).
+
+**Diplomatic Dynamics.** Peace talks have stalled. While Trump and Zelenskyy reportedly agreed on 90–95% of a peace proposal, Russia has shown no willingness to reciprocate. The Iran conflict is diverting US attention and, critically, financially benefiting Moscow: the Trump administration lifted sanctions on Russian oil purchases through 4 April to compensate for Hormuz disruption, generating an estimated $1.3–1.9 billion windfall in Russian tax revenue (*Financial Times* via *Al Jazeera*, 13 March). The EU renewed sanctions targeting ~2,600 individuals and entities until September 2026, breaking a Hungarian–Slovak blockade (*EU Council*, 14 March).
+
+**Ukraine's Iran Pivot.** Kyiv has leveraged the Iran conflict to seek re-engagement with Washington, offering drone counter-warfare expertise to protect US Gulf bases. Ukraine's Center for Countering Disinformation publicised the US request on 6 March (*Al Jazeera*, 13 March).
+
+::: {.confidence-note}
+**Confidence: HIGH** on battlefield data (ISW, EMPR/General Staff, ACLED). **MODERATE** on diplomatic trajectory — multiple variables including US bandwidth and Russian windfall calculations create analytic uncertainty.
+:::
+
+---
+
+## Regional Spotlight: South China Sea / Philippines
+
+**Escalating Rhetoric.** On 16 March, the Philippine DFA issued a strongly worded rejection of Beijing's claim to sovereignty over the entire South China Sea. Spokesperson Rogelio Villanueva called the Chinese embassy's weekend statement "erroneous and misleading," affirming Manila's "indivisible, incontrovertible and longstanding sovereignty" over Scarborough Shoal and the Kalayaan Island Group. The exchange was triggered by a Chinese embassy social media post citing a 1990 letter purportedly showing a Philippine ambassador conceding the shoal — which Manila dismissed as a document of "uncertain origin and authenticity" (*Reuters*, 16 March; *Philippine Star*; *Rappler*).
+
+**Code of Conduct.** As 2026 ASEAN Chair, the Philippines has pledged to conclude negotiations on a South China Sea Code of Conduct with China. DFA Secretary Lazaro committed to monthly working group meetings. However, SCMP reported that China's leading SCS academic assessed a 2026 deal as "100 per cent not likely," arguing the Philippines will "inevitably bring up the arbitration ruling" (*SCMP*, 3 March). East Asia Forum analysis assessed that diplomatic success in 2026 "should be measured modestly" given ASEAN's structural constraints (*EAF*, 10 March).
+
+**Military Posture.** No major kinetic incidents were reported in the past 72 hours, but the broader context of US naval assets being diverted to the Persian Gulf likely reduces the deterrent posture Washington can project in the Indo-Pacific. Beijing may calculate that the Middle East distraction creates a permissive environment for assertive grey-zone operations.
+
+::: {.confidence-note}
+**Confidence: HIGH** on diplomatic exchanges (official DFA statements, Reuters wire). **MODERATE** on PRC opportunism assessment — this is an analytic judgement based on historical pattern recognition rather than specific intelligence.
+:::
+
+---
+
+## Regional Spotlight: Latin America / Venezuela
+
+**Post-Intervention Governance.** Nearly eleven weeks after US forces abducted President Nicolás Maduro on 3 January, Venezuela remains under interim President Delcy Rodríguez. A UN Fact-Finding Mission reported to the Human Rights Council on 12 March that "there are no indicators of structural reforms or change" in human rights conditions. Civic space remains "severely restricted" under Rodríguez, even as 621 of an estimated 800+ political prisoners have been released (*Al Jazeera*, 12 March; *Wikipedia*).
+
+**Oil & Economy.** The US controls Venezuelan oil sales "indefinitely" per Energy Secretary Chris Wright. Trump announced during his State of the Union that the US had received "more than 80 million barrels" of Venezuelan crude. The IMF described Venezuela's economy as "quite fragile" in February, with triple-digit inflation and public debt at ~180% of GDP. Venezuela's oil production remains at roughly 800,000–1,100,000 bpd, far below its 1990s peak of 3.5 million bpd (*IMF via Al Jazeera*, 20 February; *Holland & Knight*).
+
+**Legal.** Maduro's next court appearance, initially set for 17 March, has been postponed to 26 March. He and his wife face drug trafficking charges in Manhattan federal court (*Wikipedia*).
+
+**Regional Reaction.** The intervention remains widely condemned under international law. The UN Secretary-General called it a "dangerous precedent." The Fact-Finding Mission stated unequivocally that while Maduro is "responsible for crimes against humanity," this "does not justify an unlawful military intervention" (*UN News*; *UNHRC*).
+
+::: {.confidence-note}
+**Confidence: HIGH** on factual developments (court records, official UN/IMF statements). **LOW-TO-MODERATE** on long-term governance trajectory — Rodríguez regime stability and genuine reform prospects remain deeply uncertain.
+:::
+
+---
+
+## Regional Spotlight: Africa — Sahel, Horn & Sudan
+
+**Sudan (Day ~1,065).** The civil war approaches its fourth year with no ceasefire in sight. Fighting has intensified in the Kordofan corridor following the SAF's recapture of Khartoum in March 2025. The RSF is consolidating in Darfur and North Darfur, while daily drone strikes in Kordofan produce substantial civilian casualties, including attacks on markets, health facilities, and mosques (*ACLED March 2026 Overview*; *Crisis Group*, 11 March).
+
+**Regionalisation.** The conflict is steadily internationalising. Reuters revealed in February 2026 that the UAE finances and supports a secret RSF training camp inside Ethiopia, with approximately 4,300 fighters training there as of January 2026. Chad has shut its eastern border with Sudan indefinitely following cross-border armed group incursions. The Saudi–UAE rift — triggered by the UAE-backed Southern Transitional Council's offensive in Yemen — has deepened fault lines over Sudan, with each Gulf power backing opposing factions (*Reuters*; *Crisis Group*; *The Week*).
+
+**Humanitarian.** Over 9 million internally displaced; nearly 40% of Sudan's population faces acute food insecurity. Death toll estimates range to 400,000 since April 2023, per the former US envoy. Doctors Without Borders accused the SAF of a drone strike on a market near the Chad border on 13 March (*CFR Global Conflict Tracker*; *AP*).
+
+**Sahel / Horn Linkages.** ACLED's March Africa Overview notes JNIM defections sparking crackdowns across the central Sahel. Ethiopia–Eritrea tensions remain elevated, with alliances crystallising along the same Saudi/UAE-backed lines as in Sudan. Crisis Group warns the Horn of Africa "appears on the precipice of a wider regional war."
+
+::: {.confidence-note}
+**Confidence: HIGH** on humanitarian data (OCHA, ACLED, MSF). **MODERATE** on regional escalation trajectory — dependent on Saudi–UAE diplomatic dynamics and whether the Iran conflict produces a détente or deepens divisions.
+:::
+
+---
+
+## Watch Items (24–72 Hours) {.unnumbered}
+
+::: {.watch-item}
+**1. Strait of Hormuz Naval Coalition Diplomacy.** Trump's demand for allied naval escorts drew non-committal responses from Japan, Australia, and the EU as of 16 March. If no coalition forms by end of week, expect continued oil price elevation above $100/bbl and growing pressure on Asian importers (China, India, Japan, South Korea). **Probability of coalition formation within 72 hours: UNLIKELY (20–35%).**
+:::
+
+::: {.watch-item}
+**2. Israel–Lebanon Ceasefire Talks.** Israeli officials indicated talks are imminent, with Dermer visiting Riyadh to lay groundwork. Watch for Lebanese delegation composition and whether Aoun's ceasefire precondition holds. **Probability of formal talks launching within 72 hours: ROUGHLY EVEN CHANCE (45–55%).**
+:::
+
+::: {.watch-item}
+**3. Iran Leadership & Escalation Calculus.** Mojtaba Khamenei's consolidation of power and IRGC cohesion under sustained bombardment will shape whether Tehran escalates (e.g., widening Hormuz attacks to neutral-flag vessels) or signals openness to back-channel negotiation. The NYT report of Iranian operatives reaching out to discuss terms remains unconfirmed. **Probability of formal ceasefire channel opening within 72 hours: UNLIKELY (15–30%).**
+:::
+
+::: {.watch-item}
+**4. Russian Exploitation of Middle East Crisis.** Moscow is profiting from oil price surges while the US is distracted. Watch for increased Russian offensive tempo in Ukraine (particularly the Pokrovsk and Toretsk axes) and further diplomatic manoeuvring to fracture EU sanctions consensus. Hungary's Orbán has already called for EU energy sanction suspension.
+:::
+
+::: {.watch-item}
+**5. South China Sea Grey Zone.** With US naval assets concentrated in the Persian Gulf, monitor for Chinese coast guard or maritime militia activity escalation around Second Thomas Shoal or Scarborough Shoal. The Philippines' strong 16 March DFA statement may provoke a proportional Chinese response.
+:::
+
+::: {.watch-item}
+**6. Maduro Court Date (26 March).** Postponed from 17 March. Pre-trial manoeuvring and potential plea developments could shift the Venezuela political dynamic. Watch for Rodríguez government positioning and opposition leader María Corina Machado's planned return to Venezuela.
+:::
+
+---
+
+## Business / Financial Indicators & Implications Annex {.unnumbered}
+
+::: {.annex-box}
+**ENERGY**
+
+- **Brent Crude:** Topped $106/bbl on 16 March (up ~40% since pre-war levels of ~$70). Eased slightly to ~$104.63 by early Monday GMT. WTI at ~$94.62.
+- **Strait of Hormuz:** Near-zero commercial transit continues. UKMTO reports no more than 5 ships/day transiting vs. pre-war average of 138. Over 200 tankers stranded in the Gulf (*Lloyd's List Intelligence*).
+- **IEA Emergency Release:** 32 member countries unanimously released 400 million barrels from strategic reserves — the largest coordinated drawdown in history.
+- **European Gas:** Dutch TTF futures peaked above €60/MWh (nearly double pre-war), currently oscillating around €48/MWh.
+- **Russian Windfall:** US Treasury temporarily lifted Russian oil sanctions through 4 April. Moscow estimated to have gained $1.3–1.9bn in additional tax revenue. Indian imports of Russian crude up ~50%. Benchmark Brent surge could generate an estimated $3.3bn/month for the Russian treasury.
+- **Saudi/UAE Pipeline Diversions:** Saudi Arabia increasingly routing oil via the East–West Pipeline to Yanbu (Red Sea). UAE diverting via the Abu Dhabi pipeline to Fujairah (Arabian Sea). Combined pipeline capacity falls ~12 million bpd short of normal Hormuz throughput.
+:::
+
+::: {.annex-box}
+**MACRO / MARKETS**
+
+- **US Equities:** S&P 500 rose 1% in early trading on 16 March on oil price easing. Third consecutive losing week prior. Extreme volatility tied to Hormuz developments.
+- **Goldman Sachs Scenarios:** Base case (Brent $98 avg. Mar–Apr) → US inflation +0.8pp to 2.9%, GDP −0.3pp to 2.2%. Severe case (Brent $110 avg.) → inflation 3.3%, GDP 2.1%. Recession probability raised to 25%.
+- **Oxford Economics Stress Test:** Brent at $140/bbl for two months would push the Eurozone, UK, and Japan into recession, create US economic standstill, and push global inflation to 5.1%.
+- **Venezuelan Oil:** US controlling sales "indefinitely." 19 Maduro-era contracts cancelled under review. New US licence issued for Venezuelan gold trade.
+:::
+
+::: {.annex-box}
+**DEFENCE / INDUSTRY**
+
+- **Israeli Interceptor Stocks:** Israel informed the US it is running critically low on ballistic missile interceptors (*Semafor*). This has significant implications for sustained operations on two fronts (Iran + Lebanon).
+- **Ukrainian Drone Innovation:** Kyiv automating mission feedback via "Mission Control" system — first time procurement decisions generated from real-time combat data. Ukraine offering counter-drone expertise to Gulf states.
+- **Insurance / Shipping:** War risk premiums soaring. Sohar port falls within insurer war-risk zones. JPMorgan warned that policy measures "may have limited impact on oil prices unless safe passage through the Strait of Hormuz is assured."
+:::
+
+---
+
+## Top Coverage Nav-List {.unnumbered}
+
+1. [Reuters — "Israel and Lebanon expected to hold talks soon"](https://www.reuters.com) (15 Mar)
+2. [Al Jazeera — "Oil prices keep rising as Trump seeks Hormuz coalition"](https://www.aljazeera.com/economy/2026/3/16/oil-prices-keep-rising-as-trump-seeks-coalition-to-reopen-strait-of-hormuz) (16 Mar)
+3. [CNN — "Israel seizes moment to finish fight against Hezbollah"](https://www.cnn.com/2026/03/13/middleeast/israel-strikes-hezbollah-lebanon-intl-cmd) (13 Mar)
+4. [EMPR — "Russia–Ukraine War Updates, 16 March 2026"](https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-march-16-2026/) (16 Mar)
+5. [ISW/Russia Matters — "War Report Card, 11 March 2026"](https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-march-11-2026) (11 Mar)
+6. [Rappler — "PH slams China's SCS claims"](https://www.rappler.com/philippines/manila-reject-beijing-claims-south-china-sea/) (16 Mar)
+7. [Crisis Group — "Sudan's devastating war rages on"](https://www.crisisgroup.org/opd/africa/sudan/sudans-devastating-war-rages-regional-rivalries-deepen) (11 Mar)
+8. [FDD Long War Journal — "Israel strikes 500+ targets in Lebanon"](https://www.fdd.org/analysis/2026/03/07/israel-strikes-over-500-targets-in-lebanon-issues-evac-orders-in-renewed-war-with-hezbollah-march-2-6/) (7 Mar)
+9. [Axios — "Oil prices, recession: What if Hormuz stays closed"](https://www.axios.com/2026/03/12/oil-prices-iran-strait-of-hormuz) (12 Mar)
+10. [UK House of Commons Library — "US-Israel strikes on Iran"](https://commonslibrary.parliament.uk/research-briefings/cbp-10521/) (15 Mar)
+
+---
+
+## Sources & References {.unnumbered}
+
+**Wire Services & Major Outlets**
+
+- Reuters. "Israel and Lebanon expected to hold talks soon, Israeli officials say." 15 March 2026.
+- AP. "Falling oil prices send stocks higher." 16 March 2026.
+- BBC. Ongoing Middle East and Sudan coverage, March 2026.
+- CNN. "The war that never ended: Israel seizes moment to finish fight against Hezbollah." 13 March 2026.
+- Washington Post. "Ukraine strikes Russian electronics plant that builds missile components." 12 March 2026.
+- NBC News. "Oil prices volatile on conflicting Hormuz reports." 10 March 2026.
+- CNBC. "Oil prices ease after Trump says US will insure tankers." 4 March 2026.
+- Financial Times. Russian oil windfall estimates. Via Al Jazeera, 13 March 2026.
+
+**Analytic & Research Organisations**
+
+- Institute for the Study of War (ISW). Daily campaign assessments, ongoing.
+- Russia Matters (Harvard Belfer Center). "War Report Card." 4 and 11 March 2026.
+- ACLED. "Middle East Special Issue: March 2026" and "Africa Overview: March 2026."
+- FDD Long War Journal. "Israel strikes over 500 targets in Lebanon." 7 March 2026.
+- International Crisis Group. "Sudan's devastating war rages on as regional rivalries deepen." 11 March 2026.
+- International Crisis Group. "Seven Peace and Security Priorities for Africa in 2026." 9 February 2026.
+- Atlantic Council. "How might Russia's war on Ukraine change in 2026?" January 2026.
+- East Asia Forum. "ASEAN's incremental diplomacy in the South China Sea." 10 March 2026.
+- Oxford Economics. Oil price stress test scenarios. Via Axios, 12 March 2026.
+- Goldman Sachs. Revised oil price and macro forecasts. Via Euronews and Axios, March 2026.
+
+**Government & International Organisations**
+
+- US CENTCOM. Operational updates, ongoing.
+- UK House of Commons Library. "US-Israel strikes on Iran: February/March 2026." CBP-10521. 15 March 2026.
+- EU Council. "Russia's war of aggression against Ukraine: EU extends individual listings." 14 March 2026.
+- UNIFIL. Operational statements, 14–15 March 2026.
+- UN News. "US actions in Venezuela 'constitute a dangerous precedent': Guterres." 5 January 2026.
+- UNHRC Independent Fact-Finding Mission on Venezuela. Remarks to HRC. 12 March 2026.
+- IEA. Emergency oil reserve release announcement. 11 March 2026.
+- IMF. Venezuela economic briefing. 20 February 2026.
+- US DOE. Venezuelan oil and energy announcements, January–March 2026.
+
+**Regional & Specialist Sources**
+
+- Al Jazeera. "US-Israel attacks on Iran: Death toll live tracker." Updated 16 March 2026.
+- Al Jazeera. "Oil stays above $100 a barrel amid Iran's stranglehold on Strait of Hormuz." 13 March 2026.
+- Al Jazeera. "Ukraine finds new role as protector of US, Gulf allies amid Iran war." 13 March 2026.
+- Al Jazeera. "UN fact-finding mission warns of continued HR abuses in Venezuela." 12 March 2026.
+- Al-Monitor. "Israel and Lebanon expected to hold talks soon." 15 March 2026.
+- Times of Israel. Liveblog, 15 March 2026.
+- SCMP. "South China Sea expert warns 2026 code of conduct 'simply not achievable.'" 3 March 2026.
+- Rappler. "PH dismisses Beijing's SCS claims." 16 March 2026.
+- Philippine Star / Tribune. DFA spokesperson statements, 16 March 2026.
+- Manila Bulletin. "PH vows to keep South China Sea 'a sea of peace and stability.'" 11 March 2026.
+- Ukrinform / EMPR. Daily war updates, 13–16 March 2026.
+- Euronews. "Passage denied: Hormuz shutdown keeps oil prices on upward trajectory." 4 March 2026.
+- Axios. "Oil prices, recession: What happens if Strait of Hormuz stays closed." 12 March 2026.
+- Alma Research Center. "Daily Report: The Second Iran War." 10 March 2026.
+- CFR Global Conflict Tracker. Sudan updates, ongoing.
+- Holland & Knight. "Venezuela: Navigating a New Era of Uncertainty." January 2026.
+- Britannica. "2026 Iran Conflict" entry. Updated March 2026.
+
+---
+
+## Estimative Language Key
+
+This brief employs standardised IC estimative language. Confidence levels reflect source corroboration, analytic rigour, and information gaps:
+
+| Term | Probability Range |
+|------|-------------------|
+| Almost certainly | 95–99% |
+| Very likely / Highly likely | 80–95% |
+| Likely / Probably | 55–80% |
+| Roughly even chance | 45–55% |
+| Unlikely | 20–45% |
+| Very unlikely | 5–20% |
+| Remote / Almost no chance | 1–5% |
+
