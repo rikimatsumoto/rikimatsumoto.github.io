@@ -204,7 +204,8 @@ strong {
    -------------------------------------------------------------- */
 pre, code {
   background-color: #2D2420;
-  color: var(--cream-light);
+  /* color: var(--cream-light); */
+  color: #1A1A1A;
   border-radius: 6px;
   font-size: 0.9rem;
 }

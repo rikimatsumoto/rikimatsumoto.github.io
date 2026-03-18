@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-03-15">
+
+<title>reverse engineering a viral website’s random number generator – riki's site</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">riki’s site</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../02_articles.html"> 
+<span class="menu-text">published</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../01_projects.html"> 
+<span class="menu-text">code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../essay/index_essay.html"> 
+<span class="menu-text">musings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../art/index_art.html"> 
+<span class="menu-text">art</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cdb/index_cdb.html"> 
+<span class="menu-text">daily brief</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">tldr!</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. introduction</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">2. methodology</a>
+  <ul class="collapse">
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">2.1 data collection</a></li>
+  <li><a href="#candidate-distributions" id="toc-candidate-distributions" class="nav-link" data-scroll-target="#candidate-distributions">2.2 candidate distributions</a></li>
+  <li><a href="#fitting-testing" id="toc-fitting-testing" class="nav-link" data-scroll-target="#fitting-testing">2.3 fitting &amp; testing</a></li>
+  </ul></li>
+  <li><a href="#descriptive-visual-exploration" id="toc-descriptive-visual-exploration" class="nav-link" data-scroll-target="#descriptive-visual-exploration">3. descriptive &amp; visual exploration</a>
+  <ul class="collapse">
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">3.1 descriptive statistics</a></li>
+  <li><a href="#visual-overview" id="toc-visual-overview" class="nav-link" data-scroll-target="#visual-overview">3.2 visual overview</a></li>
+  </ul></li>
+  <li><a href="#empirical-analysis" id="toc-empirical-analysis" class="nav-link" data-scroll-target="#empirical-analysis">4. empirical analysis</a>
+  <ul class="collapse">
+  <li><a href="#maximum-likelihood-estimation-mle-model-ranking" id="toc-maximum-likelihood-estimation-mle-model-ranking" class="nav-link" data-scroll-target="#maximum-likelihood-estimation-mle-model-ranking">4.1 maximum likelihood estimation (mle) &amp; model ranking</a></li>
+  <li><a href="#goodness-of-fit-gof-tests" id="toc-goodness-of-fit-gof-tests" class="nav-link" data-scroll-target="#goodness-of-fit-gof-tests">4.2 goodness-of-fit (gof) tests</a></li>
+  <li><a href="#pairewise-correlation-check" id="toc-pairewise-correlation-check" class="nav-link" data-scroll-target="#pairewise-correlation-check">4.3 pairewise correlation check</a></li>
+  <li><a href="#verdict-classification" id="toc-verdict-classification" class="nav-link" data-scroll-target="#verdict-classification">4.4 verdict classification</a></li>
+  </ul></li>
+  <li><a href="#verdict-concluding-thoughts" id="toc-verdict-concluding-thoughts" class="nav-link" data-scroll-target="#verdict-concluding-thoughts">5. verdict &amp; concluding thoughts</a>
+  <ul class="collapse">
+  <li><a href="#summary-of-findings" id="toc-summary-of-findings" class="nav-link" data-scroll-target="#summary-of-findings">5.1 summary of findings</a></li>
+  <li><a href="#what-this-means" id="toc-what-this-means" class="nav-link" data-scroll-target="#what-this-means">5.2 what this means</a></li>
+  <li><a href="#caveats-extensions" id="toc-caveats-extensions" class="nav-link" data-scroll-target="#caveats-extensions">5.3 caveats &amp; extensions</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">appendix</a>
+  <ul class="collapse">
+  <li><a href="#appendix-tables-1-mle" id="toc-appendix-tables-1-mle" class="nav-link" data-scroll-target="#appendix-tables-1-mle">appendix tables 1: mle</a></li>
+  <li><a href="#appendix-tables-2-gof-tests" id="toc-appendix-tables-2-gof-tests" class="nav-link" data-scroll-target="#appendix-tables-2-gof-tests">appendix tables 2: gof tests</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">reverse engineering a viral website’s random number generator</h1>
+<p class="subtitle lead">an empirical analysis of a misogynistic website</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 15, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">tldr!</h2>
+<p><a href="https://web.archive.org/web/20260304203624/https://mashable.com/article/check-her-body-count-website">A viral misogynistic site “Check Her Body Count”</a> claimed to use AI to estimate the number of partners from an Instagram handle. It doesn’t. Independent developers confirmed the site is run entirely client-side; it makes no API calls, doesn’t validate whether a handle exists, and simply generates random numbers.</p>
+<p>I had a specific question. If the website does generate random numbers, what probability distribution generates said random numbers? Is it uniform? Bell-shaped? Poisson? Exponential?</p>
+<p>I collected 1,000 samples from the site and used maximum likelihood estimation, AIC/BIC model comparison, and goodness-of-fit testing to determine which probability distributions best explain the outputs. All five generated statistics follow <strong>discrete uniform distributions</strong>, the simplest possible RNG pattern, likely implemented as <code>Math.floor(Math.random() * (max - min + 1)) + min</code> with a different [<em>min, max</em>] range per stat.</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. introduction</h2>
+<p>In late February 2026, <a href="https://web.archive.org/web/20260304203624/https://mashable.com/article/check-her-body-count-website">a misogynistic website called <strong>checkherbodycount.com</strong></a> claiming to estimate body count from an Instagram handle using AI went viral online. It is, of course, complete fiction, and harmful fiction at that.</p>
+<p>Independent developers quickly confirmed it’s entirely a hoax: - The site runs <strong>100% client-side</strong> in the browser - It makes <strong>zero requests</strong> to Instagram or any external API, and does not validate whether a handle even exists - It <strong>generates random numbers</strong> and <strong>caches them in localStorage</strong>.</p>
+<p><img class="essay_20260315_img01" src="media/essay_2026-03-15_img01.jpg" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;" alt="Screenshot of website"></p>
+<p>Per query, the site generates <strong>five</strong> fake statistics:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Stat</th>
+<th>Element ID</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Body Count</td>
+<td><code>#resultNumber</code></td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>Male Followers</td>
+<td><code>#statFollowers</code></td>
+<td>2,585</td>
+</tr>
+<tr class="odd">
+<td>Thirst Comments</td>
+<td><code>#statComments</code></td>
+<td>270</td>
+</tr>
+<tr class="even">
+<td>Late Night Posts</td>
+<td><code>#statLateNight</code></td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Suspicious Tags</td>
+<td><code>#statSuspicious</code></td>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<p>Along with a verdict string (“LOW”, “MEDIUM”, “HIGH”) and a visual risk meter.</p>
+<p>However, as a quant, I had a different question. Specifically:</p>
+<blockquote class="blockquote">
+<p><strong>What probability distribution(s) does the site’s random number generator use? Are all five statistics drawn from the same distribution, or do they differ? And can the exact parameters be recovered from the output?</strong></p>
+</blockquote>
+<p>By collecting a sample of the site’s output and applying standard statistical tools, maximum likelihood estimation, information-theoretic model comparison, and formal goodness-of-fit tests, the RNG can be reverse-engineered.</p>
+<p>The analysis is organized as follows:</p>
+<ol type="1">
+<li>(this) intro</li>
+<li>methodology</li>
+<li>descriptive &amp; visual exploration</li>
+<li>empirical analysis, incl.&nbsp;results of tests</li>
+<li>verdict &amp; concluding thoughts</li>
+</ol>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">2. methodology</h2>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">2.1 data collection</h3>
+<p>I used a headless browser (Puppeteer) to automate 1,000 queries to the site, each with a unique, randomly generated Instagram handle (e.g., alex48291_vibes). Each unique handle returns a sample of all five statistics. Between queries, <code>localStorage</code> is cleared to prevent caching from linking results across handles.</p>
+<p><strong>key design decisions:</strong></p>
+<ul>
+<li>Handles are randomly generated (e.g., <code>alex48291_vibes</code>) to avoid any pattern that could bias a hash-based RNG. If the site seeds its generator from a hash of the input, patterned handles (e.g., test_001, test_002) could introduce spurious structure.</li>
+<li>Each handle is used exactly once → independent samples</li>
+<li>All five stats are captured + the verdict string (e.g., “LOW”, “HIGH”) per query</li>
+</ul>
+<p>The target sample size of 1,000 was chosen to ensure adequate statistical power for the chi-squared goodness-of-fit test. With the observed ranges, 1,000 samples provide sufficient expected cell counts across bins, though as discussed in Section 4.2, the widest-range variables still present challenges.</p>
+</section>
+<section id="candidate-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="candidate-distributions">2.2 candidate distributions</h3>
+<p>Seven probability distributions were tested, each representing a plausible RNG implementation the site could use:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distribution</th>
+<th>What it would imply</th>
+<th>Typical JS implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Discrete Uniform</strong></td>
+<td>Every integer in [a, b] equally likely</td>
+<td><code>Math.floor(Math.random() * (b-a+1)) + a</code></td>
+</tr>
+<tr class="even">
+<td><strong>Normal</strong></td>
+<td>Bell-curve centered on some value</td>
+<td>Box-Muller transform on <code>Math.random()</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Poisson</strong></td>
+<td>Random count with fixed average rate</td>
+<td>Knuth’s algorithm with cumulative products</td>
+</tr>
+<tr class="even">
+<td><strong>Geometric</strong></td>
+<td>Repeated Bernoulli trials</td>
+<td>Inverse transform sampling</td>
+</tr>
+<tr class="odd">
+<td><strong>Exponential</strong></td>
+<td>Memoryless decay, right-skewed</td>
+<td><code>-β * Math.log(Math.random())</code></td>
+</tr>
+<tr class="even">
+<td><strong>Log-Normal</strong></td>
+<td>Multiplicative random effects</td>
+<td><code>Math.exp(μ + σ * normalRandom())</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Negative Binomial</strong></td>
+<td>Overdispersed count data</td>
+<td>Gamma-Poisson mixture</td>
+</tr>
+</tbody>
+</table>
+<p>The first, Discrete Uniform, is the simplest possible pattern and what independent developers suspected from inspecting the client-side code. The remaining six represent progressively more complex alternatives that would require additional code to implement.</p>
+</section>
+<section id="fitting-testing" class="level3">
+<h3 class="anchored" data-anchor-id="fitting-testing">2.3 fitting &amp; testing</h3>
+<p>For each of the five statistics and each candidate distribution, the analysis proceeds in three stages:</p>
+<ol type="1">
+<li>Parameter estimation. Distribution parameters are fit via Maximum Likelihood Estimation (MLE), which finds the parameter values that make the observed data most probable under each candidate.</li>
+<li>Model ranking. Candidates are ranked using AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion). Both metrics balance goodness-of-fit and penalize complexity: more parameters must meaningfully improve fit to be preferred. Lower values indicate better models. Typically, a model with ΔAIC &gt; 10 has essentially no support.</li>
+<li>Goodness-of-fit testing. AIC ranks models relative to each other but does not indicate whether any model fits well in absolute terms. To address this, formal hypothesis tests are applied:
+<ol type="a">
+<li>Chi-squared test for discrete distributions -&gt; bins the data and compares observed versus expected counts under the fitted distribution.</li>
+<li>Kolmogorov-Smirnov (KS) test for continuous distributions -&gt; compares the empirical CDF to the theoretical CDF. <strong>KS tests are approximate here, as the data are discrete</strong>.</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="descriptive-visual-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-visual-exploration">3. descriptive &amp; visual exploration</h2>
+<section id="descriptive-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics">3.1 descriptive statistics</h3>
+<p>Before fitting any models, the shape of each variable was examined using three diagnostic quantities:</p>
+<ul>
+<li><strong>Skewness ≈ 0</strong> → indicates symmetry, which is consistent with uniform or normal distributions but rules out exponential and geometric distributions (both right-skewed by construction).</li>
+<li><strong>Kurtosis &lt; 0 (platykurtic)</strong> → indicates a distribution flatter than normal. The uniform distribution has a theoretical excess kurtosis of −1.2, a useful benchmark for comparison.</li>
+<li><strong>Variance/Mean ratio &gt;&gt; 1</strong> → indicates overdispersion relative to a Poisson distribution, which requires the variance to equal the mean. Ratios far above 1 effectively rule out Poisson.</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>N</th>
+<th>Min</th>
+<th>Max</th>
+<th>Range</th>
+<th>Mean</th>
+<th>Median</th>
+<th>Std Dev</th>
+<th>Skewness</th>
+<th>Ex. Kurtosis</th>
+<th>Var/Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Body Count</td>
+<td>1000</td>
+<td>3</td>
+<td>42</td>
+<td>39</td>
+<td>22.8</td>
+<td>23.0</td>
+<td>11.5</td>
+<td>−0.0193</td>
+<td>−1.2270</td>
+<td>5.85</td>
+</tr>
+<tr class="even">
+<td>Male Followers</td>
+<td>1000</td>
+<td>423</td>
+<td>6200</td>
+<td>5777</td>
+<td>3360.5</td>
+<td>3352.5</td>
+<td>1681.1</td>
+<td>−0.0190</td>
+<td>−1.2330</td>
+<td>840.98</td>
+</tr>
+<tr class="odd">
+<td>Thirst Comments</td>
+<td>1000</td>
+<td>15</td>
+<td>720</td>
+<td>705</td>
+<td>377.1</td>
+<td>383.5</td>
+<td>206.1</td>
+<td>−0.0376</td>
+<td>−1.1998</td>
+<td>112.62</td>
+</tr>
+<tr class="even">
+<td>Late Night Posts</td>
+<td>1000</td>
+<td>2</td>
+<td>55</td>
+<td>53</td>
+<td>28.2</td>
+<td>28.0</td>
+<td>15.6</td>
+<td>0.0328</td>
+<td>−1.1771</td>
+<td>8.59</td>
+</tr>
+<tr class="odd">
+<td>Suspicious Tags</td>
+<td>1000</td>
+<td>1</td>
+<td>35</td>
+<td>34</td>
+<td>17.9</td>
+<td>18.0</td>
+<td>9.8</td>
+<td>0.0134</td>
+<td>−1.1334</td>
+<td>5.43</td>
+</tr>
+</tbody>
+</table>
+<p>Across all five variables, skewness hovers near 0 (max |skew| = 0.038) and excess kurtosis clusters near −1.2, closely matching the theoretical discrete uniform benchmark. Combined with high variance-to-mean ratios, this effectively rules out Poisson and strongly suggests a uniform distribution.</p>
+<p>Before any formal model fitting, the descriptive statistics alone point strongly toward a uniform distribution. The question for Section 4 is whether this initial impression survives rigorous testing.</p>
+</section>
+<section id="visual-overview" class="level3">
+<h3 class="anchored" data-anchor-id="visual-overview">3.2 visual overview</h3>
+<p>A side-by-side look at the histogram and CDF of all five variables.</p>
+<p><img class="essay_20260315_img02" src="media/essay_2026-03-15_img02.jpg" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;" alt="Four panel chart with histogram, fitted overaly and QQ plot"></p>
+<p>The histograms confirm the flat, roughly equal-frequency shape expected of uniform distributions. No variable shows the bell-shaped concentration of a normal, the right-skew of an exponential, or the peaked shape of a Poisson.</p>
+<p>The empirical CDFs reinforce this reading. A discrete uniform distribution produces a staircase CDF with evenly spaced, equal-height steps, which is exactly what all five panels display. By contrast, a normal distribution would produce the characteristic S-shaped sigmoid, and an exponential would rise steeply then flatten. Neither pattern appears.</p>
+<p>Together, the descriptive statistics and visual inspection provide strong preliminary evidence that all five variables follow discrete uniform distributions with different [min, max] ranges. The formal model fitting in Section 4 will test whether this conclusion holds under maximum likelihood estimation and hypothesis testing.</p>
+</section>
+</section>
+<section id="empirical-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="empirical-analysis">4. empirical analysis</h2>
+<section id="maximum-likelihood-estimation-mle-model-ranking" class="level3">
+<h3 class="anchored" data-anchor-id="maximum-likelihood-estimation-mle-model-ranking">4.1 maximum likelihood estimation (mle) &amp; model ranking</h3>
+<p>For each of the five statistics, all seven candidate distributions were fit via MLE and ranked by AIC. The results are unambiguous: Discrete Uniform ranks first for all five variables, with margins large enough to rule out alternatives. Shown below is the table for the first variable. The remaining four variables follow the same pattern; full results are in <a href="../essay/essay_2026-03-15.html#appendix-tables-1-mle">Appendix tables 1</a>.</p>
+<p><em>Body Count — Distribution Fit</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Distribution</th>
+<th>Parameters</th>
+<th>Log-Lik</th>
+<th>AIC</th>
+<th>BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Discrete Uniform</td>
+<td>Uniform(3, 42)</td>
+<td>-3688.879454</td>
+<td>7381.758908</td>
+<td>7391.574419</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Normal</td>
+<td>Normal(μ=22.8, σ=11.5)</td>
+<td>-3864.309690</td>
+<td>7732.619380</td>
+<td>7742.434891</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Neg. Binomial</td>
+<td>NegBin(n=4.7, p=0.1709)</td>
+<td>-3892.039173</td>
+<td>7788.078347</td>
+<td>7797.893857</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Log-Normal</td>
+<td>LogNormal(σ=0.67, scale=19.0)</td>
+<td>-3963.279759</td>
+<td>7930.559517</td>
+<td>7940.375028</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Geometric</td>
+<td>Geometric(p=0.0482)</td>
+<td>-4008.744424</td>
+<td>8019.488848</td>
+<td>8024.396603</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Exponential</td>
+<td>Exponential(β=22.8)</td>
+<td>-4125.180341</td>
+<td>8252.360681</td>
+<td>8257.268437</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Poisson</td>
+<td>Poisson(λ=22.8)</td>
+<td>-5631.539201</td>
+<td>11265.078402</td>
+<td>11269.986157</td>
+</tr>
+</tbody>
+</table>
+<p>🏆 Best: Discrete Uniform — Uniform(3, 42)</p>
+<p>A few observable trends of note. First, the ranking order is nearly identical across all five variables: Discrete Uniform first, Normal second, Negative Binomial third, with Poisson consistently last by an enormous margin. This consistency suggests a single underlying RNG pattern applied with different parameters per stat.</p>
+<p>Second, the ΔAIC between first and second place ranges from 300.9 to 374.3. Recall from Section 2.3 that a ΔAIC &gt; 10 overwhelmingly suggests the model has no support. These margins exceed that threshold by more than an order of magnitude; the evidence for Discrete Uniform is overwhelming.</p>
+<p>Third, the Poisson distribution deserves special mention. For Male Followers (λ = 3360.5) and Thirst Comments (λ = 377.1), the Poisson log-likelihoods are extremley poor (−468,168 and −68,172 respectively). This is expected: the Poisson distribution requires the variance to equal the mean, but these variables have variance-to-mean ratios of 841 and 113. The collected data is overdispersed for Poisson.</p>
+</section>
+<section id="goodness-of-fit-gof-tests" class="level3">
+<h3 class="anchored" data-anchor-id="goodness-of-fit-gof-tests">4.2 goodness-of-fit (gof) tests</h3>
+<p>AIC ranks models relative to each other, but doesn’t tell us if any model is actually <em>good</em> in absolute terms. For that I used formal hypothesis tests:</p>
+<ul>
+<li><strong>Chi-squared test</strong> (discrete distributions): bins data and compares observed vs expected counts</li>
+<li><strong>Kolmogorov-Smirnov test</strong> (continuous distributions): compares the empirical CDF to the theoretical CDF</li>
+</ul>
+<p>In both tests, the null hypothesis, H0, is that the data follows the candidate distribution; a p-value above α = 0.05 means the distribution cannot be rejected. Shown below is the table for the first variable. The remaining four variables follow the same pattern; full results are in <a href="../essay/essay_2026-03-15.html#appendix-tables-2-gof-tests">Appendix tables 2</a>.</p>
+<p>Body Count — Goodness-of-Fit Tests</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Distribution</th>
+<th>Test</th>
+<th>Statistic</th>
+<th>p-value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Discrete Uniform</td>
+<td>χ²</td>
+<td>29.680000</td>
+<td>8.590930e-01</td>
+<td>✓ Pass</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Normal</td>
+<td>KS</td>
+<td>0.081390</td>
+<td>3.283897e-06</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Poisson</td>
+<td>χ²</td>
+<td>811.023224</td>
+<td>2.628034e-157</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Exponential</td>
+<td>KS</td>
+<td>0.189205</td>
+<td>8.056775e-32</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Log-Normal</td>
+<td>KS</td>
+<td>0.123700</td>
+<td>8.544502e-14</td>
+<td>✗ Reject</td>
+</tr>
+</tbody>
+</table>
+<p>The results split into two groups. For Body Count, Late Night Posts, and Suspicious Tags, the chi-squared test passes comfortably for Discrete Uniform (p = 0.86, 0.89, and 0.50 respectively) while every alternative distribution is rejected with p-values below 10⁻⁵. These are clean results; the data is consistent with a uniform distribution and inconsistent with everything else tested.</p>
+<p>For Male Followers and Thirst Comments, the chi-squared test for Discrete Uniform returns NaN, a likely methodological issue. The chi-squared test requires binning the data and comparing observed versus expected frequencies; the standard rule of thumb is that each bin should have an expected count of at least 5. Male Followers spans a range of 5,777 unique values and Thirst Comments spans 705. With 1,000 observations spread across thousands of possible values, most bins contain 0 or 1 observations, and the test statistic becomes undefined. This is a known limitation of the chi-squared test for wide-range discrete uniform distributions.</p>
+<p>However, several lines of evidence still support Discrete Uniform: - AIC dominance. Discrete Uniform leads by ΔAIC of 367.7 (Male Followers) and 374.3 (Thirst Comments); the largest margins in the entire analysis. - Descriptive statistics. Both variables show near-zero skewness and excess kurtosis of approximately −1.2, matching the theoretical uniform value. - Visual inspection. The histograms display flat, roughly equal-frequency bars across the full range, and the CDFs show even staircase patterns.</p>
+<p>An interesting anomaly appears in the Male Followers table: the Poisson distribution passes the chi-squared test (p = 0.41) despite ranking dead last by AIC. This occurs because with λ = 3360.5, the Poisson approximates a normal distribution (by the central limit theorem), and the chi-squared test with wide bins lacks the power to distinguish between them.</p>
+<p>This is actually a nice reminder that passing a goodness-of-fit test does not mean a distribution is the correct model; it means the test failed to reject it, which is a weaker claim. AIC, which penalizes the catastrophically poor log-likelihood, correctly identifies Poisson as the worst candidate.</p>
+</section>
+<section id="pairewise-correlation-check" class="level3">
+<h3 class="anchored" data-anchor-id="pairewise-correlation-check">4.3 pairewise correlation check</h3>
+<p>If the five statistics are generated by independent <code>Math.random()</code> calls, their pairwise correlations should be near zero. A non-trivial correlation would suggest that some stats are derived from others. For example, if one variable were derived from another (e.g., <code>suspicious_tags</code> from <code>body_count</code>), one would expect non-zero correlations.</p>
+<p><img class="essay_20260315_img03" src="media/essay_2026-03-15_img03.jpg" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;" alt=""></p>
+<p>As shown above, max absolute pairwise correlation is 0.060, which is well within the range expected from sampling noise with N = 1,000 (under independence, the standard error of a sample correlation is approximately 1/√N ≈ 0.032, so |r| &lt; 0.06 is unremarkable).</p>
+<p>This suggests that all stats show no evidence of linear dependence and the site runs <code>Math.random()</code> separately for each stat with no cross-dependencies.</p>
+<p>A caveat: pairwise Pearson correlation captures only linear relationships. However, given that all five marginal distributions are uniform, a distribution with no natural “shape” to distort, nonlinear dependencies between variables would be unusual.</p>
+</section>
+<section id="verdict-classification" class="level3">
+<h3 class="anchored" data-anchor-id="verdict-classification">4.4 verdict classification</h3>
+<p>The site also assigns each query a text verdict alongside the body count. If the verdict is itself randomly generated, I would expect overlapping body count ranges across verdict categories. If instead it is deterministically derived from the body count, the ranges should be cleanly separated.</p>
+<p><img class="essay_20260315_img04" src="media/essay_2026-03-15_img04.jpg" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;" alt="Boxplot showing verdict classification"></p>
+<p>The boxplot above of the four verdict categories of SAFE, MODERATE, HIGH, and EXTREME, occupy non-overlapping body count ranges. No MODERATE result has ever appeared above a body count of 15, and no HIGH result has appeared below 16. The boundaries seem to be consistent with fixed integer cutoffs:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Verdict</th>
+<th>Inferred Cutoff Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SAFE - Low Risk</td>
+<td>body count ≤ 5</td>
+</tr>
+<tr class="even">
+<td>MODERATE - Proceed with Caution</td>
+<td>6 ≤ body count ≤ 15</td>
+</tr>
+<tr class="odd">
+<td>HIGH - Think Twice</td>
+<td>16 ≤ body count ≤ 28</td>
+</tr>
+<tr class="even">
+<td>EXTREME - Run.</td>
+<td>body count ≥ 29</td>
+</tr>
+</tbody>
+</table>
+<p>The verdict is therefore likely not a separate random variable. It is a deterministic function of the body count, implemented as a simple set of <code>if/else</code> threshold checks.</p>
+</section>
+</section>
+<section id="verdict-concluding-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="verdict-concluding-thoughts">5. verdict &amp; concluding thoughts</h2>
+<section id="summary-of-findings" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-findings">5.1 summary of findings</h3>
+<p>The following table consolidates the results across all five variables:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Best Fit</th>
+<th>Parameters</th>
+<th>AIC</th>
+<th>ΔAIC to #2</th>
+<th>Evidence</th>
+<th>GOF p-value</th>
+<th>GOF Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Body Count</td>
+<td>Discrete Uniform</td>
+<td>Uniform(3, 42)</td>
+<td>7381.8</td>
+<td>350.9</td>
+<td>Strong</td>
+<td>0.859093</td>
+<td>✓ Pass</td>
+</tr>
+<tr class="even">
+<td>Male Followers</td>
+<td>Discrete Uniform</td>
+<td>Uniform(423, 6200)</td>
+<td>17327.6</td>
+<td>367.7</td>
+<td>Strong</td>
+<td>NaN</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Thirst Comments</td>
+<td>Discrete Uniform</td>
+<td>Uniform(15, 720)</td>
+<td>13123.2</td>
+<td>374.3</td>
+<td>Strong</td>
+<td>NaN</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Late Night Posts</td>
+<td>Discrete Uniform</td>
+<td>Uniform(2, 55)</td>
+<td>7982.0</td>
+<td>350.6</td>
+<td>Strong</td>
+<td>0.887302</td>
+<td>✓ Pass</td>
+</tr>
+<tr class="odd">
+<td>Suspicious Tags</td>
+<td>Discrete Uniform</td>
+<td>Uniform(1, 35)</td>
+<td>7114.7</td>
+<td>300.9</td>
+<td>Strong</td>
+<td>0.499790</td>
+<td>✓ Pass</td>
+</tr>
+</tbody>
+</table>
+<p>So do all five stats use the same RNG pattern, or does the site use different distributions for different fake stats?</p>
+</section>
+<section id="what-this-means" class="level3">
+<h3 class="anchored" data-anchor-id="what-this-means">5.2 what this means</h3>
+<p>The analysis strongly suggests that every variable is best described by a discrete uniform distribution. The AIC margins exceed 300 in all cases, well above the conventional threshold for decisive evidence. Where the chi-squared test is applicable, it confirms the fit with high p-values. The near-zero pairwise correlations further suggest that each statistic has no linear dependence, with no evidence that any variable is derived from another.</p>
+<p>In JavaScript, this is implemented as:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> (max <span class="op">-</span> min <span class="op">+</span> <span class="dv">1</span>)) <span class="op">+</span> min</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each stat simply uses a different <code>[min, max]</code> range. The strongly negative excess kurtosis, near-zero skewness, dominant AIC scores, and near-zero cross-correlations all converge on the same conclusion.</p>
+<p>The site rolls five independent digital dice, one per stat, applies a set of hard-coded cutoffs, and presents the outcome.</p>
+</section>
+<section id="caveats-extensions" class="level3">
+<h3 class="anchored" data-anchor-id="caveats-extensions">5.3 caveats &amp; extensions</h3>
+<p>Four limitations and potential extensions are worth noting.</p>
+<ol type="1">
+<li><p><strong>Hash-based seeding:</strong> If the site seeds its RNG from a hash of the username (rather than <code>Math.random()</code>), the same handle will deterministically produce the same numbers even without caching. This can be tested by querying the same handle across different browsers/devices. The <em>output distribution</em> of a good hash function is still approximately uniform, so our conclusion holds either way.</p></li>
+<li><p><strong>Correlation structure:</strong> The correlation analysis tests only linear association. While nonlinear dependencies are unlikely given the uniform marginals and the site’s minimal codebase, a more rigorous test using mutual information or distance correlation could provide stronger confirmation of independence.</p></li>
+<li><p><strong>Sample size &amp; test power:</strong> The chi-squared test failed for the two widest-range variables due to insufficient expected cell counts. Alternative approaches, such as a simulation-based exact test (Monte Carlo permutation test comparing the observed chi-squared statistic against simulated draws from the fitted discrete uniform), could provide formal GOF confirmation for these variables. For researchers replicating this analysis, a larger sample size would help.</p></li>
+<li><p><strong>Likely underestimated max-min ranges:</strong> The fitted [min, max] parameters are derived from the observed sample extremes, which may underestimate the true code-level boundaries. For a Discrete Uniform with n possible values, the probability of observing the true maximum in N samples is 1 − ((n−1)/n)^N.</p>
+<ul>
+<li>For narrow-range variables (Body Count, Late Night Posts, Suspicious Tags), 1,000 samples is likely sufficient, and the probability of missing a boundary value is small.</li>
+<li>For wide-range variables, however, sampling coverage is sparse. Male Followers spans an estimated 5,778 unique values; with 1,000 samples, the probability of observing the true maximum is only ~16%, and likewise for the minimum. The true range for this variable is almost certainly wider than the observed [423, 6200] — plausible code-level boundaries might be round numbers like [0, 6500] or [500, 6500]. The same concern applies to Thirst Comments, though less severely. A larger sample (10,000+) or direct inspection of the site’s JavaScript source would resolve this.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">references</h2>
+<p>★ Akaike, H. (1974). A new look at the statistical model identification. IEEE Transactions on Automatic Control, 19(6), 716–723.</p>
+<p>★ Britt, T. (2026). Site to ‘check’ women’s ‘body counts’ goes viral — and some men are defending it. Mashable. https://web.archive.org/web/20260304203624/https://mashable.com/article/check-her-body-count-website</p>
+<p>★ Burnham, K. P., &amp; Anderson, D. R. (2002). Model Selection and Multimodel Inference: A Practical Information-Theoretic Approach (2nd ed.). Springer-Verlag. ISBN 978-0-387-95364-9.</p>
+<p>★ Knuth, D. E. (1997). The Art of Computer Programming, Volume 2: Seminumerical Algorithms (3rd ed.). Addison-Wesley.</p>
+<p>★ Massey, F. J. (1951). The Kolmogorov-Smirnov test for goodness of fit. Journal of the American Statistical Association, 46(253), 68–78.</p>
+<p>★ Pearson, K. (1900). On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling. Philosophical Magazine, 50(302), 157–175.</p>
+</section>
+<section id="appendix" class="level2">
+<h2 class="anchored" data-anchor-id="appendix">appendix</h2>
+<section id="appendix-tables-1-mle" class="level3">
+<h3 class="anchored" data-anchor-id="appendix-tables-1-mle">appendix tables 1: mle</h3>
+<p>These are the tables for the <a href="../essay/essay_2026-03-15.html#maximum-likelihood-estimation-mle-model-ranking"><strong>4.1 maximum likelihood estimation (mle) &amp; model ranking</strong></a> analysis.</p>
+<p><em>Body Count — Distribution Fit</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Distribution</th>
+<th>Parameters</th>
+<th>Log-Lik</th>
+<th>AIC</th>
+<th>BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Discrete Uniform</td>
+<td>Uniform(3, 42)</td>
+<td>-3688.879454</td>
+<td>7381.758908</td>
+<td>7391.574419</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Normal</td>
+<td>Normal(μ=22.8, σ=11.5)</td>
+<td>-3864.309690</td>
+<td>7732.619380</td>
+<td>7742.434891</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Neg. Binomial</td>
+<td>NegBin(n=4.7, p=0.1709)</td>
+<td>-3892.039173</td>
+<td>7788.078347</td>
+<td>7797.893857</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Log-Normal</td>
+<td>LogNormal(σ=0.67, scale=19.0)</td>
+<td>-3963.279759</td>
+<td>7930.559517</td>
+<td>7940.375028</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Geometric</td>
+<td>Geometric(p=0.0482)</td>
+<td>-4008.744424</td>
+<td>8019.488848</td>
+<td>8024.396603</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Exponential</td>
+<td>Exponential(β=22.8)</td>
+<td>-4125.180341</td>
+<td>8252.360681</td>
+<td>8257.268437</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Poisson</td>
+<td>Poisson(λ=22.8)</td>
+<td>-5631.539201</td>
+<td>11265.078402</td>
+<td>11269.986157</td>
+</tr>
+</tbody>
+</table>
+<p>🏆 Best: Discrete Uniform — Uniform(3, 42)</p>
+<p><em>Male Followers — Distribution Fit</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Distribution</th>
+<th>Parameters</th>
+<th>Log-Lik</th>
+<th>AIC</th>
+<th>BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Discrete Uniform</td>
+<td>Uniform(423, 6200)</td>
+<td>-8661.812881</td>
+<td>17327.625762</td>
+<td>17337.441273</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Normal</td>
+<td>Normal(μ=3360.5, σ=1680.3)</td>
+<td>-8845.642321</td>
+<td>17695.284643</td>
+<td>17705.100153</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Neg. Binomial</td>
+<td>NegBin(n=4.0, p=0.0012)</td>
+<td>-8887.450998</td>
+<td>17778.901995</td>
+<td>17788.717506</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Log-Normal</td>
+<td>LogNormal(σ=0.65, scale=2824.4)</td>
+<td>-8939.994728</td>
+<td>17883.989457</td>
+<td>17893.804967</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Geometric</td>
+<td>Geometric(p=0.0003)</td>
+<td>-8985.472779</td>
+<td>17972.945559</td>
+<td>17977.853314</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Exponential</td>
+<td>Exponential(β=3360.5)</td>
+<td>-9119.834934</td>
+<td>18241.669868</td>
+<td>18246.577623</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Poisson</td>
+<td>Poisson(λ=3360.5)</td>
+<td>-468168.136305</td>
+<td>936338.272609</td>
+<td>936343.180365</td>
+</tr>
+</tbody>
+</table>
+<p>🏆 Best: Discrete Uniform — Uniform(423, 6200)</p>
+<p><em>Suspicious Tags — Distribution Fit</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Distribution</th>
+<th>Parameters</th>
+<th>Log-Lik</th>
+<th>AIC</th>
+<th>BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Discrete Uniform</td>
+<td>Uniform(1, 35)</td>
+<td>-3555.348061</td>
+<td>7114.696123</td>
+<td>7124.511634</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Normal</td>
+<td>Normal(μ=17.9, σ=9.8)</td>
+<td>-3705.782292</td>
+<td>7415.564583</td>
+<td>7425.380094</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Neg. Binomial</td>
+<td>NegBin(n=4.0, p=0.1842)</td>
+<td>-3747.963466</td>
+<td>7499.926932</td>
+<td>7509.742442</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Geometric</td>
+<td>Geometric(p=0.0560)</td>
+<td>-3854.318474</td>
+<td>7710.636947</td>
+<td>7715.544703</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Log-Normal</td>
+<td>LogNormal(σ=0.83, scale=14.0)</td>
+<td>-3866.093469</td>
+<td>7736.186938</td>
+<td>7746.002449</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Exponential</td>
+<td>Exponential(β=17.9)</td>
+<td>-3882.843491</td>
+<td>7767.686983</td>
+<td>7772.594738</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Poisson</td>
+<td>Poisson(λ=17.9)</td>
+<td>-5330.480299</td>
+<td>10662.960598</td>
+<td>10667.868353</td>
+</tr>
+</tbody>
+</table>
+<p>🏆 Best: Discrete Uniform — Uniform(1, 35)</p>
+<p><em>Thirst Comments — Distribution Fit</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Distribution</th>
+<th>Parameters</th>
+<th>Log-Lik</th>
+<th>AIC</th>
+<th>BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Discrete Uniform</td>
+<td>Uniform(15, 720)</td>
+<td>-6559.615237</td>
+<td>13123.230475</td>
+<td>13133.045986</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Normal</td>
+<td>Normal(μ=377.1, σ=206.0)</td>
+<td>-6746.748965</td>
+<td>13497.497930</td>
+<td>13507.313440</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Neg. Binomial</td>
+<td>NegBin(n=3.4, p=0.0089)</td>
+<td>-6842.071023</td>
+<td>13688.142046</td>
+<td>13697.957557</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Geometric</td>
+<td>Geometric(p=0.0028)</td>
+<td>-6893.413047</td>
+<td>13788.826095</td>
+<td>13793.733850</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Log-Normal</td>
+<td>LogNormal(σ=0.83, scale=295.4)</td>
+<td>-6918.746911</td>
+<td>13841.493822</td>
+<td>13851.309333</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Exponential</td>
+<td>Exponential(β=377.1)</td>
+<td>-6932.619123</td>
+<td>13867.238246</td>
+<td>13872.146001</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Poisson</td>
+<td>Poisson(λ=377.1)</td>
+<td>-68171.844671</td>
+<td>136345.689342</td>
+<td>136350.597098</td>
+</tr>
+</tbody>
+</table>
+<p>🏆 Best: Discrete Uniform — Uniform(15, 720)</p>
+<p><em>Late Night Posts — Distribution Fit</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Distribution</th>
+<th>Parameters</th>
+<th>Log-Lik</th>
+<th>AIC</th>
+<th>BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Discrete Uniform</td>
+<td>Uniform(2, 55)</td>
+<td>-3988.984047</td>
+<td>7981.968093</td>
+<td>7991.783604</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Normal</td>
+<td>Normal(μ=28.2, σ=15.6)</td>
+<td>-4164.298698</td>
+<td>8332.597397</td>
+<td>8342.412908</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Neg. Binomial</td>
+<td>NegBin(n=3.7, p=0.1163)</td>
+<td>-4204.640358</td>
+<td>8413.280717</td>
+<td>8423.096227</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Geometric</td>
+<td>Geometric(p=0.0367)</td>
+<td>-4285.915268</td>
+<td>8573.830535</td>
+<td>8578.738291</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Log-Normal</td>
+<td>LogNormal(σ=0.80, scale=22.3)</td>
+<td>-4298.474454</td>
+<td>8600.948909</td>
+<td>8610.764419</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Exponential</td>
+<td>Exponential(β=28.2)</td>
+<td>-4340.562343</td>
+<td>8683.124686</td>
+<td>8688.032442</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Poisson</td>
+<td>Poisson(λ=28.2)</td>
+<td>-7311.831685</td>
+<td>14625.663369</td>
+<td>14630.571125</td>
+</tr>
+</tbody>
+</table>
+<p>🏆 Best: Discrete Uniform — Uniform(2, 55)</p>
+</section>
+<section id="appendix-tables-2-gof-tests" class="level3">
+<h3 class="anchored" data-anchor-id="appendix-tables-2-gof-tests">appendix tables 2: gof tests</h3>
+<p>These are the tables for the <a href="../essay/essay_2026-03-15.html#goodness-of-fit-gof-tests"><strong>4.2 goodness-of-fit (gof)</strong></a> analysis.</p>
+<p>Body Count — Goodness-of-Fit Tests</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Distribution</th>
+<th>Test</th>
+<th>Statistic</th>
+<th>p-value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Discrete Uniform</td>
+<td>χ²</td>
+<td>29.680000</td>
+<td>8.590930e-01</td>
+<td>✓ Pass</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Normal</td>
+<td>KS</td>
+<td>0.081390</td>
+<td>3.283897e-06</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Poisson</td>
+<td>χ²</td>
+<td>811.023224</td>
+<td>2.628034e-157</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Exponential</td>
+<td>KS</td>
+<td>0.189205</td>
+<td>8.056775e-32</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Log-Normal</td>
+<td>KS</td>
+<td>0.123700</td>
+<td>8.544502e-14</td>
+<td>✗ Reject</td>
+</tr>
+</tbody>
+</table>
+<p>Male Followers — Goodness-of-Fit Tests</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Distribution</th>
+<th>Test</th>
+<th>Statistic</th>
+<th>p-value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Discrete Uniform</td>
+<td>χ²</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Normal</td>
+<td>KS</td>
+<td>0.077837</td>
+<td>1.023477e-05</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Poisson</td>
+<td>χ²</td>
+<td>94.482539</td>
+<td>4.088680e-01</td>
+<td>✓ Pass</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Exponential</td>
+<td>KS</td>
+<td>0.187717</td>
+<td>2.521115e-31</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Log-Normal</td>
+<td>KS</td>
+<td>0.114558</td>
+<td>6.884858e-12</td>
+<td>✗ Reject</td>
+</tr>
+</tbody>
+</table>
+<p>Thirst Comments — Goodness-of-Fit Tests</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Distribution</th>
+<th>Test</th>
+<th>Statistic</th>
+<th>p-value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Discrete Uniform</td>
+<td>χ²</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Normal</td>
+<td>KS</td>
+<td>0.065040</td>
+<td>4.029450e-04</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Poisson</td>
+<td>χ²</td>
+<td>150.327876</td>
+<td>6.645739e-09</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Exponential</td>
+<td>KS</td>
+<td>0.175139</td>
+<td>2.682286e-27</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Log-Normal</td>
+<td>KS</td>
+<td>0.141017</td>
+<td>8.205825e-18</td>
+<td>✗ Reject</td>
+</tr>
+</tbody>
+</table>
+<p>Late Night Posts — Goodness-of-Fit Tests</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Distribution</th>
+<th>Test</th>
+<th>Statistic</th>
+<th>p-value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Discrete Uniform</td>
+<td>χ²</td>
+<td>40.904000</td>
+<td>8.873015e-01</td>
+<td>✓ Pass</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Normal</td>
+<td>KS</td>
+<td>0.070845</td>
+<td>8.263457e-05</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Poisson</td>
+<td>χ²</td>
+<td>246.226313</td>
+<td>2.777597e-39</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Exponential</td>
+<td>KS</td>
+<td>0.174785</td>
+<td>3.447390e-27</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Log-Normal</td>
+<td>KS</td>
+<td>0.131097</td>
+<td>1.909027e-15</td>
+<td>✗ Reject</td>
+</tr>
+</tbody>
+</table>
+<p>Suspicious Tags — Goodness-of-Fit Tests</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Distribution</th>
+<th>Test</th>
+<th>Statistic</th>
+<th>p-value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Discrete Uniform</td>
+<td>χ²</td>
+<td>33.340000</td>
+<td>4.997899e-01</td>
+<td>✓ Pass</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Normal</td>
+<td>KS</td>
+<td>0.076849</td>
+<td>1.391566e-05</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Poisson</td>
+<td>χ²</td>
+<td>551.128024</td>
+<td>1.006710e-104</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Exponential</td>
+<td>KS</td>
+<td>0.177266</td>
+<td>5.854542e-28</td>
+<td>✗ Reject</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Log-Normal</td>
+<td>KS</td>
+<td>0.143484</td>
+<td>1.987062e-18</td>
+<td>✗ Reject</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<hr style="margin-top:2em;margin-bottom:1em;">
+
+<p><strong>Disclaimer:</strong> This essay/blog contains research and analysis that do not reflect my employer. This essay may contain errors, omissions, or outdated information. It is provided “as is,” without warranties of any kind, express or implied. This essay is not investment, legal, security, or policy advice and must not be relied upon for decision-making. You are responsible for independently verifying facts and conclusions. The author does not accept any liability for losses or harms arising from use of this content. No duty to update is assumed.</p>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
