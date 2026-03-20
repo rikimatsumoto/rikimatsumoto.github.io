@@ -170,6 +170,7 @@ The embedded app below shows how different smart-camera devices compare in terms
 [Click here to open the Streamlit app live →](https://app-privacyriskheatmap-camerafacialembed.streamlit.app/?embed_options=light_theme)
 :::
 
+<img class="essay_20251201_img01" src="essay_2025-12-01_img01.jpg" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;" alt="Screenshot of website">
 
 Code available [here](https://github.com/rikimatsumoto/streamlit-privacyriskheatmap)
 
@@ -281,4 +282,5 @@ These thresholds should be interpreted as **heuristic ranges**:
 * Recognition performance depends on lighting, pose, occlusion, compression, and camera optics—not just pixel count.
 * Models trained on super-resolution or cross-resolution datasets may recognize faces below these thresholds in controlled settings.
 * Many facial recognition models assume a frontal face and simple geometric projection; real-world scenes introduce additional variability.
+* Manufacturers typically publish diagonal FOV; vertical FOV values used here are guess-timated from the diagonal spec and each camera's aspect ratio.
 
