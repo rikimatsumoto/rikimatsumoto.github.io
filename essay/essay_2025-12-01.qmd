@@ -170,7 +170,7 @@ The embedded app below shows how different smart-camera devices compare in terms
 [Click here to open the Streamlit app live →](https://app-privacyriskheatmap-camerafacialembed.streamlit.app/?embed_options=light_theme)
 :::
 
-<img class="essay_20251201_img01" src="essay_2025-12-01_img01.jpg" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;" alt="Screenshot of website">
+<img class="essay_20251201_img01" src="media/essay_2025-12-01_img01.jpg" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;" alt="Screenshot of website">
 
 Code available [here](https://github.com/rikimatsumoto/streamlit-privacyriskheatmap)
 
