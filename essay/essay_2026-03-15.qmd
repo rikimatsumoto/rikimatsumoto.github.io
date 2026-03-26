@@ -1,6 +1,6 @@
 ---
 title: "reverse engineering a viral website's random number generator"
-subtitle: "an empirical analysis of a misogynistic website"
+subtitle: "an empirical analysis of a mean-spirited website"
 date: "March 15, 2026"
 format:
   html:
@@ -13,7 +13,7 @@ execute:
 
 ## tldr!
 
-[A viral misogynistic site "Check Her Body Count"](https://web.archive.org/web/20260304203624/https://mashable.com/article/check-her-body-count-website) claimed to use AI to estimate the number of partners from an Instagram handle. It doesn't. Independent developers confirmed the site is run entirely client-side; it makes no API calls, doesn't validate whether a handle exists, and simply generates random numbers.
+[A viral mean-spirited site "Check Her Body Count"](https://web.archive.org/web/20260304203624/https://mashable.com/article/check-her-body-count-website) claimed to use AI to estimate the number of partners from an Instagram handle. It doesn't. Independent developers confirmed the site is run entirely client-side; it makes no API calls, doesn't validate whether a handle exists, and simply generates random numbers.
 
 I had a specific question. If the website does generate random numbers, what probability distribution generates said random numbers? Is it uniform? Bell-shaped? Poisson? Exponential?
 

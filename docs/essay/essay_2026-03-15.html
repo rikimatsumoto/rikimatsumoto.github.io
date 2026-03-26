@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">reverse engineering a viral website’s random number generator</h1>
-<p class="subtitle lead">an empirical analysis of a misogynistic website</p>
+<p class="subtitle lead">an empirical analysis of a mean-spirited website</p>
 </div>
 
 
@@ -235,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="tldr" class="level2">
 <h2 class="anchored" data-anchor-id="tldr">tldr!</h2>
-<p><a href="https://web.archive.org/web/20260304203624/https://mashable.com/article/check-her-body-count-website">A viral misogynistic site “Check Her Body Count”</a> claimed to use AI to estimate the number of partners from an Instagram handle. It doesn’t. Independent developers confirmed the site is run entirely client-side; it makes no API calls, doesn’t validate whether a handle exists, and simply generates random numbers.</p>
+<p><a href="https://web.archive.org/web/20260304203624/https://mashable.com/article/check-her-body-count-website">A viral mean-spirited site “Check Her Body Count”</a> claimed to use AI to estimate the number of partners from an Instagram handle. It doesn’t. Independent developers confirmed the site is run entirely client-side; it makes no API calls, doesn’t validate whether a handle exists, and simply generates random numbers.</p>
 <p>I had a specific question. If the website does generate random numbers, what probability distribution generates said random numbers? Is it uniform? Bell-shaped? Poisson? Exponential?</p>
 <p>I collected 1,000 samples from the site and used maximum likelihood estimation, AIC/BIC model comparison, and goodness-of-fit testing to determine which probability distributions best explain the outputs. All five generated statistics follow <strong>discrete uniform distributions</strong>, the simplest possible RNG pattern, likely implemented as <code>Math.floor(Math.random() * (max - min + 1)) + min</code> with a different [<em>min, max</em>] range per stat.</p>
 </section>
