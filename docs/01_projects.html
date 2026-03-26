@@ -132,8 +132,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#implementation-of-lilien-index-1982-in-r-and-python-working-draft" id="toc-implementation-of-lilien-index-1982-in-r-and-python-working-draft" class="nav-link active" data-scroll-target="#implementation-of-lilien-index-1982-in-r-and-python-working-draft"><span class="header-section-number">0.3</span> Implementation of Lilien Index (1982) in R and Python (working draft)</a></li>
-  <li><a href="#macro-forecaster-working-draft" id="toc-macro-forecaster-working-draft" class="nav-link" data-scroll-target="#macro-forecaster-working-draft"><span class="header-section-number">0.4</span> Macro-forecaster (working draft)</a></li>
+  <li><a href="#macro-forecaster-working-draft" id="toc-macro-forecaster-working-draft" class="nav-link active" data-scroll-target="#macro-forecaster-working-draft"><span class="header-section-number">0.1</span> Macro-forecaster (working draft)</a></li>
+  <li><a href="#implementation-of-lilien-index-1982-in-r-and-python-working-draft" id="toc-implementation-of-lilien-index-1982-in-r-and-python-working-draft" class="nav-link" data-scroll-target="#implementation-of-lilien-index-1982-in-r-and-python-working-draft"><span class="header-section-number">0.4</span> Implementation of Lilien Index (1982) in R and Python (working draft)</a></li>
   <li><a href="#u.s.-federal-expenditure-tracker-brookings" id="toc-u.s.-federal-expenditure-tracker-brookings" class="nav-link" data-scroll-target="#u.s.-federal-expenditure-tracker-brookings"><span class="header-section-number">0.5</span> U.S. Federal Expenditure tracker (Brookings)</a></li>
   <li><a href="#social-spending-mini-simulation" id="toc-social-spending-mini-simulation" class="nav-link" data-scroll-target="#social-spending-mini-simulation"><span class="header-section-number">0.6</span> Social spending mini-simulation</a></li>
   <li><a href="#u.s.-tariff-trade-tracker-brookings" id="toc-u.s.-tariff-trade-tracker-brookings" class="nav-link" data-scroll-target="#u.s.-tariff-trade-tracker-brookings"><span class="header-section-number">0.7</span> U.S. Tariff &amp; Trade tracker (Brookings)</a></li>
@@ -166,16 +166,24 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored">
 hello! here are some of the projects I’ve worked on.
 </h2>
+<section id="macro-forecaster-working-draft" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="macro-forecaster-working-draft"><span class="header-section-number">0.1</span> Macro-forecaster (working draft)</h3>
+<p>
+I created this web-app as a companion to a working paper. Overlays the IMF’s 5-year forecast path against Naive, ARIMA, ETS, Prophet, and Chronos (Amazon’s T5-based foundation model) forecasts, plus four ensemble combination methods including an adaptive inverse-MSE weighted combination.
+</p>
+<iframe src="https://rikimatsumoto.shinyapps.io/res-weoforecast/" width="100%" height="600" frameborder="0" style="border:1px solid black;">
+</iframe>
+</section>
 <div class="columns">
 <div class="column" style="width:50%;">
-<section id="zetetic-llm-powered-investment-app" class="level3" data-number="0.1">
-<h3 data-number="0.1" class="anchored" data-anchor-id="zetetic-llm-powered-investment-app"><span class="header-section-number">0.1</span> Zetetic-LLM powered investment app</h3>
+<section id="zetetic-llm-powered-investment-app" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="zetetic-llm-powered-investment-app"><span class="header-section-number">0.2</span> Zetetic-LLM powered investment app</h3>
 <p>A Streamlit application that converts your investment thesis into executable strategies using multiple AI models, simulates those strategies with Yahoo Finance data, and provides comprehensive performance analysis with backtesting support and estimated AI cost transparency.</p>
 <p><a href="https://zetetic.streamlit.app" target="_blank">Streamlit application</a></p>
 </section>
 </div><div class="column" style="width:50%;">
-<section id="discounted-cash-flow-dcf-analysis-tool" class="level3" data-number="0.2">
-<h3 data-number="0.2" class="anchored" data-anchor-id="discounted-cash-flow-dcf-analysis-tool"><span class="header-section-number">0.2</span> Discounted cash flow (DCF) analysis tool</h3>
+<section id="discounted-cash-flow-dcf-analysis-tool" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="discounted-cash-flow-dcf-analysis-tool"><span class="header-section-number">0.3</span> Discounted cash flow (DCF) analysis tool</h3>
 <p>
 I created this web-app to automate basic Monte Carlo DCF analysis for publicly traded companies (with data available via Yahoo Finance). Enter a ticker and it pulls live financials from Yahoo Finance, estimates WACC via CAPM, projects free cash flows, and calculates an intrinsic value per share.
 </p>
@@ -186,17 +194,9 @@ It runs Monte Carlo simulations to quantify uncertainty, offering a sensitivity 
 </section>
 </div>
 </div>
-<section id="implementation-of-lilien-index-1982-in-r-and-python-working-draft" class="level3" data-number="0.3">
-<h3 data-number="0.3" class="anchored" data-anchor-id="implementation-of-lilien-index-1982-in-r-and-python-working-draft"><span class="header-section-number">0.3</span> Implementation of Lilien Index (1982) in R and Python (working draft)</h3>
+<section id="implementation-of-lilien-index-1982-in-r-and-python-working-draft" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="implementation-of-lilien-index-1982-in-r-and-python-working-draft"><span class="header-section-number">0.4</span> Implementation of Lilien Index (1982) in R and Python (working draft)</h3>
 <p>This <a href="https://github.com/rikimatsumoto/res-lilien-index" target="_blank">Github repository</a> provides clean, reference implementations of the Lilien Index, generally used for measuring sectoral employment dispersion and structural change. Implementations are provided in R and Python (forthcoming), with consistent definitions, shared examples, and unit tests.</p>
-</section>
-<section id="macro-forecaster-working-draft" class="level3" data-number="0.4">
-<h3 data-number="0.4" class="anchored" data-anchor-id="macro-forecaster-working-draft"><span class="header-section-number">0.4</span> Macro-forecaster (working draft)</h3>
-<p>
-I created this web-app as a companion to a working paper. Overlays the IMF’s 5-year forecast path against Naive, ARIMA, ETS, Prophet, and Chronos (Amazon’s T5-based foundation model) forecasts, plus four ensemble combination methods including an adaptive inverse-MSE weighted combination.
-</p>
-<iframe src="https://rikimatsumoto.shinyapps.io/res-weoforecast/" width="100%" height="600" frameborder="0" style="border:1px solid black;">
-</iframe>
 </section>
 <section id="u.s.-federal-expenditure-tracker-brookings" class="level3" data-number="0.5">
 <h3 data-number="0.5" class="anchored" data-anchor-id="u.s.-federal-expenditure-tracker-brookings"><span class="header-section-number">0.5</span> U.S. Federal Expenditure tracker (Brookings)</h3>

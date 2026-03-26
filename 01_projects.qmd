@@ -11,6 +11,17 @@ lang: en
 
 <h2>hello! here are some of the projects I've worked on.</h2>
 
+### Macro-forecaster (working draft)
+<p>I created this web-app as a companion to a working paper. Overlays the IMF's 5-year forecast path against Naive, ARIMA, ETS, Prophet, and Chronos (Amazon's T5-based foundation model) forecasts, plus four ensemble combination methods including an adaptive inverse-MSE weighted combination.</p>
+
+<iframe 
+  src="https://rikimatsumoto.shinyapps.io/res-weoforecast/" 
+  width="100%" 
+  height="600" 
+  frameborder="0"
+  style="border:1px solid black;">
+</iframe>
+
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -40,17 +51,6 @@ A Streamlit application that converts your investment thesis into executable str
 ### Implementation of Lilien Index (1982) in R and Python (working draft)
 
 This <a href="https://github.com/rikimatsumoto/res-lilien-index" target="_blank" >Github repository</a> provides clean, reference implementations of the Lilien Index, generally used for measuring sectoral employment dispersion and structural change. Implementations are provided in R and Python (forthcoming), with consistent definitions, shared examples, and unit tests.
-
-### Macro-forecaster (working draft)
-<p>I created this web-app as a companion to a working paper. Overlays the IMF's 5-year forecast path against Naive, ARIMA, ETS, Prophet, and Chronos (Amazon's T5-based foundation model) forecasts, plus four ensemble combination methods including an adaptive inverse-MSE weighted combination.</p>
-
-<iframe 
-  src="https://rikimatsumoto.shinyapps.io/res-weoforecast/" 
-  width="100%" 
-  height="600" 
-  frameborder="0"
-  style="border:1px solid black;">
-</iframe>
 
 ### U.S. Federal Expenditure tracker (Brookings)
   <p>For some interesting work I did with some colleagues (s/o Noadia + Lauren), check out this R Shiny app on U.S. Federal Outlays (spending)</p>
