@@ -24,6 +24,7 @@ I collected 1,000 samples from the site and used maximum likelihood estimation, 
 In late February 2026, [a misogynistic website called **checkherbodycount.com**](https://web.archive.org/web/20260304203624/https://mashable.com/article/check-her-body-count-website) claiming to estimate body count from an Instagram handle using AI went viral online. It is, of course, complete fiction, and harmful fiction at that.
 
 Independent developers quickly confirmed it's entirely a hoax:
+
 - The site runs **100% client-side** in the browser
 - It makes **zero requests** to Instagram or any external API, and does not validate whether a handle even exists
 - It **generates random numbers** and **caches them in localStorage**.
