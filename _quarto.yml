@@ -1,8 +1,8 @@
 project:
   type: website
   output-dir: docs
-  # resources:                          # ← ADD THIS BLOCK
-  #   - "courses/LP_101_Interactive.html"                   # tells Quarto to copy this folder to docs/
+  resources:   
+    - "misc/res-hcidea.html"                   # tells Quarto to copy this folder to docs/
 
 execute:
   dir: project

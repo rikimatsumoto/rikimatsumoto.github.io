@@ -11,8 +11,15 @@ lang: en
 
 <h2>what I've (co-)written</h2>
 
-### [Benchmarking Human Capital Spending Efficiency Using Bootstrapped Data Envelopment Analysis](https://medium.com/@rikimatsumoto/benchmarking-human-capital-spending-efficiency-using-monte-carlo-data-envelopment-analysis-6b184d2a6c77)
-<p>I demonstrate how to conduct Bootstrapped Data Envelopment Analysis (DEA) and generate distributions of efficiency scores. I examine expenditures in health and education and cross-country variation in human capital and find large potential efficiency gains for developing countries.</p>
+### Working Paper Draft: How Stable Are Cross-Country Efficiency Scores? Peer Group Pertubation in Data Envelopment Analysis Applied to Human Capital Spending
+<p>Applied methodology paper demonstrating how to conduct peer group pertubation in Data Envelopment Analysis (DEA) and generate distributions of efficiency scores. I apply the procedure to health and education expenditure and cross-country variation in human capital. A formal working paper, [extending previous work](https://medium.com/@rikimatsumoto/benchmarking-human-capital-spending-efficiency-using-monte-carlo-data-envelopment-analysis-6b184d2a6c77) originally written as a blog post.</p>
+
+<iframe 
+  src="misc/res-hcidea.html" 
+  width="100%" 
+  height="600px" 
+  style="border: none;">
+</iframe>
 
 ### [Back-of-Envelope Series: Estimating spending needs to meet SDG 2](https://medium.com/@rikimatsumoto/back-of-envelope-series-estimating-spending-needs-to-meet-sdg-2-02ed96d41247)
 <p> I started a new series called the “Back-of-Envelope” Policy Series, where I calculate (very) rough estimates of a policy issue that interests me. For the inaugural “Back-of-Envelope” note, I estimated costs to meet “minimum hunger and nutrition needs” under specific scenarios.</p>

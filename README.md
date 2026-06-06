@@ -6,17 +6,17 @@ hello! this is my personal portfolio website for showcasing some analytics proje
 
 Visit the site here: https://rikimatsumoto.github.io
 
-## Embedded Projects
+## embedded projects
 
 The site includes live, embedded dashboards powered by [shinyapps.io](https://www.shinyapps.io/), and Streamlit.
 
 ---
 
-## 🐍 Quarto + Python Environment Setup (macOS)
+## quarto + Python env setup (macOS)
 
-This guide explains how to configure Quarto to use a Python environment. Quarto requires Python only if your `.qmd` documents execute Python code. Instead of letting Quarto install its own environment, we create a **controlled venv** and tell Quarto to use it.
+I use Quarto configured in a Python environment. Quarto requires Python only if your `.qmd` documents execute Python code. Instead of letting Quarto install its own environment, we create a **controlled venv** and tell Quarto to use it.
 
-### 1. Create a Python Virtual Environment for Quarto
+### 1. create a Python virtual environment for Quarto
 
 Choose the Python installation you want to use (Homebrew Python recommended):
 
@@ -27,7 +27,7 @@ python3 -m venv ~/.quarto-env
 Activate it:
 
 ```bash
-source ~/.quarto-env/bin/activate
+source .venv/bin/activate
 ```
 
 This environment will be dedicated to Quarto execution.
@@ -40,7 +40,7 @@ Quarto’s Jupyter backend requires a handful of Python libraries:
 pip install jupyter pyyaml nbformat nbclient ipykernel
 ```
 
-### 3. Register the Kernel with Jupyter
+### 3. register kernel with environment
 
 This allows Quarto to find and use the environment:
 
