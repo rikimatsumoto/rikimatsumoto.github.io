@@ -56,10 +56,10 @@ Outside my career, I work on my [art projects](https://rikimatsumoto.github.io/a
     <span class="card-desc">Web-app that converts investment ideas/theses into executable strategies using multiple AI models.</span>
   </a>
 
-  <a href="01_projects.html#discounted-cash-flow-dcf-analysis-tool" class="preview-card">
-    <span class="card-category">FINANCE</span>
-    <span class="card-title">Discounted Cash Flow (DCF) Analysis Tool</span>
-    <span class="card-desc">Web-app automating Monte Carlo DCF analysis for publicly traded companies via Yahoo Finance.</span>
+  <a href="misc/res-hcidea.html" class="preview-card">
+    <span class="card-category">ECONOMICS/OPERATIONS RESEARCH</span>
+    <span class="card-title">Peer Group Pertubation in Data Envelopment Analysis</span>
+    <span class="card-desc">Applied methodology paper analyzing DEA sensitivity to the comparator set, and proposing peer group pertubation to analyze distributions of efficiency scores.</span>
   </a>
 </div>
 

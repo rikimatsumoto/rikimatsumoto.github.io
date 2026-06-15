@@ -11,7 +11,7 @@ lang: en
 
 <h2>what I've (co-)written</h2>
 
-### Working Paper Draft: How Stable Are Cross-Country Efficiency Scores? Peer Group Pertubation in Data Envelopment Analysis Applied to Human Capital Spending
+### [Working Paper Draft: How Stable Are Cross-Country Efficiency Scores? Peer Group Pertubation in Data Envelopment Analysis Applied to Human Capital Spending](misc/res-hcidea.html)
 <p>Applied methodology paper demonstrating DEA sensitivity to the comparator set, and proposing peer group pertubation to analyze distributions of efficiency scores. I apply the procedure to health and education expenditure and cross-country variation in human capital. A draft working paper, [extending previous work](https://medium.com/@rikimatsumoto/benchmarking-human-capital-spending-efficiency-using-monte-carlo-data-envelopment-analysis-6b184d2a6c77) originally written as a blog post.</p>
 
 <iframe 
