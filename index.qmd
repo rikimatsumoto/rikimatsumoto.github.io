@@ -56,7 +56,7 @@ Outside my career, I work on my [art projects](https://rikimatsumoto.github.io/a
     <span class="card-desc">Web-app that converts investment ideas/theses into executable strategies using multiple AI models.</span>
   </a>
 
-  <a href="misc/res-hcidea.html" class="preview-card">
+  <a href="02_articles.html#working-paper-draft-how-stable-are-cross-country-efficiency-scores-peer-group-pertubation-in-data-envelopment-analysis-applied-to-human-capital-spending" class="preview-card">
     <span class="card-category">ECONOMICS/OPERATIONS RESEARCH</span>
     <span class="card-title">Peer Group Perturbation in Data Envelopment Analysis</span>
     <span class="card-desc">Applied methodology paper analyzing DEA sensitivity to the comparator set, and proposing peer group perturbation to analyze distributions of efficiency scores.</span>
