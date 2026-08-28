@@ -36,3 +36,8 @@ In this analysis, I explain how to create a discrete-event simulation (DES) of a
 
 ### [(IMF Technical Guidance Note) IMF Engagement on Social Safety Net Issues in Surveillance and Program Work](https://www.imf.org/en/publications/tnm/issues/2022/10/03/imf-engagement-on-social-safety-net-issues-in-surveillance-and-program-work-524087)
 <p> This technical note discusses (1) the different channels through which SSN spending may become macro-critical, (2) how to assess the importance of these channels, and (3) the types of policy responses that are appropriate and the trade-offs involved in choosing among them. </p>
+
+### [(IMF Data) Investment and Capital Stock Dataset (ICSD)](https://data.imf.org/en/datasets/IMF.FAD:ICSD)
+<p> This dataset provides comprehensive data for investment and capital stock for the general government, private sector and public-private partnerships, across the Fund member countries. </p>
+
+

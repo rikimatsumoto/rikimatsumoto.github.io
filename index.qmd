@@ -97,26 +97,7 @@ Outside my career, I work on my [art projects](https://rikimatsumoto.github.io/a
   </a>
 </div>
 
-<!-- ─── ROW: ART ──────────────────────────────────────── -->
-<div class="preview-section-label">ART</div>
-
-<div class="preview-row">
-  <a href="art/index_art.html#lapiscine_lamp" class="preview-card">
-    <span class="card-category">LATEST</span>
-    <span class="card-title">DIY "La Piscine" lamp</span>
-    <span class="card-desc">Fixed an estate sale lamp with custom lamp fixture and bulb.</span>
-  </a>
-
-  <a href="art/index_art.html#frog_jacket" class="preview-card">
-    <span class="card-category">TEXTILE</span>
-    <span class="card-title">"Frog" Button Jacket</span>
-    <span class="card-desc">Customizing an embroidered jacket with 1960's Chinese rayon frog closures.</span>
-  </a>
-</div>
-
-</div>
-
----
+</div class="preview-grid">
 
 #### what I'm thinking about right now:
 
@@ -126,5 +107,5 @@ I.e., if the model has a good (low) RMSE but predicts a noticeably different dis
 
 
 <!-- ============================================================
-     END OF INDEX PAGE
-     ============================================================ -->
+END OF INDEX PAGE
+============================================================ -->

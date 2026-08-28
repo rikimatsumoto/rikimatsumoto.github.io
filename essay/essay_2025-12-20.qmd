@@ -11,19 +11,36 @@ execute:
   echo: true
 ---
 
-## tldr!
+## tldr
 
-Generative image AI models can be “poisoned” surprisingly easily - not necessarily through malicious attacks, but through repeated exposure to heavily stylized images such as the popular “Charlie Kirk filters.”
+A few months ago, some users on Youtube noticed images of people generated on some AI image generation platforms were distorted to resemble the late American political activist Charlie Kirk. Turns out, generative image AI models can be “poisoned” surprisingly easily - not necessarily through malicious attacks, but through repeated exposure to heavily stylized images such as the popular “Charlie Kirk filters.” 
+
+It doesn't take much
 
 There's no need for millions of poisoned images. A small, consistent bias in the data that receives the most training weight would be enough to cause a generator to produce faces with distorted proportions. 
 
 Moreover, the most likely vector for poisoning lies in Reinforcement Learning from Human Feedback (RLHF) and aesthetic scoring systems trained on web-scraped galleries, where even tiny, hard-to-detect biases in feedback data can reshape the model’s entire notion of what a “good” image looks like.
 
+Generative models are vulnerable to poisoning through surprisingly small, targeted biases - and the most likely entry point is something called preference/feedback systems, not training data.
+
+###################################################################################################################################################
+## 1. Introduction — The Charlie Kirk Problem
+
+- Open with the observable phenomenon: users noticing distorted faces in AI-generated images
+- Briefly introduce "Charlie Kirk filters" as the motivating example
+- **Key reframe:** This isn't necessarily a malicious attack — it may be an emergent consequence of how models learn from the internet
+
+
+
+**Why this change:** Your current intro buries the thesis under background. Lead with the punchline — models are already showing signs of this — then explain why.
+###################################################################################################################################################
+
+
 ## 1. introduction to data poisoning in generative models
 
-Recent discussions around “Charlie Kirk filters”, image edits that exaggerate specific facial proportions, have raised questions about whether repeated exposure to such stylized images can “poison” generative AI systems. A few users on Youtube have observed that some models begin [producing faces with distortions resembling these filters, even when not explicitly prompted.](https://web.archive.org/web/20251222205934/https://www.ebaumsworld.com/articles/charlie-kirks-face-may-be-poisoning-ai-image-generators/87732671/) [More recently, Vice reported on a user poisoning audio files circulating on a popular music sharing platform called Soulseek](https://www.vice.com/en/article/infinite-ai-homer-simpson-cover-songs-poisoned-soulseek/).
+Recent discussions around “Charlie Kirk filters”, image edits that exaggerate specific facial proportions, have raised questions about whether repeated exposure to such stylized images can “poison” generative AI systems. A few users on Youtube have observed that some models begin [producing faces with distortions resembling these filters, even when not explicitly prompted.](https://web.archive.org/web/20251222205934/https://www.ebaumsworld.com/articles/charlie-kirks-face-may-be-poisoning-ai-image-generators/87732671/) [More recently, Vice reported on a user poisoning audio files circulating on a popular music sharing platform called Soulseek](https://www.vice.com/en/article/infinite-ai-homer-simpson-cover-songs-poisoned-soulseek/). Clearly, the problem isn't just isolated to images.
 
-This phenomenon actually reflects known behaviors in data poisoning, latent-space drift, and preference-model bias documented in the machine learning literature. This short article provides an analytical overview of **how stylized or adversarial images meaningfully shift a generative model’s output distribution**, and why generative systems remain vulnerable even when the total fraction of poisoned data appears small.
+This phenomenon actually reflects known behaviors in "data poisoning", "latent-space drift", and "preference-model bias" documented in the machine learning literature. This short article provides an analytical overview of **how stylized or adversarial images meaningfully shift a generative model’s output distribution**, and why generative systems remain vulnerable even when the total fraction of poisoned data appears small.
 
 ## 2. poisoning depends on a *subset*, not the whole dataset
 
@@ -118,13 +135,46 @@ It is the only stage where relatively tiny amounts of poisoned data can meaningf
 | **Fine-Tuning (LoRA/DreamBooth)**  | High                | Low–Medium              | **Low**       |
 | **RLHF / Preference Optimization** | **Very High**       | **High**                | **High**      |
 
+###################################################################################################################################################
+## 5. Summary Table
+
+| Training Stage | Sensitivity | Likelihood | Overall Risk |
+|---|---|---|---|
+| Foundation Training | Low | Very Low | Very Low |
+| Fine-Tuning (LoRA/DreamBooth) | High | Low–Medium | Low–Medium |
+| RLHF / Preference Optimization | Very High | High | High |
+
+*(Same table as your current version — it works well.)*
+
+###################################################################################################################################################
+
+
+
 ## 5. concluding thoughts
 
 As generative systems move toward continual learning and user-in-the-loop optimization, understanding these vulnerabilities, and designing systems robust to distribution drift, becomes increasingly important to prevent malicious or unintentional poisoning!
 
+###################################################################################################################################################
+## 6. So What? Implications and Mitigations
+
+- **This replaces your current one-sentence conclusion.**
+- Briefly discuss what this means going forward:
+  - As models move toward continual learning and user-in-the-loop optimization, the RLHF attack surface grows
+  - Possible mitigations: anomaly detection on reward signals, distribution monitoring on latent-space clusters, adversarial filtering on feedback data
+  - The "Charlie Kirk filter" case is a canary — the same dynamics apply to any viral aesthetic trend
+- End with an honest scoping statement: this article maps the vulnerability landscape; robust defences are an open research problem
+
+**Bullet summary for readers:**
+- The shift toward user-feedback-driven training makes models increasingly vulnerable to drift
+- Defences exist (monitoring, filtering, anomaly detection) but are not yet standard practice
+- You don't need a malicious attacker — viral trends alone can reshape what AI thinks a "good" image looks like
+
+###################################################################################################################################################
+
 
 ## 6. references
 
+* Carlini, et al. (2025). *Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples*. https://arxiv.org/html/2510.07192v1
 * Biggio, B., & Roli, F. (2018). *Wild patterns: Ten years after the rise of adversarial machine learning*. Pattern Recognition.
 * Zhai, S. et al (2023). *Text-to-Image Diffusion Models can be Easily Backdoored through Multimodal Data Poisoning*. [arXiv:2305.04175](https://arxiv.org/abs/2305.04175)
 * Zhu, M. et al (2024). *Explaining latent representations of generative models with large multimodal models*. [arXiv:2402.01858v1](https://arxiv.org/html/2402.01858v1)
@@ -133,6 +183,15 @@ As generative systems move toward continual learning and user-in-the-loop optimi
 
 
 
+###################################################################################################################################################
+
+## 7. References
+
+- Keep your existing three citations
+- **Add:** A citation grounding the RLHF vulnerability claim — e.g., work on reward model overoptimization (Gao et al., 2023) or reward hacking
+- **Consider adding:** LAION-Aesthetics documentation if you use it as a concrete example in 4c
+
+###################################################################################################################################################
 
 
 
@@ -141,8 +200,88 @@ As generative systems move toward continual learning and user-in-the-loop optimi
 
 
 
+###################################################################################################################################################
+
+## 2. The Core Insight: Poisoning Is Subset-Specific, Not Dataset-Wide
+
+- **This should be the centrepiece of the article.** It's your most original and useful contribution — elevate it.
+- Explain latent-space clustering: models organize knowledge into semantic submanifolds (faces, landscapes, cars, etc.)
+- Therefore, a poisoned face image only competes with other face images — not with the entire dataset
+- Human faces occupy a tightly structured, low-dimensional manifold → high learning efficiency but also high sensitivity to biased samples
+- Introduce the concept of **directional drift**: small consistent biases in features (eye spacing, jawline, proportions) shift the entire face submanifold
+
+**Bullet summary for readers:**
+- AI models organize images into clusters by category (faces, cars, landscapes, etc.)
+- A stylized face only affects the "face cluster" — it doesn't compete with photos of beaches or dogs
+- Because faces are tightly clustered, even small biases can shift the entire region
+- This means you don't need to poison the whole dataset — just the relevant subset
+
+###################################################################################################################################################
+
+###################################################################################################################################################
+
+## 3. How Much Poison Is Enough? (Quantifying the Threat)
+
+- Move the numerical example (0.1% of 2M faces = 2,000 images) here
+- **Critical addition:** Connect the math to empirical thresholds from the literature — cite Carlini et al. or similar work on minimum effective poisoning rates
+- Distinguish between what "2,000 images" means at the foundation stage (negligible) vs. fine-tuning stage (significant) vs. RLHF stage (potentially devastating)
+- This section bridges the conceptual insight (Section 2) with the practical analysis (Section 4)
+
+**Bullet summary for readers:**
+- The amount of poisoned data needed depends on the size of the relevant subset, not the full dataset
+- At the foundation level, 2,000 images in 2M is small — but at fine-tuning scale (50–300 images), even a handful matters
+- In feedback/reward systems, the "effective weight" of images is amplified by user engagement and scoring
+
+###################################################################################################################################################
+
+###################################################################################################################################################
+
+## 4. Three Training Stages, Three Attack Surfaces
+
+Brief intro: modern generative AI pipelines update models in three distinct ways, each with different vulnerability profiles. Evaluate each on **sensitivity** (how much damage poisoned data does) and **likelihood** (how easy it is to get poisoned data in).
+
+### 4a. Foundation Training — Lowest Risk
+- Massive datasets (hundreds of millions of images) dilute individual poisoned samples
+- Quality filtering pipelines act as a first line of defence
+- Extremely costly and infrequent → narrow attack window
+- **Threat level: Very Low** (academic/state-level concern, not practical for everyday products)
+
+### 4b. Fine-Tuning (LoRA, DreamBooth) — Medium Risk
+- Much smaller datasets (3–300 images) → each sample carries disproportionate gradient weight
+- Still a curated, internal process → hard for external attackers to access
+- **However**, risk escalates when:
+  - Companies fine-tune on user-submitted data without vetting
+  - Teams reuse community datasets uncritically
+  - Multiple fine-tuning jobs compound small distortions over time
+- **Threat level: Low–Medium** (effective if you get in, but hard to get in)
+
+### 4c. RLHF & Preference Optimization — Highest Risk
+- **This is where the argument needs the most strengthening.** Currently your strongest claim has the weakest evidence.
+- Explain the specific mechanisms:
+  - Reward models trained on pairwise comparisons (InstructGPT-style) vs. aesthetic classifiers (e.g., LAION-Aesthetics)
+  - User engagement signals (likes, shares, saves) used as implicit quality proxies
+  - Self-play / iterative refinement loops where the model trains on its own scored outputs
+- **Concrete example needed:** Name at least one real system or pipeline where web-scraped aesthetic data feeds into reward model training (e.g., LAION-Aesthetics → Stable Diffusion's aesthetic classifier)
+- Explain why this is uniquely vulnerable: the "attack surface" is the open internet — anyone posting stylized images that get engagement is inadvertently contributing training signal
+- **Key distinction to add:** Separate intentional poisoning (adversarial) from unintentional drift (viral trends organically biasing feedback data). These have different threat models and different mitigations.
+- **Threat level: High** (low barrier to entry, high impact, and it can happen accidentally)
+
+**Bullet summary for readers:**
+- Foundation training is nearly impossible to poison from the outside
+- Fine-tuning is sensitive but usually locked behind internal processes
+- RLHF/preference systems are the most exposed because they pull signal from the open internet
+- Viral trends (like Charlie Kirk filters) don't need to be "attacks" — they can poison feedback loops just by being popular
+
+###################################################################################################################################################
 
 
+## Key Structural Changes Summarized
+
+1. **Elevated the subset-specific insight** from a mid-article aside to the centrepiece (Section 2)
+2. **Separated the quantitative example** into its own bridging section (Section 3) so it connects the concept to the practical analysis
+3. **Tightened the training-stage analysis** by flagging exactly where evidence needs to be added (especially RLHF)
+4. **Added a real conclusion** with implications and mitigations instead of a one-liner
+5. **Flagged the intentional vs. unintentional distinction** — this resolves the conflation issue from the original feedback
 
 
 
